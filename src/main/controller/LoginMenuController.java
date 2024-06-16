@@ -14,11 +14,26 @@ public class LoginMenuController {
     private TextField loginPasswordTextField;
     @FXML
     private Button loginToggleButton;
+    @FXML
+    private PasswordField registerPasswordField;
+    public TextField registerPasswordTextField;
+    public Button registerToggleButton;
+    @FXML
+    private PasswordField registerCPasswordField;
+    public TextField registerCPasswordTextField;
+    public Button registerToggleCButton;
 
     @FXML
     public void initialize() {
-        loginToggleButton.setOnAction(event -> togglePasswordVisibility(loginPasswordField, loginToggleButton, loginPasswordTextField));
-        loginPasswordField.textProperty().bindBidirectional(loginPasswordTextField.textProperty());
+        try {
+            loginToggleButton.setOnAction(event -> togglePasswordVisibility(loginPasswordField, loginToggleButton, loginPasswordTextField));
+            loginPasswordField.textProperty().bindBidirectional(loginPasswordTextField.textProperty());
+            registerToggleButton.setOnAction(event -> togglePasswordVisibility(registerPasswordField, registerToggleButton, registerPasswordTextField));
+            registerPasswordField.textProperty().bindBidirectional(registerPasswordTextField.textProperty());
+            registerToggleCButton.setOnAction(event -> togglePasswordVisibility(registerCPasswordField, registerToggleCButton, registerCPasswordTextField));
+            registerCPasswordField.textProperty().bindBidirectional(registerCPasswordTextField.textProperty());
+        }catch (NullPointerException e){}
+
     }
 
     private void togglePasswordVisibility(PasswordField field, Button button, TextField textField) {
