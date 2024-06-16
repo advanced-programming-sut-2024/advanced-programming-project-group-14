@@ -18,5 +18,14 @@ public class LoginMenuView extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {}
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/FXML/LoginMenu.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/resources/CSS/gwent-theme.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Register Menu");
+        primaryStage.setHeight(600);
+        primaryStage.setWidth(800);
+        primaryStage.show();
+    }
 }
