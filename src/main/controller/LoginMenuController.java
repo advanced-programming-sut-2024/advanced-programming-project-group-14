@@ -8,6 +8,35 @@ import javafx.scene.control.TextField;
 import main.model.Result;
 
 public class LoginMenuController {
+    @FXML
+    private PasswordField loginPasswordField;
+    @FXML
+    private TextField loginPasswordTextField;
+    @FXML
+    private Button loginToggleButton;
+
+    @FXML
+    public void initialize() {
+        loginToggleButton.setOnAction(event -> togglePasswordVisibility(loginPasswordField, loginToggleButton, loginPasswordTextField));
+        loginPasswordField.textProperty().bindBidirectional(loginPasswordTextField.textProperty());
+    }
+
+    private void togglePasswordVisibility(PasswordField field, Button button, TextField textField) {
+        if (field.isVisible()) {
+            field.setVisible(false);
+            field.setManaged(false);
+            textField.setVisible(true);
+            textField.setManaged(true);
+            button.setText("🙈");
+        } else {
+            field.setVisible(true);
+            field.setManaged(true);
+            textField.setVisible(false);
+            textField.setManaged(false);
+            button.setText("👁");
+        }
+    }
+
 
     public static Result register(String username, String password, String passwordConfirm, String nickname, String email) {
 
