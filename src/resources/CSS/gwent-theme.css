@@ -1,0 +1,57 @@
+.root {
+    -fx-background-color: #2b2b2b; /* Dark background */
+    -fx-font-family: 'Georgia', serif;
+}
+
+.label {
+    -fx-text-fill: #d4af37; /* Gold color for text */
+    -fx-font-size: 16px;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #1c1c1c;
+    -fx-text-fill: #d4af37;
+    -fx-border-color: #d4af37;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 5px;
+    -fx-font-size: 13;
+}
+
+.button {
+    -fx-background-color: #d4af37; /* Gold color */
+    -fx-text-fill: #2b2b2b; /* Dark text */
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 3px;
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4, 0.0 , 0 , 2 );
+}
+
+.button:hover {
+    -fx-background-color: #e6be8a;
+}
+
+.button:pressed {
+    -fx-background-color: #b8860b;
+}
+
+.grid-pane {
+    -fx-background-color: #1c1c1c; /* Slightly lighter background for grid */
+    -fx-border-color: #d4af37;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-padding: 20px;
+}
+
+.hbox > .button {
+    -fx-padding: 5px 10px;
+    -fx-font-size: 14px;
+}
+
+.hyperlink {
+    -fx-text-fill: #d4af37;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #e6be8a;
+}
