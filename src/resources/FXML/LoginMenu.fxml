@@ -25,5 +25,6 @@
     </HBox>
 
     <Button text="Login" fx:id="loginButton" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="250"/>
-    <Hyperlink fx:id="SignUpLink" text="Don't have an account?" GridPane.rowIndex="4" GridPane.columnIndex="1" alignment="CENTER" style="-fx-font-size: 14;"/>
+    <Hyperlink fx:id="signUpLink" text="Don't have an account?" GridPane.rowIndex="4" GridPane.columnIndex="1" alignment="CENTER" style="-fx-font-size: 14;"/>
+    <Hyperlink fx:id="forgetPassword" text="forgot my password ->" GridPane.rowIndex="5" GridPane.columnIndex="1" alignment="CENTER" style="-fx-font-size: 14;"/>
 </GridPane>
