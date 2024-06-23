@@ -45,6 +45,34 @@ public class LoginMenuController {
         return new Result(true, "Register successful");
     }
 
+    public static String generateRandomPassword() {
+
+        String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
+        String CHAR_UPPER = CHAR_LOWER.toUpperCase();
+        String NUMBER = "0123456789";
+        String SPECIAL_CHARS = "!@#$%^&*";
+        int length = 10;
+
+        List<Character> chars = new ArrayList<>();
+        chars.add(CHAR_LOWER.charAt(random.nextInt(CHAR_LOWER.length())));
+        chars.add(CHAR_UPPER.charAt(random.nextInt(CHAR_UPPER.length())));
+        chars.add(NUMBER.charAt(random.nextInt(NUMBER.length())));
+        chars.add(SPECIAL_CHARS.charAt(random.nextInt(SPECIAL_CHARS.length())));
+
+        for (int i = 4; i < length; i++) {
+            String charSet = CHAR_LOWER + CHAR_UPPER + NUMBER + SPECIAL_CHARS;
+            chars.add(charSet.charAt(random.nextInt(charSet.length())));
+        }
+
+        Collections.shuffle(chars);
+
+        StringBuilder password = new StringBuilder();
+        for (Character ch : chars)
+            password.append(ch);
+
+        return password.toString();
+    }
+
     public static Result login(String username, String password) {
 
         return new Result(true, "");
