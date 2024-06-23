@@ -111,9 +111,10 @@ public class PreGameMenuController {
 
 
     public static Result deleteFromDeck(Card card) {
-
-        return new Result(true, "");
+        currentPlayer.deleteFromDeck(card);
+        return new Result(true, "deleted successfully");
     }
+
 
     public static Result changeTurn() {
 
