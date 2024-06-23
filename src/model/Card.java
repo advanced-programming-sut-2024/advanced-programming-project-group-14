@@ -7,14 +7,17 @@ public class Card {
     private String name;
     private int power;
     private String type;
+    private int capacity;
     private String ability;
     private String description;
     private ArrayList<Integer> validRows;
+    private static ArrayList<Card> cards = new ArrayList<>();
 
-    public Card(String name, int power, String type, String ability, String description, ArrayList<Integer> validRows) {
+    public Card(String name, int power,int capacity ,String type, String ability, String description, ArrayList<Integer> validRows) {
         this.name = name;
         this.power = power;
         this.type = type;
+        this.capacity = capacity;
         this.ability = ability;
         this.description = description;
         this.validRows = validRows;
@@ -39,8 +42,19 @@ public class Card {
     public String getDescription() {
         return description;
     }
+    public int getCapacity() {
+        return capacity;
+    }
 
     public ArrayList<Integer> getValidRows() {
         return validRows;
+    }
+    public static Card getCardByName(String name){
+        for (Card card : cards) {
+            if (card.getName().equals(name)){
+                return card;
+            }
+        }
+        return null;
     }
 }
