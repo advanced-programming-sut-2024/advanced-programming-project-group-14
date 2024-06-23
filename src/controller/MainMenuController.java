@@ -8,6 +8,7 @@ public class MainMenuController {
 
     public static void enterMenu(String menuName) {
 
+
     }
 
     public static Result createGame(String opponentName) {
