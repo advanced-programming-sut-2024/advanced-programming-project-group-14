@@ -117,8 +117,13 @@ public class PreGameMenuController {
 
 
     public static Result changeTurn() {
-
-            return new Result(true, "");
+        if(currentPlayer.getDeck().size()<22){
+            return new Result(false, "deck is not full");
+        }
+        Player temp = currentPlayer;
+        currentPlayer = opponentPlayer;
+        opponentPlayer = temp;
+        return new Result(true, "changed successfully");
     }
 
     public static Result startGame() {
