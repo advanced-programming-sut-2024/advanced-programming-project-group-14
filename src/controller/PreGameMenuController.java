@@ -37,9 +37,30 @@ public class PreGameMenuController {
     }
 
     public static Result saveDeck(String flag, String input) {
+        if(flag.equals("-f")){
+            String fileAddress = input;
+            File file = new File(fileAddress);
+            File parent = file.getParentFile();
+            if(!parent.exists() && !parent.mkdirs()){
+                return new Result(false, "invalid file address");
+            }
+            if(fileAddress==null){
+                return new Result(false, "invalid file address");
+            }
+            if(!fileAddress.endsWith(".txt")){
+                return new Result(false, "invalid file address");
+            }
+            currentPlayer.saveDeckByFileAddress(fileAddress);
+        }
+        else if(flag.equals("-n")){
+            String deckName = input;
 
-        return new Result(true, "");
+            currentPlayer.saveDeckByDeckName(deckName);
+        }
+        return new Result(true, "saved successfully");
     }
+
+
 
     public static Result loadDeck(String flag, String input) {
 
@@ -68,6 +89,8 @@ public class PreGameMenuController {
     }
 
     public static Result changeTurn() {
+
+            return new Result(true, "");
     }
 
     public static Result startGame() {
