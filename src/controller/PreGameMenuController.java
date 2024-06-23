@@ -63,9 +63,18 @@ public class PreGameMenuController {
 
 
     public static Result loadDeck(String flag, String input) {
-
+        if(flag.equals("-f")){
+            String fileAddress = input;
+            currentPlayer.loadDeckByFileAddress(fileAddress);
+        }
+        else if(flag.equals("-n")){
+            String deckName = input;
+            currentPlayer.loadDeckByDeckName(deckName);
+        }
         return new Result(true, "");
     }
+
+
 
 
     public static Result showLeaders() {
