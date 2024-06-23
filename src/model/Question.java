@@ -5,15 +5,19 @@ import java.util.ArrayList;
 public class Question {
 
     private int number;
-    private String question;
+    private String questionText;
     private String answer;
     private static ArrayList<Question> questions = new ArrayList<>();
 
-    public Question(int number, String question, String answer) {
+    public Question(int number, String question) {
         this.number = number;
-        this.question = question;
-        this.answer = answer;
+        this.questionText = question;
         questions.add(this);
+    }
+
+    public Question(Question question, String answer) {
+        this.questionText = question.getQuestionText();
+        this.answer = answer;
     }
 
     public int getNumber() {
@@ -24,16 +28,16 @@ public class Question {
         this.number = number;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getQuestionText() {
+        return questionText;
     }
 
     public static ArrayList<Question> getQuestions() {
         return questions;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setQuestionText(String question) {
+        this.questionText= question;
     }
 
     public String getAnswer() {
@@ -47,8 +51,6 @@ public class Question {
 
 
     static {
-        Question question1 = new Question(1,"a", "b");
-
-
+        Question question1 = new Question(1,"a");
     }
 }

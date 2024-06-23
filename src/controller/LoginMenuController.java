@@ -1,5 +1,6 @@
 package controller;
 
+import model.Question;
 import model.Result;
 import model.User;
 
@@ -73,26 +74,37 @@ public class LoginMenuController {
         return password.toString();
     }
 
-    public static Result login(String username, String password) {
+    public static Result login(String username, String password, boolean stayLoggedIn) {
+        if (User.getUserByUsername(username) == null)
+            return new Result(false, "Username not found!");
 
-        return new Result(true, "");
+        if (User.getUserByUsername(username).getPassword().equals(password))
+            return new Result(false, "Password incorrect!");
+
+        // ToDo implement stay logged in
+
+        User.setLoggedInUser(User.getUserByUsername(username));
+        return new Result(true, "Login successful");
     }
 
-    public static String showQuestionList() {
-
-        return "";
+    public static String showQuestion() {
+        return User.getLoggedInUser().getQuestion().getQuestionText();
     }
 
-    public static Result pickQuestion(int number, String answer, String answerConfirm) {
-        return new Result(true, "");
+    public static void pickQuestion(int number, String answer) {
+        Question question = new Question(Question.getQuestions().get(number), answer);
+        User.getLoggedInUser().setQuestion(question);
     }
 
-    public static Result forgetPassword(String username) {
-        return new Result(true, "");
+    public static void changePassword(String password) {
+        User.getLoggedInUser().setPassword(password);
     }
 
-    public static Result checkAnswer(int number, String answer) {
-        return new Result(true, "");
+    public static Result checkAnswer(String answer) {
+        if (User.getLoggedInUser().getQuestion().getAnswer().equals(answer))
+            return new Result(true, "");
+
+        return new Result(false, "Your answer is wrong");
     }
 }
 

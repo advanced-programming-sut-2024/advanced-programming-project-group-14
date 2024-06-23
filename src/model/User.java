@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String nickname;
     private String email;
-    private ArrayList<Question> question;
+    private Question question;
     private int maxScore;
     private int rank;
     private int numOfGamePlayed;
@@ -25,7 +25,6 @@ public class User {
         this.password = password;
         this.nickname = nickname;
         this.email = email;
-        this.question = new ArrayList<>();
         this.gamePlayed = new ArrayList<>();
         this.deck = new ArrayList<>();
         allUsers.add(this);
@@ -75,12 +74,12 @@ public class User {
         this.email = email;
     }
 
-    public ArrayList<Question> getQuestion() {
+    public Question getQuestion() {
         return question;
     }
 
     public void setQuestion(Question question) {
-        this.question.add(question);
+        this.question = question;
     }
 
     public int getMaxScore() {
