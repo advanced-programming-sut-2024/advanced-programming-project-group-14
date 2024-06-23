@@ -83,9 +83,11 @@ public class PreGameMenuController {
     }
 
     public static Result selectLeader(int number) {
-
+        Faction faction = currentPlayer.getFaction();
+        currentPlayer.setCommander(faction.getCommanderByNumber(number));
         return new Result(true, "selected successfully");
     }
+
 
     public static Result addToDeck(String cardName) {
 
