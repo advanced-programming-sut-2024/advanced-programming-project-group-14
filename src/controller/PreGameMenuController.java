@@ -90,9 +90,25 @@ public class PreGameMenuController {
 
 
     public static Result addToDeck(String cardName) {
-
+        Card card = Card.getCardByName(cardName);
+        if(card==null){
+            return new Result(false, "invalid card name");
+        }
+        if(currentPlayer.getDeck().size()>=22){
+            return new Result(false, "deck is full");
+        }
+        if(card.getCapacity()<=0){
+            return new Result(false, "card capacity is zero");
+        }
+        if(card.getType().equals("sell")|| card.getType().equals("weather")){
+            if(currentPlayer.numberOfSpecificCardInDeck()>=10){
+                return new Result(false, "you can't have more than 10 special cards in your deck");
+            }
+        }
+        currentPlayer.addToDeck(card);
         return new Result(true, "added successfully");
     }
+
 
     public static Result deleteFromDeck(Card card) {
 
