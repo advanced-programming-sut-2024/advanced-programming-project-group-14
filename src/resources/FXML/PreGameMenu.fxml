@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.PreGameMenuController" spacing="10" style="-fx-padding: 20; -fx-background-color: #0e1a2b;">
+    <VBox alignment="CENTER" spacing="10">
+        <Button fx:id="showInfoButton" text="Show Information" onAction="#showCurrentUserInfo" />
+        <GridPane fx:id="infoGrid" hgap="10" vgap="10" style="-fx-background-color: #1c1c1c; -fx-padding: 20; -fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-border-radius: 5px;">
+            <!-- Labels for user information will be added dynamically -->
+        </GridPane>
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="showFactionsButton" text="Show Factions" onAction="#showFaction"/>
+            <Button fx:id="showLeadersButton" text="Show Leaders" onAction="#showLeaders"/>
+            <Button fx:id="showCardsButton" text="Show Cards" onAction="#showCards"/>
+            <Button fx:id="showDeckCardsButton" text="Show Deck Cards" onAction="#showDeck"/>
+        </HBox>
+    </VBox>
+
+
+    <VBox alignment="CENTER" spacing="10">
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="loadDeckButton" text="Load Deck" onAction="#handleLoadDeckButtonClick"/>
+            <Button fx:id="saveDeckButton" text="Save Deck" onAction="#handleSaveDeckButtonClick"/>
+        </HBox>
+        <Button fx:id="changeTurnButton" text="Change Turn" onAction="#changeTurn"/>
+    </VBox>
+</VBox>
