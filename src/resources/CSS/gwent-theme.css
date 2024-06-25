@@ -50,6 +50,7 @@
 
 .hyperlink {
     -fx-text-fill: #d4af37;
+    -fx-font-size: 14;
 }
 
 .hyperlink:hover {
@@ -112,4 +113,11 @@
 .table-view .cell:selected {
     -fx-background-color: #a57a1c; /* Background color for the selected cells */
     -fx-text-fill: #0e1a2b; /* Text color for the selected cells */
+}
+
+.check-box{
+    -fx-text-fill: #d4af37;
+    -fx-font-size: 14;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 3px;
 }

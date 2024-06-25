@@ -23,7 +23,7 @@ public class LoginMenuView extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/FXML/LoginMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/FXML/PreGameMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/resources/CSS/gwent-theme.css").toExternalForm());
         primaryStage.setScene(scene);

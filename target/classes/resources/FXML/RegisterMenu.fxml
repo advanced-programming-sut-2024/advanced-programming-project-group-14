@@ -29,6 +29,7 @@
         <TextField fx:id="registerPasswordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
         <Button fx:id="registerToggleButton" text="👁"/>
     </HBox>
+    <Button fx:id="randomPassword" GridPane.rowIndex="4" GridPane.columnIndex="2" text="Random password"/>
 
     <Label text="Confirm Password:" GridPane.rowIndex="5" />
     <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" spacing="5">
