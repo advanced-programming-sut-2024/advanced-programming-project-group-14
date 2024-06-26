@@ -12,7 +12,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import model.Question;
 import model.Result;
+import model.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -84,9 +86,15 @@ public class LoginMenuView extends MenuView {
     }
 
     private void showQuestionDialog(){
-        Dialog<Pair<String, String>> dialog = new Dialog<>();
+        User user = User.getUserByUsername(loginUsernameField.getText());
+        if (user==null){
+            showError("Enter a correct Username");
+            return;
+        }
+
+        Dialog<String> dialog = new Dialog<>();
         dialog.setTitle("Questions");
-        dialog.setHeaderText("Please choose a question and answer it:");
+        dialog.setHeaderText("Please َAnswer the question:");
 
         ButtonType OkType = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
         dialog.getDialogPane().getButtonTypes().addAll(OkType, ButtonType.CANCEL);
@@ -97,23 +105,19 @@ public class LoginMenuView extends MenuView {
         grid.setPadding(new Insets(20, 150, 10, 10));
 
         Label questionLabel = new Label("Question:");
-        ComboBox<String> questionComboBox = new ComboBox<>();
-        ArrayList<String> questions = new ArrayList<>();
-        //ToDo:
-        // add questions to Arraylist
-        questionComboBox.getItems().addAll(questions);
-        questionComboBox.setStyle("-fx-text-fill: #d4af37; -fx-border-radius: 3px;");
+        Label questionTextLabel = new Label(user.getQuestion().getQuestionText());
+
 
         Label answerLabel = new Label("Answer:");
         TextField answerField = new TextField();
 
         grid.add(questionLabel, 0, 0);
-        grid.add(questionComboBox, 1, 0);
+        grid.add(questionTextLabel, 1, 0);
         grid.add(answerLabel, 0, 1);
         grid.add(answerField, 1, 1);
 
         dialog.getDialogPane().setContent(grid);
-        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/resources/CSS/gwent-theme.css").toExternalForm());
+        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         dialog.getDialogPane().getStyleClass().add("dialog-pane");
         dialog.getDialogPane().getContent().getStyleClass().add("dialog-content");
         dialog.getDialogPane().lookup(".header-panel").getStyleClass().add("dialog-header");
@@ -122,18 +126,21 @@ public class LoginMenuView extends MenuView {
 
         dialog.setResultConverter(dialogButton -> {
             if (dialogButton == OkType) {
-                return new Pair<>(questionComboBox.getValue(), answerField.getText());
+                return answerField.getText();
             }
             return null;
         });
 
         dialog.showAndWait().ifPresent(result -> {
-            //ToDo:
-            // save questions with the answers(result.getKey and result.getValue)
+            Result checkResult = LoginMenuController.checkAnswer(user,result);
+            if (!checkResult.isSuccessful())
+                showError(checkResult.getMessage());
+            else
+                showNewPasswordDialog(user);
         });
     }
 
-    private void showNewPasswordDialog(){
+    private void showNewPasswordDialog(User user){
         Dialog<String> dialog = new Dialog<>();
         dialog.setTitle("New Password");
         dialog.setHeaderText("Please enter your new password:");
@@ -155,7 +162,7 @@ public class LoginMenuView extends MenuView {
         grid.add(confirmPasswordField, 1, 1);
 
         dialog.getDialogPane().setContent(grid);
-        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/resources/CSS/gwent-theme.css").toExternalForm());
+        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         dialog.getDialogPane().getStyleClass().add("dialog-pane");
         dialog.getDialogPane().getContent().getStyleClass().add("dialog-content");
         dialog.getDialogPane().lookup(".header-panel").getStyleClass().add("dialog-header");
@@ -180,8 +187,8 @@ public class LoginMenuView extends MenuView {
         });
 
         dialog.showAndWait().ifPresent(result -> {
-            //ToDo:
-            // change password(result)
+            LoginMenuController.changePassword(user,passwordField.getText());
+            showSuccessfulMessage("Password changed successfully");
         });
     }
 

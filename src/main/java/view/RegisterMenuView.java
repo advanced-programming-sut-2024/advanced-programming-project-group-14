@@ -13,6 +13,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import model.Question;
 import model.Result;
 
 import java.io.IOException;
@@ -90,8 +91,9 @@ public class RegisterMenuView extends MenuView {
         Label questionLabel = new Label("Question:");
         ComboBox<String> questionComboBox = new ComboBox<>();
         ArrayList<String> questions = new ArrayList<>();
-        //ToDo:
-        // add questions to Arraylist
+        for (Question question: Question.getQuestions()) {
+            questions.add(question.getQuestionText());
+        }
         questionComboBox.getItems().addAll(questions);
         questionComboBox.setStyle("-fx-text-fill: #d4af37; -fx-border-radius: 3px;");
 
@@ -119,8 +121,8 @@ public class RegisterMenuView extends MenuView {
         });
 
         dialog.showAndWait().ifPresent(result -> {
-            //ToDo:
-            // save questions with the answers(result.getKey and result.getValue)
+            Question question = Question.getQuestionByText(result.getKey());
+            RegisterMenuController.pickQuestion(question.getNumber(),result.getValue());
         });
     }
 

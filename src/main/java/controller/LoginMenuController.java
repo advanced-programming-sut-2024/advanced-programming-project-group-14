@@ -28,12 +28,12 @@ public class LoginMenuController {
         return new Result(true, "Login successful");
     }
 
-    public static void changePassword(String password) {
-        User.getLoggedInUser().setPassword(password);
+    public static void changePassword(User user, String password) {
+        user.setPassword(password);
     }
 
-    public static Result checkAnswer(String answer) {
-        if (User.getLoggedInUser().getQuestion().getAnswer().equals(answer))
+    public static Result checkAnswer(User user, String answer) {
+        if (user.getQuestion().getAnswer().equals(answer))
             return new Result(true, "");
 
         return new Result(false, "Your answer is wrong");

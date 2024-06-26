@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 
 public class Question {
-
     private int number;
     private String questionText;
     private String answer;
@@ -48,9 +47,11 @@ public class Question {
         this.answer = answer;
     }
 
-
-
-    static {
-        Question question1 = new Question(1,"a");
+    public static Question getQuestionByText(String questionText){
+        for (Question question: questions) {
+            if (question.getQuestionText().equals(questionText))
+                return question;
+        }
+        return null;
     }
 }
