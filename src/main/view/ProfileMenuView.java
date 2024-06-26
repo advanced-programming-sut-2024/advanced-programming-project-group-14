@@ -36,7 +36,7 @@ public class ProfileMenuView {
             infoGrid.add(label, 0, i);
             infoGrid.add(value, 1, i);
         }
-        
+
 
         String[] buttonTexts = {"Change username","Change nickname","Change email","Change password"};
         for (int i = 0; i < buttonTexts.length; i++) {
