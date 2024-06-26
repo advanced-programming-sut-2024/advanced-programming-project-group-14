@@ -1,6 +1,8 @@
 package view;
 
+import controller.RegisterMenuController;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -11,24 +13,30 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import model.Result;
 
 import java.io.IOException;
 import java.util.ArrayList;
 
 
-public class RegisterMenuView extends Application {
-    Stage stage = new Stage();
+public class RegisterMenuView extends MenuView {
+    public static Stage stage;
     @FXML
-    private PasswordField registerPasswordField;
-    public TextField registerPasswordTextField;
-    public Button registerToggleButton;
+    public TextField nameField;
+    public TextField nicknameField;
+    public TextField emailField;
     @FXML
-    private PasswordField registerCPasswordField;
-    public TextField registerCPasswordTextField;
-    public Button registerToggleCButton;
+    private PasswordField passwordField;
+    public TextField passwordTextField;
+    public Button passwordToggleButton;
+    @FXML
+    private PasswordField CPasswordField;
+    public TextField CPasswordTextField;
+    public Button CPasswordToggleButton;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
+        RegisterMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/RegisterMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
@@ -42,10 +50,10 @@ public class RegisterMenuView extends Application {
     @FXML
     public void initialize() {
         try {
-            registerToggleButton.setOnAction(event -> togglePasswordVisibility(registerPasswordField, registerToggleButton, registerPasswordTextField));
-            registerPasswordField.textProperty().bindBidirectional(registerPasswordTextField.textProperty());
-            registerToggleCButton.setOnAction(event -> togglePasswordVisibility(registerCPasswordField, registerToggleCButton, registerCPasswordTextField));
-            registerCPasswordField.textProperty().bindBidirectional(registerCPasswordTextField.textProperty());
+            passwordToggleButton.setOnAction(event -> togglePasswordVisibility(passwordField, passwordToggleButton, passwordTextField));
+            passwordField.textProperty().bindBidirectional(passwordTextField.textProperty());
+            CPasswordToggleButton.setOnAction(event -> togglePasswordVisibility(CPasswordField, CPasswordToggleButton, CPasswordTextField));
+            CPasswordField.textProperty().bindBidirectional(CPasswordTextField.textProperty());
         }catch (NullPointerException e){}
 
     }
@@ -114,5 +122,20 @@ public class RegisterMenuView extends Application {
             //ToDo:
             // save questions with the answers(result.getKey and result.getValue)
         });
+    }
+
+    public void register() {
+        Result result = RegisterMenuController.register(nameField.getText(),passwordTextField.getText(),CPasswordTextField.getText(),nicknameField.getText(),emailField.getText());
+        if (!result.isSuccessful())
+            showError(result.getMessage());
+        else{
+            showSuccessfulMessage(result.getMessage());
+            goToMainMenu(stage);
+        }
+
+    }
+
+    public void randomPassword() {
+        passwordTextField.setText(RegisterMenuController.generateRandomPassword());
     }
 }
