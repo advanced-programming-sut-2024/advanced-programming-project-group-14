@@ -1,0 +1,627 @@
+Index: .idea/compiler.xml
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+deleted file mode 100644
+--- a/.idea/compiler.xml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,16 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="CompilerConfiguration">
+-    <annotationProcessing>
+-      <profile name="Maven default annotation processors profile" enabled="true">
+-        <sourceOutputDir name="target/generated-sources/annotations" />
+-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+-        <outputRelativeToContentRoot value="true" />
+-        <module name="graft" />
+-      </profile>
+-    </annotationProcessing>
+-    <bytecodeTargetLevel>
+-      <module name="Graft" target="17" />
+-    </bytecodeTargetLevel>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,10 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-# Datasource local storage ignored files
+-/dataSources/
+-/dataSources.local.xml
+-# GitHub Copilot persisted chat sessions
+-/copilot/chatSessions
+Index: .idea/jarRepositories.xml
+===================================================================
+diff --git a/.idea/jarRepositories.xml b/.idea/jarRepositories.xml
+deleted file mode 100644
+--- a/.idea/jarRepositories.xml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,30 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="RemoteRepositoriesConfiguration">
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Central Repository" />
+-      <option name="url" value="https://repo.maven.apache.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="openjfx" />
+-      <option name="name" value="openjfx" />
+-      <option name="url" value="https://openjfx.io/maven/" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="central" />
+-      <option name="name" value="Maven Central repository" />
+-      <option name="url" value="https://repo1.maven.org/maven2" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="jboss.community" />
+-      <option name="name" value="JBoss Community repository" />
+-      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+-    </remote-repository>
+-    <remote-repository>
+-      <option name="id" value="oss.sonatype.org" />
+-      <option name="name" value="oss.sonatype.org" />
+-      <option name="url" value="https://oss.sonatype.org/content/repositories/snapshots" />
+-    </remote-repository>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+deleted file mode 100644
+--- a/.idea/vcs.xml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: target/classes/resources/CSS/gwent-theme.css
+===================================================================
+diff --git a/target/classes/resources/CSS/gwent-theme.css b/target/classes/resources/CSS/gwent-theme.css
+deleted file mode 100644
+--- a/target/classes/resources/CSS/gwent-theme.css	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,123 +0,0 @@
+-.root {
+-    -fx-background-color: #2b2b2b; /* Dark background */
+-    -fx-font-family: 'Georgia', serif;
+-}
+-
+-.label {
+-    -fx-text-fill: #d4af37; /* Gold color for text */
+-    -fx-font-size: 16px;
+-}
+-
+-.text-field, .password-field, .combo-box {
+-    -fx-background-color: #1c1c1c;
+-    -fx-text-fill: #d4af37;
+-    -fx-border-color: #d4af37;
+-    -fx-border-width: 1px;
+-    -fx-border-radius: 3px;
+-    -fx-padding: 5px;
+-    -fx-font-size: 13;
+-}
+-
+-.button {
+-    -fx-background-color: #d4af37; /* Gold color */
+-    -fx-text-fill: #2b2b2b; /* Dark text */
+-    -fx-font-weight: bold;
+-    -fx-padding: 10px 20px;
+-    -fx-border-radius: 3px;
+-    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4, 0.0 , 0 , 2 );
+-}
+-
+-.button:hover {
+-    -fx-background-color: #e6be8a;
+-}
+-
+-.button:pressed {
+-    -fx-background-color: #b8860b;
+-}
+-
+-.grid-pane {
+-    -fx-background-color: #2b2b2b; /* Slightly lighter background for grid */
+-    -fx-border-color: #d4af37;
+-    -fx-border-width: 2px;
+-    -fx-border-radius: 5px;
+-    -fx-padding: 20px;
+-}
+-
+-.hbox > .button {
+-    -fx-padding: 5px 10px;
+-    -fx-font-size: 14px;
+-}
+-
+-.hyperlink {
+-    -fx-text-fill: #d4af37;
+-    -fx-font-size: 14;
+-}
+-
+-.hyperlink:hover {
+-    -fx-text-fill: #e6be8a;
+-}
+-
+-.dialog-title {
+-    -fx-text-fill: #d4af37;
+-    -fx-font-size: 18px;
+-    -fx-font-weight: bold;
+-}
+-
+-.dialog-header {
+-    -fx-background-color: #2b2b2b;
+-    -fx-padding: 10px;
+-    -fx-border-width: 0 0 3px 0;
+-}
+-
+-.combo-box-popup .list-view .list-cell {
+-    -fx-background-color: #1c1c1c;
+-    -fx-text-fill: #d4af37;
+-    -fx-font-size: 14px;
+-}
+-
+-.table-view {
+-    -fx-background-color: #0e1a2b; /* Background color for the table */
+-    -fx-border-color: #a57a1c; /* Border color for the table */
+-    -fx-border-width: 2px;
+-    -fx-table-cell-border-color: transparent;
+-}
+-
+-.table-view .column-header-background {
+-    -fx-background-color: #a57a1c; /* Background color for the header */
+-}
+-
+-.table-view .column-header, .table-view .filler {
+-    -fx-size: 40px;
+-    -fx-background-color: #0e1a2b; /* Background color for the header cells */
+-    -fx-border-color: transparent transparent #a57a1c transparent;
+-    -fx-border-width: 0px 0px 1px 0px;
+-    -fx-alignment: CENTER;
+-    -fx-text-fill: #ffffff; /* Text color for the header cells */
+-    -fx-font-size: 14px;
+-    -fx-font-weight: bold;
+-}
+-
+-.table-view .cell {
+-    -fx-background-color: #1c1c1c; /* Background color for the cells */
+-    -fx-text-fill: #ffffff; /* Text color for the cells */
+-    -fx-border-color: #a57a1c; /* Border color for the cells */
+-    -fx-border-width: 0px 0px 1px 0px;
+-    -fx-alignment: CENTER-LEFT;
+-    -fx-font-size: 14px;
+-}
+-
+-.table-view .cell:hover {
+-    -fx-background-color: #2b2b2b; /* Background color for the cells on hover */
+-}
+-
+-.table-view .cell:selected {
+-    -fx-background-color: #a57a1c; /* Background color for the selected cells */
+-    -fx-text-fill: #0e1a2b; /* Text color for the selected cells */
+-}
+-
+-.check-box{
+-    -fx-text-fill: #d4af37;
+-    -fx-font-size: 14;
+-    -fx-padding: 10px 20px;
+-    -fx-border-radius: 3px;
+-}
+Index: target/classes/resources/FXML/LoginMenu.fxml
+===================================================================
+diff --git a/target/classes/resources/FXML/LoginMenu.fxml b/target/classes/resources/FXML/LoginMenu.fxml
+deleted file mode 100644
+--- a/target/classes/resources/FXML/LoginMenu.fxml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,33 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.PasswordField?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.layout.GridPane?>
+-<?import javafx.scene.layout.HBox?>
+-
+-<?import javafx.scene.control.Hyperlink?>
+-<?import javafx.scene.control.CheckBox?>
+-<?import javafx.scene.layout.VBox?>
+-<GridPane fx:id="loginGrid" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.view.LoginMenuView" alignment="CENTER" hgap="10" vgap="10">
+-    <padding>
+-        <Insets top="20" right="20" bottom="20" left="20"/>
+-    </padding>
+-
+-    <Label text="Username:" GridPane.rowIndex="1" />
+-    <TextField fx:id="loginUsernameField" GridPane.rowIndex="1" GridPane.columnIndex="1" prefHeight="35"/>
+-
+-    <Label text="Password:" GridPane.rowIndex="2" />
+-    <HBox GridPane.rowIndex="2" GridPane.columnIndex="1" spacing="10">
+-        <PasswordField fx:id="loginPasswordField" HBox.hgrow="ALWAYS" prefHeight="35"/>
+-        <TextField fx:id="loginPasswordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
+-        <Button fx:id="loginToggleButton" text="👁" />
+-    </HBox>
+-
+-    <CheckBox fx:id="stayLoginCheckBox" text="Stay login" GridPane.rowIndex="3"/>
+-    <Button text="Login" fx:id="loginButton" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="250"/>
+-    <Hyperlink fx:id="signUpLink" text="Don't have an account?" GridPane.rowIndex="4" GridPane.columnIndex="1" alignment="CENTER"/>
+-    <Hyperlink fx:id="forgetPassword" text="forgot my password ->" GridPane.rowIndex="5" GridPane.columnIndex="1" alignment="CENTER"/>
+-</GridPane>
+Index: .idea/inspectionProfiles/Project_Default.xml
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/Project_Default.xml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,10 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <profile version="1.0">
+-    <option name="myName" value="Project Default" />
+-    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+-      <Languages>
+-        <language minSize="75" name="Java" />
+-      </Languages>
+-    </inspection_tool>
+-  </profile>
+-</component>
+\ No newline at end of file
+Index: .idea/misc.xml
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,14 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="MavenProjectsManager">
+-    <option name="originalFiles">
+-      <list>
+-        <option value="$PROJECT_DIR$/pom.xml" />
+-      </list>
+-    </option>
+-  </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/out" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: target/classes/resources/FXML/MainMenu.fxml
+===================================================================
+diff --git a/target/classes/resources/FXML/MainMenu.fxml b/target/classes/resources/FXML/MainMenu.fxml
+deleted file mode 100644
+--- a/target/classes/resources/FXML/MainMenu.fxml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,18 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.layout.GridPane?>
+-<?import javafx.scene.layout.VBox?>
+-
+-<GridPane fx:id="mainMenuGrid" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.view.MainMenuView" alignment="CENTER" hgap="10" vgap="10">
+-    <padding>
+-        <Insets top="20" right="20" bottom="20" left="20"/>
+-    </padding>
+-
+-    <VBox alignment="CENTER" spacing="20" GridPane.columnSpan="2">
+-        <Button text="Profile" fx:id="profileButton" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
+-        <Button text="Start Game" fx:id="startGameButton" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
+-        <Button text="Logout" fx:id="logoutButton" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
+-    </VBox>
+-</GridPane>
+Index: target/classes/resources/FXML/RegisterMenu.fxml
+===================================================================
+diff --git a/target/classes/resources/FXML/RegisterMenu.fxml b/target/classes/resources/FXML/RegisterMenu.fxml
+deleted file mode 100644
+--- a/target/classes/resources/FXML/RegisterMenu.fxml	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ /dev/null	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
+@@ -1,42 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-
+-<?import javafx.geometry.Insets?>
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.control.Label?>
+-<?import javafx.scene.control.PasswordField?>
+-<?import javafx.scene.control.TextField?>
+-<?import javafx.scene.layout.GridPane?>
+-<?import javafx.scene.layout.HBox?>
+-<?import javafx.scene.text.Font?>
+-
+-<GridPane fx:id="registerGrid" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.view.LoginMenuView" alignment="CENTER" hgap="10" vgap="10">
+-    <padding>
+-        <Insets top="20" right="20" bottom="20" left="20"/>
+-    </padding>
+-
+-    <Label text="Name:" GridPane.rowIndex="1" />
+-    <TextField fx:id="nameField" GridPane.rowIndex="1" GridPane.columnIndex="1" prefHeight="35"/>
+-
+-    <Label text="Nickname:" GridPane.rowIndex="2" />
+-    <TextField fx:id="nicknameField" GridPane.rowIndex="2" GridPane.columnIndex="1" prefHeight="35"/>
+-
+-    <Label text="Email:" GridPane.rowIndex="3" />
+-    <TextField fx:id="emailField" GridPane.rowIndex="3" GridPane.columnIndex="1" prefHeight="35"/>
+-
+-    <Label text="Password:" GridPane.rowIndex="4" />
+-    <HBox GridPane.rowIndex="4" GridPane.columnIndex="1" spacing="5">
+-        <PasswordField fx:id="registerPasswordField" HBox.hgrow="ALWAYS" prefHeight="35"/>
+-        <TextField fx:id="registerPasswordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
+-        <Button fx:id="registerToggleButton" text="👁"/>
+-    </HBox>
+-    <Button fx:id="randomPassword" GridPane.rowIndex="4" GridPane.columnIndex="2" text="Random password"/>
+-
+-    <Label text="Confirm Password:" GridPane.rowIndex="5" />
+-    <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" spacing="5">
+-        <PasswordField fx:id="registerCPasswordField" HBox.hgrow="ALWAYS" prefHeight="35"/>
+-        <TextField fx:id="registerCPasswordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
+-        <Button fx:id="registerToggleCButton" text="👁"/>
+-    </HBox>
+-
+-    <Button text="Register" fx:id="registerButton" GridPane.rowIndex="6" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+-</GridPane>
+Index: src/main/controller/PreGameMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\r\n\r\nimport model.*;\r\n\r\nimport java.io.File;\r\nimport java.util.Date;\r\n\r\npublic class PreGameMenuController {\r\n\r\n    public static Player currentPlayer;\r\n    public static Player opponentPlayer;\r\n\r\n    public static Result showFaction() {\r\n\r\n        return new Result(true, \"\");\r\n    }\r\n\r\n    public static Result selectFaction(String factionName) {\r\n        Faction faction = Faction.getFactionByName(factionName);\r\n        currentPlayer.setFaction(faction);\r\n        return new Result(true, \"Selected successfully\");\r\n    }\r\n\r\n    public static Result showCards() {\r\n\r\n        return new Result(true, \"\");\r\n    }\r\n\r\n    public static Result showDeck() {\r\n\r\n        return new Result(true, \"\");\r\n    }\r\n\r\n    public static Result showCurrentUserInfo() {\r\n\r\n        return new Result(true, \"\");\r\n    }\r\n\r\n    public static Result saveDeck(String flag, String input) {\r\n        if(flag.equals(\"-f\")){\r\n            String fileAddress = input;\r\n            File file = new File(fileAddress);\r\n            File parent = file.getParentFile();\r\n            if(!parent.exists() && !parent.mkdirs()){\r\n                return new Result(false, \"invalid file address\");\r\n            }\r\n            if(fileAddress==null){\r\n                return new Result(false, \"invalid file address\");\r\n            }\r\n            if(!fileAddress.endsWith(\".txt\")){\r\n                return new Result(false, \"invalid file address\");\r\n            }\r\n            currentPlayer.saveDeckByFileAddress(fileAddress);\r\n        }\r\n        else if(flag.equals(\"-n\")){\r\n            String deckName = input;\r\n\r\n            currentPlayer.saveDeckByDeckName(deckName);\r\n        }\r\n        return new Result(true, \"saved successfully\");\r\n    }\r\n\r\n\r\n\r\n    public static Result loadDeck(String flag, String input) {\r\n        if(flag.equals(\"-f\")){\r\n            String fileAddress = input;\r\n            currentPlayer.loadDeckByFileAddress(fileAddress);\r\n        }\r\n        else if(flag.equals(\"-n\")){\r\n            String deckName = input;\r\n            currentPlayer.loadDeckByDeckName(deckName);\r\n        }\r\n        return new Result(true, \"\");\r\n    }\r\n\r\n\r\n\r\n\r\n    public static Result showLeaders() {\r\n\r\n        return new Result(true, \"\");\r\n    }\r\n\r\n    public static Result selectLeader(int number) {\r\n        Faction faction = currentPlayer.getFaction();\r\n        currentPlayer.setCommander(faction.getCommanderByNumber(number));\r\n        return new Result(true, \"selected successfully\");\r\n    }\r\n\r\n\r\n    public static Result addToDeck(String cardName) {\r\n        Card card = Card.getCardByName(cardName);\r\n        if(card==null){\r\n            return new Result(false, \"invalid card name\");\r\n        }\r\n        if(currentPlayer.getDeck().size()>=22){\r\n            return new Result(false, \"deck is full\");\r\n        }\r\n        if(card.getCapacity()<=0){\r\n            return new Result(false, \"card capacity is zero\");\r\n        }\r\n        if(card.getType().equals(\"sell\")|| card.getType().equals(\"weather\")){\r\n            if(currentPlayer.numberOfSpecificCardInDeck()>=10){\r\n                return new Result(false, \"you can't have more than 10 special cards in your deck\");\r\n            }\r\n        }\r\n        currentPlayer.addToDeck(card);\r\n        return new Result(true, \"added successfully\");\r\n    }\r\n\r\n\r\n    public static Result deleteFromDeck(Card card) {\r\n        currentPlayer.deleteFromDeck(card);\r\n        return new Result(true, \"deleted successfully\");\r\n    }\r\n\r\n\r\n    public static Result changeTurn() {\r\n        if(currentPlayer.getDeck().size()<22){\r\n            return new Result(false, \"deck is not full\");\r\n        }\r\n        Player temp = currentPlayer;\r\n        currentPlayer = opponentPlayer;\r\n        opponentPlayer = temp;\r\n        return new Result(true, \"changed successfully\");\r\n    }\r\n\r\n    public static Result startGame() {\r\n        if(currentPlayer.getDeck().size()<22){\r\n            return new Result(false, \"deck is not full\");\r\n        }\r\n\r\n        new GameTable(Date.from(new Date().toInstant()), currentPlayer, opponentPlayer);\r\n        return new Result(true, \"game started successfully\");\r\n    }\r\n\r\n    public static String getCurrentPlayerName(){\r\n        return currentPlayer.getUsername();\r\n    }\r\n\r\n    public static ArrayList<Card> getCurrentPlayerDeck() {\r\n        return currentPlayer.getDeck();\r\n    }\r\n\r\n    public static Faction getCurrentPlayerFaction() {\r\n        return currentPlayer.getFaction();\r\n    }\r\n\r\n    public static String getCurrentPlayerFactionName() {\r\n        if(currentPlayer.getFaction() == null)\r\n            return \"\";\r\n        return currentPlayer.getFaction().getName();\r\n    }\r\n\r\n    public static int getCurrentPlayerHandSize() {\r\n        if(currentPlayer.getHand() == null)\r\n            return 0;\r\n        return currentPlayer.getHand().size();\r\n    }\r\n\r\n    public static int getCurrentPlayerNumberOfSoldiers() {\r\n        int number = 0;\r\n        for (Card card: currentPlayer.getDeck()) {\r\n            if (card.getAbility() != \"hero\" || card.getType()!=\"spell\" || card.getType()!=\"weather\")\r\n                number++;\r\n        }\r\n        return number;\r\n    }\r\n\r\n    public static int getCurrentPlayerNumberOfHeroes() {\r\n        int number = 0;\r\n        for (Card card: currentPlayer.getDeck()) {\r\n            if (card.getAbility() == \"hero\")\r\n                number++;\r\n        }\r\n        return number;\r\n    }\r\n\r\n    public static int getCurrentPlayerTotalDeckPower() {\r\n        int power = 0;\r\n        for (Card card: currentPlayer.getDeck()) {\r\n            power+=card.getPower();\r\n        }\r\n        return power;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/controller/PreGameMenuController.java b/src/main/controller/PreGameMenuController.java
+--- a/src/main/controller/PreGameMenuController.java	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ b/src/main/controller/PreGameMenuController.java	(date 1719407444901)
+@@ -1,9 +1,11 @@
+-package controller;
++package main.controller;
+ 
+-import model.*;
++import main.model.*;
+ 
+ import java.io.File;
+ import java.util.Date;
++import java.util.ArrayList;
++
+ 
+ public class PreGameMenuController {
+ 
+Index: src/main/controller/ProfileMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\r\n\r\nimport model.Result;\r\nimport model.User;\r\n\r\nimport java.util.regex.Pattern;\r\n\r\npublic class ProfileMenuController {\r\n    public static Result changeUsername(String username) {\r\n        if (User.getUserByUsername(username) != null)\r\n            return new Result(false, \"Username is already taken!\");\r\n        if (!Pattern.matches(\"[a-zA-Z0-9\\\\-]+\", username))\r\n            return new Result(false, \"Username is invalid!\");\r\n\r\n        User.getLoggedInUser().setUsername(username);\r\n        return new Result(true, \"Username changed successfully\");\r\n    }\r\n\r\n    public static Result changeNickname(String nickname) {\r\n        User.getLoggedInUser().setNickname(nickname);\r\n        return new Result(true, \"Nickname changed successfully\");\r\n    }\r\n\r\n    public static Result changeEmail(String email) {\r\n        if (!Pattern.matches(\"^[a-zA-Z0-9_+&*-]+(?:\\\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,7}$\", email))\r\n            return new Result(false, \"Email is invalid!\");\r\n\r\n        User.getLoggedInUser().setEmail(email);\r\n        return new Result(true, \"Email changed successfully\");\r\n    }\r\n\r\n    public static Result changePassword(String newPassword, String oldPassword) {\r\n        if (!User.getLoggedInUser().getPassword().equals(oldPassword))\r\n            return new Result(false, \"Password is incorrect!\");\r\n\r\n        if (!Pattern.matches(\"^[a-zA-Z0-9!@#$%^&*]+$\", newPassword))\r\n            return new Result(false, \"Password is invalid!\");\r\n\r\n        if (newPassword.length() < 8)\r\n            return new Result(false, \"Password is to short!\");\r\n\r\n        if (!newPassword.matches(\".*[A-Z].*\") || !newPassword.matches(\".*[a-z].*\"))\r\n            return new Result(false, \"Password should have at least one lowercase letter and one uppercase letter\");\r\n\r\n        if (!newPassword.matches(\".*[0-9].*\"))\r\n            return new Result(false, \"Password should have at least one number\");\r\n\r\n        if (!newPassword.matches(\".*[!@#$%^&*].*\"))\r\n            return new Result(false, \"Password should have at least one special character\");\r\n\r\n        User.getLoggedInUser().setPassword(newPassword);\r\n        return new Result(true, \"Password changed successfully\");\r\n    }\r\n\r\n    public static Result showGameHistory(String number) {\r\n        int numberToShow = 5;\r\n        int numberOfGamePlayed = User.getLoggedInUser().getGamePlayed().size();\r\n        if (number == null) {\r\n            if (numberOfGamePlayed < 5)\r\n                numberToShow = numberOfGamePlayed;\r\n        }\r\n        else if (Integer.parseInt(number) < 1)\r\n            return new Result(false, \"The number should be greater than 0\");\r\n\r\n        else if (numberOfGamePlayed == 0)\r\n            return new Result(false, \"You haven't played any games yet!\");\r\n        else if (numberOfGamePlayed < Integer.parseInt(number))\r\n            numberToShow = numberOfGamePlayed;\r\n\r\n        return new Result(true, String.valueOf(numberToShow));\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/controller/ProfileMenuController.java b/src/main/controller/ProfileMenuController.java
+--- a/src/main/controller/ProfileMenuController.java	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ b/src/main/controller/ProfileMenuController.java	(date 1719407191188)
+@@ -1,7 +1,7 @@
+ package controller;
+ 
+-import model.Result;
+-import model.User;
++import main.model.Result;
++import main.model.User;
+ 
+ import java.util.regex.Pattern;
+ 
+Index: src/main/controller/LoginMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\r\n\r\nimport model.Question;\r\nimport model.Result;\r\nimport model.User;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.Collections;\r\nimport java.util.List;\r\nimport java.util.Random;\r\nimport java.util.regex.Pattern;\r\n\r\npublic class LoginMenuController {\r\n\r\n    static Random random = new Random();\r\n\r\n    public static Result register(String username, String password, String passwordConfirm, String nickname, String email) {\r\n        if (User.getUserByUsername(username) != null)\r\n            return new Result(false, \"Username is already taken! Do you want to use this username\" + username + \"-\" + random.nextInt(100));\r\n\r\n        if (!Pattern.matches(\"[a-zA-Z0-9\\\\-]+\", username))\r\n            return new Result(false, \"Username is invalid!\");\r\n\r\n        if (!Pattern.matches(\"^[a-zA-Z0-9_+&*-]+(?:\\\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,7}$\", email))\r\n            return new Result(false, \"Email is invalid!\");\r\n\r\n        if (!Pattern.matches(\"^[a-zA-Z0-9!@#$%^&*]+$\", password))\r\n            return new Result(false, \"Password is invalid!\");\r\n\r\n        if (password.length() < 8)\r\n            return new Result(false, \"Password is to short!\");\r\n\r\n        if (!password.matches(\".*[A-Z].*\") || !password.matches(\".*[a-z].*\"))\r\n            return new Result(false, \"Password should have at least one lowercase letter and one uppercase letter\");\r\n\r\n        if (!password.matches(\".*[0-9].*\"))\r\n            return new Result(false, \"Password should have at least one number\");\r\n\r\n        if (!password.matches(\".*[!@#$%^&*].*\"))\r\n            return new Result(false, \"Password should have at least one special character\");\r\n\r\n        if (!password.equals(passwordConfirm))\r\n            return new Result(false, \"Passwords are not same\");\r\n\r\n        User user = new User(username, password, nickname, email);\r\n        return new Result(true, \"Register successful\");\r\n    }\r\n\r\n    public static String generateRandomPassword() {\r\n\r\n        String CHAR_LOWER = \"abcdefghijklmnopqrstuvwxyz\";\r\n        String CHAR_UPPER = CHAR_LOWER.toUpperCase();\r\n        String NUMBER = \"0123456789\";\r\n        String SPECIAL_CHARS = \"!@#$%^&*\";\r\n        int length = 10;\r\n\r\n        List<Character> chars = new ArrayList<>();\r\n        chars.add(CHAR_LOWER.charAt(random.nextInt(CHAR_LOWER.length())));\r\n        chars.add(CHAR_UPPER.charAt(random.nextInt(CHAR_UPPER.length())));\r\n        chars.add(NUMBER.charAt(random.nextInt(NUMBER.length())));\r\n        chars.add(SPECIAL_CHARS.charAt(random.nextInt(SPECIAL_CHARS.length())));\r\n\r\n        for (int i = 4; i < length; i++) {\r\n            String charSet = CHAR_LOWER + CHAR_UPPER + NUMBER + SPECIAL_CHARS;\r\n            chars.add(charSet.charAt(random.nextInt(charSet.length())));\r\n        }\r\n\r\n        Collections.shuffle(chars);\r\n\r\n        StringBuilder password = new StringBuilder();\r\n        for (Character ch : chars)\r\n            password.append(ch);\r\n\r\n        return password.toString();\r\n    }\r\n\r\n    public static Result login(String username, String password, boolean stayLoggedIn) {\r\n        if (User.getUserByUsername(username) == null)\r\n            return new Result(false, \"Username not found!\");\r\n\r\n        if (User.getUserByUsername(username).getPassword().equals(password))\r\n            return new Result(false, \"Password incorrect!\");\r\n\r\n        // ToDo implement stay logged in\r\n\r\n        User.setLoggedInUser(User.getUserByUsername(username));\r\n        return new Result(true, \"Login successful\");\r\n    }\r\n\r\n    public static String showQuestion() {\r\n        return User.getLoggedInUser().getQuestion().getQuestionText();\r\n    }\r\n\r\n    public static void pickQuestion(int number, String answer) {\r\n        Question question = new Question(Question.getQuestions().get(number), answer);\r\n        User.getLoggedInUser().setQuestion(question);\r\n    }\r\n\r\n    public static void changePassword(String password) {\r\n        User.getLoggedInUser().setPassword(password);\r\n    }\r\n\r\n    public static Result checkAnswer(String answer) {\r\n        if (User.getLoggedInUser().getQuestion().getAnswer().equals(answer))\r\n            return new Result(true, \"\");\r\n\r\n        return new Result(false, \"Your answer is wrong\");\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/controller/LoginMenuController.java b/src/main/controller/LoginMenuController.java
+--- a/src/main/controller/LoginMenuController.java	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ b/src/main/controller/LoginMenuController.java	(date 1719407050717)
+@@ -1,8 +1,8 @@
+ package controller;
+ 
+-import model.Question;
+-import model.Result;
+-import model.User;
++import main.model.Question;
++import main.model.Result;
++import main.model.User;
+ 
+ import java.util.ArrayList;
+ import java.util.Collections;
+Index: src/main/controller/MainMenuController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main.controller;\r\n\r\nimport main.model.Result;\r\n\r\npublic class MainMenuController {\r\n\r\n    public static void logout(String menuName) {\r\n        // ToDo clean stay login file\r\n    }\r\n\r\n    public static Result createGame(String opponentName) {\r\n        if (User.getUserByUsername(opponentName) == null)\r\n            return new Result(false, \"Opponent not found!\");\r\n        if (User.getLoggedInUser().getUsername().equals(opponentName))\r\n            return new Result(false, \"You can not play with yourself!!\");\r\n\r\n        return new Result(true, \"welcome to pregame :)\");\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/controller/MainMenuController.java b/src/main/controller/MainMenuController.java
+--- a/src/main/controller/MainMenuController.java	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ b/src/main/controller/MainMenuController.java	(date 1719407460758)
+@@ -1,6 +1,7 @@
+ package main.controller;
+ 
+ import main.model.Result;
++import main.model.User;
+ 
+ public class MainMenuController {
+ 
+Index: src/main/model/Faction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Faction {\r\n    private String name;\r\n    private String photoName;\r\n    private ArrayList<Commander> commanders;\r\n\r\n    private static ArrayList<Faction> factions;\r\n\r\n    public Faction(ArrayList<Commander> commanders) {\r\n        this.commanders = commanders;\r\n    }\r\n\r\n    public ArrayList<Commander> getCommanders() {\r\n        return commanders;\r\n    }\r\n\r\n    public Commander getCommanderByNumber(int number){\r\n        for (Commander commander : commanders) {\r\n            if (commander.getNumber() == number){\r\n                return commander;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n    public static Faction getFactionByName(String name){\r\n        for (Faction faction : factions) {\r\n            if (faction.getName().equals(name)){\r\n                return faction;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public String getPhotoName() {\r\n        return this.photoName;\r\n    }\r\n\r\n\r\n    public static ArrayList<Faction> getFactions() {\r\n        return factions;\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/model/Faction.java b/src/main/model/Faction.java
+--- a/src/main/model/Faction.java	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ b/src/main/model/Faction.java	(date 1719407174927)
+@@ -1,4 +1,4 @@
+-package model;
++package main.model;
+ 
+ import java.util.ArrayList;
+ 
+Index: src/main/model/Card.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package model;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class Card {\r\n\r\n    private String name;\r\n    private int power;\r\n    private String type;\r\n    private int capacity;\r\n    private String ability;\r\n    private String description;\r\n    private String photoName;\r\n    private ArrayList<Integer> validRows;\r\n    private static ArrayList<Card> cards = new ArrayList<>();\r\n\r\n    public Card(String name, int power,int capacity ,String type, String ability, String description, ArrayList<Integer> validRows) {\r\n        this.name = name;\r\n        this.power = power;\r\n        this.type = type;\r\n        this.capacity = capacity;\r\n        this.ability = ability;\r\n        this.description = description;\r\n        this.validRows = validRows;\r\n    }\r\n\r\n    public static ArrayList<Card> getCards() {\r\n        return cards;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public int getPower() {\r\n        return power;\r\n    }\r\n\r\n    public String getType() {\r\n        return type;\r\n    }\r\n\r\n    public String getAbility() {\r\n        return ability;\r\n    }\r\n\r\n    public String getDescription() {\r\n        return description;\r\n    }\r\n    public int getCapacity() {\r\n        return capacity;\r\n    }\r\n\r\n    public ArrayList<Integer> getValidRows() {\r\n        return validRows;\r\n    }\r\n    public static Card getCardByName(String name){\r\n        for (Card card : cards) {\r\n            if (card.getName().equals(name)){\r\n                return card;\r\n            }\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public String getPhotoName() {\r\n        return photoName;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/model/Card.java b/src/main/model/Card.java
+--- a/src/main/model/Card.java	(revision b185ef72d4c50ed4f49ad94175cf3fb2cfc8f63c)
++++ b/src/main/model/Card.java	(date 1719407030028)
+@@ -1,4 +1,4 @@
+-package model;
++package main.model;
+ 
+ import java.util.ArrayList;
+ 
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
