@@ -1,5 +1,7 @@
 package main.model;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class User {
@@ -9,7 +11,7 @@ public class User {
     private String password;
     private String nickname;
     private String email;
-    private ArrayList<Question> question;
+    private Question question;
     private int maxScore;
     private int rank;
     private int numOfGamePlayed;
@@ -25,7 +27,6 @@ public class User {
         this.password = password;
         this.nickname = nickname;
         this.email = email;
-        this.question = new ArrayList<>();
         this.gamePlayed = new ArrayList<>();
         this.deck = new ArrayList<>();
         allUsers.add(this);
@@ -75,12 +76,12 @@ public class User {
         this.email = email;
     }
 
-    public ArrayList<Question> getQuestion() {
+    public Question getQuestion() {
         return question;
     }
 
     public void setQuestion(Question question) {
-        this.question.add(question);
+        this.question = question;
     }
 
     public int getMaxScore() {
@@ -142,12 +143,43 @@ public class User {
     public void addToDeck(Card card) {
         this.deck.add(card);
     }
+    public void deleteFromDeck(Card card) {
+        this.deck.remove(card);
+    }
 
-    public User getUserByUsername(String username) {
+    public static User getUserByUsername(String username) {
         for (User user : allUsers) {
-            if (user.getUsername().equals(username))
-                return user;
+            if (user.getUsername().equals(username)) return user;
         }
         return null;
+    }
+    public void saveDeckByFileAddress(String fileAddress) {
+        try (FileWriter fileWriter = new FileWriter(fileAddress)) {
+            for (Card card : deck) {
+                fileWriter.write(card + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void saveDeckByDeckName(String deckName){
+        //todo
+    }
+    public int numberOfSpecificCardInDeck() {
+        int count = 0;
+        for (Card card : deck) {
+            if (card.getType().equals("weather") || card.getType().equals("spell")) {
+                count++;
+
+            }
+        }
+        return count;
+    }
+
+    public void loadDeckByFileAddress(String fileAddress) {
+        //todo
+    }
+    public void loadDeckByDeckName(String deckName){
+        //todo
     }
 }
