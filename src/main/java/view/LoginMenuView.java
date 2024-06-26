@@ -10,17 +10,18 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import model.Result;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class LoginMenuView extends MenuView {
     Stage stage = new Stage();
-
     public TextField loginUsernameField;
     public CheckBox stayLoginCheckBox;
     @FXML
@@ -48,7 +49,7 @@ public class LoginMenuView extends MenuView {
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         stage.setScene(scene);
-        stage.setTitle("Register Menu");
+        stage.setTitle("Login Menu");
         stage.setHeight(600);
         stage.setWidth(800);
         stage.show();
@@ -195,5 +196,8 @@ public class LoginMenuView extends MenuView {
 
     public void forgetPassword() {
         showQuestionDialog();
+    }
+    public void openRegisterMenu() throws IOException {
+
     }
 }

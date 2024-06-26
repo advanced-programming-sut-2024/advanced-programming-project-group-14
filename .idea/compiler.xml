@@ -9,8 +9,5 @@
         <module name="graft" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="graft" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

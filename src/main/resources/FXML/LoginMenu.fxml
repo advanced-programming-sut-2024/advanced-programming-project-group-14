@@ -27,7 +27,7 @@
     </HBox>
 
     <CheckBox fx:id="stayLoginCheckBox" text="Stay login" GridPane.rowIndex="3"/>
-    <Button text="Login" fx:id="loginButton" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="250" onAction="#login"/>
-    <Hyperlink fx:id="signUpLink" text="Don't have an account?" GridPane.rowIndex="4" GridPane.columnIndex="1" alignment="CENTER"/>
-    <Hyperlink fx:id="forgetPassword" text="forgot my password ->" GridPane.rowIndex="5" GridPane.columnIndex="1" alignment="CENTER" onAction="#forgetPassword"/>
+    <Button text="Login" fx:id="loginButton" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="250"/>
+    <Hyperlink onMouseClicked="#openRegisterMenu" fx:id="signUpLink" text="Don't have an account?" GridPane.rowIndex="4" GridPane.columnIndex="1" alignment="CENTER"/>
+    <Hyperlink fx:id="forgetPassword" text="forgot my password ->" GridPane.rowIndex="5" GridPane.columnIndex="1" alignment="CENTER"/>
 </GridPane>
