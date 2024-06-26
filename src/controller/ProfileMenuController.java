@@ -1,10 +1,8 @@
 package controller;
 
-import model.GameTable;
 import model.Result;
 import model.User;
 
-import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class ProfileMenuController {
@@ -52,11 +50,6 @@ public class ProfileMenuController {
 
         User.getLoggedInUser().setPassword(newPassword);
         return new Result(true, "Password changed successfully");
-    }
-
-    public static String[] showUsersInfo() {
-
-        return null;
     }
 
     public static Result showGameHistory(String number) {
