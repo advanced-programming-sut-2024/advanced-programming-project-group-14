@@ -2,9 +2,6 @@ package view;
 
 import java.util.Scanner;
 
-public class MainMenuView {
+public class MainMenuView extends MenuView{
 
-    public static void run(Scanner scanner) {
-
-    }
 }

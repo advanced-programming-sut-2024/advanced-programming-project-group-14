@@ -2,9 +2,6 @@ package view;
 
 import java.util.Scanner;
 
-public class GameMenuView {
+public class GameMenuView extends MenuView{
 
-    public static void run(Scanner scanner) {
-
-    }
 }

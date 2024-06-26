@@ -15,7 +15,7 @@ import javafx.util.Pair;
 import java.util.ArrayList;
 
 
-public class LoginMenuView extends Application {
+public class LoginMenuView extends MenuView {
     @FXML
     private PasswordField loginPasswordField;
     @FXML
