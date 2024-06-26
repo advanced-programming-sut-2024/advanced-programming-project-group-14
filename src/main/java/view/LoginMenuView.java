@@ -1,6 +1,8 @@
 package view;
 
+import controller.LoginMenuController;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -11,11 +13,16 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
+import model.Result;
 
 import java.util.ArrayList;
 
 
 public class LoginMenuView extends MenuView {
+    Stage stage = new Stage();
+
+    public TextField loginUsernameField;
+    public CheckBox stayLoginCheckBox;
     @FXML
     private PasswordField loginPasswordField;
     @FXML
@@ -40,11 +47,11 @@ public class LoginMenuView extends MenuView {
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/LoginMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Register Menu");
-        primaryStage.setHeight(600);
-        primaryStage.setWidth(800);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.setTitle("Register Menu");
+        stage.setHeight(600);
+        stage.setWidth(800);
+        stage.show();
     }
 
     @FXML
@@ -178,4 +185,15 @@ public class LoginMenuView extends MenuView {
         });
     }
 
+    public void login() {
+        Result result = LoginMenuController.login(loginUsernameField.getText(),loginPasswordTextField.getText(),stayLoginCheckBox.isSelected());
+        if (!result.isSuccessful())
+            showError(result.getMessage());
+        else
+            changeMenu(stage,(MenuView) new MainMenuView());
+    }
+
+    public void forgetPassword() {
+        showQuestionDialog();
+    }
 }

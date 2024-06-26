@@ -10,6 +10,13 @@ public class MenuView extends Application {
 
     }
 
+    public static void changeMenu(Stage stage,MenuView menuView){
+        try {
+            menuView.start(stage);
+        }catch (Exception e){}
+
+    }
+
     public static void showError(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
