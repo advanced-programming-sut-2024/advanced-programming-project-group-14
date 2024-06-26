@@ -8,28 +8,23 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class LoginMenuView extends Application {
+    Stage stage = new Stage();
     @FXML
     private PasswordField loginPasswordField;
     @FXML
     private TextField loginPasswordTextField;
     @FXML
     private Button loginToggleButton;
-    @FXML
-    private PasswordField registerPasswordField;
-    public TextField registerPasswordTextField;
-    public Button registerToggleButton;
-    @FXML
-    private PasswordField registerCPasswordField;
-    public TextField registerCPasswordTextField;
-    public Button registerToggleCButton;
 
     public static void run(){
         launch();
@@ -40,11 +35,11 @@ public class LoginMenuView extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/LoginMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
-        primaryStage.setScene(scene);
-        primaryStage.setTitle("Register Menu");
-        primaryStage.setHeight(600);
-        primaryStage.setWidth(800);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.setTitle("Login Menu");
+        stage.setHeight(600);
+        stage.setWidth(800);
+        stage.show();
     }
 
     @FXML
@@ -52,10 +47,6 @@ public class LoginMenuView extends Application {
         try {
             loginToggleButton.setOnAction(event -> togglePasswordVisibility(loginPasswordField, loginToggleButton, loginPasswordTextField));
             loginPasswordField.textProperty().bindBidirectional(loginPasswordTextField.textProperty());
-            registerToggleButton.setOnAction(event -> togglePasswordVisibility(registerPasswordField, registerToggleButton, registerPasswordTextField));
-            registerPasswordField.textProperty().bindBidirectional(registerPasswordTextField.textProperty());
-            registerToggleCButton.setOnAction(event -> togglePasswordVisibility(registerCPasswordField, registerToggleCButton, registerCPasswordTextField));
-            registerCPasswordField.textProperty().bindBidirectional(registerCPasswordTextField.textProperty());
         }catch (NullPointerException e){}
 
     }
@@ -178,4 +169,7 @@ public class LoginMenuView extends Application {
         });
     }
 
+    public void openRegisterMenu() throws IOException {
+
+    }
 }
