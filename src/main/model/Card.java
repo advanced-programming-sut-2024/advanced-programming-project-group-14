@@ -9,7 +9,10 @@ public class Card {
     private String type;
     private String ability;
     private String description;
+    private String photoName;
     private ArrayList<Integer> validRows;
+
+    private static ArrayList<Card> cards = new ArrayList<>();
 
     public Card(String name, int power, String type, String ability, String description, ArrayList<Integer> validRows) {
         this.name = name;
@@ -18,6 +21,10 @@ public class Card {
         this.ability = ability;
         this.description = description;
         this.validRows = validRows;
+    }
+
+    public static ArrayList<Card> getCards() {
+        return cards;
     }
 
     public String getName() {
@@ -42,5 +49,9 @@ public class Card {
 
     public ArrayList<Integer> getValidRows() {
         return validRows;
+    }
+
+    public String getPhotoName() {
+        return photoName;
     }
 }

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.PreGameMenuController" spacing="10" style="-fx-padding: 20; -fx-background-color: #0e1a2b;">
+<VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.view.PreGameMenuView" spacing="10" style="-fx-padding: 20; -fx-background-color: #0e1a2b;">
     <VBox alignment="CENTER" spacing="10">
         <Button fx:id="showInfoButton" text="Show Information" onAction="#showCurrentUserInfo" />
         <GridPane fx:id="infoGrid" hgap="10" vgap="10" style="-fx-background-color: #1c1c1c; -fx-padding: 20; -fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-border-radius: 5px;">

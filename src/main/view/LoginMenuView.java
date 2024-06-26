@@ -1,6 +1,7 @@
 package main.view;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -17,13 +18,28 @@ import java.util.List;
 import java.util.Optional;
 
 public class LoginMenuView extends Application {
+    @FXML
+    private PasswordField loginPasswordField;
+    @FXML
+    private TextField loginPasswordTextField;
+    @FXML
+    private Button loginToggleButton;
+    @FXML
+    private PasswordField registerPasswordField;
+    public TextField registerPasswordTextField;
+    public Button registerToggleButton;
+    @FXML
+    private PasswordField registerCPasswordField;
+    public TextField registerCPasswordTextField;
+    public Button registerToggleCButton;
+
     public static void run(){
         launch();
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/resources/FXML/PreGameMenu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/FXML/ProfileMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/resources/CSS/gwent-theme.css").toExternalForm());
         primaryStage.setScene(scene);
@@ -31,6 +47,35 @@ public class LoginMenuView extends Application {
         primaryStage.setHeight(600);
         primaryStage.setWidth(800);
         primaryStage.show();
+    }
+
+    @FXML
+    public void initialize() {
+        try {
+            loginToggleButton.setOnAction(event -> togglePasswordVisibility(loginPasswordField, loginToggleButton, loginPasswordTextField));
+            loginPasswordField.textProperty().bindBidirectional(loginPasswordTextField.textProperty());
+            registerToggleButton.setOnAction(event -> togglePasswordVisibility(registerPasswordField, registerToggleButton, registerPasswordTextField));
+            registerPasswordField.textProperty().bindBidirectional(registerPasswordTextField.textProperty());
+            registerToggleCButton.setOnAction(event -> togglePasswordVisibility(registerCPasswordField, registerToggleCButton, registerCPasswordTextField));
+            registerCPasswordField.textProperty().bindBidirectional(registerCPasswordTextField.textProperty());
+        }catch (NullPointerException e){}
+
+    }
+
+    private void togglePasswordVisibility(PasswordField field, Button button, TextField textField) {
+        if (field.isVisible()) {
+            field.setVisible(false);
+            field.setManaged(false);
+            textField.setVisible(true);
+            textField.setManaged(true);
+            button.setText("🙈");
+        } else {
+            field.setVisible(true);
+            field.setManaged(true);
+            textField.setVisible(false);
+            textField.setManaged(false);
+            button.setText("👁");
+        }
     }
 
     private void showQuestionDialog(){
