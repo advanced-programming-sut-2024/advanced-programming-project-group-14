@@ -6,6 +6,7 @@ import model.User;
 import java.util.regex.Pattern;
 
 public class ProfileMenuController {
+
     public static Result changeUsername(String username) {
         if (User.getUserByUsername(username) != null)
             return new Result(false, "Username is already taken!");
@@ -34,7 +35,7 @@ public class ProfileMenuController {
             return new Result(false, "Password is incorrect!");
 
         if (!Pattern.matches("^[a-zA-Z0-9!@#$%^&*]+$", newPassword))
-            return new Result(false, "Password is invalid!");
+            return new Result(false, "Old password is invalid!");
 
         if (newPassword.length() < 8)
             return new Result(false, "Password is to short!");
@@ -52,7 +53,7 @@ public class ProfileMenuController {
         return new Result(true, "Password changed successfully");
     }
 
-    public static Result showGameHistory(String number) {
+    public static Result numberOfGameToShow(String number) {
         int numberToShow = 5;
         int numberOfGamePlayed = User.getLoggedInUser().getGamePlayed().size();
         if (number == null) {

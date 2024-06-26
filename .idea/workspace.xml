@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,12 +80,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main (1)" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -106,7 +96,8 @@
       <workItem from="1719137757192" duration="33058000" />
       <workItem from="1719406446357" duration="1437000" />
       <workItem from="1719407955540" duration="915000" />
-      <workItem from="1719411360082" duration="17366000" />
+      <workItem from="1719411360082" duration="17636000" />
+      <workItem from="1719443090022" duration="2416000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -227,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719441642340</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Main Menu completed">
+      <created>1719442735662</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1719442735662</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +272,7 @@
     <MESSAGE value="MenuView completed" />
     <MESSAGE value="Register Menu completed" />
     <MESSAGE value="Dialogs completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dialogs completed" />
+    <MESSAGE value="Main Menu completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main Menu completed" />
   </component>
 </project>
