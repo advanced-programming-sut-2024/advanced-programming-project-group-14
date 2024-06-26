@@ -6,16 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoginMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoginMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +63,6 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
@@ -111,7 +106,7 @@
       <workItem from="1719137757192" duration="33058000" />
       <workItem from="1719406446357" duration="1437000" />
       <workItem from="1719407955540" duration="915000" />
-      <workItem from="1719411360082" duration="16414000" />
+      <workItem from="1719411360082" duration="17366000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -225,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719439549183</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Dialogs completed">
+      <created>1719441642340</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1719441642340</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +273,7 @@
     <MESSAGE value="Unversioned Files" />
     <MESSAGE value="MenuView completed" />
     <MESSAGE value="Register Menu completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Register Menu completed" />
+    <MESSAGE value="Dialogs completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dialogs completed" />
   </component>
 </project>

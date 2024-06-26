@@ -6,7 +6,7 @@ import model.User;
 
 public class MainMenuController {
 
-    public static void logout(String menuName) {
+    public static void logout() {
         // ToDo clean stay login file
     }
 
