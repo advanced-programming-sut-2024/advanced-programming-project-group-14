@@ -9,17 +9,13 @@ import javafx.scene.layout.GridPane;
 
 import java.util.Scanner;
 
-public class ProfileMenuView {
+public class ProfileMenuView extends MenuView{
     @FXML
     private TextField gameHistoryCount;
     @FXML
     private GridPane infoGrid;
     @FXML
     private TableView<?> gameHistoryTable;
-
-    public static void run(Scanner scanner) {
-
-    }
 
     @FXML
     public void handleUserInfoButtonClick() {

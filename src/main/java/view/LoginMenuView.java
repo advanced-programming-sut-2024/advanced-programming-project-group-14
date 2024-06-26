@@ -1,8 +1,6 @@
 package view;
 
 import controller.LoginMenuController;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -21,7 +19,9 @@ import java.util.ArrayList;
 
 
 public class LoginMenuView extends MenuView {
-    Stage stage = new Stage();
+    public static Stage stage;
+
+    @FXML
     public TextField loginUsernameField;
     public CheckBox stayLoginCheckBox;
     @FXML
@@ -30,11 +30,9 @@ public class LoginMenuView extends MenuView {
     private TextField loginPasswordTextField;
     @FXML
     private Button loginToggleButton;
-    @FXML
     private PasswordField registerPasswordField;
     public TextField registerPasswordTextField;
     public Button registerToggleButton;
-    @FXML
     private PasswordField registerCPasswordField;
     public TextField registerCPasswordTextField;
     public Button registerToggleCButton;
@@ -44,7 +42,8 @@ public class LoginMenuView extends MenuView {
     }
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage stage) throws Exception {
+        LoginMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/LoginMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
@@ -191,13 +190,18 @@ public class LoginMenuView extends MenuView {
         if (!result.isSuccessful())
             showError(result.getMessage());
         else
-            changeMenu(stage,(MenuView) new MainMenuView());
+            goToMainMenu(stage);
     }
 
     public void forgetPassword() {
         showQuestionDialog();
-    }
-    public void openRegisterMenu() throws IOException {
 
+
+
+    }
+
+
+    public void openRegisterMenu() {
+        goToRegisterMenu(stage);
     }
 }

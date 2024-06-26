@@ -19,7 +19,7 @@ public class LoginMenuController {
         if (User.getUserByUsername(username) == null)
             return new Result(false, "Username not found!");
 
-        if (User.getUserByUsername(username).getPassword().equals(password))
+        if (!User.getUserByUsername(username).getPassword().equals(password))
             return new Result(false, "Password incorrect!");
 
         // ToDo implement stay logged in

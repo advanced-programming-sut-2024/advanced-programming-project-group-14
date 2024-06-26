@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane fx:id="registerGrid" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginMenuView" alignment="CENTER" hgap="10" vgap="10">
+<GridPane fx:id="Grid" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RegisterMenuView" alignment="CENTER" hgap="10" vgap="10">
     <padding>
         <Insets top="20" right="20" bottom="20" left="20"/>
     </padding>
@@ -25,18 +25,18 @@
 
     <Label text="Password:" GridPane.rowIndex="4" />
     <HBox GridPane.rowIndex="4" GridPane.columnIndex="1" spacing="5">
-        <PasswordField fx:id="registerPasswordField" HBox.hgrow="ALWAYS" prefHeight="35"/>
-        <TextField fx:id="registerPasswordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
-        <Button fx:id="registerToggleButton" text="👁"/>
+        <PasswordField fx:id="passwordField" HBox.hgrow="ALWAYS" prefHeight="35"/>
+        <TextField fx:id="passwordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
+        <Button fx:id="passwordToggleButton" text="👁"/>
     </HBox>
-    <Button fx:id="randomPassword" GridPane.rowIndex="4" GridPane.columnIndex="2" text="Random password"/>
+    <Button fx:id="randomPassword" GridPane.rowIndex="4" GridPane.columnIndex="2" text="Random password" onAction="#randomPassword"/>
 
     <Label text="Confirm Password:" GridPane.rowIndex="5" />
     <HBox GridPane.rowIndex="5" GridPane.columnIndex="1" spacing="5">
-        <PasswordField fx:id="registerCPasswordField" HBox.hgrow="ALWAYS" prefHeight="35"/>
-        <TextField fx:id="registerCPasswordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
-        <Button fx:id="registerToggleCButton" text="👁"/>
+        <PasswordField fx:id="CPasswordField" HBox.hgrow="ALWAYS" prefHeight="35"/>
+        <TextField fx:id="CPasswordTextField" HBox.hgrow="ALWAYS" visible="false" managed="false" prefHeight="35"/>
+        <Button fx:id="CPasswordToggleButton" text="👁"/>
     </HBox>
 
-    <Button text="Register" fx:id="registerButton" GridPane.rowIndex="6" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+    <Button text="Register" fx:id="registerButton" GridPane.rowIndex="6" GridPane.columnSpan="2" GridPane.halignment="CENTER" onAction="#register"/>
 </GridPane>
