@@ -1,33 +1,64 @@
 package controller;
 
+import model.GameTable;
 import model.Result;
+import model.User;
+
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class ProfileMenuController {
     public static Result changeUsername(String username) {
+        if (User.getUserByUsername(username) != null)
+            return new Result(false, "Username is already taken!");
+        if (!Pattern.matches("[a-zA-Z0-9\\-]+", username))
+            return new Result(false, "Username is invalid!");
 
-        return new Result(true, "");
+        User.getLoggedInUser().setUsername(username);
+        return new Result(true, "Username changed successfully");
     }
     public static Result changeNickname(String nickname) {
-
-        return new Result(true, "");
+        User.getLoggedInUser().setNickname(nickname);
+        return new Result(true, "Nickname changed successfully");
     }
     public static Result changeEmail(String email) {
+        if (!Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$", email))
+            return new Result(false, "Email is invalid!");
 
-        return new Result(true, "");
+        User.getLoggedInUser().setEmail(email);
+        return new Result(true, "Email changed successfully");
     }
     public static Result changePassword(String newPassword, String oldPassword) {
+        if (!User.getLoggedInUser().getPassword().equals(oldPassword))
+            return new Result(false, "Password is incorrect!");
 
-        return new Result(true, "");
+        if (!Pattern.matches("^[a-zA-Z0-9!@#$%^&*]+$", newPassword))
+            return new Result(false, "Password is invalid!");
+
+        if (newPassword.length() < 8)
+            return new Result(false, "Password is to short!");
+
+        if (!newPassword.matches(".*[A-Z].*") || !newPassword.matches(".*[a-z].*"))
+            return new Result(false, "Password should have at least one lowercase letter and one uppercase letter");
+
+        if (!newPassword.matches(".*[0-9].*"))
+            return new Result(false, "Password should have at least one number");
+
+        if (!newPassword.matches(".*[!@#$%^&*].*"))
+            return new Result(false, "Password should have at least one special character");
+
+        User.getLoggedInUser().setPassword(newPassword);
+        return new Result(true, "Password changed successfully");
     }
 
-    public static Result showUsersInfo() {
+    public static String[] showUsersInfo() {
 
-        return new Result(true, "");
+        return null;
     }
 
-    public static Result showGameHistory(int number) {
+    public static ArrayList<GameTable> showGameHistory(String number) {
 
-        return new Result(true, "");
+        return null;
     }
 
 

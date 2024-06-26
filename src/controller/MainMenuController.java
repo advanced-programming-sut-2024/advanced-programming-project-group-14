@@ -6,8 +6,8 @@ import model.User;
 
 public class MainMenuController {
 
-    public static void enterMenu(String menuName) {
-
+    public static void logout(String menuName) {
+        // ToDo clean stay login file
     }
 
     public static Result createGame(String opponentName) {
