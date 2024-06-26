@@ -11,8 +11,12 @@ public class MainMenuController {
     }
 
     public static Result createGame(String opponentName) {
+        if (User.getUserByUsername(opponentName) == null)
+            return new Result(false, "Opponent not found!");
+        if (User.getLoggedInUser().getUsername().equals(opponentName))
+            return new Result(false, "You can not play with yourself!!");
 
-        return new Result(true, "");
+        return new Result(true, "welcome to pregame :)");
     }
 
 }
