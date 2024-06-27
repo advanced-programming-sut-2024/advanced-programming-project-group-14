@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Player extends User {
-
     private Row closeCombat;
     private Row rangedCombat;
     private Row siege;
@@ -104,5 +103,17 @@ public class Player extends User {
 
     public void decreaseLife() {
 
+    }
+
+    public HashMap<Integer, Integer> getScoresOfRound() {
+        return scoresOfRound;
+    }
+
+    public int getTotalScoreOfRounds(){
+        int total = 0;
+        for (int i = 1; i < 4; i++) {
+            total += scoresOfRound.get(i);
+        }
+        return total;
     }
 }

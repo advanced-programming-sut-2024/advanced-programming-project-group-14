@@ -43,4 +43,8 @@ public class GameTable {
     public void increaseRoundNumber() {
         this.roundNumber++;
     }
+
+    public Player getWinner() {
+        return player1;
+    }
 }

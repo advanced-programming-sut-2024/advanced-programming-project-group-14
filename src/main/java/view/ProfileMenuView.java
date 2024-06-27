@@ -1,22 +1,26 @@
 package view;
 
 import controller.ProfileMenuController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import model.GameTable;
+import model.Player;
 import model.Result;
 import model.User;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 public class ProfileMenuView extends MenuView {
     @FXML
@@ -24,7 +28,17 @@ public class ProfileMenuView extends MenuView {
     @FXML
     private GridPane infoGrid;
     @FXML
-    private TableView<?> gameHistoryTable;
+    private TableView<GameTable> gameHistoryTable;
+    @FXML
+    private TableColumn<GameTable, String> opponentColumn;
+    @FXML
+    private TableColumn<GameTable, Date> dateColumn;
+    @FXML
+    private TableColumn<GameTable, String> roundsColumn;
+    @FXML
+    private TableColumn<GameTable, String> totalColumn;
+    @FXML
+    private TableColumn<GameTable, String> winnerColumn;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -97,6 +111,38 @@ public class ProfileMenuView extends MenuView {
             showError(result.getMessage());
             return;
         }
+
+        User user = User.getLoggedInUser();
+        ArrayList<GameTable> gameTables = user.getGamePlayed();
+
+        // Set cell value factories for the columns
+        opponentColumn.setCellValueFactory(cellData -> {
+            Player opponent = cellData.getValue().getPlayer1();
+            if (!cellData.getValue().getPlayer2().getUsername().equals(user.getUsername()))
+                opponent = cellData.getValue().getPlayer2();
+            return new SimpleStringProperty(opponent.getUsername());
+        });
+        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        roundsColumn.setCellValueFactory(cellData -> {
+            String roundScores = "";
+            Player player1 = cellData.getValue().getPlayer1();
+            Player player2 = cellData.getValue().getPlayer2();
+            roundScores += player1.getScoresOfRound().get(1) + " | " + player2.getScoresOfRound().get(1) + "\n";
+            roundScores += player1.getScoresOfRound().get(2) + " | " + player2.getScoresOfRound().get(2) + "\n";
+            roundScores += player1.getScoresOfRound().get(3) + " | " + player2.getScoresOfRound().get(3);
+            return new SimpleStringProperty(roundScores);
+        });
+        totalColumn.setCellValueFactory(cellData -> {
+            String totalScores = cellData.getValue().getPlayer1().getTotalScoreOfRounds() + " | " + cellData.getValue().getPlayer2().getTotalScoreOfRounds();
+            return new SimpleStringProperty(totalScores);
+        });
+        winnerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getWinner().getUsername()));
+
+        // Convert ArrayList to ObservableList
+        ObservableList<GameTable> gameData = FXCollections.observableArrayList(gameTables);
+
+        // Populate the table with data
+        gameHistoryTable.setItems(gameData);
 
         //ToDo
         // Logic to fetch and display the last 'n' games in the table
