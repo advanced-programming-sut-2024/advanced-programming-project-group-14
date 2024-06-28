@@ -1,6 +1,7 @@
 package view;
 
 import controller.LoginMenuController;
+import controller.RegisterMenuController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -187,8 +188,13 @@ public class LoginMenuView extends MenuView {
         });
 
         dialog.showAndWait().ifPresent(result -> {
-            LoginMenuController.changePassword(user,passwordField.getText());
-            showSuccessfulMessage("Password changed successfully");
+            Result checkPassword = RegisterMenuController.checkPassword(passwordField.getText(),passwordField.getText());
+            if (!checkPassword.isSuccessful())
+                showError(checkPassword.getMessage());
+            else{
+                LoginMenuController.changePassword(user,passwordField.getText());
+                showSuccessfulMessage("Password changed successfully");
+            }
         });
     }
 
@@ -202,9 +208,6 @@ public class LoginMenuView extends MenuView {
 
     public void forgetPassword() {
         showQuestionDialog();
-
-
-
     }
 
 
