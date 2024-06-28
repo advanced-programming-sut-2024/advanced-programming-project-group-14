@@ -12,13 +12,16 @@ public class Player extends User {
     private Faction faction;
     private ArrayList<Card> hand;
     private ArrayList<Card> discardPile;
-    private HashMap<Integer, Integer> scoresOfRound;
+    private HashMap<Integer, Integer> scoreOfRounds;
     private int numberOfVetoUse;
     private boolean isPassed;
 
     public Player(User user) {
         super(user.getUsername(), user.getPassword(), user.getNickname(), user.getEmail());
         this.lives = 2;
+        this.hand = new ArrayList<>();
+        this.discardPile = new ArrayList<>();
+        this.scoreOfRounds = new HashMap<>();
     }
 
     public Row getCloseCombat() {
@@ -105,15 +108,19 @@ public class Player extends User {
 
     }
 
-    public HashMap<Integer, Integer> getScoresOfRound() {
-        return scoresOfRound;
+    public HashMap<Integer, Integer> getScoreOfRounds() {
+        return scoreOfRounds;
     }
 
     public int getTotalScoreOfRounds(){
         int total = 0;
         for (int i = 1; i < 4; i++) {
-            total += scoresOfRound.get(i);
+            total += scoreOfRounds.get(i);
         }
         return total;
+    }
+
+    public void setScoresOfRound(int round, int score) {
+        this.scoreOfRounds.put(round,score);
     }
 }

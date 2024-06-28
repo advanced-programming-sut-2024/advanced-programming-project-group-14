@@ -7,12 +7,11 @@
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/GameTable.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +102,8 @@
       <workItem from="1719407955540" duration="915000" />
       <workItem from="1719411360082" duration="17636000" />
       <workItem from="1719443090022" duration="2701000" />
-      <workItem from="1719469514542" duration="13397000" />
+      <workItem from="1719469514542" duration="13619000" />
+      <workItem from="1719580604325" duration="3051000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -238,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719445558345</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Show game history compeleted">
+      <created>1719506134258</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1719506134258</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +294,7 @@
     <MESSAGE value="Dialogs completed" />
     <MESSAGE value="Main Menu completed" />
     <MESSAGE value="ShowUserInfo method completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="ShowUserInfo method completed" />
+    <MESSAGE value="Show game history compeleted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show game history compeleted" />
   </component>
 </project>

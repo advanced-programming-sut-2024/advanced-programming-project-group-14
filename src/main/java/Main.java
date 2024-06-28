@@ -15,8 +15,15 @@ public class Main{
         Question question = new Question(1,"alooo?");
         question.setAnswer("salam");
         newUser.setQuestion(question);
-        newUser.addGamePlayed(new GameTable(new Date(),new Player(newUser),new Player(newUser)));
-        newUser.addGamePlayed(new GameTable(new Date(),new Player(user2),new Player(newUser)));
+        Player player1 = new Player(newUser);
+        Player player2 = new Player(user2);
+        player1.setScoresOfRound(1,10);
+        player1.setScoresOfRound(2,20);
+        player1.setScoresOfRound(3,30);
+        player2.setScoresOfRound(1,30);
+        player2.setScoresOfRound(2,10);
+        player2.setScoresOfRound(3,20);
+        newUser.addGamePlayed(new GameTable(new Date(),player2,player1));
     }
 
     public static void main(String[] args) {

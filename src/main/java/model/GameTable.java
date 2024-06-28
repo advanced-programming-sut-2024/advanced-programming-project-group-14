@@ -45,6 +45,8 @@ public class GameTable {
     }
 
     public Player getWinner() {
-        return player1;
+        if (player1.getTotalScoreOfRounds()> player2.getTotalScoreOfRounds())
+            return player1;
+        return player2;
     }
 }

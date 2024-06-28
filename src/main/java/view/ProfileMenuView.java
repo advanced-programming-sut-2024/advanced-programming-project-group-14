@@ -6,18 +6,20 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import model.GameTable;
 import model.Player;
 import model.Result;
 import model.User;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -127,9 +129,9 @@ public class ProfileMenuView extends MenuView {
             String roundScores = "";
             Player player1 = cellData.getValue().getPlayer1();
             Player player2 = cellData.getValue().getPlayer2();
-            roundScores += player1.getScoresOfRound().get(1) + " | " + player2.getScoresOfRound().get(1) + "\n";
-            roundScores += player1.getScoresOfRound().get(2) + " | " + player2.getScoresOfRound().get(2) + "\n";
-            roundScores += player1.getScoresOfRound().get(3) + " | " + player2.getScoresOfRound().get(3);
+            roundScores += player1.getScoreOfRounds().get(1) + " | " + player2.getScoreOfRounds().get(1) + "\n";
+            roundScores += player1.getScoreOfRounds().get(2) + " | " + player2.getScoreOfRounds().get(2) + "\n";
+            roundScores += player1.getScoreOfRounds().get(3) + " | " + player2.getScoreOfRounds().get(3);
             return new SimpleStringProperty(roundScores);
         });
         totalColumn.setCellValueFactory(cellData -> {
@@ -138,18 +140,43 @@ public class ProfileMenuView extends MenuView {
         });
         winnerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getWinner().getUsername()));
 
+        //Set style for columns
+        ArrayList<TableColumn> tableColumns = new ArrayList<>(Arrays.asList(opponentColumn,dateColumn,roundsColumn,totalColumn,winnerColumn));
+        for (TableColumn tableColumn: tableColumns) {
+            setCustomCellFactory(tableColumn);
+        }
         // Convert ArrayList to ObservableList
         ObservableList<GameTable> gameData = FXCollections.observableArrayList(gameTables);
 
-        // Populate the table with data
+        gameHistoryTable.setFixedCellSize(80);
         gameHistoryTable.setItems(gameData);
-
-        //ToDo
-        // Logic to fetch and display the last 'n' games in the table
-
         gameHistoryTable.setVisible(true);
     }
 
+    private <T> void setCustomCellFactory(TableColumn<GameTable, T> column) {
+        column.setCellFactory(new Callback<>() {
+            @Override
+            public TableCell<GameTable, T> call(TableColumn<GameTable, T> param) {
+                return new TableCell<>() {
+                    @Override
+                    protected void updateItem(T item, boolean empty) {
+                        super.updateItem(item, empty);
+                        if (empty || item == null) {
+                            setText(null);
+                            setStyle("");
+                        } else {
+                            Text text = new Text(item.toString());
+                            text.setStyle("-fx-fill:white; -fx-font-size: 16px;"); // Set font size
+                            text.wrappingWidthProperty().bind(param.widthProperty()); // Ensure text wraps within cell width
+                            text.setTextAlignment(javafx.scene.text.TextAlignment.CENTER); // Center text horizontally
+                            setGraphic(text);
+                            setAlignment(Pos.CENTER);
+                        }
+                    }
+                };
+            }
+        });
+    }
 
     public void handleMessage(Result result){
         if (!result.isSuccessful())
