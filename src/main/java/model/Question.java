@@ -54,4 +54,12 @@ public class Question {
         }
         return null;
     }
+
+    public static Question getQuestionByNumber(int number){
+        for (Question question: questions) {
+            if (question.getNumber() == number)
+                return question;
+        }
+        return null;
+    }
 }

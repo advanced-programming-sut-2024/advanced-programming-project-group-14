@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/ProfileMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RegisterMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RegisterMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Question.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +101,7 @@
       <workItem from="1719411360082" duration="17636000" />
       <workItem from="1719443090022" duration="2701000" />
       <workItem from="1719469514542" duration="13619000" />
-      <workItem from="1719580604325" duration="3489000" />
+      <workItem from="1719580604325" duration="5428000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -247,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719585614268</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="back button added to profile menu">
+      <created>1719585980637</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1719585980637</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +308,7 @@
     <MESSAGE value="ShowUserInfo method completed" />
     <MESSAGE value="Show game history compeleted" />
     <MESSAGE value="Set style for show game history" />
-    <option name="LAST_COMMIT_MESSAGE" value="Set style for show game history" />
+    <MESSAGE value="back button added to profile menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="back button added to profile menu" />
   </component>
 </project>

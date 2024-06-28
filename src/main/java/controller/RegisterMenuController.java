@@ -43,6 +43,7 @@ public class RegisterMenuController {
             return new Result(false, "Passwords are not same");
 
         User user = new User(username, password, nickname, email);
+        User.setLoggedInUser(user);
         return new Result(true, "Register successful");
     }
 
@@ -79,7 +80,7 @@ public class RegisterMenuController {
     }
 
     public static void pickQuestion(int number, String answer) {
-        Question question = new Question(Question.getQuestions().get(number), answer);
+        Question question = new Question(Question.getQuestionByNumber(number), answer);
         User.getLoggedInUser().setQuestion(question);
     }
 

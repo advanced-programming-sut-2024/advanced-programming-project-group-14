@@ -106,7 +106,7 @@ public class RegisterMenuView extends MenuView {
         grid.add(answerField, 1, 1);
 
         dialog.getDialogPane().setContent(grid);
-        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/resources/CSS/gwent-theme.css").toExternalForm());
+        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         dialog.getDialogPane().getStyleClass().add("dialog-pane");
         dialog.getDialogPane().getContent().getStyleClass().add("dialog-content");
         dialog.getDialogPane().lookup(".header-panel").getStyleClass().add("dialog-header");
@@ -131,6 +131,7 @@ public class RegisterMenuView extends MenuView {
         if (!result.isSuccessful())
             showError(result.getMessage());
         else{
+            showQuestionDialog();
             showSuccessfulMessage(result.getMessage());
             goToMainMenu(stage);
         }
