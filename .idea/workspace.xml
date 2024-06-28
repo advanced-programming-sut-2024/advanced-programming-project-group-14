@@ -5,8 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/RegisterMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/RegisterMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MainMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Commander.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Commander.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Faction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Soldier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Soldier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Spell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/CSS/gwent-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/CSS/gwent-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/PreGameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/PreGameMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Commander.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Commander.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Faction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Faction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Soldier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Soldier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Spell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Spell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +116,7 @@
       <workItem from="1719411360082" duration="17636000" />
       <workItem from="1719443090022" duration="2701000" />
       <workItem from="1719469514542" duration="13619000" />
-      <workItem from="1719580604325" duration="6121000" />
+      <workItem from="1719580604325" duration="16792000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -261,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719592427113</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Check new password fixed">
+      <created>1719593062546</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1719593062546</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,6 +339,7 @@
     <MESSAGE value="Set style for show game history" />
     <MESSAGE value="back button added to profile menu" />
     <MESSAGE value="Show question after register" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show question after register" />
+    <MESSAGE value="Check new password fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check new password fixed" />
   </component>
 </project>

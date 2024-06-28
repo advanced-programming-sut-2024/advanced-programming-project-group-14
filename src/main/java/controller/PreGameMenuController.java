@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class PreGameMenuController {
-
     public static Player currentPlayer;
     public static Player opponentPlayer;
 
@@ -124,7 +123,7 @@ public class PreGameMenuController {
         Player temp = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = temp;
-        return new Result(true, "changed successfully");
+        return new Result(true, "Your turn: "+ currentPlayer.getUsername());
     }
 
     public static Result startGame() {

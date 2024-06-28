@@ -5,29 +5,39 @@ import java.util.ArrayList;
 public class Faction {
     private String name;
     private String photoName;
-    private ArrayList<Commander> commanders;
+    private ArrayList<Commander> commanders = new ArrayList<>();
 
-    private static ArrayList<Faction> factions;
+    private static ArrayList<Faction> factions = new ArrayList<>();
 
-    public Faction(ArrayList<Commander> commanders) {
-        this.commanders = commanders;
+    public Faction(String name, String photoName){
+        this.name = name;
+        this.photoName = photoName;
+
+        for (int i = 0; i < 10; i++) {
+            factions.add(this);
+        }
     }
 
     public ArrayList<Commander> getCommanders() {
         return commanders;
     }
 
-    public Commander getCommanderByNumber(int number){
+    public Commander getCommanderByNumber(int number) {
         for (Commander commander : commanders) {
-            if (commander.getNumber() == number){
+            if (commander.getNumber() == number) {
                 return commander;
             }
         }
         return null;
     }
-    public static Faction getFactionByName(String name){
+
+    public void setCommanders(ArrayList<Commander> commanders) {
+        this.commanders = commanders;
+    }
+
+    public static Faction getFactionByName(String name) {
         for (Faction faction : factions) {
-            if (faction.getName().equals(name)){
+            if (faction.getName().equals(name)) {
                 return faction;
             }
         }
@@ -41,7 +51,6 @@ public class Faction {
     public String getPhotoName() {
         return this.photoName;
     }
-
 
     public static ArrayList<Faction> getFactions() {
         return factions;

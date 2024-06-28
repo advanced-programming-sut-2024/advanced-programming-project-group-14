@@ -35,7 +35,6 @@ public class MainMenuView extends MenuView{
         if (!result.isSuccessful())
             showError(result.getMessage());
         else{
-            showSuccessfulMessage(result.getMessage());
             goToPreGameMenu(stage);
         }
 

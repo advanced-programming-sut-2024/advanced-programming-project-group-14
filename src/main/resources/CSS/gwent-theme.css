@@ -121,3 +121,7 @@
     -fx-padding: 10px 20px;
     -fx-border-radius: 3px;
 }
+
+.scroll-pane .viewport {
+    -fx-background-color: #0e1a2b; /* Background color for the ScrollPane viewport */
+}

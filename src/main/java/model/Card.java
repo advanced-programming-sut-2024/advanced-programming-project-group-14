@@ -11,16 +11,17 @@ public class Card {
     private String ability;
     private String description;
     private String photoName;
-    private ArrayList<Integer> validRows;
+    private int validRows;
     private static ArrayList<Card> cards = new ArrayList<>();
 
-    public Card(String name, int power,int capacity ,String type, String ability, String description, ArrayList<Integer> validRows) {
+    public Card(String name, int power, int capacity, String type, String ability, String description, String photoName, int validRows) {
         this.name = name;
         this.power = power;
         this.type = type;
         this.capacity = capacity;
         this.ability = ability;
         this.description = description;
+        this.photoName = photoName;
         this.validRows = validRows;
     }
 
@@ -47,13 +48,15 @@ public class Card {
     public String getDescription() {
         return description;
     }
+
     public int getCapacity() {
         return capacity;
     }
 
-    public ArrayList<Integer> getValidRows() {
+    public int getValidRows() {
         return validRows;
     }
+
     public static Card getCardByName(String name){
         for (Card card : cards) {
             if (card.getName().equals(name)){

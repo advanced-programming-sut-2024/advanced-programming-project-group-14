@@ -2,15 +2,20 @@ package view;
 
 import controller.PreGameMenuController;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Card;
 import model.Commander;
 import model.Faction;
+import model.Result;
 
 
 import java.io.File;
@@ -18,8 +23,27 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class PreGameMenuView extends MenuView{
+    public static Stage stage;
+
     @FXML
     private GridPane infoGrid;
+
+    public static void run() {
+        launch();
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        PreGameMenuView.stage = stage;
+        Parent root = FXMLLoader.load(getClass().getResource("/FXML/PreGameMenu.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
+        stage.setScene(scene);
+        stage.setTitle("Main Menu");
+        stage.setHeight(600);
+        stage.setWidth(800);
+        stage.show();
+    }
 
     @FXML
     public void handleSaveDeckButtonClick() {
@@ -48,16 +72,13 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Faction> factions = Faction.getFactions();
         for (int i = 0; i < factions.size(); i++) {
-            Label label = new Label(factions.get(i).getName());
-            label.setStyle("-fx-text-fill: #d4af37; -fx-font-size: 14px;");
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getPhotoName()))));
+            imageView.setFitWidth(150);
+            imageView.setFitHeight(100);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> System.out.println(imageView.getImage().getUrl()));
 
-            // Assuming images are stored in the resources folder
-            ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/Images/" + factions.get(i).getPhotoName())));
-            imageView.setFitWidth(100);
-            imageView.setFitHeight(150);
-
-            infoGrid.add(label, 0, i);
-            infoGrid.add(imageView, 1, i);
+            int columnIndex = i % 4;
+            infoGrid.add(imageView, columnIndex, (int) (i/4));
         }
 
     }
@@ -124,10 +145,11 @@ public class PreGameMenuView extends MenuView{
     public void showLeaders() {
         infoGrid.getChildren().clear();
 
-        if (PreGameMenuController.getCurrentPlayerDeck() == null){
+        if (PreGameMenuController.getCurrentPlayerFaction() == null){
             PreGameMenuView.showError("Choose a faction first!");
             return;
         }
+
         ArrayList<Commander> leaders = PreGameMenuController.getCurrentPlayerFaction().getCommanders();
         for (int i = 0; i < leaders.size(); i++) {
             Label label = new Label(leaders.get(i).getName());
@@ -144,6 +166,11 @@ public class PreGameMenuView extends MenuView{
     }
 
     public void changeTurn() {
-
+        Result result = PreGameMenuController.changeTurn();
+        if (!result.isSuccessful())
+            showError(result.getMessage());
+        else
+            showSuccessfulMessage(result.getMessage());
     }
+
 }

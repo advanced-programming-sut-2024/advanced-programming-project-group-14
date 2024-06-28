@@ -1,6 +1,7 @@
 package controller;
 
 
+import model.Player;
 import model.Result;
 import model.User;
 
@@ -11,11 +12,14 @@ public class MainMenuController {
     }
 
     public static Result createGame(String opponentName) {
-        if (User.getUserByUsername(opponentName) == null)
+        User opponent = User.getUserByUsername(opponentName);
+        if (opponent == null)
             return new Result(false, "Opponent not found!");
         if (User.getLoggedInUser().getUsername().equals(opponentName))
             return new Result(false, "You can not play with yourself!!");
 
+        PreGameMenuController.currentPlayer = new Player(User.getLoggedInUser());
+        PreGameMenuController.opponentPlayer = new Player(opponent);
         return new Result(true, "welcome to pregame :)");
     }
 
