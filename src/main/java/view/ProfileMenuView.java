@@ -25,6 +25,7 @@ import java.util.Arrays;
 import java.util.Date;
 
 public class ProfileMenuView extends MenuView {
+    public static Stage stage;
     @FXML
     private TextField gameHistoryCount;
     @FXML
@@ -44,7 +45,7 @@ public class ProfileMenuView extends MenuView {
 
     @Override
     public void start(Stage stage) throws Exception {
-        RegisterMenuView.stage = stage;
+        ProfileMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/ProfileMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
@@ -187,4 +188,7 @@ public class ProfileMenuView extends MenuView {
         }
     }
 
+    public void openMainMenu() {
+        goToMainMenu(stage);
+    }
 }

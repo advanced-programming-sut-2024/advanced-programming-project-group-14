@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ProfileMenuView" alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+    <Button fx:id="backButton" text="Back" onAction="#openMainMenu"/>
     <HBox  alignment="CENTER" spacing="10">
         <Button fx:id="userInfoButton" text="User info" onAction="#handleUserInfoButtonClick"/>
         <HBox spacing="5">
