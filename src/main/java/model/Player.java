@@ -1,5 +1,6 @@
 package model;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -122,5 +123,35 @@ public class Player extends User {
 
     public void setScoresOfRound(int round, int score) {
         this.scoreOfRounds.put(round,score);
+    }
+    public void saveDeckByFileAddress(String fileAddress) {
+        try(FileOutputStream fileOutputStream = new FileOutputStream(fileAddress)){
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(super.getDeck());
+            objectOutputStream.writeObject(this.faction);
+            objectOutputStream.writeObject(this.commander);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void saveDeckByDeckName(String deckName) {
+        try(FileOutputStream fileOutputStream = new FileOutputStream("data/decks/"+deckName)){
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(super.getDeck());
+            objectOutputStream.writeObject(this.faction);
+            objectOutputStream.writeObject(this.commander);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void loadDeckByFile(File file) {
+        try(FileInputStream fileInputStream = new FileInputStream(file)) {
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            super.setDeck((ArrayList<Card>) objectInputStream.readObject());
+            setFaction((Faction) objectInputStream.readObject());
+            setCommander((Commander) objectInputStream.readObject());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

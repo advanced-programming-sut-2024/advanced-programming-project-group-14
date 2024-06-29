@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Faction {
+public class Faction implements Serializable {
     private String name;
     private String photoName;
     private ArrayList<Commander> commanders = new ArrayList<>();

@@ -139,7 +139,9 @@ public class User {
     public ArrayList<Card> getDeck() {
         return deck;
     }
-
+    public void setDeck(ArrayList<Card> deck){
+        this.deck = deck;
+    }
     public void addToDeck(Card card) {
         this.deck.add(card);
     }
@@ -152,18 +154,6 @@ public class User {
             if (user.getUsername().equals(username)) return user;
         }
         return null;
-    }
-    public void saveDeckByFileAddress(String fileAddress) {
-        try (FileWriter fileWriter = new FileWriter(fileAddress)) {
-            for (Card card : deck) {
-                fileWriter.write(card + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void saveDeckByDeckName(String deckName){
-        //todo
     }
     public int numberOfSpecificCardInDeck() {
         int count = 0;
