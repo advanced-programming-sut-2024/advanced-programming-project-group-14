@@ -2,9 +2,11 @@ package view;
 
 import javafx.application.Application;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class MenuView extends Application {
     @Override
@@ -66,7 +68,7 @@ public class MenuView extends Application {
         }
     }
 
-    public static void showError(String message) {
+    public void showError(String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText(null);
@@ -74,12 +76,27 @@ public class MenuView extends Application {
         alert.showAndWait();
     }
 
-    public static void showSuccessfulMessage(String message) {
+    public void showSuccessfulMessage(String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Successful");
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.show();
+    }
+
+    public ButtonType showConfirmMessage(String message) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirm");
+        alert.setHeaderText("");
+        alert.setContentText(message);
+
+        // Show the alert and wait for a response
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            return ButtonType.OK;
+        } else {
+            return ButtonType.CANCEL;
+        }
     }
 
 }

@@ -75,12 +75,19 @@ public class PreGameMenuView extends MenuView{
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getPhotoName()))));
             imageView.setFitWidth(150);
             imageView.setFitHeight(100);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> System.out.println(imageView.getImage().getUrl()));
-
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
+                Faction faction = Faction.getFactionByPhotoName(photoName);
+                ButtonType buttonType = showConfirmMessage("You want to change faction to "+ faction.getName() + "?");
+                if (buttonType == ButtonType.OK){
+                    PreGameMenuController.selectFaction(faction);
+                    showSuccessfulMessage(faction.getName() + " chose as your faction");
+                    infoGrid.getChildren().clear();
+                }
+            });
             int columnIndex = i % 4;
             infoGrid.add(imageView, columnIndex, (int) (i/4));
         }
-
     }
 
     public void showCards() {
@@ -144,9 +151,8 @@ public class PreGameMenuView extends MenuView{
 
     public void showLeaders() {
         infoGrid.getChildren().clear();
-
         if (PreGameMenuController.getCurrentPlayerFaction() == null){
-            PreGameMenuView.showError("Choose a faction first!");
+            showError("Choose a faction first!");
             return;
         }
 
@@ -156,7 +162,7 @@ public class PreGameMenuView extends MenuView{
             label.setStyle("-fx-text-fill: #d4af37; -fx-font-size: 14px;");
 
             // Assuming images are stored in the resources folder
-            ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("resources/Images/" + leaders.get(i).getPhotoName())));
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getPhotoName()))));
             imageView.setFitWidth(100);
             imageView.setFitHeight(150);
 
@@ -171,6 +177,19 @@ public class PreGameMenuView extends MenuView{
             showError(result.getMessage());
         else
             showSuccessfulMessage(result.getMessage());
+    }
+
+    private String getPhotoNameFromUrl(String Url){
+        if (Url != null && !Url.isEmpty()) {
+            int lastSlashIndex = Url.lastIndexOf('/');
+            if (lastSlashIndex == -1) {
+                lastSlashIndex = Url.lastIndexOf('\\');
+            }
+            if (lastSlashIndex != -1 && lastSlashIndex < Url.length() - 1) {
+                return Url.substring(lastSlashIndex + 1);
+            }
+        }
+        return "Unknown Image";
     }
 
 }

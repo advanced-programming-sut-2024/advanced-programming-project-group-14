@@ -29,8 +29,8 @@ public class Main{
         Faction faction2 = new Faction("faction2","faction2.jpg");
         Card card1 = new Card("card1",10,2,"1","aloo","", "card1.jpg", 1);
         Card card2 = new Card("card2",15,1,"2","salam","", "card2.jpg", 2);
-        Card card3 = new Card("card3",5,3,"3","","", "card3.jpg", 1);
-        Card card4 = new Card("card4",10,2,"4","","", "card4.jpg", 3);
+        Card card3 = new Card("leader1",5,3,"3","","", "leader1.jpg", 1);
+        Card card4 = new Card("leader2",10,2,"4","","", "leader2.jpg", 3);
         Commander commander1 = new Commander(card3,faction1);
         Commander commander2 = new Commander(card4, faction2);
     }

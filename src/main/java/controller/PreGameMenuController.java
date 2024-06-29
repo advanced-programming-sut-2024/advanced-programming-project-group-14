@@ -15,8 +15,7 @@ public class PreGameMenuController {
         return new Result(true, "");
     }
 
-    public static Result selectFaction(String factionName) {
-        Faction faction = Faction.getFactionByName(factionName);
+    public static Result selectFaction(Faction faction) {
         currentPlayer.setFaction(faction);
         return new Result(true, "Selected successfully");
     }
@@ -60,8 +59,6 @@ public class PreGameMenuController {
         return new Result(true, "saved successfully");
     }
 
-
-
     public static Result loadDeck(String flag, String input) {
         if(flag.equals("-f")){
             String fileAddress = input;
@@ -73,9 +70,6 @@ public class PreGameMenuController {
         }
         return new Result(true, "");
     }
-
-
-
 
     public static Result showLeaders() {
 

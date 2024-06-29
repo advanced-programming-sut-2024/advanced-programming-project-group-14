@@ -35,6 +35,10 @@ public class Faction {
         this.commanders = commanders;
     }
 
+    public void addCommander(Commander commanders) {
+        this.commanders.add(commanders);
+    }
+
     public static Faction getFactionByName(String name) {
         for (Faction faction : factions) {
             if (faction.getName().equals(name)) {
@@ -56,4 +60,12 @@ public class Faction {
         return factions;
     }
 
+    public static Faction getFactionByPhotoName(String photoName) {
+        for (Faction faction : factions) {
+            if (faction.getPhotoName().equals(photoName)) {
+                return faction;
+            }
+        }
+        return null;
+    }
 }
