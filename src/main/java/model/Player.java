@@ -1,6 +1,9 @@
 package model;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -135,6 +138,14 @@ public class Player extends User {
         }
     }
     public void saveDeckByDeckName(String deckName) {
+        Path directoryPath = Paths.get("data/decks");
+        if(!Files.exists(directoryPath)){
+            try {
+                Files.createDirectories(directoryPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         try(FileOutputStream fileOutputStream = new FileOutputStream("data/decks/"+deckName)){
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(super.getDeck());

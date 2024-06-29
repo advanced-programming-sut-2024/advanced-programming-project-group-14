@@ -3,6 +3,9 @@ package controller;
 import model.*;
 
 import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -55,6 +58,13 @@ public class PreGameMenuController {
         }
         else if(flag.equals("-n")){
             String deckName = input;
+            Path path = Paths.get("data/decks/"+deckName);
+            if(deckName==null){
+                return new Result(false, "invalid deck name");
+            }
+            if(Files.exists(path)){
+                return new Result(false, "deck name already exists");
+            }
             currentPlayer.saveDeckByDeckName(deckName);
         }
         return new Result(true, "saved successfully");
