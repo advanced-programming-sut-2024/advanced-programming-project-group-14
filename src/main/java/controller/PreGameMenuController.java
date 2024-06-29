@@ -10,29 +10,8 @@ public class PreGameMenuController {
     public static Player currentPlayer;
     public static Player opponentPlayer;
 
-    public static Result showFaction() {
-
-        return new Result(true, "");
-    }
-
-    public static Result selectFaction(Faction faction) {
+    public static void selectFaction(Faction faction) {
         currentPlayer.setFaction(faction);
-        return new Result(true, "Selected successfully");
-    }
-
-    public static Result showCards() {
-
-        return new Result(true, "");
-    }
-
-    public static Result showDeck() {
-
-        return new Result(true, "");
-    }
-
-    public static Result showCurrentUserInfo() {
-
-        return new Result(true, "");
     }
 
     public static Result saveDeck(String flag, String input) {
@@ -71,20 +50,11 @@ public class PreGameMenuController {
         return new Result(true, "");
     }
 
-    public static Result showLeaders() {
-
-        return new Result(true, "");
+    public static void selectLeader(Commander commander) {
+        currentPlayer.setCommander(commander);
     }
 
-    public static Result selectLeader(int number) {
-        Faction faction = currentPlayer.getFaction();
-        currentPlayer.setCommander(faction.getCommanderByNumber(number));
-        return new Result(true, "selected successfully");
-    }
-
-
-    public static Result addToDeck(String cardName) {
-        Card card = Card.getCardByName(cardName);
+    public static Result addToDeck(Card card) {
         if(card==null){
             return new Result(false, "invalid card name");
         }
@@ -103,12 +73,10 @@ public class PreGameMenuController {
         return new Result(true, "added successfully");
     }
 
-
     public static Result deleteFromDeck(Card card) {
         currentPlayer.deleteFromDeck(card);
         return new Result(true, "deleted successfully");
     }
-
 
     public static Result changeTurn() {
         if(currentPlayer.getDeck().size()<22){
@@ -129,16 +97,8 @@ public class PreGameMenuController {
         return new Result(true, "game started successfully");
     }
 
-    public static String getCurrentPlayerName(){
-        return currentPlayer.getUsername();
-    }
-
-    public static ArrayList<Card> getCurrentPlayerDeck() {
-        return currentPlayer.getDeck();
-    }
-
-    public static Faction getCurrentPlayerFaction() {
-        return currentPlayer.getFaction();
+    public static Player getCurrentPlayer(){
+        return currentPlayer;
     }
 
     public static String getCurrentPlayerFactionName() {

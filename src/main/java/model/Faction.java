@@ -7,15 +7,15 @@ public class Faction {
     private String photoName;
     private ArrayList<Commander> commanders = new ArrayList<>();
 
+    private ArrayList<Card> cards = new ArrayList<>();
+
     private static ArrayList<Faction> factions = new ArrayList<>();
 
     public Faction(String name, String photoName){
         this.name = name;
         this.photoName = photoName;
 
-        for (int i = 0; i < 10; i++) {
-            factions.add(this);
-        }
+        factions.add(this);
     }
 
     public ArrayList<Commander> getCommanders() {
@@ -68,4 +68,21 @@ public class Faction {
         }
         return null;
     }
+
+    public Commander getCommanderByPhotoName(String photoName) {
+        for (Commander commander: this.commanders) {
+            if (commander.getPhotoName().equals(photoName))
+                return commander;
+        }
+        return null;
+    }
+
+    public void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+
 }

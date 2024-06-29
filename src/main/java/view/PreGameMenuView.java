@@ -20,7 +20,6 @@ import model.Result;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class PreGameMenuView extends MenuView{
     public static Stage stage;
@@ -80,6 +79,8 @@ public class PreGameMenuView extends MenuView{
                 Faction faction = Faction.getFactionByPhotoName(photoName);
                 ButtonType buttonType = showConfirmMessage("You want to change faction to "+ faction.getName() + "?");
                 if (buttonType == ButtonType.OK){
+                    //ToDo
+                    // Clear Deck
                     PreGameMenuController.selectFaction(faction);
                     showSuccessfulMessage(faction.getName() + " chose as your faction");
                     infoGrid.getChildren().clear();
@@ -90,38 +91,79 @@ public class PreGameMenuView extends MenuView{
         }
     }
 
+    public void showLeaders() {
+        infoGrid.getChildren().clear();
+        if (PreGameMenuController.getCurrentPlayer().getFaction() == null){
+            showError("Choose a faction first!");
+            return;
+        }
+
+        ArrayList<Commander> leaders = PreGameMenuController.getCurrentPlayer().getFaction().getCommanders();
+        for (int i = 0; i < leaders.size(); i++) {
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getPhotoName()))));
+            imageView.setFitWidth(150);
+            imageView.setFitHeight(100);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
+                Commander commander = PreGameMenuController.getCurrentPlayer().getFaction().getCommanderByPhotoName(photoName);
+                ButtonType buttonType = showConfirmMessage("You want to choose "+ commander.getName() + " as leader?");
+                if (buttonType == ButtonType.OK){
+                    PreGameMenuController.selectLeader(commander);
+                    showSuccessfulMessage(commander.getName() + " chose as your leader");
+                    infoGrid.getChildren().clear();
+                }
+            });
+            int columnIndex = i % 4;
+            infoGrid.add(imageView, columnIndex, (int) (i/4));
+        }
+    }
+
     public void showCards() {
         infoGrid.getChildren().clear();
+        if (PreGameMenuController.getCurrentPlayer().getFaction() == null){
+            showError("Choose a faction first!");
+            return;
+        }
 
-        ArrayList<Card> cards = Card.getCards();
+        ArrayList<Card> cards = PreGameMenuController.getCurrentPlayer().getFaction().getCards();
         for (int i = 0; i < cards.size(); i++) {
-            Label label = new Label(cards.get(i).getName());
-            label.setStyle("-fx-text-fill: #d4af37; -fx-font-size: 14px;");
-
-            // Assuming images are stored in the resources folder
-            ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/Images/" + cards.get(i).getPhotoName())));
-            imageView.setFitWidth(100);
-            imageView.setFitHeight(150);
-
-            infoGrid.add(label, 0, i);
-            infoGrid.add(imageView, 1, i);
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getPhotoName()))));
+            imageView.setFitWidth(150);
+            imageView.setFitHeight(100);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
+                Card card = Card.getCardByPhotoName(photoName);
+                PreGameMenuController.addToDeck(card);
+                showSuccessfulMessage(card.getName() + " added to deck");
+            });
+            int columnIndex = i % 4;
+            infoGrid.add(imageView, columnIndex, (int) (i/4));
         }
     }
 
     public void showDeck() {
         infoGrid.getChildren().clear();
-        ArrayList<Card> deck = PreGameMenuController.getCurrentPlayerDeck();
+        if (PreGameMenuController.getCurrentPlayer().getDeck().size() == 0){
+            showError("Deck is empty");
+            return;
+        }
+
+        ArrayList<Card> deck = PreGameMenuController.getCurrentPlayer().getDeck();
         for (int i = 0; i < deck.size(); i++) {
-            Label label = new Label(deck.get(i).getName());
-            label.setStyle("-fx-text-fill: #d4af37; -fx-font-size: 14px;");
-
-            // Assuming images are stored in the resources folder
-            ImageView imageView = new ImageView(new Image(getClass().getResourceAsStream("/Images/" + deck.get(i).getPhotoName())));
-            imageView.setFitWidth(100);
-            imageView.setFitHeight(150);
-
-            infoGrid.add(label, 0, i);
-            infoGrid.add(imageView, 1, i);
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + deck.get(i).getPhotoName()))));
+            imageView.setFitWidth(150);
+            imageView.setFitHeight(100);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
+                Card card = Card.getCardByPhotoName(photoName);
+                ButtonType buttonType = showConfirmMessage("You want to remove "+ card.getName() + " from deck?");
+                if (buttonType == ButtonType.OK){
+                    PreGameMenuController.deleteFromDeck(card);
+                    showSuccessfulMessage(card.getName() + " removed");
+                }
+            });
+            int columnIndex = i % 4;
+            infoGrid.add(imageView, columnIndex, (int) (i/4));
         }
     }
 
@@ -129,11 +171,11 @@ public class PreGameMenuView extends MenuView{
         infoGrid.getChildren().clear();
 
         String[] labels = {"Player Name", "Faction Name", "Cards in Hand", "Number of Soldiers", "Special Cards", "Hero Cards", "Total Power"};
-        String name = PreGameMenuController.getCurrentPlayerName();
+        String name = PreGameMenuController.getCurrentPlayer().getUsername();
         String factionName = PreGameMenuController.getCurrentPlayerFactionName();
         String handSize = String.valueOf(PreGameMenuController.getCurrentPlayerHandSize());
         String numberOfSoldiers = String.valueOf(PreGameMenuController.getCurrentPlayerNumberOfSoldiers());
-        String numberOfSpecialCards = String.valueOf(PreGameMenuController.getCurrentPlayerDeck().size()-PreGameMenuController.getCurrentPlayerNumberOfSoldiers());
+        String numberOfSpecialCards = String.valueOf(PreGameMenuController.getCurrentPlayer().getDeck().size()-PreGameMenuController.getCurrentPlayerNumberOfSoldiers());
         String numberOfHeroCards = String.valueOf(PreGameMenuController.getCurrentPlayerNumberOfHeroes());
         String totalPower = String.valueOf(PreGameMenuController.getCurrentPlayerTotalDeckPower());
         String[] values = {name, factionName, handSize, numberOfSoldiers, String.valueOf(numberOfSpecialCards), String.valueOf(numberOfHeroCards), String.valueOf(totalPower)};
@@ -149,34 +191,15 @@ public class PreGameMenuView extends MenuView{
         }
     }
 
-    public void showLeaders() {
-        infoGrid.getChildren().clear();
-        if (PreGameMenuController.getCurrentPlayerFaction() == null){
-            showError("Choose a faction first!");
-            return;
-        }
-
-        ArrayList<Commander> leaders = PreGameMenuController.getCurrentPlayerFaction().getCommanders();
-        for (int i = 0; i < leaders.size(); i++) {
-            Label label = new Label(leaders.get(i).getName());
-            label.setStyle("-fx-text-fill: #d4af37; -fx-font-size: 14px;");
-
-            // Assuming images are stored in the resources folder
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getPhotoName()))));
-            imageView.setFitWidth(100);
-            imageView.setFitHeight(150);
-
-            infoGrid.add(label, 0, i);
-            infoGrid.add(imageView, 1, i);
-        }
-    }
-
     public void changeTurn() {
         Result result = PreGameMenuController.changeTurn();
         if (!result.isSuccessful())
             showError(result.getMessage());
-        else
+        else{
             showSuccessfulMessage(result.getMessage());
+            infoGrid.getChildren().clear();
+        }
+
     }
 
     private String getPhotoNameFromUrl(String Url){

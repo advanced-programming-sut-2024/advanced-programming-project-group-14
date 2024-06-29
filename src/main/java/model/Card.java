@@ -23,10 +23,8 @@ public class Card {
         this.description = description;
         this.photoName = photoName;
         this.validRows = validRows;
-    }
 
-    public static ArrayList<Card> getCards() {
-        return cards;
+        cards.add(this);
     }
 
     public String getName() {
@@ -57,6 +55,14 @@ public class Card {
         return validRows;
     }
 
+    public String getPhotoName() {
+        return photoName;
+    }
+
+    public static ArrayList<Card> getCards() {
+        return cards;
+    }
+
     public static Card getCardByName(String name){
         for (Card card : cards) {
             if (card.getName().equals(name)){
@@ -66,7 +72,13 @@ public class Card {
         return null;
     }
 
-    public String getPhotoName() {
-        return photoName;
+    public static Card getCardByPhotoName(String photoName) {
+        for (Card card : cards) {
+            if (card.getPhotoName().equals(photoName)){
+                return card;
+            }
+        }
+        return null;
     }
+
 }
