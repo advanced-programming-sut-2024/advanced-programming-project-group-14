@@ -77,14 +77,6 @@ public class Faction {
         return null;
     }
 
-    public Commander getCommanderByPhotoName(String photoName) {
-        for (Commander commander: this.commanders) {
-            if (commander.getPhotoName().equals(photoName))
-                return commander;
-        }
-        return null;
-    }
-
     public void setCards(ArrayList<Card> cards) {
         this.cards = cards;
     }

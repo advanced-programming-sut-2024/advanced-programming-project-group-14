@@ -4,310 +4,93 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
+    <list default="true" id="1281566d-b50d-4d1c-ab4b-62ae64410afd" name="Changes" comment="Resume separate the register and login menu">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Commander.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Commander.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Faction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/PreGameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/PreGameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Faction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Faction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Soldier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Soldier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Spell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="menu-graphics" />
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="affc7b839d156ae19564e5e15103989bb5cc6694" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2iQEljNQPKnZoifcUU3KtHdmnnU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.LoginMenuView.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/javaPrograms/advanced-programming-project-group-14&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
-      <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main\java" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="view" />
+      <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="graft" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="" />
-      <created>1718886000270</created>
+      <changelist id="1281566d-b50d-4d1c-ab4b-62ae64410afd" name="Changes" comment="" />
+      <created>1719414553351</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1718886000270</updated>
-      <workItem from="1718886001557" duration="1644000" />
-      <workItem from="1718906771249" duration="48000" />
-      <workItem from="1718908420536" duration="3923000" />
-      <workItem from="1718959175877" duration="8522000" />
-      <workItem from="1719137757192" duration="33058000" />
-      <workItem from="1719406446357" duration="1437000" />
-      <workItem from="1719407955540" duration="915000" />
-      <workItem from="1719411360082" duration="17636000" />
-      <workItem from="1719443090022" duration="2701000" />
-      <workItem from="1719469514542" duration="13619000" />
-      <workItem from="1719580604325" duration="17249000" />
-      <workItem from="1719644171364" duration="3981000" />
-      <workItem from="1719668195405" duration="8084000" />
+      <updated>1719414553351</updated>
+      <workItem from="1719414554391" duration="5177000" />
+      <workItem from="1719764802863" duration="2383000" />
+      <workItem from="1719770740970" duration="594000" />
     </task>
-    <task id="LOCAL-00001" summary="pom.xml updated">
-      <created>1718898421248</created>
+    <task id="LOCAL-00001" summary="Separate the register and login menu">
+      <option name="closed" value="true" />
+      <created>1719416999147</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1718898421248</updated>
+      <updated>1719416999148</updated>
     </task>
-    <task id="LOCAL-00002" summary="Main menu fxml added">
-      <created>1718908623953</created>
+    <task id="LOCAL-00002" summary="Resume separate the register and login menu">
+      <option name="closed" value="true" />
+      <created>1719417468014</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1718908623953</updated>
+      <updated>1719417468014</updated>
     </task>
-    <task id="LOCAL-00003" summary="Questions dialog added">
-      <created>1718914556620</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1718914556620</updated>
-    </task>
-    <task id="LOCAL-00004" summary="New password dialog added">
-      <created>1718975977656</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1718975977656</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Profile menu added">
-      <created>1718982518302</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1718982518302</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Random button and Stay Login added">
-      <created>1719332328108</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1719332328108</updated>
-    </task>
-    <task id="LOCAL-00007" summary="PreGame fxml added">
-      <created>1719332380839</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1719332380839</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Directions of methods fixed">
-      <created>1719403438866</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1719403438866</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Wrong merge fixed">
-      <created>1719406041541</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1719406041541</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Dahanemon service shod valy ok kardim">
-      <created>1719413228885</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1719413228885</updated>
-    </task>
-    <task id="LOCAL-00011" summary="MenuView added">
-      <created>1719414687957</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1719414687958</updated>
-    </task>
-    <task id="LOCAL-00012" summary="changeMenu and login mthod addded">
-      <created>1719417015503</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1719417015503</updated>
-    </task>
-    <task id="LOCAL-00013" summary="misc.xml updated">
-      <created>1719417621430</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1719417621430</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Unversioned Files">
-      <created>1719417785672</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1719417785672</updated>
-    </task>
-    <task id="LOCAL-00015" summary="MenuView completed">
-      <created>1719439017978</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1719439017978</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Register Menu completed">
-      <created>1719439549183</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1719439549183</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Dialogs completed">
-      <created>1719441642340</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1719441642340</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Main Menu completed">
-      <created>1719442735662</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1719442735662</updated>
-    </task>
-    <task id="LOCAL-00019" summary="ShowUserInfo method completed">
-      <created>1719445558345</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1719445558345</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Show game history compeleted">
-      <created>1719506134258</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1719506134258</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Set style for show game history">
-      <created>1719585614268</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1719585614268</updated>
-    </task>
-    <task id="LOCAL-00022" summary="back button added to profile menu">
-      <created>1719585980637</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1719585980637</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Show question after register">
-      <created>1719592427113</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1719592427113</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Check new password fixed">
-      <created>1719593062546</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1719593062546</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Start of PreGame Menu">
-      <created>1719613020905</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1719613020905</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Show faction completed">
-      <created>1719646091298</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1719646091298</updated>
-    </task>
-    <task id="LOCAL-00027" summary="PreGame menu completed">
-      <created>1719647937475</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1719647937475</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Labels added">
-      <created>1719764971943</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1719764971943</updated>
-    </task>
-    <option name="localTasksCounter" value="29" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,50 +101,15 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="main" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="New password dialog added" />
-    <MESSAGE value="Profile menu added" />
-    <MESSAGE value="Random button and Stay Login added" />
-    <MESSAGE value="PreGame fxml added" />
-    <MESSAGE value="Directions of methods fixed" />
-    <MESSAGE value="Wrong merge fixed" />
-    <MESSAGE value="Dahanemon service shod valy ok kardim" />
-    <MESSAGE value="MenuView added" />
-    <MESSAGE value="changeMenu and login mthod addded" />
-    <MESSAGE value="misc.xml updated" />
-    <MESSAGE value="Unversioned Files" />
-    <MESSAGE value="MenuView completed" />
-    <MESSAGE value="Register Menu completed" />
-    <MESSAGE value="Dialogs completed" />
-    <MESSAGE value="Main Menu completed" />
-    <MESSAGE value="ShowUserInfo method completed" />
-    <MESSAGE value="Show game history compeleted" />
-    <MESSAGE value="Set style for show game history" />
-    <MESSAGE value="back button added to profile menu" />
-    <MESSAGE value="Show question after register" />
-    <MESSAGE value="Check new password fixed" />
-    <MESSAGE value="Start of PreGame Menu" />
-    <MESSAGE value="Show faction completed" />
-    <MESSAGE value="PreGame menu completed" />
-    <MESSAGE value="Labels added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Labels added" />
+    <MESSAGE value="Separate the register and login menu" />
+    <MESSAGE value="Resume separate the register and login menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resume separate the register and login menu" />
   </component>
 </project>

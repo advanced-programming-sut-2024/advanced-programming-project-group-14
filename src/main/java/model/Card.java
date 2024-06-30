@@ -3,28 +3,27 @@ package model;
 import java.util.ArrayList;
 
 public class Card {
-
     private String name;
     private int power;
-    private String type;
     private int capacity;
-    private String ability;
+    private String type;
+    private String factionName;
+    private boolean isHero;
     private String description;
-    private String photoName;
-    private int validRows;
     private static ArrayList<Card> cards = new ArrayList<>();
 
-    public Card(String name, int power, int capacity, String type, String ability, String description, String photoName, int validRows) {
+    public Card(String name, int power, int capacity , String type, String factionName, boolean isHero, String description) {
         this.name = name;
         this.power = power;
         this.type = type;
         this.capacity = capacity;
-        this.ability = ability;
+        this.factionName = factionName;
+        this.isHero = isHero;
         this.description = description;
-        this.photoName = photoName;
-        this.validRows = validRows;
+    }
 
-        cards.add(this);
+    public static ArrayList<Card> getCards() {
+        return cards;
     }
 
     public String getName() {
@@ -38,9 +37,8 @@ public class Card {
     public String getType() {
         return type;
     }
-
-    public String getAbility() {
-        return ability;
+    public boolean isHero() {
+        return isHero;
     }
 
     public String getDescription() {
@@ -51,30 +49,13 @@ public class Card {
         return capacity;
     }
 
-    public int getValidRows() {
-        return validRows;
-    }
-
-    public String getPhotoName() {
-        return photoName;
-    }
-
-    public static ArrayList<Card> getCards() {
-        return cards;
+    public String getFactionName() {
+        return factionName;
     }
 
     public static Card getCardByName(String name){
         for (Card card : cards) {
             if (card.getName().equals(name)){
-                return card;
-            }
-        }
-        return null;
-    }
-
-    public static Card getCardByPhotoName(String photoName) {
-        for (Card card : cards) {
-            if (card.getPhotoName().equals(photoName)){
                 return card;
             }
         }
