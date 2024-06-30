@@ -6,7 +6,6 @@ public class Faction {
     private String name;
     private String photoName;
     private ArrayList<Commander> commanders = new ArrayList<>();
-
     private ArrayList<Card> cards = new ArrayList<>();
 
     private static ArrayList<Faction> factions = new ArrayList<>();
@@ -16,6 +15,13 @@ public class Faction {
         this.photoName = photoName;
 
         factions.add(this);
+    }
+
+    public Faction(Faction faction){
+        this.name = faction.getName();
+        this.photoName = faction.getName();
+        this.commanders = faction.getCommanders();
+        this.cards = faction.getCards();
     }
 
     public ArrayList<Commander> getCommanders() {

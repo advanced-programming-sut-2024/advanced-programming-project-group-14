@@ -20,12 +20,19 @@ import model.Result;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class PreGameMenuView extends MenuView{
     public static Stage stage;
+    public int cardWidth = 150;
+    public int cardHeight = 250;
+    public int cardCountInRow = 9;
 
     @FXML
     private GridPane infoGrid;
+    public Label remainCardsLabel;
+    public Label deckSizeLabel;
+
 
     public static void run() {
         launch();
@@ -38,9 +45,9 @@ public class PreGameMenuView extends MenuView{
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         stage.setScene(scene);
-        stage.setTitle("Main Menu");
-        stage.setHeight(600);
-        stage.setWidth(800);
+        stage.setTitle("PreGame Menu");
+        stage.setMaximized(true);
+        stage.setResizable(false);
         stage.show();
     }
 
@@ -72,8 +79,8 @@ public class PreGameMenuView extends MenuView{
         ArrayList<Faction> factions = Faction.getFactions();
         for (int i = 0; i < factions.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getPhotoName()))));
-            imageView.setFitWidth(150);
-            imageView.setFitHeight(100);
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
                 Faction faction = Faction.getFactionByPhotoName(photoName);
@@ -84,10 +91,11 @@ public class PreGameMenuView extends MenuView{
                     PreGameMenuController.selectFaction(faction);
                     showSuccessfulMessage(faction.getName() + " chose as your faction");
                     infoGrid.getChildren().clear();
+                    updateLabels();
                 }
             });
-            int columnIndex = i % 4;
-            infoGrid.add(imageView, columnIndex, (int) (i/4));
+            int columnIndex = i % cardCountInRow;
+            infoGrid.add(imageView, columnIndex, (int) (i/cardCountInRow));
         }
     }
 
@@ -101,8 +109,8 @@ public class PreGameMenuView extends MenuView{
         ArrayList<Commander> leaders = PreGameMenuController.getCurrentPlayer().getFaction().getCommanders();
         for (int i = 0; i < leaders.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getPhotoName()))));
-            imageView.setFitWidth(150);
-            imageView.setFitHeight(100);
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
                 Commander commander = PreGameMenuController.getCurrentPlayer().getFaction().getCommanderByPhotoName(photoName);
@@ -113,8 +121,8 @@ public class PreGameMenuView extends MenuView{
                     infoGrid.getChildren().clear();
                 }
             });
-            int columnIndex = i % 4;
-            infoGrid.add(imageView, columnIndex, (int) (i/4));
+            int columnIndex = i % cardCountInRow;
+            infoGrid.add(imageView, columnIndex, (int) (i/cardCountInRow));
         }
     }
 
@@ -127,17 +135,19 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Card> cards = PreGameMenuController.getCurrentPlayer().getFaction().getCards();
         for (int i = 0; i < cards.size(); i++) {
+            System.out.println("freafs");
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getPhotoName()))));
-            imageView.setFitWidth(150);
-            imageView.setFitHeight(100);
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
                 Card card = Card.getCardByPhotoName(photoName);
                 PreGameMenuController.addToDeck(card);
-                showSuccessfulMessage(card.getName() + " added to deck");
+                infoGrid.getChildren().remove(imageView);
+                updateLabels();
             });
-            int columnIndex = i % 4;
-            infoGrid.add(imageView, columnIndex, (int) (i/4));
+            int columnIndex = i % cardCountInRow;
+            infoGrid.add(imageView, columnIndex, (int) (i/cardCountInRow));
         }
     }
 
@@ -151,19 +161,17 @@ public class PreGameMenuView extends MenuView{
         ArrayList<Card> deck = PreGameMenuController.getCurrentPlayer().getDeck();
         for (int i = 0; i < deck.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + deck.get(i).getPhotoName()))));
-            imageView.setFitWidth(150);
-            imageView.setFitHeight(100);
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
                 Card card = Card.getCardByPhotoName(photoName);
-                ButtonType buttonType = showConfirmMessage("You want to remove "+ card.getName() + " from deck?");
-                if (buttonType == ButtonType.OK){
-                    PreGameMenuController.deleteFromDeck(card);
-                    showSuccessfulMessage(card.getName() + " removed");
-                }
+                PreGameMenuController.deleteFromDeck(card);
+                infoGrid.getChildren().remove(imageView);
+                updateLabels();
             });
-            int columnIndex = i % 4;
-            infoGrid.add(imageView, columnIndex, (int) (i/4));
+            int columnIndex = i % cardCountInRow;
+            infoGrid.add(imageView, columnIndex, (int) (i/cardCountInRow));
         }
     }
 
@@ -198,6 +206,7 @@ public class PreGameMenuView extends MenuView{
         else{
             showSuccessfulMessage(result.getMessage());
             infoGrid.getChildren().clear();
+            updateLabels();
         }
 
     }
@@ -215,4 +224,8 @@ public class PreGameMenuView extends MenuView{
         return "Unknown Image";
     }
 
+    private void updateLabels(){
+        remainCardsLabel.setText("Cards remains: " + PreGameMenuController.currentPlayer.getFaction().getCards().size());
+        deckSizeLabel.setText("Cards in deck: " + PreGameMenuController.currentPlayer.getDeck().size());
+    }
 }

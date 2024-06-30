@@ -69,11 +69,14 @@ public class PreGameMenuController {
                 return new Result(false, "you can't have more than 10 special cards in your deck");
             }
         }
+
+        currentPlayer.getFaction().getCards().remove(card);
         currentPlayer.addToDeck(card);
         return new Result(true, "added successfully");
     }
 
     public static Result deleteFromDeck(Card card) {
+        currentPlayer.getFaction().getCards().add(card);
         currentPlayer.deleteFromDeck(card);
         return new Result(true, "deleted successfully");
     }
@@ -108,9 +111,9 @@ public class PreGameMenuController {
     }
 
     public static int getCurrentPlayerHandSize() {
-        if(currentPlayer.getHand() == null)
+        if(currentPlayer.getDeck() == null)
             return 0;
-        return currentPlayer.getHand().size();
+        return currentPlayer.getDeck().size();
     }
 
     public static int getCurrentPlayerNumberOfSoldiers() {
