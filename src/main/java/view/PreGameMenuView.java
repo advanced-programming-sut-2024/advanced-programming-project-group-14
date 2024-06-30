@@ -83,11 +83,10 @@ public class PreGameMenuView extends MenuView{
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
-                Faction faction = Faction.getFactionByPhotoName(photoName);
+                Faction faction = new Faction(Faction.getFactionByPhotoName(photoName));
                 ButtonType buttonType = showConfirmMessage("You want to change faction to "+ faction.getName() + "?");
                 if (buttonType == ButtonType.OK){
-                    //ToDo
-                    // Clear Deck
+                    PreGameMenuController.currentPlayer.setDeck(new ArrayList<>());
                     PreGameMenuController.selectFaction(faction);
                     showSuccessfulMessage(faction.getName() + " chose as your faction");
                     infoGrid.getChildren().clear();
@@ -135,7 +134,6 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Card> cards = PreGameMenuController.getCurrentPlayer().getFaction().getCards();
         for (int i = 0; i < cards.size(); i++) {
-            System.out.println("freafs");
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getPhotoName()))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);

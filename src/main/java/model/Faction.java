@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 
 public class Faction {
     private String name;
@@ -20,8 +22,8 @@ public class Faction {
     public Faction(Faction faction){
         this.name = faction.getName();
         this.photoName = faction.getName();
-        this.commanders = faction.getCommanders();
-        this.cards = faction.getCards();
+        this.commanders = new ArrayList<>(faction.getCommanders());
+        this.cards = new ArrayList<>(faction.getCards());
     }
 
     public ArrayList<Commander> getCommanders() {

@@ -140,9 +140,14 @@ public class User {
         return deck;
     }
 
+    public void setDeck(ArrayList<Card> deck) {
+        this.deck = deck;
+    }
+
     public void addToDeck(Card card) {
         this.deck.add(card);
     }
+
     public void deleteFromDeck(Card card) {
         this.deck.remove(card);
     }
@@ -153,6 +158,7 @@ public class User {
         }
         return null;
     }
+
     public void saveDeckByFileAddress(String fileAddress) {
         try (FileWriter fileWriter = new FileWriter(fileAddress)) {
             for (Card card : deck) {
