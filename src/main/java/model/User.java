@@ -29,7 +29,13 @@ public class User {
         this.email = email;
         this.gamePlayed = new ArrayList<>();
         this.deck = new ArrayList<>();
-        allUsers.add(this);
+
+        User.addUser(this);
+    }
+
+    private static void addUser(User user) {
+        if (User.getUserByUsername(user.getUsername())==null)
+            allUsers.add(user);
     }
 
     public static User getLoggedInUser() {
