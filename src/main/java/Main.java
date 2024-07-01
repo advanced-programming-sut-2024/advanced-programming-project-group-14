@@ -1,5 +1,6 @@
 import controller.PreGameMenuController;
 import model.*;
+import view.GameMenuView;
 import view.LoginMenuView;
 import view.PreGameMenuView;
 
