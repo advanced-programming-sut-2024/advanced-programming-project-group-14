@@ -57,18 +57,62 @@ public class LoadController {
     }
 
     private void loadMusterCards() {
+        new Muster("Cerys", 10, 1, "Close Combat Unit", "Skellige", true, "Its Muster effect will summon Shield Maiden cards and other musters.");
+        new Muster("Light Longship", 4, 3, "Ranged Unit", "Skellige", false, "");
+        new Muster("Elven Skirmisher", 2, 3, "Ranged Unit", "Scoia'tael", false, "");
+        new Muster("Dwarven Skirmisher", 3, 3, "Close Combat Unit", "Scoia'tael", false, "");
+        new Muster("Havekar Smuggler", 5, 3, "Close Combat Unit", "Scoia'tael", false, "");
+        new Muster("Arachas Behemoth", 6, 1, "Siege Unit", "Monsters", false, "");
+        new Muster("Crone: Brewess", 6, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Crone: Weavess", 6, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Crone: Whispess", 6, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire: Katakan", 5, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Arachas", 4, 3, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire: Bruxa", 4, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire: Ekimmara", 4, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire: Fleder", 4, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire: Garkain", 4, 1, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Nekker", 2, 3, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Ghoul", 1, 3, "Close Combat Unit", "Monsters", false, "");
+        new Muster("Gaunter O’Dimm", 2, 1, "Siege Unit", "Neutral", false, "");
+        new Muster("Gaunter O’DImm Darkness", 4, 3, "Ranged Unit", "Neutral", false, "");
     }
 
     private void loadScorchCards() {
+        new Scorch("Clan Dimun Pirate", 6, 1, "Ranged Unit", "Skellige", false, "kills opponent card(s) with most power(does not matter in which row in this card)");
+        new Scorch("Schirru", 8, 1, "Siege Unit", "Scoia'tael", false, "kills the opponent's card(s) with most power in enemy's Siege combat row if the sum of powers of none-hero cards in this row is 10 or more");
+        new Scorch("Toad", 7, 1, "Ranged Unit", "Monsters", false, "kills the opponent's card(s) with most power in enemy's Ranged combat row if the sum of powers of none-hero cards in this row is 10 or more");
+        new Scorch("Scorch", 0, 3, "Spell", "Neutral", false, "Remove card(s) with the maximum power points in the field (ignores heroes)");
+        new Scorch("Villentretenmerth", 7, 1, "Close Combat Unit", "Neutral", false, "Works only on opponent’s close combat");
     }
 
     private void loadSpyCards() {
+        new Spy("Prince Stennis", 5, 1, "Close Combat Unit", "Northern Realms", false, "");
+        new Spy("Sigismund Dijkstra", 4, 1, "Close Combat Unit", "Northern Realms", false, "");
+        new Spy("Thaler", 1, 1, "Siege Unit", "Northern Realms", false, "");
+        new Spy("Stefan Skellen", 9, 1, "Close Combat Unit", "Nilfgaard", false, "");
+        new Spy("Shilard Fitz-Oesterlen", 7, 1, "Close Combat Unit", "Nilfgaard", false, "");
+        new Spy("Vattier de Rideaux", 4, 1, "Close Combat Unit", "Nilfgaard", false, "");
+        new Spy("Mysterious Elf", 0, 1, "Close Combat Unit", "Neutral", true, "");
     }
 
     private void loadTightBondCards() {
+        new TightBond("Clan An Craite", 6, 3, "Close Combat Unit", "Skellige", false, "");
+        new TightBond("Clan Drummond Shieldmaiden", 4, 3, "Close Combat Unit", "Skellige", false, "Can be Mustered by Cerys.");
+        new TightBond("Young Vidkaarl", 8, 0, "Ranged Unit", "Skellige", false, "it can only be played when a young berserker transform into it.");
+        new TightBond("War Longship", 6, 3, "Siege Unit", "Skellige", false, "");
+        new TightBond("Blue Stripes Commando", 4, 3, "Close Combat Unit", "Northern Realms", false, "");
+        new TightBond("Catapult", 8, 2, "Siege Unit", "Northern Realms", false, "");
+        new TightBond("Dragon Hunter", 5, 3, "Ranged Unit", "Northern Realms", false, "");
+        new TightBond("Poor Infantry", 1, 4, "Close Combat Unit", "Northern Realms", false, "");
+        new TightBond("Impera Brigade Guard" , 3, 4, "Close Combat Unit", "Nilfgaard", false, "");
+        new TightBond("Young Emissary", 5, 2, "Close Combat Unit", "Nilfgaard", false, "");
+        new TightBond("Nausicaa Cavalry Rider", 2, 3, "Close Combat Unit", "Nilfgaard", false, "");
     }
 
     private void loadTransformersCards() {
+        new Transformers("Kambi", 11, 1, "Close Combat Unit", "Skelliege", true, "Turns into a card with a power of 8 after one round");
+        new Transformers("Cow", 0, 1, "Ranged Unit", "Neutral", false, "Turns into a card with a power of 8 after one round");
     }
 
 
