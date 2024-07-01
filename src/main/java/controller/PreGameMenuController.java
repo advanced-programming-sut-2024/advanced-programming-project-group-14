@@ -92,12 +92,12 @@ public class PreGameMenuController {
     }
 
     public static Result startGame() {
-        if(currentPlayer.getDeck().size()<22){
-            return new Result(false, "deck is not full");
+        if(currentPlayer.getDeck().size()<22 || currentPlayer.getDeck().size()<22){
+            return new Result(false, "One of decks is not full");
         }
 
         new GameTable(Date.from(new Date().toInstant()), currentPlayer, opponentPlayer);
-        return new Result(true, "game started successfully");
+        return new Result(true, "Welcome to the game!");
     }
 
     public static Player getCurrentPlayer(){

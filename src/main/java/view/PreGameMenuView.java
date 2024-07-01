@@ -1,6 +1,7 @@
 package view;
 
 import controller.PreGameMenuController;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -225,5 +226,14 @@ public class PreGameMenuView extends MenuView{
     private void updateLabels(){
         remainCardsLabel.setText("Cards remains: " + PreGameMenuController.currentPlayer.getFaction().getCards().size());
         deckSizeLabel.setText("Cards in deck: " + PreGameMenuController.currentPlayer.getDeck().size());
+    }
+
+    public void startGame() {
+        Result result = PreGameMenuController.startGame();
+        if (!result.isSuccessful())
+            showError(result.getMessage());
+
+        showSuccessfulMessage(result.getMessage());
+        goToGameMenu(stage);
     }
 }

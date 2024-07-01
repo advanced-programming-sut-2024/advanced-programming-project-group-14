@@ -35,14 +35,13 @@
 
                 <VBox alignment="CENTER" spacing="10">
                     <HBox alignment="CENTER" spacing="20">
-                        <Button fx:id="loadDeckButton" text="Load Deck" onAction="#handleLoadDeckButtonClick"/>
-                        <Button fx:id="saveDeckButton" text="Save Deck" onAction="#handleSaveDeckButtonClick"/>
+                        <Button fx:id="loadDeckButton" text="Load deck" onAction="#handleLoadDeckButtonClick"/>
+                        <Button fx:id="saveDeckButton" text="Save deck" onAction="#handleSaveDeckButtonClick"/>
                     </HBox>
-                    <Button fx:id="changeTurnButton" text="Change Turn" onAction="#changeTurn"/>
+                    <Button fx:id="changeTurnButton" text="Change turn" onAction="#changeTurn"/>
+                    <Button fx:id="startButton" text="Start game" onAction="#startGame"/>
                 </VBox>
             </VBox>
         </StackPane>
-
-
     </content>
 </ScrollPane>
