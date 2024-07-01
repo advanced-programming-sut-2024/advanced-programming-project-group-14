@@ -139,12 +139,15 @@ public class User {
     public ArrayList<Card> getDeck() {
         return deck;
     }
-    public void setDeck(ArrayList<Card> deck){
+
+    public void setDeck(ArrayList<Card> deck) {
         this.deck = deck;
     }
+
     public void addToDeck(Card card) {
         this.deck.add(card);
     }
+
     public void deleteFromDeck(Card card) {
         this.deck.remove(card);
     }
@@ -155,6 +158,7 @@ public class User {
         }
         return null;
     }
+
     public int numberOfSpecificCardInDeck() {
         int count = 0;
         for (Card card : deck) {
@@ -164,12 +168,5 @@ public class User {
             }
         }
         return count;
-    }
-
-    public void loadDeckByFileAddress(String fileAddress) {
-        //todo
-    }
-    public void loadDeckByDeckName(String deckName){
-        //todo
     }
 }

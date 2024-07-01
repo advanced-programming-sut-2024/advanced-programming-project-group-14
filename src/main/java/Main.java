@@ -1,6 +1,7 @@
 import controller.PreGameMenuController;
 import model.*;
 import view.PreGameMenuView;
+import view.ScoreBoardMenuView;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -37,6 +38,6 @@ public class Main{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        PreGameMenuView.run();
+        ScoreBoardMenuView.run();
     }
 }
