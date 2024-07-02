@@ -1,10 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class Faction {
+public class Faction implements Serializable {
     private String name;
     private String photoName;
     private ArrayList<Commander> commanders = new ArrayList<>();

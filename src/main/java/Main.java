@@ -3,6 +3,7 @@ import model.*;
 import view.GameMenuView;
 import view.LoginMenuView;
 import view.PreGameMenuView;
+import view.ScoreBoardMenuView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +44,6 @@ public class Main{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        PreGameMenuView.run();
+        ScoreBoardMenuView.run();
     }
 }

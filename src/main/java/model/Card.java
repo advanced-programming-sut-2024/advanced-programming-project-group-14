@@ -1,12 +1,12 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Card {
+public class Card implements Serializable {
     private String name;
     private int power;
     private int capacity;
-    private String type;
     private String factionName;
     private boolean isHero;
     private String description;

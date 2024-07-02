@@ -59,8 +59,7 @@ public class ProfileMenuController {
         if (number.length() == 0) {
             if (numberOfGamePlayed < 5)
                 numberToShow = numberOfGamePlayed;
-        }
-        else if (Integer.parseInt(number) < 1)
+        } else if (Integer.parseInt(number) < 1)
             return new Result(false, "The number should be greater than 0");
 
         else if (numberOfGamePlayed == 0)

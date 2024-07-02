@@ -24,7 +24,7 @@ public class RegisterMenuController {
         if (!Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$", email))
             return new Result(false, "Email is invalid!");
 
-        Result checkPassword = checkPassword(password,passwordConfirm);
+        Result checkPassword = checkPassword(password, passwordConfirm);
         if (!checkPassword.isSuccessful())
             return checkPassword;
 
@@ -33,7 +33,7 @@ public class RegisterMenuController {
         return new Result(true, "Register successful");
     }
 
-    public static Result checkPassword(String password, String passwordConfirm){
+    public static Result checkPassword(String password, String passwordConfirm) {
         if (!Pattern.matches("^[a-zA-Z0-9!@#$%^&*]+$", password))
             return new Result(false, "Password is invalid!");
 
@@ -52,7 +52,7 @@ public class RegisterMenuController {
         if (!password.equals(passwordConfirm))
             return new Result(false, "Passwords are not same");
 
-        return new Result(true,"");
+        return new Result(true, "");
     }
 
     public static String generateRandomPassword() {

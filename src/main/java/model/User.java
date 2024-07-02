@@ -165,18 +165,6 @@ public class User {
         return null;
     }
 
-    public void saveDeckByFileAddress(String fileAddress) {
-        try (FileWriter fileWriter = new FileWriter(fileAddress)) {
-            for (Card card : deck) {
-                fileWriter.write(card + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void saveDeckByDeckName(String deckName){
-        //todo
-    }
     public int numberOfSpecificCardInDeck() {
         int count = 0;
         for (Card card : deck) {
@@ -186,12 +174,5 @@ public class User {
             }
         }
         return count;
-    }
-
-    public void loadDeckByFileAddress(String fileAddress) {
-        //todo
-    }
-    public void loadDeckByDeckName(String deckName){
-        //todo
     }
 }

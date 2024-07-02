@@ -1,6 +1,8 @@
 package model;
 
-public class Commander extends Card {
+import java.io.Serializable;
+
+public class Commander extends Card implements Serializable {
     private Faction faction;
     private int number;
 
