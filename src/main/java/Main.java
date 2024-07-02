@@ -32,14 +32,14 @@ public class Main{
         PreGameMenuController.opponentPlayer = new Player(user2);
         Faction faction1 = new Faction("faction1","faction1.jpg");
         Faction faction2 = new Faction("faction2","faction2.jpg");
-        Card card1 = new Card("card1",10,2,"1","aloo","", "card1.jpg", 1);
-        Card card2 = new Card("card2",15,1,"2","salam","", "card2.jpg", 2);
-        Card card3 = new Card("leader1",5,3,"3","","", "leader1.jpg", 1);
-        Card card4 = new Card("leader2",10,2,"4","","", "leader2.jpg", 3);
-        faction1.setCards(new ArrayList<>(Arrays.asList(card1,card1,card1,card2,card2)));
-        faction2.setCards(new ArrayList<>(Arrays.asList(card2)));
-        Commander commander1 = new Commander(card3,faction1);
-        Commander commander2 = new Commander(card4, faction2);
+//        Card card1 = new Card("card1",10,2,"1","aloo","", "card1.jpg", 1);
+//        Card card2 = new Card("card2",15,1,"2","salam","", "card2.jpg", 2);
+//        Card card3 = new Card("leader1",5,3,"3","","", "leader1.jpg", 1);
+//        Card card4 = new Card("leader2",10,2,"4","","", "leader2.jpg", 3);
+//        faction1.setCards(new ArrayList<>(Arrays.asList(card1,card1,card1,card2,card2)));
+//        faction2.setCards(new ArrayList<>(Arrays.asList(card2)));
+//        Commander commander1 = new Commander(card3,faction1);
+//        Commander commander2 = new Commander(card4, faction2);
     }
 
     public static void main(String[] args) {

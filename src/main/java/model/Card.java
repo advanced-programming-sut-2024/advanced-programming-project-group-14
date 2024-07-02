@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Card implements Serializable {
     private String name;
     private int power;
+    private String type;
     private int capacity;
     private String factionName;
     private boolean isHero;

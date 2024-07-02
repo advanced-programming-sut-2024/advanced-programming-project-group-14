@@ -124,7 +124,7 @@ public class PreGameMenuController {
     public static int getCurrentPlayerNumberOfSoldiers() {
         int number = 0;
         for (Card card: currentPlayer.getDeck()) {
-            if (card.getAbility() != "hero" || card.getType()!="spell" || card.getType()!="weather")
+            if (!card.isHero() || card.getType() != "spell")
                 number++;
         }
         return number;
@@ -133,7 +133,7 @@ public class PreGameMenuController {
     public static int getCurrentPlayerNumberOfHeroes() {
         int number = 0;
         for (Card card: currentPlayer.getDeck()) {
-            if (card.getAbility() == "hero")
+            if (card.isHero())
                 number++;
         }
         return number;
