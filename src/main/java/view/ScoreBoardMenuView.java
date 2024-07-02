@@ -28,6 +28,7 @@ public class ScoreBoardMenuView extends MenuView {
     private TableColumn<User, String> usernameColumn;
     @FXML
     private TableColumn<User, Integer> winsColumn;
+
     private ObservableList<User> scoreList;
 
     public static void run() {
@@ -51,7 +52,7 @@ public class ScoreBoardMenuView extends MenuView {
     public void initialize() {
         rankColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(scoreBoardTable.getItems().indexOf(cellData.getValue()) + 1).asString());
         usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
-        winsColumn.setCellValueFactory(new PropertyValueFactory<>("wins"));
+        winsColumn.setCellValueFactory(new PropertyValueFactory<>("numOfWin"));
         scoreList = FXCollections.observableArrayList();
         scoreBoardTable.setItems(scoreList);
         rootVBox.widthProperty().addListener((obs, oldWidth, newWidth) -> {

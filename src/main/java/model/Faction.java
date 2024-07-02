@@ -7,22 +7,19 @@ import java.util.Collection;
 
 public class Faction implements Serializable {
     private String name;
-    private String photoName;
     private ArrayList<Commander> commanders = new ArrayList<>();
     private ArrayList<Card> cards = new ArrayList<>();
 
     private static ArrayList<Faction> factions = new ArrayList<>();
 
-    public Faction(String name, String photoName){
+    public Faction(String name){
         this.name = name;
-        this.photoName = photoName;
 
         factions.add(this);
     }
 
     public Faction(Faction faction){
         this.name = faction.getName();
-        this.photoName = faction.getName();
         this.commanders = new ArrayList<>(faction.getCommanders());
         this.cards = new ArrayList<>(faction.getCards());
     }
@@ -61,21 +58,8 @@ public class Faction implements Serializable {
         return name;
     }
 
-    public String getPhotoName() {
-        return this.photoName;
-    }
-
     public static ArrayList<Faction> getFactions() {
         return factions;
-    }
-
-    public static Faction getFactionByPhotoName(String photoName) {
-        for (Faction faction : factions) {
-            if (faction.getPhotoName().equals(photoName)) {
-                return faction;
-            }
-        }
-        return null;
     }
 
     public void setCards(ArrayList<Card> cards) {
@@ -86,4 +70,11 @@ public class Faction implements Serializable {
         return cards;
     }
 
+    public Commander getCommanderByName(String name) {
+        for (Commander commander: commanders) {
+            if (commander.getName().equals(name))
+                return commander;
+        }
+        return null;
+    }
 }

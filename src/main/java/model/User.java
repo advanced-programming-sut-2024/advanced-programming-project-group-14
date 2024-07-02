@@ -122,6 +122,11 @@ public class User {
         return numOfWin;
     }
 
+
+    public void setNumOfWin(int numOfWin) {
+        this.numOfWin = numOfWin;
+    }
+
     public void increaseNumOfWin() {
         this.numOfWin++;
     }
@@ -175,4 +180,6 @@ public class User {
         }
         return count;
     }
+
+
 }

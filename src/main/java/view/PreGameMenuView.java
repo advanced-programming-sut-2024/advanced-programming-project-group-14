@@ -58,7 +58,7 @@ public class PreGameMenuView extends MenuView{
         fileChooser.setTitle("Save Deck");
         File file = fileChooser.showSaveDialog(new Stage());
         if (file != null) {
-            // Add logic to save deck to the file
+            PreGameMenuController.saveDeck("-f",file.getAbsolutePath());
             System.out.println("Deck saved to: " + file.getAbsolutePath());
         }
     }
@@ -69,7 +69,7 @@ public class PreGameMenuView extends MenuView{
         fileChooser.setTitle("Load Deck");
         File file = fileChooser.showOpenDialog(new Stage());
         if (file != null) {
-            // Add logic to load deck from the file
+            PreGameMenuController.loadDeck(file);
             System.out.println("Deck loaded from: " + file.getAbsolutePath());
         }
     }
@@ -79,12 +79,13 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Faction> factions = Faction.getFactions();
         for (int i = 0; i < factions.size(); i++) {
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getPhotoName()))));
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
-                Faction faction = new Faction(Faction.getFactionByPhotoName(photoName));
+                String name = getNameFromUrl(imageView.getImage().getUrl());
+                System.out.println(name);
+                Faction faction = new Faction(Faction.getFactionByName(name));
                 ButtonType buttonType = showConfirmMessage("You want to change faction to "+ faction.getName() + "?");
                 if (buttonType == ButtonType.OK){
                     PreGameMenuController.currentPlayer.setDeck(new ArrayList<>());
@@ -108,12 +109,12 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Commander> leaders = PreGameMenuController.getCurrentPlayer().getFaction().getCommanders();
         for (int i = 0; i < leaders.size(); i++) {
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getPhotoName()))));
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
-                Commander commander = PreGameMenuController.getCurrentPlayer().getFaction().getCommanderByPhotoName(photoName);
+                String name = getNameFromUrl(imageView.getImage().getUrl());
+                Commander commander = PreGameMenuController.getCurrentPlayer().getFaction().getCommanderByName(name);
                 ButtonType buttonType = showConfirmMessage("You want to choose "+ commander.getName() + " as leader?");
                 if (buttonType == ButtonType.OK){
                     PreGameMenuController.selectLeader(commander);
@@ -135,12 +136,12 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Card> cards = PreGameMenuController.getCurrentPlayer().getFaction().getCards();
         for (int i = 0; i < cards.size(); i++) {
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getPhotoName()))));
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
-                Card card = Card.getCardByPhotoName(photoName);
+                String name = getNameFromUrl(imageView.getImage().getUrl());
+                Card card = Card.getCardByName(name);
                 PreGameMenuController.addToDeck(card);
                 infoGrid.getChildren().remove(imageView);
                 updateLabels();
@@ -159,12 +160,12 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Card> deck = PreGameMenuController.getCurrentPlayer().getDeck();
         for (int i = 0; i < deck.size(); i++) {
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + deck.get(i).getPhotoName()))));
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + deck.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                String photoName = getPhotoNameFromUrl(imageView.getImage().getUrl());
-                Card card = Card.getCardByPhotoName(photoName);
+                String name = getNameFromUrl(imageView.getImage().getUrl());
+                Card card = Card.getCardByName(name);
                 PreGameMenuController.deleteFromDeck(card);
                 infoGrid.getChildren().remove(imageView);
                 updateLabels();
@@ -210,14 +211,14 @@ public class PreGameMenuView extends MenuView{
 
     }
 
-    private String getPhotoNameFromUrl(String Url){
+    private String getNameFromUrl(String Url){
         if (Url != null && !Url.isEmpty()) {
             int lastSlashIndex = Url.lastIndexOf('/');
             if (lastSlashIndex == -1) {
                 lastSlashIndex = Url.lastIndexOf('\\');
             }
             if (lastSlashIndex != -1 && lastSlashIndex < Url.length() - 1) {
-                return Url.substring(lastSlashIndex + 1);
+                return Url.substring(lastSlashIndex + 1,Url.lastIndexOf('.'));
             }
         }
         return "Unknown Image";

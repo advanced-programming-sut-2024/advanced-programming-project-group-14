@@ -15,6 +15,8 @@ public class Main{
     static {
         User user1 = new User("amir","1","ahy","amir@gmail.com");
         User user2 = new User("ali","1","amb","ali@gmail.com");
+        user1.setNumOfWin(2);
+        user2.setNumOfWin(4);
         Question question = new Question(1,"alooo?");
         question.setAnswer("salam");
         user1.setQuestion(question);
@@ -30,20 +32,12 @@ public class Main{
 
         PreGameMenuController.currentPlayer = new Player(user1);
         PreGameMenuController.opponentPlayer = new Player(user2);
-        Faction faction1 = new Faction("faction1","faction1.jpg");
-        Faction faction2 = new Faction("faction2","faction2.jpg");
-//        Card card1 = new Card("card1",10,2,"1","aloo","", "card1.jpg", 1);
-//        Card card2 = new Card("card2",15,1,"2","salam","", "card2.jpg", 2);
-//        Card card3 = new Card("leader1",5,3,"3","","", "leader1.jpg", 1);
-//        Card card4 = new Card("leader2",10,2,"4","","", "leader2.jpg", 3);
-//        faction1.setCards(new ArrayList<>(Arrays.asList(card1,card1,card1,card2,card2)));
-//        faction2.setCards(new ArrayList<>(Arrays.asList(card2)));
-//        Commander commander1 = new Commander(card3,faction1);
-//        Commander commander2 = new Commander(card4, faction2);
+        Faction faction_realms = new Faction("faction_realms");
+        Faction faction_skellige = new Faction("faction_skellige");
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ScoreBoardMenuView.run();
+        PreGameMenuView.run();
     }
 }

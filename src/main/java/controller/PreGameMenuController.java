@@ -13,8 +13,7 @@ public class PreGameMenuController {
     public static Player currentPlayer;
     public static Player opponentPlayer;
 
-    public static Result selectFaction(String factionName) {
-        Faction faction = Faction.getFactionByName(factionName);
+    public static Result selectFaction(Faction faction) {
         currentPlayer.getHand().clear();
         currentPlayer.setFaction(faction);
         return new Result(true, "Selected successfully");
