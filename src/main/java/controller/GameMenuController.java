@@ -2,11 +2,14 @@ package controller;
 
 
 import model.Card;
+import model.Player;
 import model.Result;
 
 import java.util.ArrayList;
 
 public class GameMenuController {
+    public static Player currentPlayer = PreGameMenuController.currentPlayer;
+    public static Player opponentPlayer = PreGameMenuController.opponentPlayer;
 
     public Result vetoCard(int cardNumber) {
 
