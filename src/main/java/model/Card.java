@@ -13,7 +13,7 @@ public class Card implements Serializable {
     private String description;
     private static ArrayList<Card> cards = new ArrayList<>();
 
-    public Card(String name, int power, int capacity , String type, String factionName, boolean isHero, String description) {
+    public Card(String name, int power, int capacity, String type, String factionName, boolean isHero, String description) {
         this.name = name;
         this.power = power;
         this.type = type;
@@ -38,6 +38,7 @@ public class Card implements Serializable {
     public String getType() {
         return type;
     }
+
     public boolean isHero() {
         return isHero;
     }
@@ -54,9 +55,9 @@ public class Card implements Serializable {
         return factionName;
     }
 
-    public static Card getCardByName(String name){
+    public static Card getCardByName(String name) {
         for (Card card : cards) {
-            if (card.getName().equals(name)){
+            if (card.getName().equals(name)) {
                 return card;
             }
         }
