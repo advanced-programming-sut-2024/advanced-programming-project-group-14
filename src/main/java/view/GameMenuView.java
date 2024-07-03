@@ -90,13 +90,76 @@ public class GameMenuView extends MenuView {
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-
+                showAvailableRows(getCardFromUrl(imageView.getImage().getUrl()));
             });
             playerHand.add(imageView,i,0);
         }
         playerHand.setAlignment(Pos.CENTER);
         playerHand.setHgap(10);
 
+    }
+
+    private Card getCardFromUrl(String Url){
+        if (Url != null && !Url.isEmpty()) {
+            int lastSlashIndex = Url.lastIndexOf('/');
+            if (lastSlashIndex == -1) {
+                lastSlashIndex = Url.lastIndexOf('\\');
+            }
+            if (lastSlashIndex != -1 && lastSlashIndex < Url.length() - 1) {
+                String name = Url.substring(lastSlashIndex + 1,Url.lastIndexOf('.'));
+                return Card.getCardByName(name);
+            }
+        }
+        return null;
+    }
+
+    private void showAvailableRows(Card card) {
+        ArrayList<GridPane> rows = getRows(card);
+        for (GridPane gridPane: rows) {
+            double width = gridPane.getWidth();
+            double height = gridPane.getHeight();
+            gridPane.setStyle("-fx-background-color: #FEE250; -fx-border-color: #a57a1c;  -fx-pref-height: height; -fx-pref-width: width;");
+        }
+    }
+
+    public ArrayList<GridPane> getRows(Card card){
+        boolean isSpy = false;
+        ArrayList<GridPane> gridPanes = new ArrayList<>();
+//        if (card.getAbility()=="Spy")
+//            isSpy = true;
+//
+//        switch (card.getType()){
+//            case "Close Combat Unit":
+//                if (isSpy) gridPanes.add(opponentCloseCombat);
+//                else gridPanes.add(playerCloseCombat);
+//                break;
+//            case "Ranged Unit":
+//                if (isSpy) gridPanes.add(opponentRanged);
+//                else gridPanes.add(playerRanged);
+//                break;
+//            case "Siege Unit":
+//                if (isSpy) gridPanes.add(opponentSiege);
+//                else gridPanes.add(playerSiege);
+//                break;
+//            case "Agile Unit":
+//                if (isSpy){
+//                    gridPanes.add(opponentCloseCombat);
+//                    gridPanes.add(playerRanged);
+//                }else{
+//                    gridPanes.add(playerCloseCombat);
+//                    gridPanes.add(playerRanged);
+//                }
+//                break;
+//            case "Special":
+//                gridPanes.add(playerCloseCombatSpecial);
+//                gridPanes.add(playerRangedSpecial);
+//                gridPanes.add(playerSiegeSpecial);
+//                break;
+//            case "Spell":
+//                gridPanes.add(spell);
+//                break;
+//        }
+        return gridPanes;
     }
 
     public void leaderAction() {

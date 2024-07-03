@@ -5,53 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/Card.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/Commander.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/Faction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/MainMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/PreGameMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/Question.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/Soldier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/Spell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_50_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/Card.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/Commander.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/Faction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/MainMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/PreGameMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/Question.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/Soldier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/Spell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_52_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/Card.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/Commander.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/Faction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/MainMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/PreGameMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/Question.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/Soldier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/Spell.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_6_26_2024_5_53_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_bronze.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_bronze.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_copper.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_copper.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_gold.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_gold.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_silver.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_silver.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_son_of_medell.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_son_of_medell.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/spell.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/spell.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/spell.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Images/spell.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +103,7 @@
       <workItem from="1719668195405" duration="8084000" />
       <workItem from="1719946192891" duration="13000" />
       <workItem from="1719985008627" duration="9698000" />
-      <workItem from="1720026338171" duration="1483000" />
+      <workItem from="1720026338171" duration="1945000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -368,7 +322,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719997067377</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Profile added, other things corrected">
+      <created>1720028766887</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1720028766887</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -413,7 +374,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="PreGame fxml added" />
     <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
@@ -438,6 +398,7 @@
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Connect load and save" />
     <MESSAGE value="Game fxml and resources added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game fxml and resources added" />
+    <MESSAGE value="Profile added, other things corrected" />
+    <option name="LAST_COMMIT_MESSAGE" value="Profile added, other things corrected" />
   </component>
 </project>
