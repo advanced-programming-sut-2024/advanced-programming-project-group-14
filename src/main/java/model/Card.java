@@ -24,6 +24,8 @@ public class Card implements Serializable {
         this.factionName = factionName;
         this.isHero = isHero;
         this.description = description;
+
+        Faction.getFactionByName(factionName).addCard(this);
     }
 
     public static ArrayList<Card> getCards() {

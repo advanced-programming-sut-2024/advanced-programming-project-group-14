@@ -33,13 +33,13 @@ public class Muster extends Card implements Actionable {
         for (Card card : GameMenuController.currentPlayer.getHand()) {
             if (isTeammate(muster.getName(), card.getName())){
                 GameMenuController.currentPlayer.getHand().remove(card);
-                row.getCards().add(card);
+                row.addToCards(card);
             }
         }
         for (Card card : GameMenuController.currentPlayer.getDeck()) {
             if (isTeammate(muster.getName(), card.getName())){
                 GameMenuController.currentPlayer.getDeck().remove(card);
-                row.getCards().add(card);
+                row.addToCards(card);
             }
         }
     }

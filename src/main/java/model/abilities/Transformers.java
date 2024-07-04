@@ -19,6 +19,6 @@ public class Transformers extends Card implements Actionable {
             transformers.setPower(8);
         else
             transformers.setPower(11);
-        row.getCards().add(transformers);
+        row.addToCards(transformers);
     }
 }

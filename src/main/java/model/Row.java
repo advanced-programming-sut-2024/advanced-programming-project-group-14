@@ -31,4 +31,8 @@ public class Row {
     public void addToCards(Card card) {
         this.cards.add(card);
     }
+
+    public void deleteFromCards(Card card) {
+        this.cards.remove(card);
+    }
 }

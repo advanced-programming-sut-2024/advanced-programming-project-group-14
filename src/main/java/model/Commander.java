@@ -2,23 +2,23 @@ package model;
 
 import java.io.Serializable;
 
-public class Commander extends Card implements Serializable {
-    private Faction faction;
-    private int number;
+public class Commander implements Serializable {
+    private String factionName;
+    private String name;
 
-    public Commander(Card card, Faction faction) {
-        super(card.getName(), card.getPower(), card.getCapacity(), card.getAbility(), card.getType(), card.getFactionName(), card.isHero(), card.getDescription());
-        this.faction = faction;
+    public Commander(String factionName, String name) {
+        this.factionName = factionName;
+        this.name = name;
 
-        faction.addCommander(this);
+        Faction.getFactionByName(factionName).addCommander(this);
     }
 
-    public Faction getFaction() {
-        return faction;
+    public String getFaction() {
+        return factionName;
     }
 
-    public int getNumber() {
-        return number;
+    public String getName() {
+        return name;
     }
 }
 
