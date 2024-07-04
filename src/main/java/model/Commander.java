@@ -7,7 +7,7 @@ public class Commander extends Card implements Serializable {
     private int number;
 
     public Commander(Card card, Faction faction) {
-        super(card.getName(), card.getPower(), card.getCapacity(),card.getType(), card.getFactionName(), card.isHero(), card.getDescription());
+        super(card.getName(), card.getPower(), card.getCapacity(), card.getAbility(), card.getType(), card.getFactionName(), card.isHero(), card.getDescription());
         this.faction = faction;
 
         faction.addCommander(this);
