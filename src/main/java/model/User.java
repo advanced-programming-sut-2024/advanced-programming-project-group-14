@@ -34,7 +34,7 @@ public class User {
     }
 
     private static void addUser(User user) {
-        if (User.getUserByUsername(user.getUsername())==null)
+        if (User.getUserByUsername(user.getUsername()) == null)
             allUsers.add(user);
     }
 
@@ -164,6 +164,7 @@ public class User {
     }
 
     public static User getUserByUsername(String username) {
+        if (allUsers == null) return null;
         for (User user : allUsers) {
             if (user.getUsername().equals(username)) return user;
         }
