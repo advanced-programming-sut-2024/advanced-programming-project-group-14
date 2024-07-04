@@ -6,15 +6,18 @@ public class Card {
     private String name;
     private int power;
     private int capacity;
+    private String ability;
     private String type;
     private String factionName;
     private boolean isHero;
     private String description;
+    private String currentPlace;
     private static ArrayList<Card> cards = new ArrayList<>();
 
-    public Card(String name, int power, int capacity , String type, String factionName, boolean isHero, String description) {
+    public Card(String name, int power, int capacity, String ability, String type, String factionName, boolean isHero, String description) {
         this.name = name;
         this.power = power;
+        this.ability = ability;
         this.type = type;
         this.capacity = capacity;
         this.factionName = factionName;
@@ -32,6 +35,14 @@ public class Card {
 
     public int getPower() {
         return power;
+    }
+
+    public String getAbility() {
+        return ability;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
     }
 
     public String getType() {

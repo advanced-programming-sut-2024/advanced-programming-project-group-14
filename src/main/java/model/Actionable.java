@@ -1,5 +1,5 @@
 package model;
 
-public interface Actionable {
-    void doAction();
+public interface Actionable <T> {
+    void doAction(T[] items);
 }

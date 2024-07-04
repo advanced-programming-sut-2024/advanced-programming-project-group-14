@@ -2,11 +2,19 @@ package controller;
 
 
 import model.Card;
+import model.GameTable;
+import model.Player;
 import model.Result;
+import model.abilities.Decoy;
 
 import java.util.ArrayList;
 
 public class GameMenuController {
+
+
+    public static GameTable currentGameTable;
+    public static Player currentPlayer = currentGameTable.getPlayer1();
+    public static Player opponentPlayer = currentGameTable.getPlayer2();
 
     public Result vetoCard(int cardNumber) {
 

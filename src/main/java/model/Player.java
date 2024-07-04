@@ -1,12 +1,14 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Player extends User {
     private Row closeCombat;
     private Row rangedCombat;
     private Row siege;
+    private ArrayList<Row> rows;
     private int lives;
     private Commander commander;
     private Faction faction;
@@ -22,6 +24,11 @@ public class Player extends User {
         this.hand = new ArrayList<>();
         this.discardPile = new ArrayList<>();
         this.scoreOfRounds = new HashMap<>();
+        this.closeCombat = new Row();
+        this.rangedCombat = new Row();
+        this.siege = new Row();
+        this.rows = new ArrayList<>(Arrays.asList(closeCombat,rangedCombat,siege));
+
     }
 
     public Row getCloseCombat() {
@@ -42,6 +49,10 @@ public class Player extends User {
 
     public Row getSiege() {
         return siege;
+    }
+
+    public ArrayList<Row> getRows() {
+        return rows;
     }
 
     public void addToSiege(Card card) {
