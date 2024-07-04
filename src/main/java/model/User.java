@@ -34,7 +34,7 @@ public class User {
     }
 
     private static void addUser(User user) {
-        if (User.getUserByUsername(user.getUsername())==null)
+        if (User.getUserByUsername(user.getUsername()) == null)
             allUsers.add(user);
     }
 
@@ -122,6 +122,11 @@ public class User {
         return numOfWin;
     }
 
+
+    public void setNumOfWin(int numOfWin) {
+        this.numOfWin = numOfWin;
+    }
+
     public void increaseNumOfWin() {
         this.numOfWin++;
     }
@@ -159,24 +164,13 @@ public class User {
     }
 
     public static User getUserByUsername(String username) {
+        if (allUsers == null) return null;
         for (User user : allUsers) {
             if (user.getUsername().equals(username)) return user;
         }
         return null;
     }
 
-    public void saveDeckByFileAddress(String fileAddress) {
-        try (FileWriter fileWriter = new FileWriter(fileAddress)) {
-            for (Card card : deck) {
-                fileWriter.write(card + "\n");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public void saveDeckByDeckName(String deckName){
-        //todo
-    }
     public int numberOfSpecificCardInDeck() {
         int count = 0;
         for (Card card : deck) {
@@ -188,10 +182,5 @@ public class User {
         return count;
     }
 
-    public void loadDeckByFileAddress(String fileAddress) {
-        //todo
-    }
-    public void loadDeckByDeckName(String deckName){
-        //todo
-    }
+
 }

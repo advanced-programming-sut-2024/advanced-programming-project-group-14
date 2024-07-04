@@ -1,5 +1,9 @@
 package model;
 
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -123,7 +127,7 @@ public class Player extends User {
         return scoreOfRounds;
     }
 
-    public int getTotalScoreOfRounds(){
+    public int getTotalScoreOfRounds() {
         int total = 0;
         for (int i = 1; i < 4; i++) {
             total += scoreOfRounds.get(i);
@@ -132,6 +136,47 @@ public class Player extends User {
     }
 
     public void setScoresOfRound(int round, int score) {
-        this.scoreOfRounds.put(round,score);
+        this.scoreOfRounds.put(round, score);
+    }
+
+    public void saveDeckByFileAddress(String fileAddress) {
+        try (FileOutputStream fileOutputStream = new FileOutputStream(fileAddress)) {
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(super.getDeck());
+            objectOutputStream.writeObject(this.faction);
+            objectOutputStream.writeObject(this.commander);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void saveDeckByDeckName(String deckName) {
+        Path directoryPath = Paths.get("data/decks");
+        if (!Files.exists(directoryPath)) {
+            try {
+                Files.createDirectories(directoryPath);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        try (FileOutputStream fileOutputStream = new FileOutputStream("data/decks/" + deckName)) {
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(super.getDeck());
+            objectOutputStream.writeObject(this.faction);
+            objectOutputStream.writeObject(this.commander);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadDeckByFile(File file) {
+        try (FileInputStream fileInputStream = new FileInputStream(file)) {
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            super.setDeck((ArrayList<Card>) objectInputStream.readObject());
+            setFaction((Faction) objectInputStream.readObject());
+            setCommander((Commander) objectInputStream.readObject());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

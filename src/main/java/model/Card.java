@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Card {
+public class Card implements Serializable {
     private String name;
     private int power;
     private int capacity;
@@ -64,9 +65,9 @@ public class Card {
         return factionName;
     }
 
-    public static Card getCardByName(String name){
+    public static Card getCardByName(String name) {
         for (Card card : cards) {
-            if (card.getName().equals(name)){
+            if (card.getName().equals(name)) {
                 return card;
             }
         }

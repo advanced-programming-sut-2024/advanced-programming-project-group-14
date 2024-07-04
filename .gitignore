@@ -2,6 +2,8 @@
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+*.iml
+.idea/
 
 ### Eclipse ###
 .apt_generated
@@ -27,3 +29,26 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+# Ignore Maven and Gradle build directories
+target/
+build/
+
+# Ignore class files
+*.class
+
+# Ignore Eclipse files
+.settings/
+
+# Ignore NetBeans files
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Ignore logs
+*.log
+
+# Ignore OS-specific files
+Thumbs.db

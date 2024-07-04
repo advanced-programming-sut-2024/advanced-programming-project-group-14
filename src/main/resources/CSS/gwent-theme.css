@@ -24,7 +24,7 @@
     -fx-font-weight: bold;
     -fx-padding: 10px 20px;
     -fx-border-radius: 3px;
-    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 4, 0.0 , 0 , 2 );
+    -fx-effect: dropshadow(one-pass-box, rgba(0, 0, 0, 0.8), 4, 0.0, 0, 2);
 }
 
 .button:hover {
@@ -89,8 +89,8 @@
 .table-view .column-header, .table-view .filler {
     -fx-size: 40px;
     -fx-background-color: #0e1a2b; /* Background color for the header cells */
-    -fx-border-color: transparent transparent #a57a1c transparent;
-    -fx-border-width: 0px 0px 1px 0px;
+    -fx-border-color: #a57a1c;
+    -fx-border-width: 0px 1px 1px 0px;
     -fx-alignment: CENTER;
     -fx-text-fill: #ffffff; /* Text color for the header cells */
     -fx-font-size: 14px;
@@ -98,11 +98,13 @@
 }
 
 .table-view .cell {
+    -fx-cell-size: 30px;
+    -fx-spacing: 10px;
     -fx-background-color: #1c1c1c; /* Background color for the cells */
     -fx-text-fill: #ffffff; /* Text color for the cells */
     -fx-border-color: #a57a1c; /* Border color for the cells */
-    -fx-border-width: 0px 0px 1px 0px;
-    -fx-alignment: CENTER-LEFT;
+    -fx-border-width: 0px 1px 1px 0px;
+    -fx-alignment: CENTER;
     -fx-font-size: 14px;
 }
 
@@ -115,7 +117,7 @@
     -fx-text-fill: #0e1a2b; /* Text color for the selected cells */
 }
 
-.check-box{
+.check-box {
     -fx-text-fill: #d4af37;
     -fx-font-size: 14;
     -fx-padding: 10px 20px;
