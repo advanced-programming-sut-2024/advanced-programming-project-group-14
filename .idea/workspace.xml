@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Faction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ScoreBoardMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScoreBoardMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CSS/gwent-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSS/gwent-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Commander.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Commander.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Faction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Faction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Soldier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Soldier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Spell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Spell.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +75,6 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -101,9 +116,6 @@
       <workItem from="1719580604325" duration="17249000" />
       <workItem from="1719644171364" duration="3981000" />
       <workItem from="1719668195405" duration="8084000" />
-      <workItem from="1719946192891" duration="13000" />
-      <workItem from="1719985008627" duration="9698000" />
-      <workItem from="1720026338171" duration="1945000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -308,28 +320,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <task id="LOCAL-00030" summary="Connect load and save">
-      <created>1719932784842</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1719932784842</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Game fxml and resources added">
-      <created>1719997067377</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1719997067377</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Profile added, other things corrected">
-      <created>1720028766887</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1720028766887</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +365,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Profile menu added" />
+    <MESSAGE value="Random button and Stay Login added" />
+    <MESSAGE value="PreGame fxml added" />
     <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
@@ -396,9 +390,6 @@
     <MESSAGE value="PreGame menu completed" />
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
-    <MESSAGE value="Connect load and save" />
-    <MESSAGE value="Game fxml and resources added" />
-    <MESSAGE value="Profile added, other things corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="Profile added, other things corrected" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the bugs after merge" />
   </component>
 </project>

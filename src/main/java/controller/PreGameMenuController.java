@@ -20,28 +20,16 @@ public class PreGameMenuController {
     }
 
     public static Result saveDeck(String flag, String input) {
-        if(flag.equals("-f")){
+        if (flag.equals("-f")) {
             String fileAddress = input;
-            File file = new File(fileAddress);
-            File parent = file.getParentFile();
-            if(!parent.exists() && !parent.mkdirs()){
-                return new Result(false, "invalid file address");
-            }
-            if(fileAddress==null){
-                return new Result(false, "invalid file address");
-            }
-            if(!fileAddress.endsWith(".txt")){
-                return new Result(false, "invalid file address");
-            }
             currentPlayer.saveDeckByFileAddress(fileAddress);
-        }
-        else if(flag.equals("-n")){
+        } else if (flag.equals("-n")) {
             String deckName = input;
-            Path path = Paths.get("data/decks/"+deckName);
-            if(deckName==null){
+            Path path = Paths.get("data/decks/" + deckName);
+            if (deckName == null) {
                 return new Result(false, "invalid deck name");
             }
-            if(Files.exists(path)){
+            if (Files.exists(path)) {
                 return new Result(false, "deck name already exists");
             }
             currentPlayer.saveDeckByDeckName(deckName);
@@ -59,17 +47,17 @@ public class PreGameMenuController {
     }
 
     public static Result addToDeck(Card card) {
-        if(card==null){
+        if (card == null) {
             return new Result(false, "invalid card name");
         }
-        if(currentPlayer.getDeck().size()>=22){
+        if (currentPlayer.getDeck().size() >= 22) {
             return new Result(false, "deck is full");
         }
-        if(card.getCapacity()<=0){
+        if (card.getCapacity() <= 0) {
             return new Result(false, "card capacity is zero");
         }
-        if(card.getType().equals("spell")|| card.getType().equals("weather")){
-            if(currentPlayer.numberOfSpecificCardInDeck()>=10){
+        if (card.getType().equals("spell") || card.getType().equals("weather")) {
+            if (currentPlayer.numberOfSpecificCardInDeck() >= 10) {
                 return new Result(false, "you can't have more than 10 special cards in your deck");
             }
         }
@@ -86,17 +74,17 @@ public class PreGameMenuController {
     }
 
     public static Result changeTurn() {
-        if(currentPlayer.getDeck().size()<22){
+        if (currentPlayer.getDeck().size() < 22) {
             return new Result(false, "deck is not full");
         }
         Player temp = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = temp;
-        return new Result(true, "Your turn: "+ currentPlayer.getUsername());
+        return new Result(true, "Your turn: " + currentPlayer.getUsername());
     }
 
     public static Result startGame() {
-        if(currentPlayer.getDeck().size()<22 || currentPlayer.getDeck().size()<22){
+        if (currentPlayer.getDeck().size() < 22 || opponentPlayer.getDeck().size() < 22) {
             return new Result(false, "One of decks is not full");
         }
 
@@ -104,25 +92,25 @@ public class PreGameMenuController {
         return new Result(true, "Welcome to the game!");
     }
 
-    public static Player getCurrentPlayer(){
+    public static Player getCurrentPlayer() {
         return currentPlayer;
     }
 
     public static String getCurrentPlayerFactionName() {
-        if(currentPlayer.getFaction() == null)
+        if (currentPlayer.getFaction() == null)
             return "";
         return currentPlayer.getFaction().getName();
     }
 
     public static int getCurrentPlayerHandSize() {
-        if(currentPlayer.getDeck() == null)
+        if (currentPlayer.getDeck() == null)
             return 0;
         return currentPlayer.getDeck().size();
     }
 
     public static int getCurrentPlayerNumberOfSoldiers() {
         int number = 0;
-        for (Card card: currentPlayer.getDeck()) {
+        for (Card card : currentPlayer.getDeck()) {
             if (!card.isHero() || card.getType() != "spell")
                 number++;
         }
@@ -131,7 +119,7 @@ public class PreGameMenuController {
 
     public static int getCurrentPlayerNumberOfHeroes() {
         int number = 0;
-        for (Card card: currentPlayer.getDeck()) {
+        for (Card card : currentPlayer.getDeck()) {
             if (card.isHero())
                 number++;
         }
@@ -140,8 +128,8 @@ public class PreGameMenuController {
 
     public static int getCurrentPlayerTotalDeckPower() {
         int power = 0;
-        for (Card card: currentPlayer.getDeck()) {
-            power+=card.getPower();
+        for (Card card : currentPlayer.getDeck()) {
+            power += card.getPower();
         }
         return power;
     }

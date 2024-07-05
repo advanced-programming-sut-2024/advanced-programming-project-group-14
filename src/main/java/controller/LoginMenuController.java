@@ -12,9 +12,6 @@ import java.util.regex.Pattern;
 
 public class LoginMenuController {
 
-    static Random random = new Random();
-
-
     public static Result login(String username, String password, boolean stayLoggedIn) {
         if (User.getUserByUsername(username) == null)
             return new Result(false, "Username not found!");
