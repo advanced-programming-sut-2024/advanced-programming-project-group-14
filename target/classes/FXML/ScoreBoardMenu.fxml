@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="view.ScoreBoardMenuView" fx:id="rootVBox" spacing="10" alignment="center"
+      stylesheets="../CSS/gwent-theme.css">
+    <Label text="Score Board" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <TableView fx:id="scoreBoardTable" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="rankColumn" text="Rank">
+            </TableColumn>
+            <TableColumn fx:id="usernameColumn" text="Username">
+                <cellValueFactory>
+                    <PropertyValueFactory property="username"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="winsColumn" text="Wins">
+                <cellValueFactory>
+                    <PropertyValueFactory property="wins"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    <HBox spacing="10" style="-fx-padding: 10px; -fx-alignment: CENTER;">
+        <Button text="Refresh" onAction="#handleRefresh" style="-fx-padding: 10px;"/>
+    </HBox>
+</VBox>

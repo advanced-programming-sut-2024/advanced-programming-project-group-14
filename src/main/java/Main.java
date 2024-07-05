@@ -1,4 +1,4 @@
-import controller.LoadController;
+import controller.GameMenuController;
 import controller.PreGameMenuController;
 import model.*;
 import view.*;
@@ -30,13 +30,35 @@ public class Main {
         PreGameMenuController.opponentPlayer = new Player(user2);
         Faction faction_realms = new Faction("faction_realms");
         Faction faction_skellige = new Faction("faction_skellige");
+        Card realms_esterad = new Card("realms_esterad",10,1,"c","faction_realms",true,"");
+        Card realms_trebuchet_1 = new Card("realms_trebuchet_1",5,1,"s","faction_realms",false,"");
+        Card realms_foltest_bronze = new Card("realms_foltest_bronze",0,1,"m","faction_realms",false,"");
+        Card realms_foltest_gold = new Card("realms_foltest_gold", 0,1,"m","faction_realms",false,"");
+        Commander foltest_bronze = new Commander(realms_foltest_bronze,faction_realms);
+        Commander foltest_gold = new Commander(realms_foltest_gold,faction_realms);
+        GameMenuController.currentPlayer.setCommander(foltest_bronze);
+        GameMenuController.opponentPlayer.setCommander(foltest_gold);
+
+        GameMenuController.currentPlayer.addToHand(realms_esterad);
+        GameMenuController.currentPlayer.addToHand(realms_esterad);
+        GameMenuController.currentPlayer.addToHand(realms_trebuchet_1);
+        GameMenuController.currentPlayer.addToHand(realms_trebuchet_1);
+        GameMenuController.currentPlayer.addToHand(realms_esterad);
+        GameMenuController.currentPlayer.addToHand(realms_esterad);
+        GameMenuController.currentPlayer.addToHand(realms_trebuchet_1);
+        GameMenuController.currentPlayer.addToHand(realms_esterad);
+        GameMenuController.currentPlayer.addToHand(realms_esterad);
+        GameMenuController.currentPlayer.addToHand(realms_trebuchet_1);
+
+
+
     }
 
     public static void main(String[] args) {
         UsersManager usersManager = new UsersManager();
         usersManager.loadUsers();
         Scanner scanner = new Scanner(System.in);
-        LoginMenuView.run();
+        GameMenuView.run();
         saveUsers(usersManager);
     }
 
