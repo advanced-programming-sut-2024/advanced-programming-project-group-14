@@ -13,8 +13,8 @@ public class Transformers extends Card implements Actionable {
 
     @Override
     public void doAction(Object[] items) {
-        Transformers transformers = (Transformers) items[0];
-        Row row = (Row) items[1];
+        Row row = (Row) items[0];
+        Transformers transformers = (Transformers) items[1];
         if (transformers.getName().equals("Cow"))
             transformers.setPower(8);
         else

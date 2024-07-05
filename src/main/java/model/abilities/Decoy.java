@@ -14,8 +14,8 @@ public class Decoy extends Card implements Actionable {
 
     @Override
     public void doAction(Object[] items) {
-        Card card = (Card) items[0];
-        Row row = (Row) items[1];
+        Row row = (Row) items[0];
+        Card card = (Card) items[1];
         row.deleteFromCards(card);
         GameMenuController.currentPlayer.getHand().add(card);
     }

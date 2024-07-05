@@ -28,9 +28,9 @@ public class Player extends User {
         this.hand = new ArrayList<>();
         this.discardPile = new ArrayList<>();
         this.scoreOfRounds = new HashMap<>();
-        this.closeCombat = new Row();
-        this.rangedCombat = new Row();
-        this.siege = new Row();
+        this.closeCombat = new Row("Close Combat Unit");
+        this.rangedCombat = new Row("Ranged Unit");
+        this.siege = new Row("Siege Unit");
         this.rows = new ArrayList<>(Arrays.asList(closeCombat,rangedCombat,siege));
 
     }

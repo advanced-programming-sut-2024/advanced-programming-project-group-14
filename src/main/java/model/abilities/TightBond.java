@@ -13,8 +13,8 @@ public class TightBond extends Card implements Actionable {
 
     @Override
     public void doAction(Object[] items) {
-        TightBond tightBond = (TightBond) items[0];
-        Row row =(Row) items[1];
+        Row row =(Row) items[0];
+        TightBond tightBond = (TightBond) items[1];
         int numOfSameCard = 0;
         for (Card card : row.getCards()) {
             if (card.getName().equals(tightBond.getName()))

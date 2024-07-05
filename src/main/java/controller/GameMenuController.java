@@ -1,11 +1,11 @@
 package controller;
 
 
-import model.Card;
-import model.GameTable;
-import model.Player;
-import model.Result;
+import model.*;
+import model.abilities.*;
 
+import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class GameMenuController {
@@ -44,30 +44,47 @@ public class GameMenuController {
         return new Result(true, "");
     }
 
-    public void placeCard(Card card, String row) {
-        if (row == null) {
+    public void placeCard(Card card, String rowName) {
+        if (rowName == null) {
             currentGameTable.addToWeather(card);
             return;
         }
+
+        Row row = switch (rowName) {
+            case "Ranged Unit" -> currentPlayer.getRangedCombat();
+            case "Siege Unit" -> currentPlayer.getSiege();
+            default -> currentPlayer.getCloseCombat();
+        };
+
         if (card.getType().equals("Special")) {
-        switch (row) {
-                case "Close Combat Unit":
-                    currentPlayer.getCloseCombat().addToCards(card);
-                case "Ranged Unit":
-                    currentPlayer.getRangedCombat().addToCards(card);
-                case "Siege Unit":
-                    currentPlayer.getSiege().addToCards(card);
-            }
+            if (rowName.equals("Close Combat Unit") && currentPlayer.getCloseCombat().getSpecial() == null)
+                currentPlayer.getCloseCombat().setSpecial(card);
+            if (rowName.equals("Ranged Unit") && currentPlayer.getRangedCombat().getSpecial() == null)
+                currentPlayer.getRangedCombat().setSpecial(card);
+            if (rowName.equals("Siege Unit") && currentPlayer.getSiege().getSpecial() == null)
+                currentPlayer.getSiege().setSpecial(card);
+        } else {
+            if (rowName.equals("Close Combat Unit") && (card.getType().equals("Close Combat Unit") || card.getType().equals("Agile Unit")))
+                currentPlayer.getCloseCombat().addToCards(card);
+            if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || card.getType().equals("Agile Unit")))
+                currentPlayer.getRangedCombat().addToCards(card);
+            if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit"))
+                currentPlayer.getSiege().addToCards(card);
         }
-        else {
-            switch (row) {
-                case "Close Combat Unit":
-                    currentPlayer.getCloseCombat().setSpecial(card);
-                case "Ranged Unit":
-                    currentPlayer.getRangedCombat().setSpecial(card);
-                case "Siege Unit":
-                    currentPlayer.getSiege().setSpecial(card);
-            }
+
+        Object[] forAction = {row, card};
+
+        switch (card.getAbility()) {
+            case "CommandersHorn": ((CommandersHorn) card).doAction(forAction); break;
+            case "Decoy": ((Decoy) card).doAction(forAction); break;
+            case "Mardroem": ((Mardroeme) card).doAction(forAction); break;
+            case "Medic": ((Medic) card).doAction(forAction); break;
+            case "MoralBoost": ((MoralBoost) card).doAction(forAction); break;
+            case "Muster": ((Muster) card).doAction(forAction); break;
+            case "Scorch": ((Scorch) card).doAction(forAction); break;
+            case "Spy": ((Spy) card).doAction(forAction); break;
+            case "TightBond": ((TightBond) card).doAction(forAction); break;
+            case "Transformers": ((Transformers) card).doAction(forAction); break;
         }
     }
 

@@ -4,59 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Update some photo name in image folder">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Add placeCard and vetoCard methods to GameMenuController">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_the_treacherous.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_invader_of_the_north.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_son_of_medell.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_hope_of_the_aen_seidhe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_berserker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_birna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_blueboy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_brokva_archer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_cerys.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_crach_an_craite.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_craite_warrior.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_dimun_pirate.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_donar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_draig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_ermion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_hjalmar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_holger.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_kambi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_king_bran.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_light_longship.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_madmad_lugos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_olaf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_svanrige.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_tordarroch.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_udalryk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_vildkaarl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_war_longship.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_young_berserker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_young_vildkaarl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/special_mardroeme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Faction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Faction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Decoy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Decoy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/TightBond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/TightBond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Transformers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Transformers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,19 +48,29 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.main.executor": "Run",
-    "git-widget-placeholder": "d00c195c",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;8df66670&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/javaPrograms/Graphics&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -119,6 +85,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -141,6 +114,8 @@
       <workItem from="1719580604325" duration="17249000" />
       <workItem from="1719644171364" duration="3981000" />
       <workItem from="1719668195405" duration="8084000" />
+      <workItem from="1720199383866" duration="4616000" />
+      <workItem from="1720205522147" duration="1391000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -353,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720190064192</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Add placeCard and vetoCard methods to GameMenuController">
+      <option name="closed" value="true" />
+      <created>1720194152022</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1720194152022</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,7 +381,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="PreGame fxml added" />
     <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
@@ -423,6 +405,7 @@
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Update some photo name in image folder" />
     <MESSAGE value="Deleted image folder because I can't do anything" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleted image folder because I can't do anything" />
+    <MESSAGE value="Add placeCard and vetoCard methods to GameMenuController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add placeCard and vetoCard methods to GameMenuController" />
   </component>
 </project>
