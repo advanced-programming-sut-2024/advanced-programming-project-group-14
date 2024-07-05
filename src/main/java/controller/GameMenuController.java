@@ -10,11 +10,9 @@ import model.abilities.Decoy;
 import java.util.ArrayList;
 
 public class GameMenuController {
-
-
     public static GameTable currentGameTable;
-    public static Player currentPlayer = currentGameTable.getPlayer1();
-    public static Player opponentPlayer = currentGameTable.getPlayer2();
+    public static Player currentPlayer;
+    public static Player opponentPlayer;
 
     public Result vetoCard(int cardNumber) {
 
