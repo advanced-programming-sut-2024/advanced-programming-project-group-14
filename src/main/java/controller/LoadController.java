@@ -37,57 +37,57 @@ public class LoadController {
     private static void loadFactions() {
         new Faction("Monsters");
         new Faction("Nilfgaard");
-        new Faction("Northern Realms");
-        new Faction("Scoia’tael");
+        new Faction("Northern");
+        new Faction("Scoiatael");
         new Faction("Skellige");
 
     }
 
     private static void loadCommanders() {
-        new Commander("Northern Realms", "The Siegemaster");
-        new Commander("Northern Realms", "The Steel-Forged");
-        new Commander("Northern Realms", "King of Temeria");
-        new Commander("Northern Realms", "Lord Commander of the North");
-        new Commander("Northern Realms", "Son of Medell");
-        new Commander("Nilfgaard", "The White Flame");
-        new Commander("Nilfgaard", "His Imperial Majesty");
-        new Commander("Nilfgaard", "Emperor of Nilfgaard");
-        new Commander("Nilfgaard", "The Relentless");
-        new Commander("Nilfgaard", "Invader of the North");
-        new Commander("Monsters", "Bringer of Death");
-        new Commander("Monsters", "King of the wild Hunt");
-        new Commander("Monsters", "Destroyer of Worlds");
-        new Commander("Monsters", "Commander of the Red Riders");
-        new Commander("Monsters", "The Treacherous");
-        new Commander("Scoia’tael", "Queen of Dol Blathanna");
-        new Commander("Scoia’tael", "The Beautiful");
-        new Commander("Scoia’tael", "Daisy of the Valley");
-        new Commander("Scoia’tael", "Pureblood Elf");
-        new Commander("Scoia’tael", "Hope of the Aen Seidhe");
-        new Commander("Skellige", "Crach an Craite");
-        new Commander("Skellige", "King Bran");
+        new Commander("Northern", "TheSiegemaster");
+        new Commander("Northern", "TheSteel-Forged");
+        new Commander("Northern", "KingofTemeria");
+        new Commander("Northern", "LordCommanderoftheNorth");
+        new Commander("Northern", "SonofMedell");
+        new Commander("Nilfgaard", "TheWhiteFlame");
+        new Commander("Nilfgaard", "HisImperialMajesty");
+        new Commander("Nilfgaard", "EmperorofNilfgaard");
+        new Commander("Nilfgaard", "TheRelentless");
+        new Commander("Nilfgaard", "InvaderoftheNorth");
+        new Commander("Monsters", "BringerofDeath");
+        new Commander("Monsters", "KingofthewildHunt");
+        new Commander("Monsters", "DestroyerofWorlds");
+        new Commander("Monsters", "CommanderoftheRedRiders");
+        new Commander("Monsters", "TheTreacherous");
+        new Commander("Scoiatael", "QueenofDolBlathanna");
+        new Commander("Scoiatael", "TheBeautiful");
+        new Commander("Scoiatael", "DaisyoftheValley");
+        new Commander("Scoiatael", "PurebloodElf");
+        new Commander("Scoiatael", "HopeoftheAenSeidhe");
+        new Commander("Skellige", "CrachanCraite");
+        new Commander("Skellige", "KingBran");
     }
 
     private static void loadWeatherCards() {
         for (int i = 0; i < 3; i++) {
-            new Weather("Biting Frost", 0, 3, "", "Weather", "Monsters", false, "Sets the power of all close combat units of both sides to 1");
-            new Weather("Impenetrable fog", 0, 3, "", "Weather", "Neutral", false, "Sets the power of all ranged units of both sides to 1");
-            new Weather("Torrential Rain", 0, 3, "", "Weather", "Neutral", false, "Sets the power of all siege units of both sides to 1");
-            new Weather("Skellige Storm", 0, 3, "", "Weather", "Neutral", false, "Sets the power of all siege and ranged units of both sides to 1");
-            new Weather("Clear Weather", 0, 3, "", "Weather", "Neutral", false, "Cancel all the weather cards");
+            new Weather("BitingFrost", 0, 3, "", "Weather", "Monsters", false, "Sets the power of all close combat units of both sides to 1");
+            new Weather("Impenetrablefog", 0, 3, "", "Weather", "Neutral", false, "Sets the power of all ranged units of both sides to 1");
+            new Weather("TorrentialRain", 0, 3, "", "Weather", "Neutral", false, "Sets the power of all siege units of both sides to 1");
+            new Weather("SkelligeStorm", 0, 3, "", "Weather", "Neutral", false, "Sets the power of all siege and ranged units of both sides to 1");
+            new Weather("ClearWeather", 0, 3, "", "Weather", "Neutral", false, "Cancel all the weather cards");
         }
     }
 
     private static void loadBerserkerCards() {
         for (int i = 0; i < 3; i++)
-            new Berserker("Young Berserker", 2, 3, "Berserker", "Ranged Unit", "Skellige", false, "Transforms into Young Vidkaarl when Mardroeme is used.Young Vidkaarl has Tight Bond effect.");
+            new Berserker("YoungBerserker", 2, 3, "Berserker", "Ranged Unit", "Skellige", false, "Transforms into Young Vidkaarl when Mardroeme is used.Young Vidkaarl has Tight Bond effect.");
         new Berserker("Berserker", 4, 1, "Berserker", "Close Combat Unit", "Skellige", false, "Transforms into Vidkaarl when Mardroeme is used.Vidkaarl has Morale Boost effect.");
     }
 
     private static void loadCommandersHornCards() {
         for (int i = 0; i < 3; i++)
-            new CommandersHorn("Commander’s horn", 0, 3, "CommandersHorn", "Special", "Neutral", false, "Doubles the power of the cards in the row that was placed. Only one of this type can be played in a row");
-        new CommandersHorn("Draig Bon-Dhu", 2, 1, "CommandersHorn", "Siege Unit", "Skellige", false, "");
+            new CommandersHorn("Commander’shorn", 0, 3, "CommandersHorn", "Special", "Neutral", false, "Doubles the power of the cards in the row that was placed. Only one of this type can be played in a row");
+        new CommandersHorn("DraigBon-Dhu", 2, 1, "CommandersHorn", "Siege Unit", "Skellige", false, "");
         new CommandersHorn("Dandelion", 2, 1, "CommandersHorn", "Close Combat Unit", "Neutral", false, "Same power as the commander’s horn");
     }
 
@@ -104,87 +104,87 @@ public class LoadController {
 
     private static void loadMedicCards() {
         for (int i = 0; i < 3; i++)
-            new Medic("Havekar Healer", 0, 3, "Medic", "Ranged Unit", "Scoia’tael", false, "");
+            new Medic("HavekarHealer", 0, 3, "Medic", "Ranged Unit", "Scoiatael", false, "");
         for (int i = 0; i < 2; i++)
-            new Medic("Etolian Auxiliary Archers", 1, 2, "Medic", "Ranged Unit", "Nilfgaard", false, "");
-        new Medic("Menno Coehoorn", 10, 1, "Medic", "Close Combat Unit", "Nilfgaard", true, "");
-        new Medic("Birna Bran", 2, 1, "Medic", "Close Combat Unit", "Skellige", false, "");
-        new Medic("Siege Technician", 0, 1, "Medic", "Siege Unit", "Nilfgaard", false, "");
-        new Medic("Yennefer of Vengerberg", 7, 1, "Medic", "Ranged Unit", "Neutral", true, "");
-        new Medic("Dun Banner Medic", 5, 1, "Medic", "Siege Unit", "Northern Realms", false, "");
-        new Medic("Menno Coehorn", 10, 1, "Medic", "Close Combat Unit", "Nilfgaard", true, "");
+            new Medic("EtolianAuxiliaryArchers", 1, 2, "Medic", "Ranged Unit", "Nilfgaard", false, "");
+        new Medic("MennoCoehoorn", 10, 1, "Medic", "Close Combat Unit", "Nilfgaard", true, "");
+        new Medic("BirnaBran", 2, 1, "Medic", "Close Combat Unit", "Skellige", false, "");
+        new Medic("SiegeTechnician", 0, 1, "Medic", "Siege Unit", "Nilfgaard", false, "");
+        new Medic("YenneferofVengerberg", 7, 1, "Medic", "Ranged Unit", "Neutral", true, "");
+        new Medic("DunBannerMedic", 5, 1, "Medic", "Siege Unit", "Northern", false, "");
+    ///////    new Medic("MennoCoehorn", 10, 1, "Medic", "Close Combat Unit", "Nilfgaard", true, "");
 
     }
 
     private static void loadMoralBoostCards() {
         for (int i = 0; i < 3; i++)
-            new MoralBoost("Kaedweni Siege Expert", 1, 3, "MoralBoost", "Siege Unit", "Northern Realms", false, "");
-        new MoralBoost("Olgierd Von Everc", 6, 1, "MoralBoost", "Agile Unit", "Neutral", false, "");
+            new MoralBoost("KaedweniSiegeExpert", 1, 3, "MoralBoost", "Siege Unit", "Northern", false, "");
+        new MoralBoost("OlgierdVonEverc", 6, 1, "MoralBoost", "Agile Unit", "Neutral", false, "");
         new MoralBoost("Olaf", 12, 1, "MoralBoost", "Agile Unit", "Skellige", false, "");
         new MoralBoost("Vidkaarl", 14, 0, "MoralBoost", "Close Combat Unit", "Skellige", false, "it can only be played when a berserker transform into it.");
     }
 
     private static void loadMusterCards() {
         for (int i = 0; i < 3; i++) {
-            new Muster("Light Longship", 4, 3, "Muster", "Ranged Unit", "Skellige", false, "");
-            new Muster("Elven Skirmisher", 2, 3, "Muster", "Ranged Unit", "Scoia’tael", false, "");
-            new Muster("Dwarven Skirmisher", 3, 3, "Muster", "Close Combat Unit", "Scoia’tael", false, "");
-            new Muster("Havekar Smuggler", 5, 3, "Muster", "Close Combat Unit", "Scoia’tael", false, "");
-            new Muster("Gaunter O’DImm Darkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
+            new Muster("LightLongship", 4, 3, "Muster", "Ranged Unit", "Skellige", false, "");
+            new Muster("ElvenSkirmisher", 2, 3, "Muster", "Ranged Unit", "Scoiatael", false, "");
+            new Muster("DwarvenSkirmisher", 3, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
+            new Muster("HavekarSmuggler", 5, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
+            new Muster("GaunterO’DImmDarkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
             new Muster("Arachas", 4, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Ghoul", 1, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Nekker", 2, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
         }
         new Muster("Cerys", 10, 1, "Muster", "Close Combat Unit", "Skellige", true, "Its Muster effect will summon Shield Maiden cards and other musters.");
-        new Muster("Crone: Brewess", 6, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Crone: Weavess", 6, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Crone: Whispess", 6, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Vampire: Katakan", 5, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Vampire: Bruxa", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Vampire: Ekimmara", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Vampire: Fleder", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Vampire: Garkain", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-        new Muster("Arachas Behemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
-        new Muster("Gaunter O’Dimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
+        new Muster("Crone-Brewess", 6, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+        new Muster("Crone-Weavess", 6, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+        new Muster("Crone-Whispess", 6, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire-Katakan", 5, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire-Bruxa", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire-Ekimmara", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire-Fleder", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+        new Muster("Vampire-Garkain", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
+////////        new Muster("ArachasBehemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
+        new Muster("GaunterO’Dimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
     }
 
     private static void loadScorchCards() {
         for (int i = 0; i < 3; i++)
             new Scorch("Scorch", 0, 3, "Scorch", "Weather", "Neutral", false, "Remove card(s) with the maximum power points in the field (ignores heroes)");
-        new Scorch("Clan Dimun Pirate", 6, 1, "Scorch", "Ranged Unit", "Skellige", false, "kills opponent card(s) with most power(does not matter in which row in this card)");
-        new Scorch("Schirru", 8, 1, "Scorch", "Siege Unit", "Scoia’tael", false, "kills the opponent's card(s) with most power in enemy's Siege combat row if the sum of powers of none-hero cards in this row is 10 or more");
+        new Scorch("ClanDimunPirate", 6, 1, "Scorch", "Ranged Unit", "Skellige", false, "kills opponent card(s) with most power(does not matter in which row in this card)");
+        new Scorch("Schirru", 8, 1, "Scorch", "Siege Unit", "Scoiatael", false, "kills the opponent's card(s) with most power in enemy's Siege combat row if the sum of powers of none-hero cards in this row is 10 or more");
         new Scorch("Toad", 7, 1, "Scorch", "Ranged Unit", "Monsters", false, "kills the opponent's card(s) with most power in enemy's Ranged combat row if the sum of powers of none-hero cards in this row is 10 or more");
         new Scorch("Villentretenmerth", 7, 1, "Scorch", "Close Combat Unit", "Neutral", false, "Works only on opponent’s close combat");
     }
 
     private static void loadSpyCards() {
-        new Spy("Prince Stennis", 5, 1, "Spy", "Close Combat Unit", "Northern Realms", false, "");
-        new Spy("Sigismund Dijkstra", 4, 1, "Spy", "Close Combat Unit", "Northern Realms", false, "");
-        new Spy("Thaler", 1, 1, "Spy", "Siege Unit", "Northern Realms", false, "");
-        new Spy("Stefan Skellen", 9, 1, "Spy", "Close Combat Unit", "Nilfgaard", false, "");
-        new Spy("Shilard Fitz-Oesterlen", 7, 1, "Spy", "Close Combat Unit", "Nilfgaard", false, "");
-        new Spy("Vattier de Rideaux", 4, 1, "Spy", "Close Combat Unit", "Nilfgaard", false, "");
-        new Spy("Mysterious Elf", 0, 1, "Spy", "Close Combat Unit", "Neutral", true, "");
+        new Spy("PrinceStennis", 5, 1, "Spy", "Close Combat Unit", "Northern", false, "");
+        new Spy("SigismundDijkstra", 4, 1, "Spy", "Close Combat Unit", "Northern", false, "");
+        new Spy("Thaler", 1, 1, "Spy", "Siege Unit", "Northern", false, "");
+        new Spy("StefanSkellen", 9, 1, "Spy", "Close Combat Unit", "Nilfgaard", false, "");
+        new Spy("ShilardFitz-Oesterlen", 7, 1, "Spy", "Close Combat Unit", "Nilfgaard", false, "");
+        new Spy("VattierdeRideaux", 4, 1, "Spy", "Close Combat Unit", "Nilfgaard", false, "");
+        new Spy("MysteriousElf", 0, 1, "Spy", "Close Combat Unit", "Neutral", true, "");
     }
 
     private static void loadTightBondCards() {
         for (int i = 0; i < 4; i++) {
-            new TightBond("Impera Brigade Guard", 3, 4, "TightBond", "Close Combat Unit", "Nilfgaard", false, "");
-            new TightBond("Poor Infantry", 1, 4, "TightBond", "Close Combat Unit", "Northern Realms", false, "");
+            new TightBond("ImperaBrigadeGuard", 3, 4, "TightBond", "Close Combat Unit", "Nilfgaard", false, "");
+            new TightBond("PoorInfantry", 1, 4, "TightBond", "Close Combat Unit", "Northern", false, "");
         }
         for (int i = 0; i < 3; i++) {
-            new TightBond("Clan An Craite", 6, 3, "TightBond", "Close Combat Unit", "Skellige", false, "");
-            new TightBond("Clan Drummond Shieldmaiden", 4, 3, "TightBond", "Close Combat Unit", "Skellige", false, "Can be Mustered by Cerys.");
-            new TightBond("Blue Stripes Commando", 4, 3, "TightBond", "Close Combat Unit", "Northern Realms", false, "");
-            new TightBond("Dragon Hunter", 5, 3, "TightBond", "Ranged Unit", "Northern Realms", false, "");
-            new TightBond("War Longship", 6, 3, "TightBond", "Siege Unit", "Skellige", false, "");
-            new TightBond("Nausicaa Cavalry Rider", 2, 3, "TightBond", "Close Combat Unit", "Nilfgaard", false, "");
+            new TightBond("ClanAnCraite", 6, 3, "TightBond", "Close Combat Unit", "Skellige", false, "");
+            new TightBond("ClanDrummondShieldmaiden", 4, 3, "TightBond", "Close Combat Unit", "Skellige", false, "Can be Mustered by Cerys.");
+            new TightBond("BlueStripesCommando", 4, 3, "TightBond", "Close Combat Unit", "Northern", false, "");
+            new TightBond("DragonHunter", 5, 3, "TightBond", "Ranged Unit", "Northern", false, "");
+            new TightBond("WarLongship", 6, 3, "TightBond", "Siege Unit", "Skellige", false, "");
+            new TightBond("NausicaaCavalryRider", 2, 3, "TightBond", "Close Combat Unit", "Nilfgaard", false, "");
         }
         for (int i = 0; i < 2; i++) {
-            new TightBond("Catapult", 8, 2, "TightBond", "Siege Unit", "Northern Realms", false, "");
-            new TightBond("Young Emissary", 5, 2, "TightBond", "Close Combat Unit", "Nilfgaard", false, "");
+            new TightBond("Catapult", 8, 2, "TightBond", "Siege Unit", "Northern", false, "");
+            new TightBond("YoungEmissary", 5, 2, "TightBond", "Close Combat Unit", "Nilfgaard", false, "");
         }
-        new TightBond("Young Vidkaarl", 8, 0, "TightBond", "Ranged Unit", "Skellige", false, "it can only be played when a young berserker transform into it.");
+        new TightBond("YoungVidkaarl", 8, 0, "TightBond", "Ranged Unit", "Skellige", false, "it can only be played when a young berserker transform into it.");
     }
 
     private static void loadTransformersCards() {
@@ -196,19 +196,18 @@ public class LoadController {
         new Card("Draug", 10, 1, "", "Close Combat Unit", "Monsters", true, "");
         new Card("Imlerith", 10, 1, "", "Close Combat Unit", "Monsters", true, "");
         new Card("Leshen", 10, 1, "", "Close Combat Unit", "Monsters", true, "");
-        new Card("Earth Elemental", 6, 1, "", "Siege Unit", "Monsters", false, "");
+        new Card("EarthElemental", 6, 1, "", "Siege Unit", "Monsters", false, "");
         new Card("Fiend", 6, 1, "", "Close Combat Unit", "Monsters", false, "");
-        new Card("Fire Elemental", 6, 1, "", "Siege Unit", "Monsters", false, "");
+        new Card("FireElemental", 6, 1, "", "Siege Unit", "Monsters", false, "");
         new Card("Forktail", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Frightener", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
-        new Card("Forktail", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
-        new Card("Grave Hag", 5, 1, "", "Ranged Unit", "Monsters", false, "");
+        new Card("GraveHag", 5, 1, "", "Ranged Unit", "Monsters", false, "");
         new Card("Griffin", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
-        new Card("Ice Giant", 5, 1, "", "Siege Unit", "Monsters", false, "");
-        new Card("Plague Maiden", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
+        new Card("IceGiant", 5, 1, "", "Siege Unit", "Monsters", false, "");
+        new Card("PlagueMaiden", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Werewolf", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Botchling", 4, 1, "", "Close Combat Unit", "Monsters", false, "");
-        new Card("Celaeno Harpy", 2, 1, "", "Agile", "Monsters", false, "");
+        new Card("CelaenoHarpy", 2, 1, "", "Agile", "Monsters", false, "");
         new Card("Cockatrice", 2, 1, "", "Ranged Unit", "Monsters", false, "");
         new Card("Endrega", 2, 1, "", "Ranged Unit", "Monsters", false, "");
         new Card("Foglet", 2, 1, "", "Close Combat Unit", "Monsters", false, "");
@@ -219,24 +218,23 @@ public class LoadController {
 
     private static void loadNoActionNilfgaardianCards() {
         for (int i = 0; i < 2; i++)
-            new Card("Black Infantry Archer", 10, 2, "", "Ranged Unit", "Nilfgaard", false, "");
-        new Card("Cahir Mawr Dyffryn aep Ceallach", 6, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
+            new Card("BlackInfantryArcher", 10, 2, "", "Ranged Unit", "Nilfgaard", false, "");
+        new Card("CahirMawrDyffrynaepCeallach", 6, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
         new Card("Puttkammer", 3, 1, "", "Ranged Unit", "Nilfgaard", false, "");
-        new Card("Assire var Anahid", 6, 1, "", "Ranged Unit", "Nilfgaard", false, "");
-        new Card("Tibor Eggebracht", 10, 1, "", "Ranged Unit", "Nilfgaard", true, "");
-        new Card("Renuald aep Matsen", 5, 1, "", "Ranged Unit", "Nilfgaard", false, "");
-        new Card("Fringilla Vigo", 6, 1, "", "Ranged Unit", "Nilfgaard", false, "");
-        new Card("Rotten Mangonel", 3, 1, "", "Siege Unit", "Nilfgaard", false, "");
-        new Card("Heavy Zerrikanian Fire Scorpion", 10, 1, "", "Siege Unit", "Nilfgaard", false, "");
-        new Card("Zerrikanian Fire Scorpion", 5, 1, "", "Siege Unit", "Nilfgaard", false, "");
-        new Card("Siege Engineer", 6, 1, "", "Siege Unit", "Nilfgaard", false, "");
-        new Card("Morvran Voorhis", 10, 1, "", "Siege Unit", "Nilfgaard", true, "");
+        new Card("AssirevarAnahid", 6, 1, "", "Ranged Unit", "Nilfgaard", false, "");
+        new Card("TiborEggebracht", 10, 1, "", "Ranged Unit", "Nilfgaard", true, "");
+        new Card("RenualdaepMatsen", 5, 1, "", "Ranged Unit", "Nilfgaard", false, "");
+        new Card("FringillaVigo", 6, 1, "", "Ranged Unit", "Nilfgaard", false, "");
+        new Card("RottenMangonel", 3, 1, "", "Siege Unit", "Nilfgaard", false, "");
+        new Card("HeavyZerrikanianFireScorpion", 10, 1, "", "Siege Unit", "Nilfgaard", false, "");
+        new Card("ZerrikanianFireScorpion", 5, 1, "", "Siege Unit", "Nilfgaard", false, "");
+        new Card("SiegeEngineer", 6, 1, "", "Siege Unit", "Nilfgaard", false, "");
+        new Card("MorvranVoorhis", 10, 1, "", "Siege Unit", "Nilfgaard", true, "");
         new Card("Albrich", 2, 1, "", "Ranged Unit", "Nilfgaard", false, "");
         new Card("Cynthia", 4, 1, "", "Ranged Unit", "Nilfgaard", false, "");
-        new Card("Letho of Gulet", 10, 1, "", "Close Combat Unit", "Nilfgaard", true, "");
+        new Card("LethoofGulet", 10, 1, "", "Close Combat Unit", "Nilfgaard", true, "");
         new Card("Morteisen", 3, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
-        new Card("Morvran Voorhis", 10, 1, "", "Siege Unit", "Nilfgaard", true, "");
-        new Card("Rainfarn ", 4, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
+        new Card("Rainfarn", 4, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
         new Card("Sweers", 2, 1, "", "Ranged Unit", "Nilfgaard", false, "");
         new Card("Vanhemar", 4, 1, "", "Ranged Unit", "Nilfgaard", false, "");
         new Card("Vreemde", 2, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
@@ -244,60 +242,60 @@ public class LoadController {
 
     private static void loadNoActionNorthenCards() {
         for (int i = 0; i < 2; i++) {
-            new Card("Ballista", 6, 2, "", "Siege Unit", "Northern Realms", false, "");
-            new Card("Redanian Foot Soldier", 1, 2, "", "Close Combat Unit", "Northern Realms", false, "");
-            new Card("Trebuchet", 6, 2, "", "Siege Unit", "Northern Realms", false, "");
+            new Card("Ballista", 6, 2, "", "Siege Unit", "Northern", false, "");
+            new Card("RedanianFootSoldier", 1, 2, "", "Close Combat Unit", "Northern", false, "");
+            new Card("Trebuchet", 6, 2, "", "Siege Unit", "Northern", false, "");
         }
-        new Card("Dethmold", 6, 1, "", "Ranged Unit", "Northern Realms", false, "");
-        new Card("Esterad Thyssen", 10, 1, "", "Close Combat Unit", "Northern Realms", true, "");
-        new Card("John Natalis", 10, 1, "", "Close Combat Unit", "Northern Realms", true, "");
-        new Card("Keira Metz", 5, 1, "", "Ranged Unit", "Northern Realms", false, "");
-        new Card("Philippa Eilhart", 10, 1, "", "Ranged Unit", "Northern Realms", true, "");
-        new Card("Sabrina Glevissing", 4, 1, "", "Ranged Unit", "Northern Realms", false, "");
-        new Card("Sheldon Skaggs", 4, 1, "", "Ranged Unit", "Northern Realms", false, "");
-        new Card("Siege Tower", 6, 1, "", "Siege Unit", "Northern Realms", false, "");
-        new Card("Siegfried of Denesle", 5, 1, "", "Close Combat Unit", "Northern Realms", false, "");
-        new Card("Síle de Tansarville", 5, 1, "", "Ranged Unit", "Northern Realms", false, "");
-        new Card("Vernon Roche", 10, 1, "", "Close Combat Unit", "Northern Realms", true, "");
-        new Card("Ves", 5, 1, "", "Close Combat Unit", "Northern Realms", false, "");
-        new Card("Yarpen Zirgrin", 2, 1, "", "Close Combat Unit", "Northern Realms", false, "");
+        new Card("Dethmold", 6, 1, "", "Ranged Unit", "Northern", false, "");
+        new Card("EsteradThyssen", 10, 1, "", "Close Combat Unit", "Northern", true, "");
+        new Card("JohnNatalis", 10, 1, "", "Close Combat Unit", "Northern", true, "");
+        new Card("KeiraMetz", 5, 1, "", "Ranged Unit", "Northern", false, "");
+        new Card("PhilippaEilhart", 10, 1, "", "Ranged Unit", "Northern", true, "");
+        new Card("SabrinaGlevissing", 4, 1, "", "Ranged Unit", "Northern", false, "");
+        new Card("SheldonSkaggs", 4, 1, "", "Ranged Unit", "Northern", false, "");
+        new Card("SiegeTower", 6, 1, "", "Siege Unit", "Northern", false, "");
+        new Card("SiegfriedofDenesle", 5, 1, "", "Close Combat Unit", "Northern", false, "");
+        new Card("SíledeTansarville", 5, 1, "", "Ranged Unit", "Northern", false, "");
+        new Card("VernonRoche", 10, 1, "", "Close Combat Unit", "Northern", true, "");
+        new Card("Ves", 5, 1, "", "Close Combat Unit", "Northern", false, "");
+        new Card("YarpenZirgrin", 2, 1, "", "Close Combat Unit", "Northern", false, "");
 
     }
 
     private static void loadNoActionScoiataellCards() {
         for (int i = 0; i < 5; i++)
-            new Card("Mahakaman Defender", 5, 5, "", "Close Combat Unit", "Scoia’tael", false, "");
+            new Card("MahakamanDefender", 5, 5, "", "Close Combat Unit", "Scoiatael", false, "");
         for (int i = 0; i < 3; i++)
-            new Card("Dol Blathanna Scout", 6, 3, "", "Agile Unit", "Scoia’tael", false, "");
+            new Card("DolBlathannaScout", 6, 3, "", "Agile Unit", "Scoiatael", false, "");
         for (int i = 0; i < 2; i++)
-            new Card("Vrihedd Brigade Veteran", 5, 2, "", "Agile Unit", "Scoia’tael", false, "");
-        new Card("Iorveth", 10, 1, "", "Ranged Unit", "Scoia’tael", true, "");
-        new Card("Yaevinn", 6, 1, "", "Agile Unit", "Scoia’tael", false, "");
-        new Card("Ciaran aep", 3, 1, "", "Agile Unit", "Scoia’tael", false, "");
-        new Card("Dennis Cranmer", 6, 1, "", "Close Combat Unit", "Scoia’tael", false, "");
-        new Card("Dol Blathanna Archer", 4, 1, "", "Ranged Unit", "Scoia’tael", false, "");
-        new Card("Filavandrel", 6, 1, "", "Agile Unit", "Scoia’tael", false, "");
-        new Card("Ida Emean aep", 6, 1, "", "Ranged Unit", "Scoia’tael", false, "");
-        new Card("Riordain", 1, 1, "", "Ranged Unit", "Scoia’tael", false, "");
-        new Card("Toruviel", 2, 1, "", "Ranged Unit", "Scoia’tael", false, "");
-        new Card("Vrihedd Brigade Recruit", 4, 1, "", "Ranged Unit", "Scoia’tael", false, "");
-        new Card("Seasenthessis", 10, 1, "", "Ranged Unit", "Scoia’tael", true, "");
-        new Card("Barclay Els", 6, 1, "", "Agile Unit", "Scoia’tael", false, "");
-        new Card("Eithne", 10, 1, "", "Ranged Unit", "Scoia’tael", true, "");
+            new Card("VriheddBrigadeVeteran", 5, 2, "", "Agile Unit", "Scoiatael", false, "");
+        new Card("Iorveth", 10, 1, "", "Ranged Unit", "Scoiatael", true, "");
+        new Card("Yaevinn", 6, 1, "", "Agile Unit", "Scoiatael", false, "");
+        new Card("Ciaranaep", 3, 1, "", "Agile Unit", "Scoiatael", false, "");
+        new Card("DennisCranmer", 6, 1, "", "Close Combat Unit", "Scoiatael", false, "");
+        new Card("DolBlathannaArcher", 4, 1, "", "Ranged Unit", "Scoiatael", false, "");
+        new Card("Filavandrel", 6, 1, "", "Agile Unit", "Scoiatael", false, "");
+        new Card("IdaEmeanaep", 6, 1, "", "Ranged Unit", "Scoiatael", false, "");
+        new Card("Riordain", 1, 1, "", "Ranged Unit", "Scoiatael", false, "");
+        new Card("Toruviel", 2, 1, "", "Ranged Unit", "Scoiatael", false, "");
+        new Card("VriheddBrigadeRecruit", 4, 1, "", "Ranged Unit", "Scoiatael", false, "");
+        new Card("Seasenthessis", 10, 1, "", "Ranged Unit", "Scoiatael", true, "");
+        new Card("BarclayEls", 6, 1, "", "Agile Unit", "Scoiatael", false, "");
+        new Card("Eithne", 10, 1, "", "Ranged Unit", "Scoiatael", true, "");
 
     }
 
     private static void loadNoActionSkelligeCards() {
         for (int i = 0; i < 3; i++)
-            new Card("Clan Brokvar Archer", 6, 3, "", "Ranged Unit", "Skellige", false, "");
+            new Card("ClanBrokvarArcher", 6, 3, "", "Ranged Unit", "Skellige", false, "");
         new Card("Hjalmar", 10, 1, "", "Ranged Unit", "Skellige", true, "");
-        new Card("Holger Blackhand", 4, 1, "", "Siege Unit", "Skellige", false, "");
+        new Card("HolgerBlackhand", 4, 1, "", "Siege Unit", "Skellige", false, "");
         new Card("Svanrige", 4, 1, "", "Close Combat Unit", "Skellige", false, "");
         new Card("Udalryk", 4, 1, "", "Close Combat Unit", "Skellige", false, "");
-        new Card("Donar an Hindar", 4, 1, "", "Close Combat Unit", "Skellige", false, "");
-        new Card("Blueboy Lugos", 6, 1, "", "Close Combat Unit", "Skellige", false, "");
-        new Card("Madman Lugos", 6, 1, "", "Close Combat Unit", "Skellige", false, "");
-        new Card("Clan Tordarroch Armorsmith", 4, 1, "", "Close Combat Unit", "Skellige", false, "");
+        new Card("DonaranHindar", 4, 1, "", "Close Combat Unit", "Skellige", false, "");
+        new Card("BlueboyLugos", 6, 1, "", "Close Combat Unit", "Skellige", false, "");
+        new Card("MadmanLugos", 6, 1, "", "Close Combat Unit", "Skellige", false, "");
+        new Card("ClanTordarrochArmorsmith", 4, 1, "", "Close Combat Unit", "Skellige", false, "");
 
     }
 }
