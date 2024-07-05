@@ -36,12 +36,6 @@
                 </HBox>
                 <ImageView fx:id="currentLeaderImage" fitHeight="190" fitWidth="100"/>
             </VBox>
-            <!--            <HBox alignment="BOTTOM_CENTER">-->
-            <!--                <padding>-->
-            <!--                    <Insets bottom="200"/>-->
-            <!--                </padding>-->
-            <!--                <Button fx:id="useLeaderActionButton" text="Leader Action" prefWidth="150" onAction="#leaderAction"/>-->
-            <!--            </HBox>-->
         </HBox>
         <!-- Center section for the game board -->
         <HBox>
