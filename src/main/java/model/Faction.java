@@ -8,12 +8,12 @@ import java.util.Collection;
 public class Faction implements Serializable {
     private String name;
     private ArrayList<Commander> commanders = new ArrayList<>();
-    private ArrayList<Card> cards = new ArrayList<>();
-
+    private ArrayList<Card> cards;
     private static ArrayList<Faction> factions = new ArrayList<>();
 
     public Faction(String name){
         this.name = name;
+        this.cards = new ArrayList<>();
 
         factions.add(this);
     }
@@ -28,14 +28,6 @@ public class Faction implements Serializable {
         return commanders;
     }
 
-    public Commander getCommanderByNumber(int number) {
-        for (Commander commander : commanders) {
-            if (commander.getNumber() == number) {
-                return commander;
-            }
-        }
-        return null;
-    }
 
     public void setCommanders(ArrayList<Commander> commanders) {
         this.commanders = commanders;
@@ -43,6 +35,10 @@ public class Faction implements Serializable {
 
     public void addCommander(Commander commanders) {
         this.commanders.add(commanders);
+    }
+
+    public void addCard(Card card) {
+        this.cards.add(card);
     }
 
     public static Faction getFactionByName(String name) {

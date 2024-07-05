@@ -7,34 +7,21 @@
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Spell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Spell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Faction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/ScoreBoardMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ScoreBoardMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CSS/gwent-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSS/gwent-theme.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Actionable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Actionable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Card.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Commander.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Commander.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Faction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Faction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Soldier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Soldier.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/Spell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Spell.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Berserker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Berserker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/CommandersHorn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/CommandersHorn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Decoy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Decoy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Mardroeme.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Mardroeme.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Medic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Medic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/MoralBoost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/MoralBoost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Muster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Muster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Spy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Spy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/TightBond.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/TightBond.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Transformers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Transformers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,8 +74,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../4/1" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -130,10 +116,6 @@
       <workItem from="1719580604325" duration="17249000" />
       <workItem from="1719644171364" duration="3981000" />
       <workItem from="1719668195405" duration="8084000" />
-      <workItem from="1719946192891" duration="13000" />
-      <workItem from="1719985008627" duration="9698000" />
-      <workItem from="1720026338171" duration="2007000" />
-      <workItem from="1720108198693" duration="96000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -338,35 +320,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <task id="LOCAL-00030" summary="Connect load and save">
-      <created>1719932784842</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1719932784842</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Game fxml and resources added">
-      <created>1719997067377</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1719997067377</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Profile added, other things corrected">
-      <created>1720028766887</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1720028766887</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Show available rows added">
-      <created>1720028850991</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1720028850991</updated>
-    </task>
-    <option name="localTasksCounter" value="34" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,10 +390,6 @@
     <MESSAGE value="PreGame menu completed" />
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
-    <MESSAGE value="Connect load and save" />
-    <MESSAGE value="Game fxml and resources added" />
-    <MESSAGE value="Profile added, other things corrected" />
-    <MESSAGE value="Show available rows added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Show available rows added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the bugs after merge" />
   </component>
 </project>

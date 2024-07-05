@@ -16,12 +16,12 @@ public class Mardroeme extends Card implements Actionable {
         Row row = (Row) items[0];
         for (Card card : row.getCards()) {
             if (card.getName().equals("Berserker")) {
-                row.getCards().remove(card);
-                row.getCards().add(Card.getCardByName("Vidkaarl"));
+                row.deleteFromCards(card);
+                row.addToCards(Card.getCardByName("Vidkaarl"));
             }
-            else {
-                row.getCards().remove(card);
-                row.getCards().add(Card.getCardByName("Young Vidkaarl"));
+            else if (card.getName().equals("Young Berserker")){
+                row.deleteFromCards(card);
+                row.addToCards(Card.getCardByName("Young Vidkaarl"));
             }
         }
 
