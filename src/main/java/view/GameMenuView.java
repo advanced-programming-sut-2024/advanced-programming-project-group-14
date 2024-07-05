@@ -84,7 +84,7 @@ public class GameMenuView extends MenuView {
         opponentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentName.setText(GameMenuController.opponentPlayer.getUsername());
         currentName.setText(GameMenuController.currentPlayer.getUsername());
-        
+
         for (int i=0; i<GameMenuController.currentPlayer.getHand().size();i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getHand().get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
