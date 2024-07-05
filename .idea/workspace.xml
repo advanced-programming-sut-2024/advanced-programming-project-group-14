@@ -6,90 +6,217 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/monsters_eredin_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/monsters_eredin_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/monsters_eredin_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/monsters_eredin_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/monsters_eredin_the_treacherous.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_cow.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_dandelion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_gaunter_odimm.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_gaunter_odimm_darkness.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_mysterious_elf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_olgierd.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_villen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_yennefer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/nilfgaard_emhyr_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/nilfgaard_emhyr_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/nilfgaard_emhyr_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/nilfgaard_emhyr_invader_of_the_north.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/nilfgaard_emhyr_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_foltest_son_of_medell.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_barclay.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_ciaran.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dennis.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_archer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_eithne.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_filavandrel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_francesca_bronze.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_francesca_copper.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_francesca_gold.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_francesca_hope_of_the_aen_seidhe.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_francesca_silver.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_ida.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_iorveth.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_riordain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_saskia.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_schirru.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_toruviel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_brigade.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_cadet.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_yaevinn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_berserker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_birna.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_blueboy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_brokva_archer.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_cerys.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_crach_an_craite.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_craite_warrior.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_dimun_pirate.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_donar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_draig.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_ermion.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_hjalmar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_holger.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_kambi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_king_bran.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_light_longship.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_madmad_lugos.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_olaf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_shield_maiden.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_svanrige.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_tordarroch.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_udalryk.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_vildkaarl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_war_longship.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_young_berserker.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_young_vildkaarl.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_decoy.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_horn.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_mardroeme.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_scorch.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_clear.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_fog.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_frost.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_rain.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_storm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Faction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/PreGameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/PreGameMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Commander’shorn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/CommandersHorn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/GaunterO’DImmDarkness.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/GaunterODImmDarkness.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/GaunterO’Dimm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/GaunterODimm.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SíledeTansarville.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_blue_stripes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/realms_crinfrid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/PreGameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/PreGameMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/faction_monsters.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/faction_nilfgaard.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/faction_realms.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/faction_scoiatael.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/faction_skellige.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_arachas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_arachas_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_arachas_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_arachas_behemoth.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_bruxa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_celaeno_harpy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_cockatrice.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_draug.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_earth_elemental.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_ekkima.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_endrega.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_bronze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_copper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_gold.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_silver.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_eredin_the_treacherous.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_fiend.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_fire_elemental.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_fleder.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_fogling.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_forktail.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_frightener.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_frost_giant.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_gargoyle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_garkain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_ghoul.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_ghoul_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_ghoul_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_gravehag.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_gryffin.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_harpy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_imlerith.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_katakan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_leshen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_mighty_maiden.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_nekker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_nekker_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_nekker_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_poroniec.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_toad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_werewolf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_witch_velen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_witch_velen_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_witch_velen_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_wyvern.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_cow.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_dandelion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_gaunter_odimm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_gaunter_odimm_darkness.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_mysterious_elf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_olgierd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_villen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_yennefer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_albrich.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_archer_support.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_archer_support_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_assire.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_black_archer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_cahir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_cynthia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_bronze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_copper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_gold.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_invader_of_the_north.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_emhyr_silver.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_fringilla.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_heavy_zerri.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_imperal_brigade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_letho.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_menno.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_moorvran.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_morteisen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_nauzicaa_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_puttkammer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_rainfarn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_renuald.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_rotten.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_shilard.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_siege_engineer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_siege_support.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_stefan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_sweers.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_tibor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_vanhemar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_vattier.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_vreemde.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_young_emissary.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_young_emissary_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_zerri.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_ballista.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_banner_nurse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_blue_stripes.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_catapult_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_crinfrid.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_dethmold.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_dijkstra.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_esterad.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_bronze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_copper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_gold.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_silver.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_foltest_son_of_medell.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_kaedwen_siege.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_kaedwen_siege_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_kaedwen_siege_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_keira.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_natalis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_philippa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_poor_infantry.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_redania.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_redania_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_sabrina.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_sheala.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_sheldon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_siege_tower.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_siegfried.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_stennis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_thaler.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_trebuchet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_trebuchet_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_vernon.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_ves.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/realms_yarpen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_barclay.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_ciaran.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dennis.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_archer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_infantry.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dwarf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_eithne.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_elf_skirmisher.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_filavandrel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_bronze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_copper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_gold.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_hope_of_the_aen_seidhe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_francesca_silver.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_nurse_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_support.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_ida.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_iorveth.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_riordain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_saskia.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_schirru.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_toruviel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_vrihedd_brigade.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_vrihedd_cadet.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_yaevinn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_berserker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_birna.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_blueboy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_brokva_archer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_cerys.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_crach_an_craite.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_craite_warrior.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_dimun_pirate.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_donar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_draig.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_ermion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_hjalmar.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_holger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_kambi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_king_bran.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_light_longship.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_madmad_lugos.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_olaf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_svanrige.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_tordarroch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_udalryk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_vildkaarl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_war_longship.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_young_berserker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_young_vildkaarl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/special_decoy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/special_horn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/special_mardroeme.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/special_scorch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/weather_clear.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/weather_fog.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/weather_frost.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/weather_rain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/weather_storm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Faction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Faction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -402,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720184153583</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Photos name update completed">
+      <created>1720187861875</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1720187861875</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="PreGame fxml added" />
     <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
@@ -460,6 +593,7 @@
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="LoadAll called" />
     <MESSAGE value="Commanders array list initialized corrected" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commanders array list initialized corrected" />
+    <MESSAGE value="Photos name update completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Photos name update completed" />
   </component>
 </project>

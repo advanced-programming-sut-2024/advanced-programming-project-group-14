@@ -86,7 +86,7 @@ public class LoadController {
 
     private static void loadCommandersHornCards() {
         for (int i = 0; i < 3; i++)
-            new CommandersHorn("Commander’shorn", 0, 3, "CommandersHorn", "Special", "Neutral", false, "Doubles the power of the cards in the row that was placed. Only one of this type can be played in a row");
+            new CommandersHorn("CommandersHorn", 0, 3, "CommandersHorn", "Special", "Neutral", false, "Doubles the power of the cards in the row that was placed. Only one of this type can be played in a row");
         new CommandersHorn("DraigBon-Dhu", 2, 1, "CommandersHorn", "Siege Unit", "Skellige", false, "");
         new CommandersHorn("Dandelion", 2, 1, "CommandersHorn", "Close Combat Unit", "Neutral", false, "Same power as the commander’s horn");
     }
@@ -130,7 +130,7 @@ public class LoadController {
             new Muster("ElvenSkirmisher", 2, 3, "Muster", "Ranged Unit", "Scoiatael", false, "");
             new Muster("DwarvenSkirmisher", 3, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
             new Muster("HavekarSmuggler", 5, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
-            new Muster("GaunterO’DImmDarkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
+            new Muster("GaunterODImmDarkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
             new Muster("Arachas", 4, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Ghoul", 1, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Nekker", 2, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
@@ -145,7 +145,7 @@ public class LoadController {
         new Muster("Vampire-Fleder", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
         new Muster("Vampire-Garkain", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
 ////////        new Muster("ArachasBehemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
-        new Muster("GaunterO’Dimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
+        new Muster("GaunterODimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
     }
 
     private static void loadScorchCards() {
@@ -255,7 +255,7 @@ public class LoadController {
         new Card("SheldonSkaggs", 4, 1, "", "Ranged Unit", "Northern", false, "");
         new Card("SiegeTower", 6, 1, "", "Siege Unit", "Northern", false, "");
         new Card("SiegfriedofDenesle", 5, 1, "", "Close Combat Unit", "Northern", false, "");
-        new Card("SíledeTansarville", 5, 1, "", "Ranged Unit", "Northern", false, "");
+        new Card("SiledeTansarville", 5, 1, "", "Ranged Unit", "Northern", false, "");
         new Card("VernonRoche", 10, 1, "", "Close Combat Unit", "Northern", true, "");
         new Card("Ves", 5, 1, "", "Close Combat Unit", "Northern", false, "");
         new Card("YarpenZirgrin", 2, 1, "", "Close Combat Unit", "Northern", false, "");
