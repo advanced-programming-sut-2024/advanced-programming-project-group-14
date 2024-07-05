@@ -19,7 +19,7 @@ public class Mardroeme extends Card implements Actionable {
                 row.deleteFromCards(card);
                 row.addToCards(Card.getCardByName("Vidkaarl"));
             }
-            else {
+            else if (card.getName().equals("Young Berserker")){
                 row.deleteFromCards(card);
                 row.addToCards(Card.getCardByName("Young Vidkaarl"));
             }
