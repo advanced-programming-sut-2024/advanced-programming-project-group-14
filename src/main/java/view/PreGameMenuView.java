@@ -1,5 +1,6 @@
 package view;
 
+import controller.LoadController;
 import controller.PreGameMenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -42,6 +43,7 @@ public class PreGameMenuView extends MenuView{
     @Override
     public void start(Stage stage) throws Exception {
         PreGameMenuView.stage = stage;
+        LoadController.loadAll();
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/PreGameMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
