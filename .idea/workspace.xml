@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Faction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Faction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Commander.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Commander.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Faction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Faction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Row.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Row.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Soldier.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Spell.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Decoy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Decoy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Mardroeme.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Mardroeme.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Muster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Muster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Transformers.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Transformers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="LoadAll called">
+      <created>1720177236561</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1720177236561</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +372,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Profile menu added" />
     <MESSAGE value="Random button and Stay Login added" />
     <MESSAGE value="PreGame fxml added" />
     <MESSAGE value="Directions of methods fixed" />
@@ -374,6 +396,7 @@
     <MESSAGE value="PreGame menu completed" />
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix the bugs after merge" />
+    <MESSAGE value="LoadAll called" />
+    <option name="LAST_COMMIT_MESSAGE" value="LoadAll called" />
   </component>
 </project>

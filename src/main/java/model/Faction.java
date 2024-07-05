@@ -7,13 +7,14 @@ import java.util.Collection;
 
 public class Faction implements Serializable {
     private String name;
-    private ArrayList<Commander> commanders = new ArrayList<>();
+    private ArrayList<Commander> commanders;
     private ArrayList<Card> cards;
     private static ArrayList<Faction> factions = new ArrayList<>();
 
     public Faction(String name){
         this.name = name;
         this.cards = new ArrayList<>();
+        this.commanders = new ArrayList<>();
 
         factions.add(this);
     }
