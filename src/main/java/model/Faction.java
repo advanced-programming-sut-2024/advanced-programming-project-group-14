@@ -74,4 +74,16 @@ public class Faction implements Serializable {
         }
         return null;
     }
+
+    public Card getCardByName(String name) {
+        for (Card card : cards) {
+            if (card.getName().equals(name))
+                return card;
+        }
+        return null;
+    }
+
+    public void removeCard(Card card) {
+        this.cards.remove(card);
+    }
 }

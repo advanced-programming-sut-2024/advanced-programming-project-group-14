@@ -171,16 +171,11 @@ public class User {
         return null;
     }
 
-    public int numberOfSpecificCardInDeck() {
-        int count = 0;
-        for (Card card : deck) {
-            if (card.getType().equals("weather") || card.getType().equals("spell")) {
-                count++;
-
-            }
+    public Card getCardInDeck(String name){
+        for (Card card: deck) {
+            if (card.getName().equals(name))
+                return card;
         }
-        return count;
+        return null;
     }
-
-
 }

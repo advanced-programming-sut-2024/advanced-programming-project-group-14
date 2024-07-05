@@ -27,7 +27,7 @@ import java.util.Objects;
 public class PreGameMenuView extends MenuView{
     public static Stage stage;
     public int cardWidth = 150;
-    public int cardHeight = 250;
+    public int cardHeight = 283;
     public int cardCountInRow = 9;
 
     @FXML
@@ -86,7 +86,6 @@ public class PreGameMenuView extends MenuView{
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String name = getNameFromUrl(imageView.getImage().getUrl());
-                System.out.println(name);
                 Faction faction = new Faction(Faction.getFactionByName(name));
                 ButtonType buttonType = showConfirmMessage("You want to change faction to "+ faction.getName() + "?");
                 if (buttonType == ButtonType.OK){
@@ -143,10 +142,16 @@ public class PreGameMenuView extends MenuView{
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String name = getNameFromUrl(imageView.getImage().getUrl());
-                Card card = Card.getCardByName(name);
-                PreGameMenuController.addToDeck(card);
+                Card card = PreGameMenuController.getCurrentPlayer().getFaction().getCardByName(name);
+                Result result = PreGameMenuController.addToDeck(card);
+                Object[] objects = {card,2,"salam"};
+                if (!result.isSuccessful()) {
+                    showError(result.getMessage());
+                    return;
+                }
                 infoGrid.getChildren().remove(imageView);
                 updateLabels();
+                showCards();
             });
             int columnIndex = i % cardCountInRow;
             infoGrid.add(imageView, columnIndex, (int) (i/cardCountInRow));
@@ -167,10 +172,11 @@ public class PreGameMenuView extends MenuView{
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String name = getNameFromUrl(imageView.getImage().getUrl());
-                Card card = Card.getCardByName(name);
+                Card card = PreGameMenuController.currentPlayer.getCardInDeck(name);
                 PreGameMenuController.deleteFromDeck(card);
                 infoGrid.getChildren().remove(imageView);
                 updateLabels();
+                showDeck();
             });
             int columnIndex = i % cardCountInRow;
             infoGrid.add(imageView, columnIndex, (int) (i/cardCountInRow));
@@ -185,10 +191,10 @@ public class PreGameMenuView extends MenuView{
         String factionName = PreGameMenuController.getCurrentPlayerFactionName();
         String handSize = String.valueOf(PreGameMenuController.getCurrentPlayerHandSize());
         String numberOfSoldiers = String.valueOf(PreGameMenuController.getCurrentPlayerNumberOfSoldiers());
-        String numberOfSpecialCards = String.valueOf(PreGameMenuController.getCurrentPlayer().getDeck().size()-PreGameMenuController.getCurrentPlayerNumberOfSoldiers());
+        String numberOfSpecialCards = String.valueOf(PreGameMenuController.getCurrentPlayerHandSize()-PreGameMenuController.getCurrentPlayerNumberOfSoldiers());
         String numberOfHeroCards = String.valueOf(PreGameMenuController.getCurrentPlayerNumberOfHeroes());
         String totalPower = String.valueOf(PreGameMenuController.getCurrentPlayerTotalDeckPower());
-        String[] values = {name, factionName, handSize, numberOfSoldiers, String.valueOf(numberOfSpecialCards), String.valueOf(numberOfHeroCards), String.valueOf(totalPower)};
+        String[] values = {name, factionName, handSize, numberOfSoldiers, numberOfSpecialCards, numberOfHeroCards,totalPower};
 
         for (int i = 0; i < labels.length; i++) {
             Label label = new Label(labels[i] + ":");
@@ -227,8 +233,14 @@ public class PreGameMenuView extends MenuView{
     }
 
     private void updateLabels(){
-        remainCardsLabel.setText("Cards remains: " + PreGameMenuController.currentPlayer.getFaction().getCards().size());
-        deckSizeLabel.setText("Cards in deck: " + PreGameMenuController.currentPlayer.getDeck().size());
+        try {
+            remainCardsLabel.setText("Cards remains: " + PreGameMenuController.currentPlayer.getFaction().getCards().size());
+            deckSizeLabel.setText("Cards in deck: " + PreGameMenuController.currentPlayer.getDeck().size());
+        }catch (Exception e){
+            remainCardsLabel.setText("Cards remains: 0");
+            deckSizeLabel.setText("Cards in deck: 0");
+        }
+
     }
 
     public void startGame() {

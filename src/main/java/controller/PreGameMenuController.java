@@ -14,6 +14,7 @@ public class PreGameMenuController {
     public static Player opponentPlayer;
 
     public static Result selectFaction(Faction faction) {
+        currentPlayer.setCommander(null);
         currentPlayer.getHand().clear();
         currentPlayer.setFaction(faction);
         return new Result(true, "Selected successfully");
@@ -50,33 +51,30 @@ public class PreGameMenuController {
         if (card == null) {
             return new Result(false, "invalid card name");
         }
-        if (currentPlayer.getDeck().size() >= 22) {
-            return new Result(false, "deck is full");
-        }
-        if (card.getCapacity() <= 0) {
-            return new Result(false, "card capacity is zero");
-        }
-        if (card.getType().equals("spell") || card.getType().equals("weather")) {
-            if (currentPlayer.numberOfSpecificCardInDeck() >= 10) {
+        if (card.getType().equals("Special") || card.getType().equals("Weather")) {
+            if (getCurrentPlayerHandSize()-getCurrentPlayerNumberOfSoldiers() >= 10) {
                 return new Result(false, "you can't have more than 10 special cards in your deck");
             }
         }
 
-        currentPlayer.getFaction().getCards().remove(card);
+        currentPlayer.getFaction().removeCard(card);
         currentPlayer.addToDeck(card);
         return new Result(true, "added successfully");
     }
 
     public static Result deleteFromDeck(Card card) {
-        currentPlayer.getFaction().getCards().add(card);
+        currentPlayer.getFaction().addCard(card);
         currentPlayer.deleteFromDeck(card);
         return new Result(true, "deleted successfully");
     }
 
     public static Result changeTurn() {
-        if (currentPlayer.getDeck().size() < 22) {
-            return new Result(false, "deck is not full");
-        }
+        if (currentPlayer.getDeck().size() < 22)
+            return new Result(false, "Deck is not full");
+        if (currentPlayer.getCommander() == null)
+            return new Result(false,"Choose a leader please");
+        if (currentPlayer.getDeck().size() >= 22 && opponentPlayer.getDeck().size() >= 22)
+            return new Result(false, "Your opponent has passed it's turn, please start the game");
         Player temp = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = temp;
@@ -88,9 +86,12 @@ public class PreGameMenuController {
             return new Result(false, "One of decks is not full");
         }
 
-        new GameTable(Date.from(new Date().toInstant()), currentPlayer, opponentPlayer);
+        GameMenuController.currentGameTable = new GameTable(Date.from(new Date().toInstant()), currentPlayer, opponentPlayer);
+        GameMenuController.currentPlayer = currentPlayer;
+        GameMenuController.opponentPlayer = opponentPlayer;
         return new Result(true, "Welcome to the game!");
     }
+
 
     public static Player getCurrentPlayer() {
         return currentPlayer;
@@ -111,7 +112,7 @@ public class PreGameMenuController {
     public static int getCurrentPlayerNumberOfSoldiers() {
         int number = 0;
         for (Card card : currentPlayer.getDeck()) {
-            if (!card.isHero() || card.getType() != "spell")
+            if (card.getType() != "Special" && card.getType()!= "Weather")
                 number++;
         }
         return number;
