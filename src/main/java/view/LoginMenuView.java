@@ -2,6 +2,7 @@ package view;
 
 import controller.LoginMenuController;
 import controller.RegisterMenuController;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -17,12 +18,21 @@ import model.Question;
 import model.Result;
 import model.User;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Optional;
+import java.util.Properties;
 
 
 public class LoginMenuView extends MenuView {
     public static Stage stage;
+    private static final String USERNAME = "gwentgame14@gmail.com";
+    private static final String PASSWORD = "perognblyuxxvicq";
+    private String generatedCode;
 
     @FXML
     public TextField loginUsernameField;
@@ -40,7 +50,7 @@ public class LoginMenuView extends MenuView {
     public TextField registerCPasswordTextField;
     public Button registerToggleCButton;
 
-    public static void run(){
+    public static void run() {
         launch();
     }
 
@@ -66,7 +76,8 @@ public class LoginMenuView extends MenuView {
             registerPasswordField.textProperty().bindBidirectional(registerPasswordTextField.textProperty());
             registerToggleCButton.setOnAction(event -> togglePasswordVisibility(registerCPasswordField, registerToggleCButton, registerCPasswordTextField));
             registerCPasswordField.textProperty().bindBidirectional(registerCPasswordTextField.textProperty());
-        }catch (NullPointerException e){}
+        } catch (NullPointerException e) {
+        }
 
     }
 
@@ -86,9 +97,9 @@ public class LoginMenuView extends MenuView {
         }
     }
 
-    private void showQuestionDialog(){
+    private void showQuestionDialog() {
         User user = User.getUserByUsername(loginUsernameField.getText());
-        if (user==null){
+        if (user == null) {
             showError("Enter a correct Username");
             return;
         }
@@ -133,7 +144,7 @@ public class LoginMenuView extends MenuView {
         });
 
         dialog.showAndWait().ifPresent(result -> {
-            Result checkResult = LoginMenuController.checkAnswer(user,result);
+            Result checkResult = LoginMenuController.checkAnswer(user, result);
             if (!checkResult.isSuccessful())
                 showError(checkResult.getMessage());
             else
@@ -141,7 +152,7 @@ public class LoginMenuView extends MenuView {
         });
     }
 
-    private void showNewPasswordDialog(User user){
+    private void showNewPasswordDialog(User user) {
         Dialog<String> dialog = new Dialog<>();
         dialog.setTitle("New Password");
         dialog.setHeaderText("Please enter your new password:");
@@ -188,30 +199,129 @@ public class LoginMenuView extends MenuView {
         });
 
         dialog.showAndWait().ifPresent(result -> {
-            Result checkPassword = RegisterMenuController.checkPassword(passwordField.getText(),passwordField.getText());
+            Result checkPassword = RegisterMenuController.checkPassword(passwordField.getText(), passwordField.getText());
             if (!checkPassword.isSuccessful())
                 showError(checkPassword.getMessage());
-            else{
-                LoginMenuController.changePassword(user,passwordField.getText());
+            else {
+                LoginMenuController.changePassword(user, passwordField.getText());
                 showSuccessfulMessage("Password changed successfully");
             }
         });
     }
 
     public void login() {
-        Result result = LoginMenuController.login(loginUsernameField.getText(),loginPasswordTextField.getText(),stayLoginCheckBox.isSelected());
+        Result result = LoginMenuController.login(loginUsernameField.getText(), loginPasswordTextField.getText(), stayLoginCheckBox.isSelected());
         if (!result.isSuccessful())
             showError(result.getMessage());
-        else
-            goToMainMenu(stage);
+        else {
+            yourMethod();
+        }
     }
 
     public void forgetPassword() {
         showQuestionDialog();
     }
 
+    public void verifyCode() {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Email Verification");
+        alert.setHeaderText("Enter the verification code sent to your email.");
+        TextField codeField = new TextField();
+        alert.getDialogPane().setContent(codeField);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == ButtonType.OK) {
+            String enteredCode = codeField.getText();
+            if (enteredCode.equals(generatedCode)) {
+                showSuccessfulMessage("Email verified successfully.");
+                goToMainMenu(stage);
+            } else {
+                showError("Invalid verification code.");
+            }
+        }
+    }
 
     public void openRegisterMenu() {
         goToRegisterMenu(stage);
+    }
+
+    private void sendEmail(String to, String subject, String text) {
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(USERNAME, PASSWORD);
+            }
+        });
+
+        try {
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(USERNAME));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+            message.setSubject(subject);
+            message.setText(text);
+            Transport.send(message);
+            System.out.println("Email sent successfully.");
+        } catch (MessagingException e) {
+            e.printStackTrace();
+            System.out.println("Failed to send email: " + e.getMessage());
+        }
+    }
+
+    private String generateVerificationCode() {
+        SecureRandom random = new SecureRandom();
+        int code = random.nextInt(999999);
+        return String.format("%06d", code);
+    }
+
+    public void sendEmailInBackground(String email, String subject, String content) {
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+                sendEmail(email, subject, content);
+                return null;
+            }
+
+            @Override
+            protected void succeeded() {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Successful");
+                alert.setHeaderText(null);
+                alert.setContentText("Verification code sent to your email.");
+                alert.showAndWait();
+
+                Optional<ButtonType> result = Optional.ofNullable(alert.getResult());
+                if (result.isPresent() && result.get() == ButtonType.OK) {
+                    verifyCode();
+                }
+
+            }
+
+            @Override
+            protected void failed() {
+                Throwable throwable = getException();
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Failed to send email: " + throwable.getMessage());
+                alert.showAndWait();
+            }
+        };
+
+        Thread thread = new Thread(task);
+        thread.setDaemon(true);
+        thread.start();
+    }
+
+    public void yourMethod() {
+        generatedCode = generateVerificationCode();
+        String email = User.getUserByUsername(loginUsernameField.getText()).getEmail();
+        String subject = "Gwent Game";
+        String content = "Your verification code is: " + generatedCode;
+
+        sendEmailInBackground(email, subject, content);
     }
 }

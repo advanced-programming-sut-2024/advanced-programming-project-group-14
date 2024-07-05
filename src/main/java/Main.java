@@ -11,8 +11,9 @@ public class Main {
     public static void main(String[] args) {
         UsersManager usersManager = new UsersManager();
         usersManager.loadUsers();
+        //User user = new User("navid", "1234", "navid","navidatb83@gmail.com");
         Scanner scanner = new Scanner(System.in);
-        GameMenuView.run();
+        LoginMenuView.run();
         saveUsers(usersManager);
     }
 

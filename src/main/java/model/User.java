@@ -32,6 +32,9 @@ public class User {
 
         User.addUser(this);
     }
+    public User(){
+
+    }
 
     private static void addUser(User user) {
         if (User.getUserByUsername(user.getUsername()) == null)
