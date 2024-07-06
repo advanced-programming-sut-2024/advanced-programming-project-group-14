@@ -20,6 +20,16 @@ public class GameMenuController {
         currentPlayer.getHand().remove(card);
     }
 
+    public void loadHand() {
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int chosenCard = random.nextInt(0, currentPlayer.getDeck().size());
+            Card toAdd = currentPlayer.getDeck().get(chosenCard);
+            currentPlayer.getDeck().remove(toAdd);
+            currentPlayer.getHand().add(toAdd);
+        }
+    }
+
     public String showDeck() {
         return "";
     }
