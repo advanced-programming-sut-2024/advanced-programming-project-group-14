@@ -44,45 +44,45 @@
                     <!-- Opponent's rows -->
                     <HBox GridPane.rowIndex="0">
                         <GridPane fx:id="opponentSiegeSpecial"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="opponentSiege"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 600;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
                     </HBox>
                     <HBox GridPane.rowIndex="1">
                         <GridPane fx:id="opponentRangedSpecial"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="opponentRanged" GridPane.rowIndex="1" GridPane.columnIndex="0"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 600;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
                     </HBox>
                     <HBox GridPane.rowIndex="2">
                         <GridPane fx:id="opponentCloseCombatSpecial"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="opponentCloseCombat"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 600;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
                     </HBox>
                     <GridPane fx:id="space" GridPane.rowIndex="3"
                               style="-fx-border-color: #ff5050; -fx-border-width: 2px; -fx-pref-width: 700;"/>
                     <HBox GridPane.rowIndex="4">
                         <GridPane fx:id="playerCloseCombatSpecial"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="playerCloseCombat"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 600;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
                     </HBox>
                     <HBox GridPane.rowIndex="5">
                         <GridPane fx:id="playerRangedSpecial"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="playerRanged"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 600;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
                     </HBox>
                     <HBox GridPane.rowIndex="6">
                         <GridPane fx:id="playerSiegeSpecial"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="playerSiege"
-                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 600;"/>
+                                  style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
                     </HBox>
                 </GridPane>
                 <GridPane fx:id="playerHand" GridPane.rowIndex="7" GridPane.columnIndex="0"
-                          style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 150; -fx-pref-width: 600;"/>
+                          style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
             </VBox>
             <VBox spacing="500">
                 <padding>
@@ -90,15 +90,15 @@
                 </padding>
                 <HBox spacing="20">
                     <GridPane fx:id="opponentDiscardPile"
-                              style="-fx-border-color: #a57a1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                              style="-fx-border-color: #a57a1c; -fx-pref-height: 120; -fx-pref-width: 100;"/>
                     <ImageView fx:id="opponentDeck"
-                               style="-fx-border-color: #a57a1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                               style="-fx-border-color: #a57a1c; -fx-pref-height: 120; -fx-pref-width: 100;"/>
                 </HBox>
                 <HBox spacing="20">
                     <GridPane fx:id="currentDiscardPile"
-                              style="-fx-border-color: #a57a1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                              style="-fx-border-color: #a57a1c; -fx-pref-height: 120; -fx-pref-width: 100;"/>
                     <ImageView fx:id="currentDeck"
-                               style="-fx-border-color: #a57a1c; -fx-pref-height: 150; -fx-pref-width: 100;"/>
+                               style="-fx-border-color: #a57a1c; -fx-pref-height: 120; -fx-pref-width: 100;"/>
                 </HBox>
             </VBox>
         </HBox>
