@@ -110,7 +110,7 @@ public class GameMenuView extends MenuView {
                 if (clickedCard != null) {
                     if (gridPane.getId().contains("Close"))
                         rowName = "Close Combat Unit";
-                    else if (gridPane.getId().equals("Ranged"))
+                    else if (gridPane.getId().contains("Ranged"))
                         rowName = "Ranged Unit";
                     else if (gridPane.getId().contains("Siege"))
                         rowName = "Siege Unit";
@@ -121,6 +121,12 @@ public class GameMenuView extends MenuView {
         }
 
         GameMenuController.loadHand();
+        loadPlayerHand(rows,specials);
+
+    }
+
+    private void loadPlayerHand(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
+        playerHand.getChildren().clear();
         for (int i=0; i<GameMenuController.currentPlayer.getHand().size();i++) {
             ImageView imageView = getImageViewOfCard(GameMenuController.currentPlayer.getHand().get(i));
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
@@ -132,7 +138,6 @@ public class GameMenuView extends MenuView {
         }
         playerHand.setAlignment(Pos.CENTER);
         playerHand.setHgap(10);
-
     }
 
     private void refreshRows() {
@@ -166,12 +171,14 @@ public class GameMenuView extends MenuView {
             ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getSiege().getCards().get(i));
             opponentSiege.add(imageView,i,0);
         }
-
         ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged,playerSiege,playerCloseCombat,opponentSiege,opponentRanged,opponentCloseCombat));
+        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial,playerSiegeSpecial,playerCloseCombatSpecial,opponentSiegeSpecial,opponentRangedSpecial,opponentCloseCombatSpecial));
         for (GridPane gridPane: rows) {
             gridPane.setAlignment(Pos.CENTER);
             gridPane.setHgap(10);
         }
+
+        loadPlayerHand(rows,specials);
     }
 
     private void resetGridPanes(ArrayList<GridPane> rows,ArrayList<GridPane> specials) {
@@ -251,7 +258,6 @@ public class GameMenuView extends MenuView {
                 gridPanes.add(spell);
                 break;
         }
-        System.out.println(gridPanes.size());
         return gridPanes;
     }
 
