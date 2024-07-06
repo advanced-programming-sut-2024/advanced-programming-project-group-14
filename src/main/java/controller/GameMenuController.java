@@ -20,7 +20,7 @@ public class GameMenuController {
         currentPlayer.getHand().remove(card);
     }
 
-    public void loadHand() {
+    public static void loadHand() {
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             int chosenCard = random.nextInt(0, currentPlayer.getDeck().size());
@@ -54,7 +54,7 @@ public class GameMenuController {
         return new Result(true, "");
     }
 
-    public void placeCard(Card card, String rowName) {
+    public static void placeCard(Card card, String rowName) {
         if (rowName == null) {
             currentGameTable.addToWeather(card);
             return;
