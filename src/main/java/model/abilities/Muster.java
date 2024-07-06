@@ -32,16 +32,18 @@ public class Muster extends Card implements Actionable {
         Row row = (Row) items[0];
         Muster muster = (Muster) items[1];
         Iterator<Card> iterator = GameMenuController.currentPlayer.getHand().iterator();
-        for (Card card : GameMenuController.currentPlayer.getHand()) {
+        while (iterator.hasNext()) {
+            Card card = iterator.next();
             if (iterator.hasNext()) {
-                if (isTeammate(muster.getName(), card.getName())){
+                if (isTeammate(muster.getName(), card.getName())) {
                     GameMenuController.currentPlayer.getHand().remove(card);
                     row.addToCards(card);
                 }
             }
         }
         Iterator<Card> iterator1 = GameMenuController.currentPlayer.getDeck().iterator();
-        for (Card card : GameMenuController.currentPlayer.getDeck()) {
+        while (iterator.hasNext()) {
+            Card card = iterator.next();
             if (iterator1.hasNext()) {
                 if (isTeammate(muster.getName(), card.getName())) {
                     GameMenuController.currentPlayer.getDeck().remove(card);
