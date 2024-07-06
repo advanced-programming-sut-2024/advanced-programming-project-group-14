@@ -51,4 +51,8 @@ public class GameTable {
             return player1;
         return player2;
     }
+
+    public void setWeather(ArrayList<Card> arrayList) {
+        this.weather = arrayList;
+    }
 }

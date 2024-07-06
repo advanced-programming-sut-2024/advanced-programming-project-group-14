@@ -96,6 +96,10 @@ public class GameMenuController {
             case "TightBond": ((TightBond) card).doAction(forAction); break;
             case "Transformers": ((Transformers) card).doAction(forAction); break;
         }
+
+        Player tempPlayer = currentPlayer;
+        currentPlayer = opponentPlayer;
+        opponentPlayer = tempPlayer;
     }
 
     public void doAction(Card card) {

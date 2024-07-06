@@ -5,57 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_kayran.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_chort.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_ciri.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_emiel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_geralt.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_triss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_vesemir.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_zoltan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_black_archer_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_infantry_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_infantry_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dwarf_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dwarf_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_elf_skirmisher_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_elf_skirmisher_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_nurse.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_nurse_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_support_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_support_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_isengrim.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_milva.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_vrihedd_brigade_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_hemdall.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_heymaey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/spell.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/GameTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Row.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Decoy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Medic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/TightBond.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Transformers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Weather.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="detached" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,29 +46,17 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "detached3"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -385,15 +325,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -405,6 +336,15 @@
                 </option>
               </RecentGroup>
             </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
           </value>
         </entry>
       </map>
