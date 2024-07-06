@@ -11,8 +11,7 @@ public class Row {
 
     public Row(String name) {
         this.name = name;
-        this.special = null;
-        this.cards = null;
+        this.cards = new ArrayList<>();
         this.totalScore = 0;
     }
 

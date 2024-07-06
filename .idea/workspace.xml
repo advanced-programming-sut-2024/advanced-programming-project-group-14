@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Add action of weather and complete placeCard method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Row.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Row.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Muster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Muster.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "detached3"
+    "Application.Main.executor": "Run",
+    "git-widget-placeholder": "detached3",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -318,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720187861875</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add action of weather and complete placeCard method">
+      <option name="closed" value="true" />
+      <created>1720273389258</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1720273389258</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,7 +362,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
     <MESSAGE value="MenuView added" />
@@ -380,6 +390,7 @@
     <MESSAGE value="LoadAll called" />
     <MESSAGE value="Commanders array list initialized corrected" />
     <MESSAGE value="Photos name update completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Photos name update completed" />
+    <MESSAGE value="Add action of weather and complete placeCard method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add action of weather and complete placeCard method" />
   </component>
 </project>
