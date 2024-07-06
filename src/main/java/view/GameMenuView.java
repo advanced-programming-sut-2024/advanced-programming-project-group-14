@@ -92,10 +92,17 @@ public class GameMenuView extends MenuView {
         ArrayList<GridPane> rowsWithSpecials = new ArrayList<>();
         rowsWithSpecials.addAll(rows);
         rowsWithSpecials.addAll(specials);
+        for (GridPane gridPane: rows) {
+            gridPane.setAlignment(Pos.CENTER);
+            gridPane.setHgap(10);
+        }
 
         spell.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
-            if (clickedCard!=null)
+            if (clickedCard!=null){
                 GameMenuController.placeCard(clickedCard,"Weather");
+                refreshRows();
+            }
+
         });
         for (GridPane gridPane: rowsWithSpecials) {
             gridPane.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
@@ -109,14 +116,13 @@ public class GameMenuView extends MenuView {
                         rowName = "Siege Unit";
                 }
                 GameMenuController.placeCard(clickedCard, rowName);
+                refreshRows();
             });
         }
 
         GameMenuController.loadHand();
         for (int i=0; i<GameMenuController.currentPlayer.getHand().size();i++) {
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getHand().get(i).getName() + ".jpg"))));
-            imageView.setFitWidth(cardWidth);
-            imageView.setFitHeight(cardHeight);
+            ImageView imageView = getImageViewOfCard(GameMenuController.currentPlayer.getHand().get(i));
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 clickedCard = getCardFromUrl(imageView.getImage().getUrl());
                 resetGridPanes(rows,specials);
@@ -127,6 +133,45 @@ public class GameMenuView extends MenuView {
         playerHand.setAlignment(Pos.CENTER);
         playerHand.setHgap(10);
 
+    }
+
+    private void refreshRows() {
+        for (int i = 0; i < GameMenuController.currentPlayer.getCloseCombat().getCards().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getCloseCombat().getCards().get(i);
+            ImageView imageView = getImageViewOfCard(card);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {clickedCard = card;});
+            playerCloseCombat.add(imageView,i,0);
+        }
+        for (int i = 0; i < GameMenuController.currentPlayer.getRangedCombat().getCards().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getRangedCombat().getCards().get(i);
+            ImageView imageView = getImageViewOfCard(card);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {clickedCard = card;});
+            playerRanged.add(imageView,i,0);
+        }
+        for (int i = 0; i < GameMenuController.currentPlayer.getSiege().getCards().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getSiege().getCards().get(i);
+            ImageView imageView = getImageViewOfCard(card);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {clickedCard = card;});
+            playerSiege.add(imageView,i,0);
+        }
+        for (int i = 0; i < GameMenuController.opponentPlayer.getCloseCombat().getCards().size(); i++) {
+            ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getCloseCombat().getCards().get(i));
+            opponentCloseCombat.add(imageView,i,0);
+        }
+        for (int i = 0; i < GameMenuController.opponentPlayer.getRangedCombat().getCards().size(); i++) {
+            ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getRangedCombat().getCards().get(i));
+            opponentRanged.add(imageView,i,0);
+        }
+        for (int i = 0; i < GameMenuController.opponentPlayer.getSiege().getCards().size(); i++) {
+            ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getSiege().getCards().get(i));
+            opponentSiege.add(imageView,i,0);
+        }
+
+        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged,playerSiege,playerCloseCombat,opponentSiege,opponentRanged,opponentCloseCombat));
+        for (GridPane gridPane: rows) {
+            gridPane.setAlignment(Pos.CENTER);
+            gridPane.setHgap(10);
+        }
     }
 
     private void resetGridPanes(ArrayList<GridPane> rows,ArrayList<GridPane> specials) {
@@ -158,13 +203,12 @@ public class GameMenuView extends MenuView {
     private void showAvailableRows(Card card) {
         ArrayList<GridPane> rows = getRows(card);
         for (GridPane gridPane: rows) {
-            System.out.println(gridPane.getId());
             if (gridPane.getId().contains("Special"))
-                gridPane.setStyle("-fx-background-color: #FEE250; -fx-border-color: #a57a1c;  -fx-pref-height: 120; -fx-pref-width: 70;");
+                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px; -fx-pref-height: 120; -fx-pref-width: 70;");
             else if(gridPane.getId().contains("spell"))
                 gridPane.getChildren().add(new ImageView(new Image(String.valueOf(getClass().getResource("/Images/selectedSpell.jpg")))));
             else
-                gridPane.setStyle("-fx-background-color: #FEE250; -fx-border-color: #a57a1c;  -fx-pref-height: 120; -fx-pref-width: 600;");
+                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px;  -fx-pref-height: 120; -fx-pref-width: 600;");
 
         }
     }
@@ -207,9 +251,17 @@ public class GameMenuView extends MenuView {
                 gridPanes.add(spell);
                 break;
         }
+        System.out.println(gridPanes.size());
         return gridPanes;
     }
 
     public void leaderAction() {
+    }
+
+    public ImageView getImageViewOfCard(Card card){
+        ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
+        imageView.setFitWidth(cardWidth);
+        imageView.setFitHeight(cardHeight);
+        return imageView;
     }
 }
