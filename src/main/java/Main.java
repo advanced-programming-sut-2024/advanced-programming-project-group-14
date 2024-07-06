@@ -27,8 +27,10 @@ public class Main {
         player2.setDeck(new ArrayList<>(faction2.getCards()));
     }
     public static void main(String[] args) {
+        //UsersManager usersManager = new UsersManager();
         Scanner scanner = new Scanner(System.in);
         GameMenuView.run();
+        //saveUsers(usersManager);
     }
 
     private static void saveUsers(UsersManager usersManager) {

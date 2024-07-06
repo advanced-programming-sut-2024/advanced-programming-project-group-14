@@ -278,6 +278,11 @@ public class LoginMenuView extends MenuView {
     }
 
     public void sendEmailInBackground(String email, String subject, String content) {
+        Alert waitingAlert = new Alert(Alert.AlertType.INFORMATION);
+        waitingAlert.setTitle("Please Wait");
+        waitingAlert.setHeaderText(null);
+        waitingAlert.setContentText("Please wait while the verification code is being sent for 2FA...");
+        waitingAlert.show();
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {

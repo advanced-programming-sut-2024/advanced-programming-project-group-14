@@ -127,3 +127,24 @@
 .scroll-pane .viewport {
     -fx-background-color: #0e1a2b; /* Background color for the ScrollPane viewport */
 }
+.list-view {
+    -fx-background-color: #0e1a2b; /* Background color for the ListView */
+    -fx-border-color: #a57a1c; /* Border color for the ListView */
+    -fx-border-width: 2px;
+}
+.list-cell {
+    -fx-background-color: #1c1c1c; /* Background color for the ListCell */
+    -fx-text-fill: #ffffff; /* Text color for the ListCell */
+    -fx-border-color: #a57a1c; /* Border color for the ListCell */
+    -fx-border-width: 0px 1px 1px 0px;
+    -fx-font-size: 18px;
+    -fx-alignment: CENTER;
+    -fx-cell-size: 30px;
+}
+.list-cell:filled:selected {
+    -fx-background-color: #a57a1c; /* Background color for the selected ListCell */
+    -fx-text-fill: #0e1a2b; /* Text color for the selected ListCell */
+}
+.list-cell:filled:hover {
+    -fx-background-color: #2b2b2b; /* Background color for the ListCell on hover */
+}
