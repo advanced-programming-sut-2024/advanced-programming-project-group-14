@@ -54,17 +54,16 @@ public class GameMenuController {
         return new Result(true, "");
     }
 
-    public void placeCard(Card card, String rowName) {
-        if (rowName == null) {
+    public static void placeCard(Card card, String rowName) {
+
+        Object[] forWeatherAction = {card};
+
+        if (rowName.equals("Weather")) {
             currentGameTable.addToWeather(card);
+            ((Weather) card).doAction(forWeatherAction);
             return;
         }
 
-        Row row = switch (rowName) {
-            case "Ranged Unit" -> currentPlayer.getRangedCombat();
-            case "Siege Unit" -> currentPlayer.getSiege();
-            default -> currentPlayer.getCloseCombat();
-        };
 
         if (card.getType().equals("Special")) {
             if (rowName.equals("Close Combat Unit") && currentPlayer.getCloseCombat().getSpecial() == null)
@@ -82,20 +81,41 @@ public class GameMenuController {
                 currentPlayer.getSiege().addToCards(card);
         }
 
+        Row row = switch (rowName) {
+            case "Ranged Unit" -> currentPlayer.getRangedCombat();
+            case "Siege Unit" -> currentPlayer.getSiege();
+            default -> currentPlayer.getCloseCombat();
+        };
+
         Object[] forAction = {row, card};
 
-        switch (card.getAbility()) {
-            case "CommandersHorn": ((CommandersHorn) card).doAction(forAction); break;
-            case "Decoy": ((Decoy) card).doAction(forAction); break;
-            case "Mardroem": ((Mardroeme) card).doAction(forAction); break;
-            case "Medic": ((Medic) card).doAction(forAction); break;
-            case "MoralBoost": ((MoralBoost) card).doAction(forAction); break;
-            case "Muster": ((Muster) card).doAction(forAction); break;
-            case "Scorch": ((Scorch) card).doAction(forAction); break;
-            case "Spy": ((Spy) card).doAction(forAction); break;
-            case "TightBond": ((TightBond) card).doAction(forAction); break;
-            case "Transformers": ((Transformers) card).doAction(forAction); break;
+        if (card.getAbility() != null) {
+            switch (card.getAbility()) {
+                case "CommandersHorn": ((CommandersHorn) card).doAction(forAction); break;
+                case "Decoy": ((Decoy) card).doAction(forAction); break;
+                case "Mardroem": ((Mardroeme) card).doAction(forAction); break;
+                case "Medic":
+                    ((Medic) card).doAction(forAction);
+                    break;
+                case "MoralBoost":
+                    ((MoralBoost) card).doAction(forAction);
+                    break;
+                case "Muster":
+                    ((Muster) card).doAction(forAction);
+                    break;
+                case "Scorch":
+                    ((Scorch) card).doAction(forAction);
+                    break;
+                case "Spy":
+                    ((Spy) card).doAction(forAction); break;
+                case "TightBond": ((TightBond) card).doAction(forAction); break;
+                case "Transformers": ((Transformers) card).doAction(forAction); break;
+            }
         }
+
+        Player tempPlayer = currentPlayer;
+        currentPlayer = opponentPlayer;
+        opponentPlayer = tempPlayer;
     }
 
     public void doAction(Card card) {

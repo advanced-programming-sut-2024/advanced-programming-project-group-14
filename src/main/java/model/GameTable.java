@@ -42,6 +42,10 @@ public class GameTable {
         this.weather.add(weather);
     }
 
+    public void setWeather(ArrayList<Card> weather) {
+        this.weather = weather;
+    }
+
     public void increaseRoundNumber() {
         this.roundNumber++;
     }

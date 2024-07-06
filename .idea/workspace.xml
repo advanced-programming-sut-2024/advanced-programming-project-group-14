@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Complete placeCard and methods in GameMenuController">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Update some photo name in image folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
     </list>
@@ -27,6 +27,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="d2b80a498dd8b0ad5db3b1411499ef14f151e7a5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,9 +43,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -63,8 +61,20 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/javaPrograms/Graphics",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -79,13 +89,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -108,9 +111,6 @@
       <workItem from="1719580604325" duration="17249000" />
       <workItem from="1719644171364" duration="3981000" />
       <workItem from="1719668195405" duration="8084000" />
-      <workItem from="1720199383866" duration="4616000" />
-      <workItem from="1720205522147" duration="1583000" />
-      <workItem from="1720249188865" duration="387000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -315,31 +315,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <task id="LOCAL-00030" summary="Deleted image folder because I can't do anything">
-      <option name="closed" value="true" />
-      <created>1720190064192</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1720190064192</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Add placeCard and vetoCard methods to GameMenuController">
-      <option name="closed" value="true" />
-      <created>1720194152022</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1720194152022</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Complete placeCard and methods in GameMenuController">
-      <option name="closed" value="true" />
-      <created>1720207770372</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1720207770372</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -384,6 +360,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Random button and Stay Login added" />
+    <MESSAGE value="PreGame fxml added" />
+    <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
     <MESSAGE value="MenuView added" />
@@ -406,9 +385,6 @@
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Update some photo name in image folder" />
-    <MESSAGE value="Deleted image folder because I can't do anything" />
-    <MESSAGE value="Add placeCard and vetoCard methods to GameMenuController" />
-    <MESSAGE value="Complete placeCard and methods in GameMenuController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete placeCard and methods in GameMenuController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update some photo name in image folder" />
   </component>
 </project>
