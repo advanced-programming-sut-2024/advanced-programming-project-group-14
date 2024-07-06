@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 
-public class Commander implements Serializable {
+public class Commander implements Serializable, Actionable {
     private String factionName;
     private String name;
 
@@ -19,6 +19,11 @@ public class Commander implements Serializable {
 
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void doAction(Object[] items) {
+
     }
 }
 
