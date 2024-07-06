@@ -4,16 +4,27 @@ import java.util.ArrayList;
 
 public class Row {
 
+    private String name;
     private Card special;
     private ArrayList<Card> cards;
+    private int totalScore;
 
-    public Row() {
+    public Row(String name) {
+        this.name = name;
         this.special = null;
         this.cards = null;
+        this.totalScore = 0;
     }
 
-    public int calculateTotalScore() {
-        return 0;
+    public int getTotalScore() {
+        this.totalScore = 0;
+        for (Card card : cards)
+            this.totalScore += card.getPower();
+        return totalScore;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public Card getSpecial() {

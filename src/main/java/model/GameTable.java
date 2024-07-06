@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class GameTable {
@@ -8,12 +9,13 @@ public class GameTable {
     private Date date;
     private Player player1;
     private Player player2;
-    private Card spell;
+    private ArrayList<Card> weather;
 
     public GameTable(Date date, Player player1, Player player2) {
         this.date = date;
         this.player1 = player1;
         this.player2 = player2;
+        this.weather = new ArrayList<>();
     }
 
     public int getRoundNumber() {
@@ -32,12 +34,12 @@ public class GameTable {
         return player2;
     }
 
-    public Card getSpell() {
-        return spell;
+    public ArrayList<Card> getWeather() {
+        return weather;
     }
 
-    public void setSpell(Card spell) {
-        this.spell = spell;
+    public void addToWeather(Card weather) {
+        this.weather.add(weather);
     }
 
     public void increaseRoundNumber() {

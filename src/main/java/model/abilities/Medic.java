@@ -13,7 +13,7 @@ public class Medic extends Card implements Actionable {
 
     @Override
     public void doAction(Object[] items) {
-        Card card = (Card) items[0];
+        Card card = (Card) items[1];
         switch (card.getType()) {
             case "Ranged Unit":
                 GameMenuController.currentPlayer.getRangedCombat().getCards().add(card);
