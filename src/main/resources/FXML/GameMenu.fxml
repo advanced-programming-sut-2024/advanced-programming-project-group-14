@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -19,22 +18,25 @@
         <HBox alignment="CENTER" spacing="50">
             <VBox alignment="CENTER" spacing="50">
                 <ImageView fx:id="opponentLeaderImage" fitHeight="190" fitWidth="100"/>
-                <VBox alignment="CENTER">
+                <HBox alignment="CENTER" spacing="20">
                     <Label fx:id="opponentName" text=""/>
-                </VBox>
+                    <Label fx:id="opponentScore" text="0"/>
+                </HBox>
                 <HBox alignment="CENTER" spacing="20">
                     <Label fx:id="opponentCardCount" text="Cards: 10"/>
                     <Label fx:id="opponentCrystal" text="Crystal: 2"/>
                 </HBox>
                 <GridPane fx:id="spell" maxHeight="50" maxWidth="100"/>
-                <VBox alignment="CENTER">
+                <HBox alignment="CENTER" spacing="20">
                     <Label fx:id="currentName" text=""/>
-                </VBox>
+                    <Label fx:id="currentScore" text="0"/>
+                </HBox>
                 <HBox alignment="CENTER" spacing="20">
                     <Label fx:id="currentCardCount" text="Cards: 10"/>
                     <Label fx:id="currentCrystal" text="Crystal: 2"/>
                 </HBox>
                 <ImageView fx:id="currentLeaderImage" fitHeight="190" fitWidth="100"/>
+                <Button fx:id="passButton" text="Pass" prefWidth="100" maxWidth="100" onAction="#passTurn"/>
             </VBox>
         </HBox>
         <!-- Center section for the game board -->
@@ -42,43 +44,49 @@
             <VBox>
                 <GridPane fx:id="gameBoard" hgap="10" vgap="10" style="-fx-padding: 20;" alignment="CENTER">
                     <!-- Opponent's rows -->
-                    <HBox GridPane.rowIndex="0">
+                    <HBox GridPane.rowIndex="0" spacing="5" alignment="CENTER">
                         <GridPane fx:id="opponentSiegeSpecial"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="opponentSiege"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
+                        <Label fx:id="opponentSiegeScore" text="0" styleClass="circular-label"/>
                     </HBox>
-                    <HBox GridPane.rowIndex="1">
+                    <HBox GridPane.rowIndex="1" spacing="5" alignment="CENTER">
                         <GridPane fx:id="opponentRangedSpecial"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="opponentRanged" GridPane.rowIndex="1" GridPane.columnIndex="0"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
+                        <Label fx:id="opponentRangedScore" text="0" styleClass="circular-label"/>
                     </HBox>
-                    <HBox GridPane.rowIndex="2">
+                    <HBox GridPane.rowIndex="2" spacing="5" alignment="CENTER">
                         <GridPane fx:id="opponentCloseCombatSpecial"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="opponentCloseCombat"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
+                        <Label fx:id="opponentCloseCombatScore" text="0" styleClass="circular-label"/>
                     </HBox>
                     <GridPane fx:id="space" GridPane.rowIndex="3"
-                              style="-fx-border-color: #ff5050; -fx-border-width: 2px; -fx-pref-width: 700;"/>
-                    <HBox GridPane.rowIndex="4">
+                              style="-fx-border-color: #ff5050; -fx-border-width: 2px; -fx-max-width: 675;"/>
+                    <HBox GridPane.rowIndex="4" spacing="5" alignment="CENTER">
                         <GridPane fx:id="playerCloseCombatSpecial"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="playerCloseCombat"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
+                        <Label fx:id="playerCloseCombatScore" text="0" styleClass="circular-label"/>
                     </HBox>
-                    <HBox GridPane.rowIndex="5">
+                    <HBox GridPane.rowIndex="5" spacing="5" alignment="CENTER">
                         <GridPane fx:id="playerRangedSpecial"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="playerRanged"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
+                        <Label fx:id="playerRangedScore" text="0" styleClass="circular-label"/>
                     </HBox>
-                    <HBox GridPane.rowIndex="6">
+                    <HBox GridPane.rowIndex="6" spacing="5" alignment="CENTER">
                         <GridPane fx:id="playerSiegeSpecial"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;"/>
                         <GridPane fx:id="playerSiege"
                                   style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;"/>
+                        <Label fx:id="playerSiegeScore" text="0" styleClass="circular-label"/>
                     </HBox>
                 </GridPane>
                 <GridPane fx:id="playerHand" GridPane.rowIndex="7" GridPane.columnIndex="0"

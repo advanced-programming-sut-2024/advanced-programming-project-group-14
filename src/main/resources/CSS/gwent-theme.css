@@ -127,3 +127,15 @@
 .scroll-pane .viewport {
     -fx-background-color: #0e1a2b; /* Background color for the ScrollPane viewport */
 }
+
+.circular-label {
+    -fx-background-color: #1c1c1c;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-min-width: 40px;  /* Adjust the size as needed */
+    -fx-min-height: 40px;
+    -fx-max-width: 40px;
+    -fx-max-height: 40px;
+    -fx-background-radius: 50%;
+    -fx-font-size: 18px;   /* Adjust the font size as needed */
+}
