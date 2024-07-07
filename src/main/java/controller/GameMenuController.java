@@ -48,6 +48,7 @@ public class GameMenuController {
             if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit"))
                 currentPlayer.getSiege().addToCards(card);
         }
+        currentPlayer.getHand().remove(card);
 
         Object[] forAction = {row, card};
 

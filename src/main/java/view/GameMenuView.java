@@ -110,7 +110,7 @@ public class GameMenuView extends MenuView {
                 if (clickedCard != null) {
                     if (gridPane.getId().contains("Close"))
                         rowName = "Close Combat Unit";
-                    else if (gridPane.getId().equals("Ranged"))
+                    else if (gridPane.getId().contains("Ranged"))
                         rowName = "Ranged Unit";
                     else if (gridPane.getId().contains("Siege"))
                         rowName = "Siege Unit";
