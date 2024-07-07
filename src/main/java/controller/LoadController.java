@@ -130,7 +130,7 @@ public class LoadController {
             new Muster("ElvenSkirmisher", 2, 3, "Muster", "Ranged Unit", "Scoiatael", false, "");
             new Muster("DwarvenSkirmisher", 3, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
             new Muster("HavekarSmuggler", 5, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
-            new Muster("GaunterODImmDarkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
+            new Muster("Gaunter-ODImmDarkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
             new Muster("Arachas", 4, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Ghoul", 1, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Nekker", 2, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
@@ -145,7 +145,7 @@ public class LoadController {
         new Muster("Vampire-Fleder", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
         new Muster("Vampire-Garkain", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
 ////////        new Muster("ArachasBehemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
-        new Muster("GaunterODimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
+        new Muster("Gaunter-ODimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
     }
 
     private static void loadScorchCards() {

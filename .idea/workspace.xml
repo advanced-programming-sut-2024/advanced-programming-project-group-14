@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="PlayerHand refresh">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Handle placeCard methode for spy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Muster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Muster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/GaunterODImmDarkness.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Gaunter-ODImmDarkness.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/GaunterODimm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Gaunter-ODimm.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720346792958</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Handle placeCard methode for spy">
+      <option name="closed" value="true" />
+      <created>1720349062984</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1720349062984</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,8 +390,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MenuView added" />
-    <MESSAGE value="changeMenu and login mthod addded" />
     <MESSAGE value="misc.xml updated" />
     <MESSAGE value="Unversioned Files" />
     <MESSAGE value="MenuView completed" />
@@ -408,6 +417,7 @@
     <MESSAGE value="Add action of weather and complete placeCard method" />
     <MESSAGE value="PlayerHand refresh" />
     <MESSAGE value="null -&gt; Weather in placeCard method" />
-    <option name="LAST_COMMIT_MESSAGE" value="null -&gt; Weather in placeCard method" />
+    <MESSAGE value="Handle placeCard methode for spy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Handle placeCard methode for spy" />
   </component>
 </project>

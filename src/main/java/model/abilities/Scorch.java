@@ -1,7 +1,12 @@
 package model.abilities;
 
 import controller.GameMenuController;
-import model.*;
+import model.Actionable;
+import model.Card;
+import model.Player;
+import model.Row;
+
+import java.util.ArrayList;
 
 public class Scorch extends Card implements Actionable {
 
@@ -37,11 +42,10 @@ public class Scorch extends Card implements Actionable {
         Scorch scorch = (Scorch) items[1];
         if (scorch.getName().equals("Scorch")) {
             int maxPowerInTable = 0;
-            maxPowerInTable = Math.max(getMaxPowerInTable(GameMenuController.currentPlayer, maxPowerInTable), getMaxPowerInTable(GameMenuController.opponentPlayer, maxPowerInTable)) ;
+            maxPowerInTable = Math.max(getMaxPowerInTable(GameMenuController.currentPlayer, maxPowerInTable), getMaxPowerInTable(GameMenuController.opponentPlayer, maxPowerInTable));
             deleteMaxPower(GameMenuController.currentPlayer, maxPowerInTable);
             deleteMaxPower(GameMenuController.opponentPlayer, maxPowerInTable);
-        }
-        else {
+        } else {
             int totalPowerInRow = 0;
             for (Card card : row.getCards()) {
                 if (!card.isHero()) {
@@ -49,12 +53,14 @@ public class Scorch extends Card implements Actionable {
                 }
             }
             if (totalPowerInRow > 10) {
+                ArrayList<Card> cardsToRemove = new ArrayList<>();
                 for (Card card : row.getCards()) {
-                    if (!card.isHero()) {
+                    if (!card.isHero() && card.getPower() == totalPowerInRow) {
+                        cardsToRemove.add(card);
                         GameMenuController.currentPlayer.getDiscardPile().add(card);
-                        row.deleteFromCards(card);
                     }
                 }
+                row.getCards().removeAll(cardsToRemove);
             }
         }
     }
