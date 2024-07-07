@@ -29,7 +29,7 @@ public class GameMenuController {
     }
 
     public static void placeCard(Card card, String rowName) {
-        if (rowName == null) {
+        if (rowName.equals("Weather")) {
             currentGameTable.addToWeather(card);
             return;
         }
