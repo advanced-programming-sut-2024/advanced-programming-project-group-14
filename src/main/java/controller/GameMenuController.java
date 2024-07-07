@@ -19,7 +19,7 @@ public class GameMenuController {
             int chosenCard1 = random.nextInt(0, opponentPlayer.getDeck().size());
 
             Card toAdd = currentPlayer.getDeck().get(chosenCard);
-            Card toAdd1 = currentPlayer.getDeck().get(chosenCard1);
+            Card toAdd1 = opponentPlayer.getDeck().get(chosenCard1);
 
             currentPlayer.getDeck().remove(toAdd);
             currentPlayer.getHand().add(toAdd);
