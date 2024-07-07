@@ -253,9 +253,13 @@ public class GameMenuView extends MenuView {
             opponentSiege.add(imageView, i, 0);
         }
 
+        updateLabels();
+        loadPlayerHand(rows, specials);
+        resetGridPanes(rows, specials);
         updateSpell();
+    }
 
-        //update Labels
+    private void updateLabels() {
         playerCloseCombatScore.setText(String.valueOf(GameMenuController.currentPlayer.getCloseCombat().getTotalScore()));
         playerRangedScore.setText(String.valueOf(GameMenuController.currentPlayer.getRangedCombat().getTotalScore()));
         playerSiegeScore.setText(String.valueOf(GameMenuController.currentPlayer.getSiege().getTotalScore()));
@@ -265,8 +269,6 @@ public class GameMenuView extends MenuView {
         currentScore.setText(String.valueOf(GameMenuController.currentPlayer.calculateTotalScore()));
         opponentScore.setText(String.valueOf(GameMenuController.opponentPlayer.calculateTotalScore()));
 
-        loadPlayerHand(rows, specials);
-        resetGridPanes(rows, specials);
     }
 
     private void updateSpell(){
@@ -281,6 +283,7 @@ public class GameMenuView extends MenuView {
         spell.setHgap(10);
 
     }
+
     private void resetGridPanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
         playerHand.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         for (GridPane gridPane : rows) {
@@ -289,6 +292,7 @@ public class GameMenuView extends MenuView {
         for (GridPane gridPane : specials) {
             gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         }
+        updateSpell();
 
     }
 
