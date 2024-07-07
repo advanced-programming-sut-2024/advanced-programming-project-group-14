@@ -270,4 +270,8 @@ public class GameMenuView extends MenuView {
         imageView.setFitHeight(cardHeight);
         return imageView;
     }
+
+    public void passTurn() {
+        
+    }
 }
