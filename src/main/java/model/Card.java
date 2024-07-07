@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -7,6 +8,7 @@ public class Card implements Serializable {
     private static ArrayList<Card> cards = new ArrayList<>();
     private String name;
     private int power;
+    private int currentPower;
     private int capacity;
     private String ability;
     private String type;
@@ -14,10 +16,12 @@ public class Card implements Serializable {
     private boolean isHero;
     private String description;
     private String currentPlace;
+    private Label label;
 
     public Card(String name, int power, int capacity, String ability, String type, String factionName, boolean isHero, String description) {
         this.name = name;
         this.power = power;
+        this.currentPower = power;
         this.ability = ability;
         this.type = type;
         this.capacity = capacity;
@@ -81,4 +85,19 @@ public class Card implements Serializable {
         return factionName;
     }
 
+    public Label getLabel() {
+        return label;
+    }
+
+    public void setLabel(Label label) {
+        this.label = label;
+    }
+
+    public int getCurrentPower() {
+        return currentPower;
+    }
+
+    public void setCurrentPower(int currentPower) {
+        this.currentPower = currentPower;
+    }
 }

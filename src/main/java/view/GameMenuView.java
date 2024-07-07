@@ -31,11 +31,11 @@ public class GameMenuView extends MenuView {
     public static Stage stage;
     public double screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
     public double screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-    public double cardWidth = 0.06*screenWidth;
-    public double cardHeight = 0.1*screenHeight;
-    private double leaderImageWidth = 0.06*screenWidth;
-    private double leaderImageHeight = 0.16*screenHeight;
-    private double buttonWidth = 0.06*screenWidth;
+    public double cardWidth = 0.06 * screenWidth;
+    public double cardHeight = 0.1 * screenHeight;
+    private double leaderImageWidth = 0.06 * screenWidth;
+    private double leaderImageHeight = 0.16 * screenHeight;
+    private double buttonWidth = 0.06 * screenWidth;
     public Card clickedCard;
 
     public GridPane mainGridPane;
@@ -82,8 +82,6 @@ public class GameMenuView extends MenuView {
 
     @Override
     public void start(Stage stage) throws Exception {
-        System.out.println(screenWidth);
-        System.out.println(screenHeight);
         GameMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/GameMenu.fxml"));
         Scene scene = new Scene(root);
@@ -121,7 +119,7 @@ public class GameMenuView extends MenuView {
             if (clickedCard != null) {
                 GameMenuController.placeCard(clickedCard, "Weather");
                 clickedCard = null;
-                refreshRows();
+                refreshRows(rows, specials);
             }
 
         });
@@ -135,82 +133,80 @@ public class GameMenuView extends MenuView {
                         rowName = "Ranged Unit";
                     else if (gridPane.getId().contains("Siege"))
                         rowName = "Siege Unit";
+                    GameMenuController.placeCard(clickedCard, rowName);
+                    clickedCard = null;
+                    refreshRows(rows, specials);
                 }
-                GameMenuController.placeCard(clickedCard, rowName);
-                clickedCard = null;
-                refreshRows();
             });
         }
 
         GameMenuController.loadHand();
         loadPlayerHand(rows, specials);
-        resizePanes(rows,specials);
+        resizePanes(rows, specials);
 
     }
 
     private void resizePanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
-        mainGridPane.setPadding(new Insets(cardWidth,cardWidth,cardWidth,cardWidth));
+        mainGridPane.setPadding(new Insets(cardWidth, cardWidth, cardWidth, cardWidth));
         opponentLeaderImage.setFitWidth(leaderImageWidth);
         opponentLeaderImage.setFitHeight(leaderImageHeight);
         currentLeaderImage.setFitWidth(leaderImageWidth);
         currentLeaderImage.setFitHeight(leaderImageHeight);
-        spell.setMaxWidth(2*cardWidth);
-        spell.setMaxHeight(cardHeight+5);
-        spell.setMinWidth(2*cardWidth);
-        spell.setMinHeight(cardHeight+5);
+        spell.setMaxWidth(2 * cardWidth);
+        spell.setMaxHeight(cardHeight + 5);
+        spell.setMinWidth(2 * cardWidth);
+        spell.setMinHeight(cardHeight + 5);
         passButton.setPrefWidth(buttonWidth);
 
-        playerHand.setMaxWidth(11*cardWidth);
-        playerHand.setMaxHeight(cardHeight+5);
-        playerHand.setMinWidth(11*cardWidth);
-        playerHand.setMinHeight(cardHeight+5);
-        space.setMaxWidth(9*cardWidth);
-        space.setMinWidth(9*cardWidth);
-        for (GridPane gridPane: rows) {
-            gridPane.setMinWidth(8*cardWidth);
-            gridPane.setMinHeight(cardHeight+5);
-            gridPane.setMaxWidth(8*cardWidth);
-            gridPane.setMaxHeight(cardHeight+5);
+        playerHand.setMaxWidth(11 * cardWidth);
+        playerHand.setMaxHeight(cardHeight + 25);
+        playerHand.setMinWidth(11 * cardWidth);
+        playerHand.setMinHeight(cardHeight + 25);
+        space.setMaxWidth(9 * cardWidth);
+        space.setMinWidth(9 * cardWidth);
+        for (GridPane gridPane : rows) {
+            gridPane.setMinWidth(8 * cardWidth);
+            gridPane.setMinHeight(cardHeight + 25);
+            gridPane.setMaxWidth(8 * cardWidth);
+            gridPane.setMaxHeight(cardHeight + 25);
         }
-        for (GridPane gridPane: specials) {
+        for (GridPane gridPane : specials) {
             gridPane.setMinWidth(cardWidth);
-            gridPane.setMinHeight(cardHeight+5);
+            gridPane.setMinHeight(cardHeight + 25);
             gridPane.setMaxWidth(cardWidth);
-            gridPane.setMaxHeight(cardHeight+5);
+            gridPane.setMaxHeight(cardHeight + 25);
         }
 
         opponentDiscardPile.setMinWidth(cardWidth);
-        opponentDiscardPile.setMinHeight(cardHeight+5);
+        opponentDiscardPile.setMinHeight(cardHeight + 25);
         currentDiscardPile.setMinWidth(cardWidth);
-        currentDiscardPile.setMinHeight(cardHeight+5);
+        currentDiscardPile.setMinHeight(cardHeight + 25);
         opponentDiscardPile.setMaxWidth(cardWidth);
-        opponentDiscardPile.setMaxHeight(cardHeight+5);
+        opponentDiscardPile.setMaxHeight(cardHeight + 25);
         currentDiscardPile.setMaxWidth(cardWidth);
-        currentDiscardPile.setMaxHeight(cardHeight+5);
+        currentDiscardPile.setMaxHeight(cardHeight + 25);
         currentDeck.setFitWidth(cardWidth);
-        currentDeck.setFitHeight(cardHeight);
+        currentDeck.setFitHeight(cardHeight + 25);
         opponentDeck.setFitWidth(cardWidth);
-        opponentDeck.setFitHeight(cardHeight);
+        opponentDeck.setFitHeight(cardHeight + 25);
     }
 
     private void loadPlayerHand(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
         playerHand.getChildren().clear();
         for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
-            ImageView imageView = getImageViewOfCard(GameMenuController.currentPlayer.getHand().get(i));
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                clickedCard = getCardFromUrl(imageView.getImage().getUrl());
+            VBox vBox = getVBoxOfCard(GameMenuController.currentPlayer.getHand().get(i));
+            vBox.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                clickedCard = getCardFromUrl(vBox.getId());
                 resetGridPanes(rows, specials);
                 showAvailableRows(clickedCard);
             });
-            playerHand.add(imageView, i, 0);
+            playerHand.add(vBox, i, 0);
         }
         playerHand.setAlignment(Pos.CENTER);
         playerHand.setHgap(10);
     }
 
-    private void refreshRows() {
-        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
-        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
+    private void refreshRows(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
         for (GridPane gridPane : rows) {
             gridPane.getChildren().clear();
             gridPane.setAlignment(Pos.CENTER);
@@ -218,48 +214,75 @@ public class GameMenuView extends MenuView {
         }
         for (int i = 0; i < GameMenuController.currentPlayer.getCloseCombat().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getCloseCombat().getCards().get(i);
-            ImageView imageView = getImageViewOfCard(card);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            VBox vBox = getVBoxOfCard(card);
+            ((Label) vBox.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            vBox.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 clickedCard = card;
             });
-            playerCloseCombat.add(imageView, i, 0);
+            playerCloseCombat.add(vBox, i, 0);
         }
         for (int i = 0; i < GameMenuController.currentPlayer.getRangedCombat().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getRangedCombat().getCards().get(i);
-            ImageView imageView = getImageViewOfCard(card);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            VBox vBox = getVBoxOfCard(card);
+            ((Label) vBox.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            vBox.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 clickedCard = card;
             });
-            playerRanged.add(imageView, i, 0);
+            playerRanged.add(vBox, i, 0);
         }
         for (int i = 0; i < GameMenuController.currentPlayer.getSiege().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getSiege().getCards().get(i);
-            ImageView imageView = getImageViewOfCard(card);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            VBox vBox = getVBoxOfCard(card);
+            ((Label) vBox.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            vBox.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 clickedCard = card;
             });
-            playerSiege.add(imageView, i, 0);
+            playerSiege.add(vBox, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getCloseCombat().getCards().size(); i++) {
-            ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getCloseCombat().getCards().get(i));
-            opponentCloseCombat.add(imageView, i, 0);
+            Card card = GameMenuController.opponentPlayer.getCloseCombat().getCards().get(i);
+            VBox vBox = getVBoxOfCard(card);
+            ((Label) vBox.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            opponentCloseCombat.add(vBox, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getRangedCombat().getCards().size(); i++) {
-            ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getRangedCombat().getCards().get(i));
-            opponentRanged.add(imageView, i, 0);
+            Card card = GameMenuController.opponentPlayer.getRangedCombat().getCards().get(i);
+            VBox vBox = getVBoxOfCard(card);
+            ((Label) vBox.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            opponentRanged.add(vBox, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getSiege().getCards().size(); i++) {
-            ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getSiege().getCards().get(i));
-            opponentSiege.add(imageView, i, 0);
+            Card card = GameMenuController.opponentPlayer.getSiege().getCards().get(i);
+            VBox vBox = getVBoxOfCard(card);
+            ((Label) vBox.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            opponentSiege.add(vBox, i, 0);
         }
 
-        updateLabels();
+        for (GridPane gridPane : specials) {
+            gridPane.getChildren().clear();
+            gridPane.setAlignment(Pos.CENTER);
+            gridPane.setHgap(10);
+        }
+        playerCloseCombatSpecial.add(
+                getVBoxOfCard(GameMenuController.currentPlayer.getCloseCombat().getSpecial()), 0, 0);
+        playerRangedSpecial.add(
+                getVBoxOfCard(GameMenuController.currentPlayer.getRangedCombat().getSpecial()), 0, 0);
+        playerSiegeSpecial.add(
+                getVBoxOfCard(GameMenuController.currentPlayer.getSiege().getSpecial()), 0, 0);
+        opponentCloseCombatSpecial.add(
+                getVBoxOfCard(GameMenuController.opponentPlayer.getCloseCombat().getSpecial()), 0, 0);
+        opponentRangedSpecial.add(
+                getVBoxOfCard(GameMenuController.opponentPlayer.getRangedCombat().getSpecial()), 0, 0);
+        opponentSiegeSpecial.add(
+                getVBoxOfCard(GameMenuController.opponentPlayer.getSiege().getSpecial()), 0, 0);
+
+        updateTableLabels();
         loadPlayerHand(rows, specials);
         resetGridPanes(rows, specials);
         updateSpell();
     }
 
-    private void updateLabels() {
+    private void updateTableLabels() {
         playerCloseCombatScore.setText(String.valueOf(GameMenuController.currentPlayer.getCloseCombat().getTotalScore()));
         playerRangedScore.setText(String.valueOf(GameMenuController.currentPlayer.getRangedCombat().getTotalScore()));
         playerSiegeScore.setText(String.valueOf(GameMenuController.currentPlayer.getSiege().getTotalScore()));
@@ -271,12 +294,14 @@ public class GameMenuView extends MenuView {
 
     }
 
-    private void updateSpell(){
+    private void updateSpell() {
         spell.getChildren().clear();
         spell.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         for (int i = 0; i < GameMenuController.currentGameTable.getWeather().size(); i++) {
             Card card = GameMenuController.currentGameTable.getWeather().get(i);
-            ImageView imageView = getImageViewOfCard(card);
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
             spell.add(imageView, i, 0);
         }
         spell.setAlignment(Pos.CENTER);
@@ -367,12 +392,22 @@ public class GameMenuView extends MenuView {
     public void leaderAction() {
     }
 
-    public ImageView getImageViewOfCard(Card card) {
-        System.out.println(card.getName());
-        ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
-        imageView.setFitWidth(cardWidth);
-        imageView.setFitHeight(cardHeight);
-        return imageView;
+    public VBox getVBoxOfCard(Card card) {
+        try {
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
+            Label label = new Label(String.valueOf(card.getCurrentPower()));
+            label.setStyle("-fx-background-color: #1c1c1c; -fx-text-fill: #a57a1c");
+            if (card.getType().equals("Weather") || card.getType().equals("Special"))
+                label.setText("");
+            VBox imageWithLabelVBox = new VBox(imageView, label);
+            imageWithLabelVBox.setId(imageView.getImage().getUrl());
+            imageWithLabelVBox.setAlignment(javafx.geometry.Pos.CENTER);
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
+            return imageWithLabelVBox;
+        } catch (Exception e) {
+            return new VBox();
+        }
     }
 
     public void passTurn() {
