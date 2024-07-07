@@ -34,26 +34,22 @@ public class GameMenuController {
             return;
         }
 
-        Row row = switch (rowName) {
-            case "Ranged Unit" -> currentPlayer.getRangedCombat();
-            case "Siege Unit" -> currentPlayer.getSiege();
-            default -> currentPlayer.getCloseCombat();
-        };
+        Row row = getRow(card, rowName);
 
         if (card.getType().equals("Special")) {
             if (rowName.equals("Close Combat Unit") && currentPlayer.getCloseCombat().getSpecial() == null)
-                currentPlayer.getCloseCombat().setSpecial(card);
+                row.setSpecial(card);
             if (rowName.equals("Ranged Unit") && currentPlayer.getRangedCombat().getSpecial() == null)
-                currentPlayer.getRangedCombat().setSpecial(card);
+                row.setSpecial(card);
             if (rowName.equals("Siege Unit") && currentPlayer.getSiege().getSpecial() == null)
-                currentPlayer.getSiege().setSpecial(card);
+                row.setSpecial(card);
         } else {
             if (rowName.equals("Close Combat Unit") && (card.getType().equals("Close Combat Unit") || card.getType().equals("Agile Unit")))
-                currentPlayer.getCloseCombat().addToCards(card);
+                row.addToCards(card);
             if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || card.getType().equals("Agile Unit")))
-                currentPlayer.getRangedCombat().addToCards(card);
+                row.addToCards(card);
             if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit"))
-                currentPlayer.getSiege().addToCards(card);
+                row.addToCards(card);
         }
         currentPlayer.getHand().remove(card);
 
@@ -77,6 +73,23 @@ public class GameMenuController {
         Player tempPlayer = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = tempPlayer;
+    }
+
+    private static Row getRow(Card card, String rowName) {
+        Row row = switch (rowName) {
+            case "Ranged Unit" -> currentPlayer.getRangedCombat();
+            case "Siege Unit" -> currentPlayer.getSiege();
+            default -> currentPlayer.getCloseCombat();
+        };
+
+        if (card.getAbility().equals("Spy")) {
+            row = switch (rowName) {
+                case "Ranged Unit" -> opponentPlayer.getRangedCombat();
+                case "Siege Unit" -> opponentPlayer.getSiege();
+                default -> opponentPlayer.getCloseCombat();
+            };
+        }
+        return row;
     }
 
     public void vetoCard(Card card) {
