@@ -5,6 +5,7 @@ import controller.PreGameMenuController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -37,6 +38,7 @@ public class GameMenuView extends MenuView {
     private double buttonWidth = 0.06*screenWidth;
     public Card clickedCard;
 
+    public GridPane mainGridPane;
     public ImageView opponentLeaderImage;
     public ImageView currentLeaderImage;
     public GridPane spell;
@@ -147,6 +149,7 @@ public class GameMenuView extends MenuView {
     }
 
     private void resizePanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
+        mainGridPane.setPadding(new Insets(cardWidth,cardWidth,cardWidth,cardWidth));
         opponentLeaderImage.setFitWidth(leaderImageWidth);
         opponentLeaderImage.setFitHeight(leaderImageHeight);
         currentLeaderImage.setFitWidth(leaderImageWidth);
@@ -184,8 +187,10 @@ public class GameMenuView extends MenuView {
         opponentDiscardPile.setMaxHeight(cardHeight+5);
         currentDiscardPile.setMaxWidth(cardWidth);
         currentDiscardPile.setMaxHeight(cardHeight+5);
+        currentDeck.setFitWidth(cardWidth);
         currentDeck.setFitHeight(cardHeight);
         opponentDeck.setFitWidth(cardWidth);
+        opponentDeck.setFitHeight(cardHeight);
     }
 
     private void loadPlayerHand(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
