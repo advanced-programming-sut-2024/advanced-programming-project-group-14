@@ -112,7 +112,7 @@ public class LoadController {
         new Medic("SiegeTechnician", 0, 1, "Medic", "Siege Unit", "Nilfgaard", false, "");
         new Medic("YenneferofVengerberg", 7, 1, "Medic", "Ranged Unit", "Neutral", true, "");
         new Medic("DunBannerMedic", 5, 1, "Medic", "Siege Unit", "Northern", false, "");
-    ///////    new Medic("MennoCoehorn", 10, 1, "Medic", "Close Combat Unit", "Nilfgaard", true, "");
+        new Medic("MennoCoehorn", 10, 1, "Medic", "Close Combat Unit", "Nilfgaard", true, "");
 
     }
 
@@ -144,7 +144,7 @@ public class LoadController {
         new Muster("Vampire-Ekimmara", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
         new Muster("Vampire-Fleder", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
         new Muster("Vampire-Garkain", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-////////        new Muster("ArachasBehemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
+        new Muster("ArachasBehemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
         new Muster("Gaunter-ODimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
     }
 
