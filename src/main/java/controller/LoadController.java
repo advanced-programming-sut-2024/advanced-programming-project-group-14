@@ -207,12 +207,12 @@ public class LoadController {
         new Card("PlagueMaiden", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Werewolf", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Botchling", 4, 1, "", "Close Combat Unit", "Monsters", false, "");
-        new Card("CelaenoHarpy", 2, 1, "", "Agile", "Monsters", false, "");
+        new Card("CelaenoHarpy", 2, 1, "", "Agile Unit", "Monsters", false, "");
         new Card("Cockatrice", 2, 1, "", "Ranged Unit", "Monsters", false, "");
         new Card("Endrega", 2, 1, "", "Ranged Unit", "Monsters", false, "");
         new Card("Foglet", 2, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Gargoyle", 2, 1, "", "Ranged Unit", "Monsters", false, "");
-        new Card("Harpy", 2, 1, "", "Agile", "Monsters", false, "");
+        new Card("Harpy", 2, 1, "", "Agile Unit", "Monsters", false, "");
         new Card("Wyvern", 2, 1, "", "Ranged Unit", "Monsters", false, "");
     }
 
