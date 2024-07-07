@@ -149,6 +149,13 @@ public class GameMenuView extends MenuView {
     }
 
     private void refreshRows() {
+        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged,playerSiege,playerCloseCombat,opponentSiege,opponentRanged,opponentCloseCombat));
+        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial,playerSiegeSpecial,playerCloseCombatSpecial,opponentSiegeSpecial,opponentRangedSpecial,opponentCloseCombatSpecial));
+        for (GridPane gridPane: rows) {
+            gridPane.getChildren().clear();
+            gridPane.setAlignment(Pos.CENTER);
+            gridPane.setHgap(10);
+        }
         for (int i = 0; i < GameMenuController.currentPlayer.getCloseCombat().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getCloseCombat().getCards().get(i);
             ImageView imageView = getImageViewOfCard(card);
@@ -179,12 +186,7 @@ public class GameMenuView extends MenuView {
             ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getSiege().getCards().get(i));
             opponentSiege.add(imageView,i,0);
         }
-        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged,playerSiege,playerCloseCombat,opponentSiege,opponentRanged,opponentCloseCombat));
-        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial,playerSiegeSpecial,playerCloseCombatSpecial,opponentSiegeSpecial,opponentRangedSpecial,opponentCloseCombatSpecial));
-        for (GridPane gridPane: rows) {
-            gridPane.setAlignment(Pos.CENTER);
-            gridPane.setHgap(10);
-        }
+
 
         playerCloseCombatScore.setText(String.valueOf(GameMenuController.currentPlayer.getCloseCombat().getTotalScore()));
         playerRangedScore.setText(String.valueOf(GameMenuController.currentPlayer.getRangedCombat().getTotalScore()));
@@ -196,6 +198,7 @@ public class GameMenuView extends MenuView {
         opponentScore.setText(String.valueOf(GameMenuController.opponentPlayer.calculateTotalScore()));
 
         loadPlayerHand(rows,specials);
+        resetGridPanes(rows,specials);
     }
 
     private void resetGridPanes(ArrayList<GridPane> rows,ArrayList<GridPane> specials) {
