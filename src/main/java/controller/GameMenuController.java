@@ -3,6 +3,7 @@ package controller;
 
 import model.*;
 import model.abilities.*;
+reimport view.GameMenuView;
 
 import java.util.Random;
 
@@ -31,6 +32,7 @@ public class GameMenuController {
     public static void placeCard(Card card, String rowName) {
         if (rowName.equals("Weather")) {
             currentGameTable.addToWeather(card);
+            currentPlayer.getHand().remove(card);
             return;
         }
 
@@ -60,7 +62,7 @@ public class GameMenuController {
                 case "CommandersHorn": ((CommandersHorn) card).doAction(forAction); break;
                 case "Decoy": ((Decoy) card).doAction(forAction); break;
                 case "Mardroem": ((Mardroeme) card).doAction(forAction); break;
-                case "Medic": ((Medic) card).doAction(forAction); break;
+                case "Medic":  break;
                 case "MoralBoost": ((MoralBoost) card).doAction(forAction); break;
                 case "Muster": ((Muster) card).doAction(forAction); break;
                 case "Scorch": ((Scorch) card).doAction(forAction); break;

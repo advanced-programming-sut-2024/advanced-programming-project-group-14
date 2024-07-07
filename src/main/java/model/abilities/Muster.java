@@ -18,8 +18,8 @@ public class Muster extends Card implements Actionable {
     }
 
     public static boolean isTeammate(String str1, String str2) {
-        Set<String> wordsSet = new HashSet<>(Arrays.asList(str1.split(" ")));
-        for (String word : str2.split(" ")) {
+        Set<String> wordsSet = new HashSet<>(Arrays.asList(str1.split("-")));
+        for (String word : str2.split("-")) {
             if (wordsSet.contains(word)) {
                 return true;
             }
