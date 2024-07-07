@@ -3,7 +3,6 @@ package controller;
 
 import model.*;
 import model.abilities.*;
-reimport view.GameMenuView;
 
 import java.util.Random;
 
@@ -33,6 +32,7 @@ public class GameMenuController {
         if (rowName.equals("Weather")) {
             currentGameTable.addToWeather(card);
             currentPlayer.getHand().remove(card);
+            changeTurn();
             return;
         }
 
@@ -41,10 +41,11 @@ public class GameMenuController {
         if (card.getType().equals("Special")) {
             if (rowName.equals("Close Combat Unit") && currentPlayer.getCloseCombat().getSpecial() == null)
                 row.setSpecial(card);
-            if (rowName.equals("Ranged Unit") && currentPlayer.getRangedCombat().getSpecial() == null)
+            else if (rowName.equals("Ranged Unit") && currentPlayer.getRangedCombat().getSpecial() == null)
                 row.setSpecial(card);
-            if (rowName.equals("Siege Unit") && currentPlayer.getSiege().getSpecial() == null)
+            else if (rowName.equals("Siege Unit") && currentPlayer.getSiege().getSpecial() == null)
                 row.setSpecial(card);
+            else return;
         } else {
             if (rowName.equals("Close Combat Unit") && (card.getType().equals("Close Combat Unit") || card.getType().equals("Agile Unit")))
                 row.addToCards(card);
@@ -72,6 +73,10 @@ public class GameMenuController {
             }
         }
 
+        changeTurn();
+    }
+
+    private static void changeTurn() {
         Player tempPlayer = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = tempPlayer;
