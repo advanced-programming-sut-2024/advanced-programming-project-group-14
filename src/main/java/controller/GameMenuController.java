@@ -30,6 +30,8 @@ public class GameMenuController {
 
     public static void placeCard(Card card, String rowName) {
         if (rowName.equals("Weather")) {
+            Object[] objects = {card};
+            ((Weather) card).doAction(objects);
             currentGameTable.addToWeather(card);
             currentPlayer.getHand().remove(card);
             changeTurn();
@@ -69,7 +71,7 @@ public class GameMenuController {
                 case "Scorch": ((Scorch) card).doAction(forAction); break;
                 case "Spy": ((Spy) card).doAction(forAction); break;
                 case "TightBond": ((TightBond) card).doAction(forAction); break;
-                case "Transformers": ((Transformers) card).doAction(forAction); break;
+                //case "Transformers": ((Transformers) card).doAction(forAction); break;
             }
         }
 
