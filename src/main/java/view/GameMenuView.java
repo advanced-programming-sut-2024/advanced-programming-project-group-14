@@ -58,6 +58,14 @@ public class GameMenuView extends MenuView {
     public Label currentName;
     public Label currentCardCount;
     public Label currentCrystal;
+    public Label opponentSiegeScore;
+    public Label opponentRangedScore;
+    public Label opponentCloseCombatScore;
+    public Label playerCloseCombatScore;
+    public Label playerRangedScore;
+    public Label playerSiegeScore;
+    public Label currentScore;
+    public Label opponentScore;
 
     public static void run() {
         launch();
@@ -177,6 +185,15 @@ public class GameMenuView extends MenuView {
             gridPane.setAlignment(Pos.CENTER);
             gridPane.setHgap(10);
         }
+
+        playerCloseCombatScore.setText(String.valueOf(GameMenuController.currentPlayer.getCloseCombat().getTotalScore()));
+        playerRangedScore.setText(String.valueOf(GameMenuController.currentPlayer.getRangedCombat().getTotalScore()));
+        playerSiegeScore.setText(String.valueOf(GameMenuController.currentPlayer.getSiege().getTotalScore()));
+        opponentCloseCombatScore.setText(String.valueOf(GameMenuController.opponentPlayer.getCloseCombat().getTotalScore()));
+        opponentRangedScore.setText(String.valueOf(GameMenuController.opponentPlayer.getRangedCombat().getTotalScore()));
+        opponentSiegeScore.setText(String.valueOf(GameMenuController.opponentPlayer.getSiege().getTotalScore()));
+        currentScore.setText(String.valueOf(GameMenuController.currentPlayer.calculateTotalScore()));
+        opponentScore.setText(String.valueOf(GameMenuController.opponentPlayer.calculateTotalScore()));
 
         loadPlayerHand(rows,specials);
     }

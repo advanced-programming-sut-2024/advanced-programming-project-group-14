@@ -3,7 +3,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -37,7 +36,7 @@
                     <Label fx:id="currentCrystal" text="Crystal: 2"/>
                 </HBox>
                 <ImageView fx:id="currentLeaderImage" fitHeight="190" fitWidth="100"/>
-                <Button fx:id="passButton" text="Pass" prefWidth="100" maxWidth="100"/>
+                <Button fx:id="passButton" text="Pass" prefWidth="100" maxWidth="100" onAction="#passTurn"/>
             </VBox>
         </HBox>
         <!-- Center section for the game board -->

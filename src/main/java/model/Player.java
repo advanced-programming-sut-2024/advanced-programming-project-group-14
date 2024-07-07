@@ -116,7 +116,11 @@ public class Player extends User {
     }
 
     public int calculateTotalScore() {
-        return 0;
+        int totalScore = 0;
+        for (Row row: rows) {
+            totalScore += row.getTotalScore();
+        }
+        return totalScore;
     }
 
     public void decreaseLife() {
