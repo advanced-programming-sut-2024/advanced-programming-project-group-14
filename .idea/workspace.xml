@@ -7,12 +7,8 @@
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="PlayerHand refresh">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/CommandersHorn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/CommandersHorn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/TightBond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/TightBond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/CommandersHorn.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/CommandersHorn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Muster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Muster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,13 +53,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;detached3&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.main.executor": "Run",
+    "git-widget-placeholder": "detached3",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -350,15 +346,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720346792958</updated>
     </task>
-    <task id="LOCAL-00036" summary="Resize images">
-      <option name="closed" value="true" />
-      <created>1720359267854</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1720359267854</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +379,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="MenuView added" />
     <MESSAGE value="changeMenu and login mthod addded" />
     <MESSAGE value="misc.xml updated" />
     <MESSAGE value="Unversioned Files" />
@@ -419,7 +408,6 @@
     <MESSAGE value="Add action of weather and complete placeCard method" />
     <MESSAGE value="PlayerHand refresh" />
     <MESSAGE value="null -&gt; Weather in placeCard method" />
-    <MESSAGE value="Resize images" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resize images" />
+    <option name="LAST_COMMIT_MESSAGE" value="null -&gt; Weather in placeCard method" />
   </component>
 </project>

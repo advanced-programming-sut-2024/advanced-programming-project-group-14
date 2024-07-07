@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,23 +21,31 @@ import model.Player;
 import model.Row;
 import model.abilities.Spy;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 public class GameMenuView extends MenuView {
     public static Stage stage;
-    public int cardWidth = 70;
-    public int cardHeight = 120;
+    public double screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+    public double screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+    public double cardWidth = 0.06*screenWidth;
+    public double cardHeight = 0.1*screenHeight;
+    private double leaderImageWidth = 0.06*screenWidth;
+    private double leaderImageHeight = 0.16*screenHeight;
+    private double buttonWidth = 0.06*screenWidth;
     public Card clickedCard;
 
     public ImageView opponentLeaderImage;
     public ImageView currentLeaderImage;
     public GridPane spell;
+    public Button passButton;
     public GridPane playerHand;
     public GridPane playerSiege;
     public GridPane playerRanged;
     public GridPane playerCloseCombat;
+    public GridPane space;
     public GridPane opponentCloseCombat;
     public GridPane opponentRanged;
     public GridPane opponentSiege;
@@ -71,6 +80,8 @@ public class GameMenuView extends MenuView {
 
     @Override
     public void start(Stage stage) throws Exception {
+        System.out.println(screenWidth);
+        System.out.println(screenHeight);
         GameMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/GameMenu.fxml"));
         Scene scene = new Scene(root);
@@ -85,6 +96,12 @@ public class GameMenuView extends MenuView {
 
     @FXML
     public void initialize() {
+        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
+        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
+        ArrayList<GridPane> rowsWithSpecials = new ArrayList<>();
+        rowsWithSpecials.addAll(rows);
+        rowsWithSpecials.addAll(specials);
+
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
         currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
@@ -92,11 +109,7 @@ public class GameMenuView extends MenuView {
         opponentName.setText(GameMenuController.opponentPlayer.getUsername());
         currentName.setText(GameMenuController.currentPlayer.getUsername());
 
-        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
-        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
-        ArrayList<GridPane> rowsWithSpecials = new ArrayList<>();
-        rowsWithSpecials.addAll(rows);
-        rowsWithSpecials.addAll(specials);
+
         for (GridPane gridPane : rows) {
             gridPane.setAlignment(Pos.CENTER);
             gridPane.setHgap(10);
@@ -129,7 +142,50 @@ public class GameMenuView extends MenuView {
 
         GameMenuController.loadHand();
         loadPlayerHand(rows, specials);
+        resizePanes(rows,specials);
 
+    }
+
+    private void resizePanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
+        opponentLeaderImage.setFitWidth(leaderImageWidth);
+        opponentLeaderImage.setFitHeight(leaderImageHeight);
+        currentLeaderImage.setFitWidth(leaderImageWidth);
+        currentLeaderImage.setFitHeight(leaderImageHeight);
+        spell.setMaxWidth(2*cardWidth);
+        spell.setMaxHeight(cardHeight+5);
+        spell.setMinWidth(2*cardWidth);
+        spell.setMinHeight(cardHeight+5);
+        passButton.setPrefWidth(buttonWidth);
+
+        playerHand.setMaxWidth(11*cardWidth);
+        playerHand.setMaxHeight(cardHeight+5);
+        playerHand.setMinWidth(11*cardWidth);
+        playerHand.setMinHeight(cardHeight+5);
+        space.setMaxWidth(9*cardWidth);
+        space.setMinWidth(9*cardWidth);
+        for (GridPane gridPane: rows) {
+            gridPane.setMinWidth(8*cardWidth);
+            gridPane.setMinHeight(cardHeight+5);
+            gridPane.setMaxWidth(8*cardWidth);
+            gridPane.setMaxHeight(cardHeight+5);
+        }
+        for (GridPane gridPane: specials) {
+            gridPane.setMinWidth(cardWidth);
+            gridPane.setMinHeight(cardHeight+5);
+            gridPane.setMaxWidth(cardWidth);
+            gridPane.setMaxHeight(cardHeight+5);
+        }
+
+        opponentDiscardPile.setMinWidth(cardWidth);
+        opponentDiscardPile.setMinHeight(cardHeight+5);
+        currentDiscardPile.setMinWidth(cardWidth);
+        currentDiscardPile.setMinHeight(cardHeight+5);
+        opponentDiscardPile.setMaxWidth(cardWidth);
+        opponentDiscardPile.setMaxHeight(cardHeight+5);
+        currentDiscardPile.setMaxWidth(cardWidth);
+        currentDiscardPile.setMaxHeight(cardHeight+5);
+        currentDeck.setFitHeight(cardHeight);
+        opponentDeck.setFitWidth(cardWidth);
     }
 
     private void loadPlayerHand(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
@@ -210,7 +266,7 @@ public class GameMenuView extends MenuView {
 
     private void updateSpell(){
         spell.getChildren().clear();
-        spell.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 200;");
+        spell.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         for (int i = 0; i < GameMenuController.currentGameTable.getWeather().size(); i++) {
             Card card = GameMenuController.currentGameTable.getWeather().get(i);
             ImageView imageView = getImageViewOfCard(card);
@@ -221,12 +277,12 @@ public class GameMenuView extends MenuView {
 
     }
     private void resetGridPanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
-        playerHand.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;");
+        playerHand.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         for (GridPane gridPane : rows) {
-            gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;");
+            gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         }
         for (GridPane gridPane : specials) {
-            gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;");
+            gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         }
 
     }
@@ -249,11 +305,11 @@ public class GameMenuView extends MenuView {
         ArrayList<GridPane> rows = getRows(card);
         for (GridPane gridPane : rows) {
             if (gridPane.getId().contains("Special"))
-                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px; -fx-pref-height: 120; -fx-pref-width: 70;");
+                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px;");
             else if (gridPane.getId().contains("spell"))
-                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px; -fx-pref-height: 120; -fx-pref-width: 200;");
+                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px;");
             else
-                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px;  -fx-pref-height: 120; -fx-pref-width: 600;");
+                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px;");
 
         }
     }
