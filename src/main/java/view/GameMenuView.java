@@ -351,7 +351,7 @@ public class GameMenuView extends MenuView {
     public ArrayList<GridPane> getRows(Card card) {
         boolean isSpy = false;
         ArrayList<GridPane> gridPanes = new ArrayList<>();
-        if (card.getAbility() == "Spy")
+        if (card.getAbility().equals("Spy"))
             isSpy = true;
 
         switch (card.getType()) {

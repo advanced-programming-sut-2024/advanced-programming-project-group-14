@@ -15,14 +15,15 @@ public class TightBond extends Card implements Actionable {
     public void doAction(Object[] items) {
         Row row =(Row) items[0];
         TightBond tightBond = (TightBond) items[1];
-        int numOfSameCard = -1;
+        int primitivePower = tightBond.getPower();
+        int numOfSameCard = 0;
         for (Card card : row.getCards()) {
             if (card.getName().equals(tightBond.getName()))
                 numOfSameCard++;
         }
         for (Card card : row.getCards()) {
             if (card.getName().equals(tightBond.getName()))
-                card.setPower(tightBond.getPower() * numOfSameCard);
+                card.setPower(primitivePower * numOfSameCard);
         }
     }
 }
