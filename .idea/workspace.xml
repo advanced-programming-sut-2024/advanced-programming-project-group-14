@@ -6,206 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="PlayerHand refresh">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Albrich.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Albrich.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Arachas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Arachas.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/AssirevarAnahid.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/AssirevarAnahid.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Ballista.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Ballista.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/BarclayEls.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BarclayEls.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Berserker.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Berserker.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/BirnaBran.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BirnaBran.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/BitingFrost.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BitingFrost.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/BlackInfantryArcher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BlackInfantryArcher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/BlueStripesCommando.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BlueStripesCommando.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/BlueboyLugos.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BlueboyLugos.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Botchling.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Botchling.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/BringerofDeath.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BringerofDeath.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/CahirMawrDyffrynaepCeallach.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/CahirMawrDyffrynaepCeallach.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Catapult.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Catapult.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/CelaenoHarpy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/CelaenoHarpy.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Cerys.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Cerys.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Ciaranaep.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Ciaranaep.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ClanAnCraite.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClanAnCraite.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ClanBrokvarArcher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClanBrokvarArcher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ClanDimunPirate.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClanDimunPirate.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ClanDrummondShieldmaiden.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClanDrummondShieldmaiden.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ClanTordarrochArmorsmith.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClanTordarrochArmorsmith.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ClearWeather.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClearWeather.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Cockatrice.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Cockatrice.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/CommanderoftheRedRiders.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/CommanderoftheRedRiders.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/CommandersHorn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/CommandersHorn.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Cow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Cow.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/CrachanCraite.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/CrachanCraite.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Crone-Brewess.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Crone-Brewess.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Crone-Weavess.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Crone-Weavess.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Crone-Whispess.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Crone-Whispess.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Cynthia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Cynthia.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DaisyoftheValley.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DaisyoftheValley.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Dandelion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Dandelion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Decoy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Decoy.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DennisCranmer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DennisCranmer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DestroyerofWorlds.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DestroyerofWorlds.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Dethmold.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Dethmold.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaArcher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaArcher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaScout.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaScout.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DonaranHindar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DonaranHindar.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DragonHunter.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DragonHunter.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DraigBon-Dhu.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DraigBon-Dhu.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Draug.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Draug.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DunBannerMedic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DunBannerMedic.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/DwarvenSkirmisher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DwarvenSkirmisher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/EarthElemental.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/EarthElemental.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Eithne.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Eithne.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ElvenSkirmisher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ElvenSkirmisher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/EmperorofNilfgaard.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/EmperorofNilfgaard.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Endrega.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Endrega.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Ermion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Ermion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/EsteradThyssen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/EsteradThyssen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/EtolianAuxiliaryArchers.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/EtolianAuxiliaryArchers.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Fiend.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Fiend.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Filavandrel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Filavandrel.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/FireElemental.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/FireElemental.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Foglet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Foglet.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Forktail.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Forktail.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Frightener.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Frightener.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/FringillaVigo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/FringillaVigo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Gargoyle.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Gargoyle.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Gaunter-ODImmDarkness.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Gaunter-ODImmDarkness.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Gaunter-ODimm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Gaunter-ODimm.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Ghoul.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Ghoul.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/GraveHag.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/GraveHag.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Griffin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Griffin.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Harpy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Harpy.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/HavekarHealer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HavekarHealer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/HavekarSmuggler.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HavekarSmuggler.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/HeavyZerrikanianFireScorpion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HeavyZerrikanianFireScorpion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/HisImperialMajesty.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HisImperialMajesty.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Hjalmar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Hjalmar.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/HolgerBlackhand.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HolgerBlackhand.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/HopeoftheAenSeidhe.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HopeoftheAenSeidhe.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/IceGiant.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/IceGiant.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/IdaEmeanaep.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/IdaEmeanaep.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Imlerith.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Imlerith.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Impenetrablefog.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Impenetrablefog.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ImperaBrigadeGuard.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ImperaBrigadeGuard.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/InvaderoftheNorth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/InvaderoftheNorth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Iorveth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Iorveth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/JohnNatalis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/JohnNatalis.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/KaedweniSiegeExpert.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/KaedweniSiegeExpert.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Kambi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Kambi.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/KeiraMetz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/KeiraMetz.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/KingBran.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/KingBran.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/KingofTemeria.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/KingofTemeria.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/KingofthewildHunt.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/KingofthewildHunt.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Leshen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Leshen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/LethoofGulet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/LethoofGulet.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/LightLongship.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/LightLongship.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/LordCommanderoftheNorth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/LordCommanderoftheNorth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/MadmanLugos.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MadmanLugos.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/MahakamanDefender.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MahakamanDefender.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Mardoeme.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Mardoeme.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/MennoCoehoorn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MennoCoehoorn.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Morteisen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Morteisen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/MorvranVoorhis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MorvranVoorhis.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/MysteriousElf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MysteriousElf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/NausicaaCavalryRider.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/NausicaaCavalryRider.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Nekker.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Nekker.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Olaf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Olaf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/OlgierdVonEverc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/OlgierdVonEverc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/PhilippaEilhart.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/PhilippaEilhart.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/PlagueMaiden.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/PlagueMaiden.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/PoorInfantry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/PoorInfantry.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/PrinceStennis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/PrinceStennis.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/PurebloodElf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/PurebloodElf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Puttkammer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Puttkammer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/QueenofDolBlathanna.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/QueenofDolBlathanna.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Rainfarn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Rainfarn.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/RedanianFootSoldier.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/RedanianFootSoldier.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/RenualdaepMatsen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/RenualdaepMatsen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Riordain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Riordain.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/RottenMangonel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/RottenMangonel.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SabrinaGlevissing.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SabrinaGlevissing.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Schirru.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Schirru.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Scorch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Scorch.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Seasenthessis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Seasenthessis.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SheldonSkaggs.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SheldonSkaggs.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ShilardFitz-Oesterlen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ShilardFitz-Oesterlen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SiegeEngineer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SiegeEngineer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SiegeTechnician.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SiegeTechnician.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SiegeTower.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SiegeTower.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SiegfriedofDenesle.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SiegfriedofDenesle.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SigismundDijkstra.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SigismundDijkstra.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SkelligeStorm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SkelligeStorm.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/SonofMedell.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SonofMedell.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/StefanSkellen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/StefanSkellen.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Svanrige.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Svanrige.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Sweers.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Sweers.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Thaler.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Thaler.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TheBeautiful.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TheBeautiful.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TheRelentless.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TheRelentless.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TheSiegemaster.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TheSiegemaster.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TheSteel-Forged.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TheSteel-Forged.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TheTreacherous.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TheTreacherous.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TheWhiteFlame.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TheWhiteFlame.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TiborEggebracht.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TiborEggebracht.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Toad.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Toad.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/TorrentialRain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TorrentialRain.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Toruviel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Toruviel.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Trebuchet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Trebuchet.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Udalryk.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Udalryk.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Bruxa.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Bruxa.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Ekimmara.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Ekimmara.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Fleder.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Fleder.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Garkain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Garkain.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Katakan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vampire-Katakan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vanhemar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vanhemar.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/VattierdeRideaux.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VattierdeRideaux.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/VernonRoche.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VernonRoche.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Ves.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Ves.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vidkaarl.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vidkaarl.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Villentretenmerth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Villentretenmerth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Vreemde.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Vreemde.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeRecruit.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeRecruit.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeVeteran.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeVeteran.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/WarLongship.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/WarLongship.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Werewolf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Werewolf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Wyvern.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Wyvern.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Yaevinn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Yaevinn.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/YarpenZirgrin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/YarpenZirgrin.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/YenneferofVengerberg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/YenneferofVengerberg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/YoungBerserker.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/YoungBerserker.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/YoungEmissary.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/YoungEmissary.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/YoungVidkaarl.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/YoungVidkaarl.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/ZerrikanianFireScorpion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ZerrikanianFireScorpion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/monsters_kayran.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/monsters_kayran.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_chort.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/neutral_chort.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_ciri.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/neutral_ciri.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_emiel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/neutral_emiel.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_geralt.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/neutral_geralt.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_triss.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/neutral_triss.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_vesemir.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/neutral_vesemir.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_zoltan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/neutral_zoltan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/nilfgaard_black_archer_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/nilfgaard_black_archer_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_isengrim.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_isengrim.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_milva.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_milva.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_brigade_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_brigade_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_hemdall.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/skellige_hemdall.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_heymaey.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/skellige_heymaey.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_shield_maiden_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/skellige_shield_maiden_1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/skellige_shield_maiden_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/skellige_shield_maiden_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,13 +53,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;detached3&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.main.executor": "Run",
+    "git-widget-placeholder": "detached3",
+    "node.js.selected.package.tslint": "(autodetect)"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />

@@ -12,9 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundFill;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import model.Card;
@@ -89,31 +87,31 @@ public class GameMenuView extends MenuView {
     public void initialize() {
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
-        spell.getChildren().add(new ImageView(new Image(String.valueOf(getClass().getResource("/Images/spell.jpg")))));
         currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentName.setText(GameMenuController.opponentPlayer.getUsername());
         currentName.setText(GameMenuController.currentPlayer.getUsername());
 
-        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged,playerSiege,playerCloseCombat,opponentSiege,opponentRanged,opponentCloseCombat));
-        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial,playerSiegeSpecial,playerCloseCombatSpecial,opponentSiegeSpecial,opponentRangedSpecial,opponentCloseCombatSpecial));
+        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
+        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
         ArrayList<GridPane> rowsWithSpecials = new ArrayList<>();
         rowsWithSpecials.addAll(rows);
         rowsWithSpecials.addAll(specials);
-        for (GridPane gridPane: rows) {
+        for (GridPane gridPane : rows) {
             gridPane.setAlignment(Pos.CENTER);
             gridPane.setHgap(10);
         }
 
-        spell.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
-            if (clickedCard!=null){
-                GameMenuController.placeCard(clickedCard,"Weather");
+        spell.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            if (clickedCard != null) {
+                GameMenuController.placeCard(clickedCard, "Weather");
+                clickedCard = null;
                 refreshRows();
             }
 
         });
-        for (GridPane gridPane: rowsWithSpecials) {
-            gridPane.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+        for (GridPane gridPane : rowsWithSpecials) {
+            gridPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String rowName = null;
                 if (clickedCard != null) {
                     if (gridPane.getId().contains("Close"))
@@ -130,29 +128,29 @@ public class GameMenuView extends MenuView {
         }
 
         GameMenuController.loadHand();
-        loadPlayerHand(rows,specials);
+        loadPlayerHand(rows, specials);
 
     }
 
     private void loadPlayerHand(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
         playerHand.getChildren().clear();
-        for (int i=0; i<GameMenuController.currentPlayer.getHand().size();i++) {
+        for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
             ImageView imageView = getImageViewOfCard(GameMenuController.currentPlayer.getHand().get(i));
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 clickedCard = getCardFromUrl(imageView.getImage().getUrl());
-                resetGridPanes(rows,specials);
+                resetGridPanes(rows, specials);
                 showAvailableRows(clickedCard);
             });
-            playerHand.add(imageView,i,0);
+            playerHand.add(imageView, i, 0);
         }
         playerHand.setAlignment(Pos.CENTER);
         playerHand.setHgap(10);
     }
 
     private void refreshRows() {
-        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged,playerSiege,playerCloseCombat,opponentSiege,opponentRanged,opponentCloseCombat));
-        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial,playerSiegeSpecial,playerCloseCombatSpecial,opponentSiegeSpecial,opponentRangedSpecial,opponentCloseCombatSpecial));
-        for (GridPane gridPane: rows) {
+        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
+        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
+        for (GridPane gridPane : rows) {
             gridPane.getChildren().clear();
             gridPane.setAlignment(Pos.CENTER);
             gridPane.setHgap(10);
@@ -160,43 +158,41 @@ public class GameMenuView extends MenuView {
         for (int i = 0; i < GameMenuController.currentPlayer.getCloseCombat().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getCloseCombat().getCards().get(i);
             ImageView imageView = getImageViewOfCard(card);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {clickedCard = card;});
-            playerCloseCombat.add(imageView,i,0);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                clickedCard = card;
+            });
+            playerCloseCombat.add(imageView, i, 0);
         }
         for (int i = 0; i < GameMenuController.currentPlayer.getRangedCombat().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getRangedCombat().getCards().get(i);
             ImageView imageView = getImageViewOfCard(card);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {clickedCard = card;});
-            playerRanged.add(imageView,i,0);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                clickedCard = card;
+            });
+            playerRanged.add(imageView, i, 0);
         }
         for (int i = 0; i < GameMenuController.currentPlayer.getSiege().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getSiege().getCards().get(i);
             ImageView imageView = getImageViewOfCard(card);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {clickedCard = card;});
-            playerSiege.add(imageView,i,0);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                clickedCard = card;
+            });
+            playerSiege.add(imageView, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getCloseCombat().getCards().size(); i++) {
             ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getCloseCombat().getCards().get(i));
-            opponentCloseCombat.add(imageView,i,0);
+            opponentCloseCombat.add(imageView, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getRangedCombat().getCards().size(); i++) {
             ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getRangedCombat().getCards().get(i));
-            opponentRanged.add(imageView,i,0);
+            opponentRanged.add(imageView, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getSiege().getCards().size(); i++) {
             ImageView imageView = getImageViewOfCard(GameMenuController.opponentPlayer.getSiege().getCards().get(i));
-            opponentSiege.add(imageView,i,0);
+            opponentSiege.add(imageView, i, 0);
         }
 
-        //update spell
-        spell.getChildren().clear();
-        for (int i = 0; i < GameMenuController.currentGameTable.getWeather().size(); i++) {
-            Card card = GameMenuController.currentGameTable.getWeather().get(i);
-            ImageView imageView = getImageViewOfCard(card);
-            playerSiege.add(imageView,i,0);
-        }
-        spell.setAlignment(Pos.CENTER);
-        spell.setHgap(10);
+        updateSpell();
 
         //update Labels
         playerCloseCombatScore.setText(String.valueOf(GameMenuController.currentPlayer.getCloseCombat().getTotalScore()));
@@ -208,30 +204,41 @@ public class GameMenuView extends MenuView {
         currentScore.setText(String.valueOf(GameMenuController.currentPlayer.calculateTotalScore()));
         opponentScore.setText(String.valueOf(GameMenuController.opponentPlayer.calculateTotalScore()));
 
-        loadPlayerHand(rows,specials);
-        resetGridPanes(rows,specials);
+        loadPlayerHand(rows, specials);
+        resetGridPanes(rows, specials);
     }
 
-    private void resetGridPanes(ArrayList<GridPane> rows,ArrayList<GridPane> specials) {
-        spell.getChildren().add(new ImageView(new Image(String.valueOf(getClass().getResource("/Images/spell.jpg")))));
+    private void updateSpell(){
+        spell.getChildren().clear();
+        spell.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 200;");
+        for (int i = 0; i < GameMenuController.currentGameTable.getWeather().size(); i++) {
+            Card card = GameMenuController.currentGameTable.getWeather().get(i);
+            ImageView imageView = getImageViewOfCard(card);
+            spell.add(imageView, i, 0);
+        }
+        spell.setAlignment(Pos.CENTER);
+        spell.setHgap(10);
+
+    }
+    private void resetGridPanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
         playerHand.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;");
-        for (GridPane gridPane: rows) {
+        for (GridPane gridPane : rows) {
             gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 600;");
         }
-        for (GridPane gridPane: specials) {
+        for (GridPane gridPane : specials) {
             gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c; -fx-pref-height: 120; -fx-pref-width: 70;");
         }
 
     }
 
-    private Card getCardFromUrl(String Url){
+    private Card getCardFromUrl(String Url) {
         if (Url != null && !Url.isEmpty()) {
             int lastSlashIndex = Url.lastIndexOf('/');
             if (lastSlashIndex == -1) {
                 lastSlashIndex = Url.lastIndexOf('\\');
             }
             if (lastSlashIndex != -1 && lastSlashIndex < Url.length() - 1) {
-                String name = Url.substring(lastSlashIndex + 1,Url.lastIndexOf('.'));
+                String name = Url.substring(lastSlashIndex + 1, Url.lastIndexOf('.'));
                 return GameMenuController.currentPlayer.getFaction().getCardByName(name);
             }
         }
@@ -240,24 +247,24 @@ public class GameMenuView extends MenuView {
 
     private void showAvailableRows(Card card) {
         ArrayList<GridPane> rows = getRows(card);
-        for (GridPane gridPane: rows) {
+        for (GridPane gridPane : rows) {
             if (gridPane.getId().contains("Special"))
                 gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px; -fx-pref-height: 120; -fx-pref-width: 70;");
-            else if(gridPane.getId().contains("spell"))
-                gridPane.getChildren().add(new ImageView(new Image(String.valueOf(getClass().getResource("/Images/selectedSpell.jpg")))));
+            else if (gridPane.getId().contains("spell"))
+                gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px; -fx-pref-height: 120; -fx-pref-width: 200;");
             else
                 gridPane.setStyle("-fx-background-color: #1c1c1c; -fx-border-color: #c3c701; -fx-border-width: 5px;  -fx-pref-height: 120; -fx-pref-width: 600;");
 
         }
     }
 
-    public ArrayList<GridPane> getRows(Card card){
+    public ArrayList<GridPane> getRows(Card card) {
         boolean isSpy = false;
         ArrayList<GridPane> gridPanes = new ArrayList<>();
-        if (card.getAbility()=="Spy")
+        if (card.getAbility() == "Spy")
             isSpy = true;
 
-        switch (card.getType()){
+        switch (card.getType()) {
             case "Close Combat Unit":
                 if (isSpy) gridPanes.add(opponentCloseCombat);
                 else gridPanes.add(playerCloseCombat);
@@ -271,10 +278,10 @@ public class GameMenuView extends MenuView {
                 else gridPanes.add(playerSiege);
                 break;
             case "Agile Unit":
-                if (isSpy){
+                if (isSpy) {
                     gridPanes.add(opponentCloseCombat);
                     gridPanes.add(playerRanged);
-                }else{
+                } else {
                     gridPanes.add(playerCloseCombat);
                     gridPanes.add(playerRanged);
                 }
@@ -295,7 +302,8 @@ public class GameMenuView extends MenuView {
     public void leaderAction() {
     }
 
-    public ImageView getImageViewOfCard(Card card){
+    public ImageView getImageViewOfCard(Card card) {
+        System.out.println(card.getName());
         ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
         imageView.setFitWidth(cardWidth);
         imageView.setFitHeight(cardHeight);
@@ -303,6 +311,6 @@ public class GameMenuView extends MenuView {
     }
 
     public void passTurn() {
-        
+
     }
 }
