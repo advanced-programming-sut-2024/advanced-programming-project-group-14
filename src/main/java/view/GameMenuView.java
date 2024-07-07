@@ -124,6 +124,7 @@ public class GameMenuView extends MenuView {
                         rowName = "Siege Unit";
                 }
                 GameMenuController.placeCard(clickedCard, rowName);
+                clickedCard = null;
                 refreshRows();
             });
         }
@@ -187,7 +188,17 @@ public class GameMenuView extends MenuView {
             opponentSiege.add(imageView,i,0);
         }
 
+        //update spell
+        spell.getChildren().clear();
+        for (int i = 0; i < GameMenuController.currentGameTable.getWeather().size(); i++) {
+            Card card = GameMenuController.currentGameTable.getWeather().get(i);
+            ImageView imageView = getImageViewOfCard(card);
+            playerSiege.add(imageView,i,0);
+        }
+        spell.setAlignment(Pos.CENTER);
+        spell.setHgap(10);
 
+        //update Labels
         playerCloseCombatScore.setText(String.valueOf(GameMenuController.currentPlayer.getCloseCombat().getTotalScore()));
         playerRangedScore.setText(String.valueOf(GameMenuController.currentPlayer.getRangedCombat().getTotalScore()));
         playerSiegeScore.setText(String.valueOf(GameMenuController.currentPlayer.getSiege().getTotalScore()));
