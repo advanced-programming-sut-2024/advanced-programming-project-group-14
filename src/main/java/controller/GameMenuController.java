@@ -15,9 +15,16 @@ public class GameMenuController {
         Random random = new Random();
         for (int i = 0; i < 10; i++) {
             int chosenCard = random.nextInt(0, currentPlayer.getDeck().size());
+            int chosenCard1 = random.nextInt(0, opponentPlayer.getDeck().size());
+
             Card toAdd = currentPlayer.getDeck().get(chosenCard);
+            Card toAdd1 = currentPlayer.getDeck().get(chosenCard);
+
             currentPlayer.getDeck().remove(toAdd);
             currentPlayer.getHand().add(toAdd);
+
+            opponentPlayer.getDeck().remove(toAdd1);
+            opponentPlayer.getHand().add(toAdd1);
         }
     }
 
