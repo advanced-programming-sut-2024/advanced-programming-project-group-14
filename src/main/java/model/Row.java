@@ -18,7 +18,7 @@ public class Row {
     public int getTotalScore() {
         this.totalScore = 0;
         for (Card card : cards)
-            this.totalScore += card.getPower();
+            this.totalScore += card.getCurrentPower();
         return totalScore;
     }
 
