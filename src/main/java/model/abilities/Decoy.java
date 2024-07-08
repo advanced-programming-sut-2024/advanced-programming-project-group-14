@@ -17,8 +17,9 @@ public class Decoy extends Card implements Actionable {
         Row row = (Row) items[0];
         Card card = (Card) items[2];
         row.deleteFromCards(card);
-        card.setMoralBoostAction(false);
-        card.setCommandersHornAction(false);
+        GameMenuController.resetRow(row);
+        for (Card rowCard : row.getCards())
+            GameMenuController.doAction(card, new Object[]{rowCard, row});
         GameMenuController.currentPlayer.getHand().add(card);
     }
 }

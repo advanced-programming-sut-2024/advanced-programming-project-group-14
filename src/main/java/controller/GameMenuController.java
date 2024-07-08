@@ -76,6 +76,12 @@ public class GameMenuController {
 
         Object[] forAction = {row, card, targetCard};
 
+        doAction(card, forAction);
+
+        changeTurn();
+    }
+
+    public static void doAction(Card card, Object[] forAction) {
         if (card.getAbility() != null) {
             switch (card.getAbility()) {
                 case "CommandersHorn":
@@ -107,8 +113,6 @@ public class GameMenuController {
                 //case "Transformers": ((Transformers) card).doAction(forAction); break;
             }
         }
-
-        changeTurn();
     }
 
     private static void checkExistActionableCardInRow(Row row) {
@@ -147,6 +151,13 @@ public class GameMenuController {
         currentPlayer.getHand().add(cardToAdd);
         currentPlayer.getHand().remove(card);
         currentPlayer.increaseNumberOfVetoUse();
+    }
+
+    public static void resetRow(Row row) {
+        for (Card card : row.getCards()) {
+            card.setMoralBoostAction(false);
+            card.setCommandersHornAction(false);
+        }
     }
 
     public String showDeck() {
