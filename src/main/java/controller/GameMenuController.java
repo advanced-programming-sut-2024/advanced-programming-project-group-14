@@ -30,6 +30,8 @@ public class GameMenuController {
     }
 
     public static void placeCard(Card card, String rowName, Card targetCard) {
+        if (card.getAbility().equals("Decoy") && targetCard == null) return;
+
         if (rowName.equals("Weather")) {
             Object[] objects = {null,card};
             if (card.getAbility().equals("Scorch"))
@@ -53,11 +55,11 @@ public class GameMenuController {
                 row.setSpecial(card);
             else return;
         } else {
-            if (rowName.equals("Close Combat Unit") && (card.getType().equals("Close Combat Unit") || card.getType().equals("Agile Unit")))
+            if (rowName.equals("Close Combat Unit") && (card.getType().equals("Close Combat Unit") || (card.getType().equals("Special")) || card.getType().equals("Agile Unit")))
                 row.addToCards(card);
-            else if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || card.getType().equals("Agile Unit")))
+            else if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || (card.getType().equals("Special"))  || card.getType().equals("Agile Unit")))
                 row.addToCards(card);
-            else if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit"))
+            else if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit") || (card.getType().equals("Special")) )
                 row.addToCards(card);
             else return;
         }

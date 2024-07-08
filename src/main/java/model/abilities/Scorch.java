@@ -26,19 +26,22 @@ public class Scorch extends Card implements Actionable {
     }
 
     private static void deleteMaxPower(Player currentPlayer, int maxPowerInTable) {
+        ArrayList<Card> cardsToRemove = new ArrayList<>();
         for (Row playerRow : currentPlayer.getRows()) {
             for (Card card : playerRow.getCards()) {
                 if (card.getPower() == maxPowerInTable && !card.isHero()) {
                     currentPlayer.getDiscardPile().add(card);
-                    playerRow.deleteFromCards(card);
+                    cardsToRemove.add(card);
                 }
             }
+            playerRow.getCards().removeAll(cardsToRemove);
         }
     }
 
     @Override
     public void doAction(Object[] items) {
         Row row = (Row) items[0];
+        System.out.println(1);
         Scorch scorch = (Scorch) items[1];
         if (scorch.getName().equals("Scorch")) {
             int maxPowerInTable = 0;

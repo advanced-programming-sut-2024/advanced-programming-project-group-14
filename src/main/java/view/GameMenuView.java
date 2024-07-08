@@ -123,7 +123,7 @@ public class GameMenuView extends MenuView {
 
         spell.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (clickedCard != null) {
-                GameMenuController.placeCard(clickedCard, "Weather");
+                GameMenuController.placeCard(clickedCard, "Weather",null);
                 clickedCard = null;
                 refreshRows(rows, specials);
             }
@@ -139,7 +139,7 @@ public class GameMenuView extends MenuView {
                         rowName = "Ranged Unit";
                     else if (gridPane.getId().contains("Siege"))
                         rowName = "Siege Unit";
-                    GameMenuController.placeCard(clickedCard, rowName);
+                    GameMenuController.placeCard(clickedCard, rowName, null);
                     clickedCard = null;
                     refreshRows(rows, specials);
                 }
