@@ -90,6 +90,7 @@ public class GameMenuController {
                     ((Mardroeme) card).doAction(forAction);
                     break;
                 case "Medic":
+                    ((Medic) card).doAction(forAction);
                     break;
                 case "MoralBoost":
                     ((MoralBoost) card).doAction(forAction);

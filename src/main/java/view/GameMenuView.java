@@ -286,6 +286,8 @@ public class GameMenuView extends MenuView {
     }
 
     private void updateDiscardPilesAndImages() {
+        currentDiscardPile.getChildren().clear();
+        opponentDiscardPile.getChildren().clear();
         if (GameMenuController.currentPlayer.getDiscardPile().size()!=0)
             currentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.currentPlayer.getDiscardPile().get(0)));
         if (GameMenuController.opponentPlayer.getDiscardPile().size()!=0)
@@ -472,6 +474,9 @@ public class GameMenuView extends MenuView {
     }
 
     public static void showDiscardPile() {
+        if (GameMenuController.currentPlayer.getDiscardPile().size() == 0)
+            return;
+
         Stage dialogStage = new Stage();
         dialogStage.setTitle("DiscardPile");
         dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -493,6 +498,8 @@ public class GameMenuView extends MenuView {
 
         Scene scene = new Scene(gridPane);
         dialogStage.setScene(scene);
+        dialogStage.setWidth(600);
+        dialogStage.setHeight(400);
         dialogStage.showAndWait();
     }
 
