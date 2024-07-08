@@ -76,6 +76,7 @@ public class RegisterMenuView extends MenuView {
     }
 
     private void showQuestionDialog(){
+        Question.loadQuestions();
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Questions");
         dialog.setHeaderText("Please choose a question and answer it:");

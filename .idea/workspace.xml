@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Veto added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Question.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,7 @@
       <workItem from="1719668195405" duration="8084000" />
       <workItem from="1720333262935" duration="2235000" />
       <workItem from="1720341391752" duration="1128000" />
-      <workItem from="1720414758042" duration="1826000" />
+      <workItem from="1720414758042" duration="3458000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -364,7 +363,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720387372194</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Veto added">
+      <created>1720416845330</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1720416845330</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +403,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Unversioned Files" />
     <MESSAGE value="MenuView completed" />
     <MESSAGE value="Register Menu completed" />
     <MESSAGE value="Dialogs completed" />
@@ -426,6 +431,7 @@
     <MESSAGE value="Padding set" />
     <MESSAGE value="Spell reset corrected" />
     <MESSAGE value="Card labels redesigned" />
-    <option name="LAST_COMMIT_MESSAGE" value="Card labels redesigned" />
+    <MESSAGE value="Veto added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Veto added" />
   </component>
 </project>
