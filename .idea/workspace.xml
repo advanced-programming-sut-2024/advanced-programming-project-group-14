@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Card.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -371,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720416845330</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Veto for both added">
+      <created>1720440872115</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1720440872115</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,7 +411,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="MenuView completed" />
     <MESSAGE value="Register Menu completed" />
     <MESSAGE value="Dialogs completed" />
     <MESSAGE value="Main Menu completed" />
@@ -433,6 +439,7 @@
     <MESSAGE value="Spell reset corrected" />
     <MESSAGE value="Card labels redesigned" />
     <MESSAGE value="Veto added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Veto added" />
+    <MESSAGE value="Veto for both added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Veto for both added" />
   </component>
 </project>

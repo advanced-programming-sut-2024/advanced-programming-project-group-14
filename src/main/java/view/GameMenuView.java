@@ -224,7 +224,7 @@ public class GameMenuView extends MenuView {
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
-                    GameMenuController.placeCard(card,"Close Combat Unit",clickedCard);
+                    GameMenuController.placeCard(clickedCard,"Close Combat Unit",card);
 
             });
             playerCloseCombat.add(stackPane, i, 0);
@@ -235,7 +235,7 @@ public class GameMenuView extends MenuView {
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
-                    GameMenuController.placeCard(card,"Ranged Unit",clickedCard);
+                    GameMenuController.placeCard(clickedCard,"Ranged Unit",card);
 
             });
             playerRanged.add(stackPane, i, 0);
@@ -246,7 +246,7 @@ public class GameMenuView extends MenuView {
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
-                    GameMenuController.placeCard(card,"Siege Unit",clickedCard);
+                    GameMenuController.placeCard(clickedCard,"Siege Unit",card);
             });
             playerSiege.add(stackPane, i, 0);
         }
@@ -490,7 +490,7 @@ public class GameMenuView extends MenuView {
             GameMenuController.changeTurn();
         }
     }
-    
+
     public void passTurn() {
 
     }
