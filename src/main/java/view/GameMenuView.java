@@ -35,8 +35,8 @@ public class GameMenuView extends MenuView {
     public static double screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
     public static double cardWidth = 0.06 * screenWidth;
     public static double cardHeight = 0.1 * screenHeight;
-    private double leaderImageWidth = 0.06 * screenWidth;
-    private double leaderImageHeight = 0.16 * screenHeight;
+    private double leaderImageWidth = 0.1 * screenWidth;
+    private double leaderImageHeight = 0.2 * screenHeight;
     private double buttonWidth = 0.06 * screenWidth;
     public Card clickedCard;
 
@@ -103,18 +103,6 @@ public class GameMenuView extends MenuView {
         rowsWithSpecials.addAll(rows);
         rowsWithSpecials.addAll(specials);
 
-        currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
-        currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            //ToDo
-            // Commander action
-        });
-        opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
-        currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
-        opponentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
-        opponentName.setText(GameMenuController.opponentPlayer.getUsername());
-        currentName.setText(GameMenuController.currentPlayer.getUsername());
-
-
         for (GridPane gridPane : rows) {
             gridPane.setAlignment(Pos.CENTER);
             gridPane.setHgap(10);
@@ -147,6 +135,8 @@ public class GameMenuView extends MenuView {
 
         GameMenuController.loadHand();
         doVeto();
+        updateDiscardPilesAndImages();
+        updateTableLabels();
         loadPlayerHand(rows, specials);
         resizePanes(rows, specials);
 
@@ -288,19 +278,29 @@ public class GameMenuView extends MenuView {
         opponentSiegeSpecial.add(
                 getStackPaneOfCard(GameMenuController.opponentPlayer.getSiege().getSpecial()), 0, 0);
 
-        updateDiscardPilesGridPanes();
+        updateDiscardPilesAndImages();
         updateTableLabels();
         loadPlayerHand(rows, specials);
         resetGridPanes(rows, specials);
         updateSpell();
     }
 
-    private void updateDiscardPilesGridPanes() {
-        try{
-            opponentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.opponentPlayer.getDiscardPile().get(0)));
+    private void updateDiscardPilesAndImages() {
+        if (GameMenuController.currentPlayer.getDiscardPile().size()!=0)
             currentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.currentPlayer.getDiscardPile().get(0)));
-        }catch (Exception e){}
+        if (GameMenuController.opponentPlayer.getDiscardPile().size()!=0)
+            opponentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.opponentPlayer.getDiscardPile().get(0)));
 
+        currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
+        currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            //ToDo
+            // Commander action
+        });
+        opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
+        currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
+        opponentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
+        opponentName.setText(GameMenuController.opponentPlayer.getUsername());
+        currentName.setText(GameMenuController.currentPlayer.getUsername());
     }
 
     private void updateTableLabels() {
@@ -310,9 +310,15 @@ public class GameMenuView extends MenuView {
         opponentCloseCombatScore.setText(String.valueOf(GameMenuController.opponentPlayer.getCloseCombat().getTotalScore()));
         opponentRangedScore.setText(String.valueOf(GameMenuController.opponentPlayer.getRangedCombat().getTotalScore()));
         opponentSiegeScore.setText(String.valueOf(GameMenuController.opponentPlayer.getSiege().getTotalScore()));
+
+        currentName.setText(GameMenuController.currentPlayer.getUsername());
+        opponentName.setText(GameMenuController.opponentPlayer.getUsername());
         currentScore.setText(String.valueOf(GameMenuController.currentPlayer.calculateTotalScore()));
         opponentScore.setText(String.valueOf(GameMenuController.opponentPlayer.calculateTotalScore()));
-
+        currentCardCount.setText(String.valueOf(GameMenuController.currentPlayer.getHand().size()));
+        opponentCardCount.setText(String.valueOf(GameMenuController.opponentPlayer.getHand().size()));
+        currentCrystal.setText(String.valueOf(GameMenuController.currentPlayer.getLives()));
+        opponentCrystal.setText(String.valueOf(GameMenuController.opponentPlayer.getLives()));
     }
 
     private void updateSpell() {
