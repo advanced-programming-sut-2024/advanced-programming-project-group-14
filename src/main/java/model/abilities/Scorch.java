@@ -18,8 +18,8 @@ public class Scorch extends Card implements Actionable {
     private static int getMaxPowerInTable(Player currentPlayer, int maxPowerInTable) {
         for (Row playerRow : currentPlayer.getRows()) {
             for (Card card : playerRow.getCards()) {
-                if (card.getPower() > maxPowerInTable && !card.isHero())
-                    maxPowerInTable = card.getPower();
+                if (card.getCurrentPower() > maxPowerInTable && !card.isHero())
+                    maxPowerInTable = card.getCurrentPower();
             }
         }
         return maxPowerInTable;
@@ -29,7 +29,7 @@ public class Scorch extends Card implements Actionable {
         ArrayList<Card> cardsToRemove = new ArrayList<>();
         for (Row playerRow : currentPlayer.getRows()) {
             for (Card card : playerRow.getCards()) {
-                if (card.getPower() == maxPowerInTable && !card.isHero()) {
+                if (card.getCurrentPower() == maxPowerInTable && !card.isHero()) {
                     currentPlayer.getDiscardPile().add(card);
                     cardsToRemove.add(card);
                 }
@@ -49,16 +49,16 @@ public class Scorch extends Card implements Actionable {
             deleteMaxPower(GameMenuController.currentPlayer, maxPowerInTable);
             deleteMaxPower(GameMenuController.opponentPlayer, maxPowerInTable);
         } else {
-            int totalPowerInRow = 0;
-            for (Card card : row.getCards()) {
-                if (!card.isHero()) {
-                    totalPowerInRow += card.getPower();
-                }
-            }
+            int totalPowerInRow = row.getTotalScore();
+
             if (totalPowerInRow > 10) {
+                int maxPowerInRow = 0;
+                for (Card card : row.getCards()) {
+                    if (card.getCurrentPower() > maxPowerInRow && !card.isHero()) maxPowerInRow = card.getCurrentPower();
+                }
                 ArrayList<Card> cardsToRemove = new ArrayList<>();
                 for (Card card : row.getCards()) {
-                    if (!card.isHero() && card.getPower() == totalPowerInRow) {
+                    if (!card.isHero() && card.getCurrentPower() == maxPowerInRow) {
                         cardsToRemove.add(card);
                         GameMenuController.currentPlayer.getDiscardPile().add(card);
                     }
