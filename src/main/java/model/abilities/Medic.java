@@ -3,6 +3,7 @@ package model.abilities;
 import controller.GameMenuController;
 import model.Actionable;
 import model.Card;
+import view.GameMenuView;
 
 public class Medic extends Card implements Actionable {
 
@@ -22,5 +23,6 @@ public class Medic extends Card implements Actionable {
             default:
                 GameMenuController.currentPlayer.getCloseCombat().getCards().add(card);
         }*/
+        GameMenuView.showDiscardPile();
     }
 }
