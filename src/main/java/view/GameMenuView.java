@@ -105,6 +105,10 @@ public class GameMenuView extends MenuView {
         rowsWithSpecials.addAll(specials);
 
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
+        currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+            //ToDo
+            // Commander action
+        });
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
         currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
@@ -143,9 +147,10 @@ public class GameMenuView extends MenuView {
         }
 
         GameMenuController.loadHand();
+        veto(GameMenuController.currentPlayer);
+        veto(GameMenuController.opponentPlayer);
         loadPlayerHand(rows, specials);
         resizePanes(rows, specials);
-        veto();
 
     }
 
@@ -423,20 +428,20 @@ public class GameMenuView extends MenuView {
         }
     }
 
-    public void veto() {
+    public void veto(Player player) {
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("Veto");
+        dialogStage.setTitle("Veto: "+player.getUsername());
         dialogStage.initModality(Modality.WINDOW_MODAL);
 
         GridPane gridPane = new GridPane();
-        for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
-            Card card = GameMenuController.currentPlayer.getHand().get(i);
+        for (int i = 0; i < player.getHand().size(); i++) {
+            Card card = player.getHand().get(i);
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/"+card.getName()+".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
                 GameMenuController.vetoCard(card);
-                if (GameMenuController.currentPlayer.getNumberOfVetoUse() == 2)
+                if (player.getNumberOfVetoUse() == 2)
                     dialogStage.close();
                 gridPane.getChildren().remove(imageView);
 
@@ -444,7 +449,32 @@ public class GameMenuView extends MenuView {
             gridPane.add(imageView,i,0);
         }
         gridPane.setHgap(10);
-        gridPane.setVgap(10);
+        gridPane.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(gridPane);
+        dialogStage.setScene(scene);
+        dialogStage.showAndWait();
+    }
+
+    public void showDiscardPile() {
+        Stage dialogStage = new Stage();
+        dialogStage.setTitle("DiscardPile");
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+
+        GridPane gridPane = new GridPane();
+        for (int i = 0; i < GameMenuController.currentPlayer.getDiscardPile().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getDiscardPile().get(i);
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/"+card.getName()+".jpg"))));
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+                //ToDo
+                // Revive card
+                dialogStage.close();
+            });
+            gridPane.add(imageView,i,0);
+        }
+        gridPane.setHgap(10);
         gridPane.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(gridPane);
