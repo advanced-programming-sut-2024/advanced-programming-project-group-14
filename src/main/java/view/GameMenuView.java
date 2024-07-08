@@ -95,7 +95,6 @@ public class GameMenuView extends MenuView {
         stage.show();
     }
 
-
     @FXML
     public void initialize() {
         ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
@@ -123,7 +122,7 @@ public class GameMenuView extends MenuView {
 
         spell.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (clickedCard != null) {
-                GameMenuController.placeCard(clickedCard, "Weather");
+                GameMenuController.placeCard(clickedCard, "Weather",null);
                 clickedCard = null;
                 refreshRows(rows, specials);
             }
@@ -139,7 +138,7 @@ public class GameMenuView extends MenuView {
                         rowName = "Ranged Unit";
                     else if (gridPane.getId().contains("Siege"))
                         rowName = "Siege Unit";
-                    GameMenuController.placeCard(clickedCard, rowName);
+                    GameMenuController.placeCard(clickedCard, rowName,null);
                     clickedCard = null;
                     refreshRows(rows, specials);
                 }
@@ -147,8 +146,7 @@ public class GameMenuView extends MenuView {
         }
 
         GameMenuController.loadHand();
-        veto(GameMenuController.currentPlayer);
-        veto(GameMenuController.opponentPlayer);
+        doVeto();
         loadPlayerHand(rows, specials);
         resizePanes(rows, specials);
 
@@ -225,7 +223,8 @@ public class GameMenuView extends MenuView {
             StackPane stackPane = getStackPaneOfCard(card);
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                if (clickedCard != null && clickedCard.getName().equals("Decoy")) ;
+                if (clickedCard != null && clickedCard.getName().equals("Decoy"))
+                    GameMenuController.placeCard(card,"Close Combat Unit",clickedCard);
 
             });
             playerCloseCombat.add(stackPane, i, 0);
@@ -235,7 +234,8 @@ public class GameMenuView extends MenuView {
             StackPane stackPane = getStackPaneOfCard(card);
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                if (clickedCard != null && clickedCard.getName().equals("Decoy")) ;
+                if (clickedCard != null && clickedCard.getName().equals("Decoy"))
+                    GameMenuController.placeCard(card,"Ranged Unit",clickedCard);
 
             });
             playerRanged.add(stackPane, i, 0);
@@ -245,7 +245,8 @@ public class GameMenuView extends MenuView {
             StackPane stackPane = getStackPaneOfCard(card);
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                if (clickedCard != null && clickedCard.getName().equals("Decoy")) ;
+                if (clickedCard != null && clickedCard.getName().equals("Decoy"))
+                    GameMenuController.placeCard(card,"Siege Unit",clickedCard);
             });
             playerSiege.add(stackPane, i, 0);
         }
@@ -428,20 +429,20 @@ public class GameMenuView extends MenuView {
         }
     }
 
-    public void veto(Player player) {
+    public void veto() {
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("Veto: "+player.getUsername());
+        dialogStage.setTitle("Veto: "+GameMenuController.currentPlayer.getUsername());
         dialogStage.initModality(Modality.WINDOW_MODAL);
 
         GridPane gridPane = new GridPane();
-        for (int i = 0; i < player.getHand().size(); i++) {
-            Card card = player.getHand().get(i);
+        for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getHand().get(i);
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/"+card.getName()+".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
                 GameMenuController.vetoCard(card);
-                if (player.getNumberOfVetoUse() == 2)
+                if (GameMenuController.currentPlayer.getNumberOfVetoUse() == 2)
                     dialogStage.close();
                 gridPane.getChildren().remove(imageView);
 
@@ -482,6 +483,14 @@ public class GameMenuView extends MenuView {
         dialogStage.showAndWait();
     }
 
+
+    private void doVeto() {
+        for (int i = 0; i < 2; i++) {
+            veto();
+            GameMenuController.changeTurn();
+        }
+    }
+    
     public void passTurn() {
 
     }
