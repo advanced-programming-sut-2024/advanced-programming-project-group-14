@@ -115,7 +115,7 @@ public class GameMenuController {
         }
     }
 
-    private static void changeTurn() {
+    public static void changeTurn() {
         Player tempPlayer = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = tempPlayer;
