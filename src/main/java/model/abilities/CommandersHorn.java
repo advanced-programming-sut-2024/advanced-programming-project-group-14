@@ -16,7 +16,7 @@ public class CommandersHorn extends Card implements Actionable {
         Row row = (Row) items[0];
         for (Card card : row.getCards()) {
             if (!card.isHero() && !card.getAbility().equals("CommandersHorn"))
-                card.setPower(card.getPower() * 2);
+                card.setCommandersHornAction(true);
         }
     }
 }

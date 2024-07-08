@@ -6,6 +6,7 @@ public class Row {
 
     private String name;
     private Card special;
+    private boolean weatherAction;
     private ArrayList<Card> cards;
     private int totalScore;
 
@@ -13,6 +14,7 @@ public class Row {
         this.name = name;
         this.cards = new ArrayList<>();
         this.totalScore = 0;
+        this.weatherAction = false;
     }
 
     public int getTotalScore() {
@@ -40,6 +42,15 @@ public class Row {
 
     public void addToCards(Card card) {
         this.cards.add(card);
+        card.setCurrentRow(this);
+    }
+
+    public boolean isWeatherAction() {
+        return weatherAction;
+    }
+
+    public void setWeatherAction(boolean weatherAction) {
+        this.weatherAction = weatherAction;
     }
 
     public void deleteFromCards(Card card) {

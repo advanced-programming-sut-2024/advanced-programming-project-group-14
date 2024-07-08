@@ -17,7 +17,7 @@ public class MoralBoost extends Card implements Actionable {
         MoralBoost moralBoost = (MoralBoost) items[1];
         for (Card card : row.getCards()) {
             if (card != moralBoost && !card.isHero())
-                card.setPower(card.getPower() + 1);
+                card.setMoralBoostAction(true);
         }
     }
 }

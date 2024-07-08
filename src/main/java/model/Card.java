@@ -7,6 +7,8 @@ import java.util.ArrayList;
 public class Card implements Serializable {
     private static ArrayList<Card> cards = new ArrayList<>();
     private String name;
+    private boolean commandersHornAction;
+    private boolean moralBoostAction;
     private int power;
     private int currentPower;
     private int capacity;
@@ -15,6 +17,7 @@ public class Card implements Serializable {
     private String factionName;
     private boolean isHero;
     private String description;
+    private Row currentRow;
     private String currentPlace;
     private Label label;
 
@@ -28,6 +31,8 @@ public class Card implements Serializable {
         this.factionName = factionName;
         this.isHero = isHero;
         this.description = description;
+        this.moralBoostAction = false;
+        this.commandersHornAction = false;
 
         if (factionName.equals("Neutral")) {
             for (Faction faction : Faction.getFactions())
@@ -93,8 +98,32 @@ public class Card implements Serializable {
         this.label = label;
     }
 
+    public void calcCurrentPower() {
+        currentPower = power;
+        if (currentRow != null && currentRow.isWeatherAction() && !isHero) currentPower = 1;
+        if (moralBoostAction) currentPower += 1;
+        if (commandersHornAction) currentPower *= 2;
+    }
+
     public int getCurrentPower() {
+        calcCurrentPower();
         return currentPower;
+    }
+
+    public void setCommandersHornAction(boolean commandersHornAction) {
+        this.commandersHornAction = commandersHornAction;
+    }
+
+    public void setMoralBoostAction(boolean moralBoostAction) {
+        this.moralBoostAction = moralBoostAction;
+    }
+
+    public Row getCurrentRow() {
+        return currentRow;
+    }
+
+    public void setCurrentRow(Row currentRow) {
+        this.currentRow = currentRow;
     }
 
     public void setCurrentPower(int currentPower) {

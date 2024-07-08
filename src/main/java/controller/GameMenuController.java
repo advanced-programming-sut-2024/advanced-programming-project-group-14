@@ -4,6 +4,7 @@ package controller;
 import model.*;
 import model.abilities.*;
 
+import java.sql.Array;
 import java.util.Random;
 
 public class GameMenuController {
@@ -28,19 +29,22 @@ public class GameMenuController {
         }
     }
 
-    public static void placeCard(Card card, String rowName) {
+    public static void placeCard(Card card, String rowName, Card targetCard) {
         if (rowName.equals("Weather")) {
-            Object[] objects = {card};
-            ((Weather) card).doAction(objects);
+            Object[] objects = {null,card};
+            if (card.getAbility().equals("Scorch"))
+                ((Scorch) card).doAction(objects);
+            else
+                ((Weather) card).doAction(objects);
             currentGameTable.addToWeather(card);
             currentPlayer.getHand().remove(card);
             changeTurn();
             return;
         }
 
-        Row row = getRow(card, rowName);
+        Row row = getRow(card, rowName, false);
 
-        if (card.getType().equals("Special")) {
+        if (card.getType().equals("Special") && !card.getName().equals("Decoy")) {
             if (rowName.equals("Close Combat Unit") && currentPlayer.getCloseCombat().getSpecial() == null)
                 row.setSpecial(card);
             else if (rowName.equals("Ranged Unit") && currentPlayer.getRangedCombat().getSpecial() == null)
@@ -51,31 +55,62 @@ public class GameMenuController {
         } else {
             if (rowName.equals("Close Combat Unit") && (card.getType().equals("Close Combat Unit") || card.getType().equals("Agile Unit")))
                 row.addToCards(card);
-            if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || card.getType().equals("Agile Unit")))
+            else if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || card.getType().equals("Agile Unit")))
                 row.addToCards(card);
-            if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit"))
+            else if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit"))
                 row.addToCards(card);
+            else return;
         }
+
         currentPlayer.getHand().remove(card);
 
-        Object[] forAction = {row, card};
+        checkExistActionableCardInRow(row);
+
+
+        row = getRow(card, rowName, true);
+
+        Object[] forAction = {row, card, targetCard};
 
         if (card.getAbility() != null) {
             switch (card.getAbility()) {
-                case "CommandersHorn": ((CommandersHorn) card).doAction(forAction); break;
-                case "Decoy": ((Decoy) card).doAction(forAction); break;
-                case "Mardroem": ((Mardroeme) card).doAction(forAction); break;
-                case "Medic":  break;
-                case "MoralBoost": ((MoralBoost) card).doAction(forAction); break;
-                case "Muster": ((Muster) card).doAction(forAction); break;
-                case "Scorch": ((Scorch) card).doAction(forAction); break;
-                case "Spy": ((Spy) card).doAction(forAction); break;
-                case "TightBond": ((TightBond) card).doAction(forAction); break;
+                case "CommandersHorn":
+                    ((CommandersHorn) card).doAction(forAction);
+                    break;
+                case "Decoy":
+                    ((Decoy) card).doAction(forAction);
+                    break;
+                case "Mardroem":
+                    ((Mardroeme) card).doAction(forAction);
+                    break;
+                case "Medic":
+                    break;
+                case "MoralBoost":
+                    ((MoralBoost) card).doAction(forAction);
+                    break;
+                case "Muster":
+                    ((Muster) card).doAction(forAction);
+                    break;
+                case "Scorch":
+                    ((Scorch) card).doAction(forAction);
+                    break;
+                case "Spy":
+                    ((Spy) card).doAction(forAction);
+                    break;
+                case "TightBond":
+                    ((TightBond) card).doAction(forAction);
+                    break;
                 //case "Transformers": ((Transformers) card).doAction(forAction); break;
             }
         }
 
         changeTurn();
+    }
+
+    private static void checkExistActionableCardInRow(Row row) {
+        for (Card card : row.getCards()) {
+            if (card.getAbility().equals("CommandersHorn")) ((CommandersHorn) card).doAction(new Object[]{row});
+            if (card.getAbility().equals("MoralBoost")) ((MoralBoost) card).doAction(new Object[]{row, card});
+        }
     }
 
     private static void changeTurn() {
@@ -84,14 +119,14 @@ public class GameMenuController {
         opponentPlayer = tempPlayer;
     }
 
-    private static Row getRow(Card card, String rowName) {
+    private static Row getRow(Card card, String rowName, boolean forAction) {
         Row row = switch (rowName) {
             case "Ranged Unit" -> currentPlayer.getRangedCombat();
             case "Siege Unit" -> currentPlayer.getSiege();
             default -> currentPlayer.getCloseCombat();
         };
 
-        if (card.getAbility().equals("Spy")) {
+        if ((forAction && card.getAbility().equals("Scorch")) || card.getAbility().equals("Spy")) {
             row = switch (rowName) {
                 case "Ranged Unit" -> opponentPlayer.getRangedCombat();
                 case "Siege Unit" -> opponentPlayer.getSiege();
