@@ -200,9 +200,11 @@ public class GameMenuView extends MenuView {
     private void loadPlayerHand(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
         playerHand.getChildren().clear();
         for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
-            StackPane stackPane = getStackPaneOfCard(GameMenuController.currentPlayer.getHand().get(i));
+            Card card = GameMenuController.currentPlayer.getHand().get(i);
+            StackPane stackPane = getStackPaneOfCard(card);
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                clickedCard = getCardFromUrl(stackPane.getId());
+                clickedCard = card;
+                System.out.println(GameMenuController.currentPlayer.getHand().contains(clickedCard));
                 resetGridPanes(rows, specials);
                 showAvailableRows(clickedCard);
             });
