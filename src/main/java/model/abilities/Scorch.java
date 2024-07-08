@@ -32,6 +32,9 @@ public class Scorch extends Card implements Actionable {
                 if (card.getCurrentPower() == maxPowerInTable && !card.isHero()) {
                     currentPlayer.getDiscardPile().add(card);
                     cardsToRemove.add(card);
+                    GameMenuController.resetRow(playerRow);
+                    for (Card rowCard : playerRow.getCards())
+                        GameMenuController.doAction(card, new Object[]{rowCard, playerRow});
                 }
             }
             playerRow.getCards().removeAll(cardsToRemove);
@@ -60,6 +63,9 @@ public class Scorch extends Card implements Actionable {
                 for (Card card : row.getCards()) {
                     if (!card.isHero() && card.getCurrentPower() == maxPowerInRow) {
                         cardsToRemove.add(card);
+                        GameMenuController.resetRow(row);
+                        for (Card rowCard : row.getCards())
+                            GameMenuController.doAction(card, new Object[]{rowCard, row});
                         GameMenuController.currentPlayer.getDiscardPile().add(card);
                     }
                 }
