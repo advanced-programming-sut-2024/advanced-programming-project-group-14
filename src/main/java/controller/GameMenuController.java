@@ -64,11 +64,7 @@ public class GameMenuController {
             else return;
         }
 
-        System.out.println(card);
-        System.out.println(currentPlayer.getHand().contains(card));
         currentPlayer.getHand().remove(card);
-        System.out.println(currentPlayer.getHand());
-
         checkExistActionableCardInRow(row);
 
 

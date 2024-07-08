@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Handle medic action and add reviveCard method">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Debug decoy,moralboost and scorch actions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Decoy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Decoy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -399,15 +399,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720446326708</updated>
     </task>
-    <task id="LOCAL-00043" summary="Handle medic action and add reviveCard method">
-      <option name="closed" value="true" />
-      <created>1720447302039</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1720447302039</updated>
-    </task>
-    <option name="localTasksCounter" value="44" />
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -440,6 +432,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Dialogs completed" />
+    <MESSAGE value="Main Menu completed" />
     <MESSAGE value="ShowUserInfo method completed" />
     <MESSAGE value="Show game history compeleted" />
     <MESSAGE value="Set style for show game history" />
@@ -467,7 +461,6 @@
     <MESSAGE value="Veto added" />
     <MESSAGE value="Removing card corrected" />
     <MESSAGE value="Debug decoy,moralboost and scorch actions" />
-    <MESSAGE value="Handle medic action and add reviveCard method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Handle medic action and add reviveCard method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Debug decoy,moralboost and scorch actions" />
   </component>
 </project>

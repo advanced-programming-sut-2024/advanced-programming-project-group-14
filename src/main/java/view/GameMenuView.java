@@ -104,7 +104,7 @@ public class GameMenuView extends MenuView {
         rowsWithSpecials.addAll(specials);
 
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
-        currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+        currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             //ToDo
             // Commander action
         });
@@ -122,7 +122,7 @@ public class GameMenuView extends MenuView {
 
         spell.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             if (clickedCard != null) {
-                GameMenuController.placeCard(clickedCard, "Weather",null);
+                GameMenuController.placeCard(clickedCard, "Weather", null);
                 clickedCard = null;
                 refreshRows(rows, specials);
             }
@@ -138,7 +138,7 @@ public class GameMenuView extends MenuView {
                         rowName = "Ranged Unit";
                     else if (gridPane.getId().contains("Siege"))
                         rowName = "Siege Unit";
-                    GameMenuController.placeCard(clickedCard, rowName,null);
+                    GameMenuController.placeCard(clickedCard, rowName, null);
                     clickedCard = null;
                     refreshRows(rows, specials);
                 }
@@ -226,7 +226,7 @@ public class GameMenuView extends MenuView {
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
-                    GameMenuController.placeCard(clickedCard,"Close Combat Unit",card);
+                    GameMenuController.placeCard(clickedCard, "Close Combat Unit", card);
 
             });
             playerCloseCombat.add(stackPane, i, 0);
@@ -237,7 +237,7 @@ public class GameMenuView extends MenuView {
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
-                    GameMenuController.placeCard(clickedCard,"Ranged Unit",card);
+                    GameMenuController.placeCard(clickedCard, "Ranged Unit", card);
 
             });
             playerRanged.add(stackPane, i, 0);
@@ -248,7 +248,7 @@ public class GameMenuView extends MenuView {
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
-                    GameMenuController.placeCard(clickedCard,"Siege Unit",card);
+                    GameMenuController.placeCard(clickedCard, "Siege Unit", card);
             });
             playerSiege.add(stackPane, i, 0);
         }
@@ -414,17 +414,15 @@ public class GameMenuView extends MenuView {
                     "-fx-min-width: 18px; -fx-min-height: 18px; -fx-max-width: 18px; -fx-max-height: 18px;" +
                     " -fx-background-radius: 50%; -fx-font-size: 14;");
             label.setTranslateX(5);
-            if (card.getType().equals("Weather") || card.getType().equals("Special")) {
-                label.setStyle("");
-                label.setText("");
-            }
-
             StackPane stackPane = new StackPane();
             stackPane.getChildren().addAll(imageView, label);
             StackPane.setAlignment(label, Pos.TOP_LEFT);
             stackPane.setId(imageView.getImage().getUrl());
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
+            if (card.getType().equals("Weather") || card.getType().equals("Special")) {
+                stackPane.getChildren().remove(label);
+            }
             return stackPane;
         } catch (Exception e) {
             return new StackPane();
@@ -433,23 +431,23 @@ public class GameMenuView extends MenuView {
 
     public void veto() {
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("Veto: "+GameMenuController.currentPlayer.getUsername());
+        dialogStage.setTitle("Veto: " + GameMenuController.currentPlayer.getUsername());
         dialogStage.initModality(Modality.WINDOW_MODAL);
 
         GridPane gridPane = new GridPane();
         for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
             Card card = GameMenuController.currentPlayer.getHand().get(i);
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/"+card.getName()+".jpg"))));
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 GameMenuController.vetoCard(card);
                 if (GameMenuController.currentPlayer.getNumberOfVetoUse() == 2)
                     dialogStage.close();
                 gridPane.getChildren().remove(imageView);
 
             });
-            gridPane.add(imageView,i,0);
+            gridPane.add(imageView, i, 0);
         }
         gridPane.setHgap(10);
         gridPane.setAlignment(Pos.CENTER);
@@ -467,15 +465,15 @@ public class GameMenuView extends MenuView {
         GridPane gridPane = new GridPane();
         for (int i = 0; i < GameMenuController.currentPlayer.getDiscardPile().size(); i++) {
             Card card = GameMenuController.currentPlayer.getDiscardPile().get(i);
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/"+card.getName()+".jpg"))));
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
-            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 //ToDo
                 // Revive card
                 dialogStage.close();
             });
-            gridPane.add(imageView,i,0);
+            gridPane.add(imageView, i, 0);
         }
         gridPane.setHgap(10);
         gridPane.setAlignment(Pos.CENTER);
