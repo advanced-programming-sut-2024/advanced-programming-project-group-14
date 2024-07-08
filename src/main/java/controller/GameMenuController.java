@@ -65,7 +65,6 @@ public class GameMenuController {
         }
 
         currentPlayer.getHand().remove(card);
-
         checkExistActionableCardInRow(row);
 
 
