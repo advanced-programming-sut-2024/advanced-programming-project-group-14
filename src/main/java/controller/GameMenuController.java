@@ -101,11 +101,12 @@ public class GameMenuController {
         return row;
     }
 
-    public void vetoCard(Card card) {
+    public static void vetoCard(Card card) {
         Random random = new Random();
         Card cardToAdd = currentPlayer.getDeck().get(random.nextInt(0, currentPlayer.getDeck().size()));
         currentPlayer.getHand().add(cardToAdd);
         currentPlayer.getHand().remove(card);
+        currentPlayer.increaseNumberOfVetoUse();
     }
 
     public String showDeck() {

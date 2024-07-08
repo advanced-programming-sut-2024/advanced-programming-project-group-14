@@ -10,12 +10,14 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Card;
 import model.Player;
@@ -143,6 +145,7 @@ public class GameMenuView extends MenuView {
         GameMenuController.loadHand();
         loadPlayerHand(rows, specials);
         resizePanes(rows, specials);
+        veto();
 
     }
 
@@ -217,7 +220,7 @@ public class GameMenuView extends MenuView {
             StackPane stackPane = getStackPaneOfCard(card);
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                if (clickedCard != null && clickedCard.getName().equals("Decoy"));
+                if (clickedCard != null && clickedCard.getName().equals("Decoy")) ;
 
             });
             playerCloseCombat.add(stackPane, i, 0);
@@ -227,7 +230,7 @@ public class GameMenuView extends MenuView {
             StackPane stackPane = getStackPaneOfCard(card);
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                if (clickedCard != null && clickedCard.getName().equals("Decoy"));
+                if (clickedCard != null && clickedCard.getName().equals("Decoy")) ;
 
             });
             playerRanged.add(stackPane, i, 0);
@@ -237,7 +240,7 @@ public class GameMenuView extends MenuView {
             StackPane stackPane = getStackPaneOfCard(card);
             ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                if (clickedCard != null && clickedCard.getName().equals("Decoy"));
+                if (clickedCard != null && clickedCard.getName().equals("Decoy")) ;
             });
             playerSiege.add(stackPane, i, 0);
         }
@@ -380,9 +383,9 @@ public class GameMenuView extends MenuView {
                 break;
             case "Special":
                 if (card.getName().equals("Decoy"))
-                    gridPanes.addAll(Arrays.asList(playerCloseCombat,playerRanged,playerSiege));
+                    gridPanes.addAll(Arrays.asList(playerCloseCombat, playerRanged, playerSiege));
                 else
-                    gridPanes.addAll(Arrays.asList(playerCloseCombatSpecial,playerRangedSpecial,playerSiegeSpecial));
+                    gridPanes.addAll(Arrays.asList(playerCloseCombatSpecial, playerRangedSpecial, playerSiegeSpecial));
                 break;
             case "Spell":
             case "Weather":
@@ -403,7 +406,7 @@ public class GameMenuView extends MenuView {
                     "-fx-min-width: 18px; -fx-min-height: 18px; -fx-max-width: 18px; -fx-max-height: 18px;" +
                     " -fx-background-radius: 50%; -fx-font-size: 14;");
             label.setTranslateX(5);
-            if (card.getType().equals("Weather") || card.getType().equals("Special")){
+            if (card.getType().equals("Weather") || card.getType().equals("Special")) {
                 label.setStyle("");
                 label.setText("");
             }
@@ -418,6 +421,35 @@ public class GameMenuView extends MenuView {
         } catch (Exception e) {
             return new StackPane();
         }
+    }
+
+    public void veto() {
+        Stage dialogStage = new Stage();
+        dialogStage.setTitle("Veto");
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+
+        GridPane gridPane = new GridPane();
+        for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getHand().get(i);
+            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/"+card.getName()+".jpg"))));
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED,event -> {
+                GameMenuController.vetoCard(card);
+                if (GameMenuController.currentPlayer.getNumberOfVetoUse() == 2)
+                    dialogStage.close();
+                gridPane.getChildren().remove(imageView);
+
+            });
+            gridPane.add(imageView,i,0);
+        }
+        gridPane.setHgap(10);
+        gridPane.setVgap(10);
+        gridPane.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(gridPane);
+        dialogStage.setScene(scene);
+        dialogStage.showAndWait();
     }
 
     public void passTurn() {
