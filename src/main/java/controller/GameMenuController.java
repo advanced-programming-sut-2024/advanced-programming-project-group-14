@@ -173,7 +173,7 @@ public class GameMenuController {
 
     }
 
-    public void reviveCard(Card card) {
+    public static void reviveCard(Card card) {
         currentPlayer.getDiscardPile().remove(card);
         String rowName = card.getType();
         if (card.getType().contains("Agile")) rowName = "Close Combat Unit";

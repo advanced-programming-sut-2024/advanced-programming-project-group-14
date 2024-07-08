@@ -31,10 +31,10 @@ import java.util.Collection;
 
 public class GameMenuView extends MenuView {
     public static Stage stage;
-    public double screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-    public double screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
-    public double cardWidth = 0.06 * screenWidth;
-    public double cardHeight = 0.1 * screenHeight;
+    public static double screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+    public static double screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+    public static double cardWidth = 0.06 * screenWidth;
+    public static double cardHeight = 0.1 * screenHeight;
     private double leaderImageWidth = 0.06 * screenWidth;
     private double leaderImageHeight = 0.16 * screenHeight;
     private double buttonWidth = 0.06 * screenWidth;
@@ -204,7 +204,6 @@ public class GameMenuView extends MenuView {
             StackPane stackPane = getStackPaneOfCard(card);
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 clickedCard = card;
-                System.out.println(GameMenuController.currentPlayer.getHand().contains(clickedCard));
                 resetGridPanes(rows, specials);
                 showAvailableRows(clickedCard);
             });
@@ -289,10 +288,19 @@ public class GameMenuView extends MenuView {
         opponentSiegeSpecial.add(
                 getStackPaneOfCard(GameMenuController.opponentPlayer.getSiege().getSpecial()), 0, 0);
 
+        updateDiscardPilesGridPanes();
         updateTableLabels();
         loadPlayerHand(rows, specials);
         resetGridPanes(rows, specials);
         updateSpell();
+    }
+
+    private void updateDiscardPilesGridPanes() {
+        try{
+            opponentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.opponentPlayer.getDiscardPile().get(0)));
+            currentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.currentPlayer.getDiscardPile().get(0)));
+        }catch (Exception e){}
+
     }
 
     private void updateTableLabels() {
@@ -457,7 +465,7 @@ public class GameMenuView extends MenuView {
         dialogStage.showAndWait();
     }
 
-    public void showDiscardPile() {
+    public static void showDiscardPile() {
         Stage dialogStage = new Stage();
         dialogStage.setTitle("DiscardPile");
         dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -465,12 +473,11 @@ public class GameMenuView extends MenuView {
         GridPane gridPane = new GridPane();
         for (int i = 0; i < GameMenuController.currentPlayer.getDiscardPile().size(); i++) {
             Card card = GameMenuController.currentPlayer.getDiscardPile().get(i);
-            ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + card.getName() + ".jpg"))));
+            ImageView imageView = new ImageView(new Image(String.valueOf(GameMenuView.class.getResource("/Images/" + card.getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                //ToDo
-                // Revive card
+                GameMenuController.reviveCard(card);
                 dialogStage.close();
             });
             gridPane.add(imageView, i, 0);
@@ -482,7 +489,6 @@ public class GameMenuView extends MenuView {
         dialogStage.setScene(scene);
         dialogStage.showAndWait();
     }
-
 
     private void doVeto() {
         for (int i = 0; i < 2; i++) {
