@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/ProfileMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -391,7 +383,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720509556133</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="End turn and end game completed">
+      <created>1720514644756</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1720514644756</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -424,7 +423,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Dialogs completed" />
     <MESSAGE value="Main Menu completed" />
     <MESSAGE value="ShowUserInfo method completed" />
     <MESSAGE value="Show game history compeleted" />
@@ -453,6 +451,7 @@
     <MESSAGE value="Veto added" />
     <MESSAGE value="Update Leaders image" />
     <MESSAGE value="Array lists rows and specials changed to public and passTurn completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Array lists rows and specials changed to public and passTurn completed" />
+    <MESSAGE value="End turn and end game completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="End turn and end game completed" />
   </component>
 </project>

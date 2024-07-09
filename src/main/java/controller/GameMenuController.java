@@ -93,6 +93,7 @@ public class GameMenuController {
                     break;
                 case "Medic":
                     ((Medic) card).doAction(forAction);
+                    changeTurn();
                     break;
                 case "MoralBoost":
                     ((MoralBoost) card).doAction(forAction);
