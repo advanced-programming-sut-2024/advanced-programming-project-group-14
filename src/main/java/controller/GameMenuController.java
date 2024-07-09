@@ -128,6 +128,7 @@ public class GameMenuController {
             if (card.getAbility().equals("CommandersHorn")) ((CommandersHorn) card).doAction(new Object[]{row});
             if (card.getAbility().equals("MoralBoost")) ((MoralBoost) card).doAction(new Object[]{row, card});
         }
+        if (row.getSpecial() != null && row.getSpecial().getAbility().equals("CommandersHorn")) ((CommandersHorn) row.getSpecial()).doAction(new Object[]{row});
     }
 
     public static void changeTurn() {
@@ -165,6 +166,7 @@ public class GameMenuController {
 
     public static void resetRow(Row row) {
         for (Card card : row.getCards()) {
+            System.out.println(1);
             card.setMoralBoostAction(false);
             card.setCommandersHornAction(false);
         }

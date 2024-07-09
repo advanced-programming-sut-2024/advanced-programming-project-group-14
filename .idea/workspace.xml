@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Reset power after using decoy and scorch">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Add cards.add(this) in constructor of card">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Medic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +116,7 @@
       <workItem from="1720333262935" duration="2235000" />
       <workItem from="1720341391752" duration="1128000" />
       <workItem from="1720414758042" duration="3458000" />
-      <workItem from="1720526276602" duration="7541000" />
+      <workItem from="1720526276602" duration="10613000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -417,7 +414,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720514644756</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Add commanders actions">
+      <option name="closed" value="true" />
+      <created>1720542486209</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1720542486209</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Add cards.add(this) in constructor of card">
+      <option name="closed" value="true" />
+      <created>1720543462901</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1720543462901</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,9 +463,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Main Menu completed" />
-    <MESSAGE value="ShowUserInfo method completed" />
-    <MESSAGE value="Show game history compeleted" />
     <MESSAGE value="Set style for show game history" />
     <MESSAGE value="back button added to profile menu" />
     <MESSAGE value="Show question after register" />
@@ -479,7 +489,9 @@
     <MESSAGE value="Update Leaders image" />
     <MESSAGE value="Array lists rows and specials changed to public and passTurn completed" />
     <MESSAGE value="End turn and end game completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="End turn and end game completed" />
+    <MESSAGE value="Add commanders actions" />
+    <MESSAGE value="Add cards.add(this) in constructor of card" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add cards.add(this) in constructor of card" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

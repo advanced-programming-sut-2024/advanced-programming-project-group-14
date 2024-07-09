@@ -32,19 +32,19 @@ public class Scorch extends Card implements Actionable {
                 if (card.getCurrentPower() == maxPowerInTable && !card.isHero()) {
                     currentPlayer.getDiscardPile().add(card);
                     cardsToRemove.add(card);
-                    removeCardsInRow(cardsToRemove, playerRow, card);
+                    removeCardsInRow(playerRow, card);
                 }
             }
             playerRow.getCards().removeAll(cardsToRemove);
         }
     }
 
-    private static void removeCardsInRow(ArrayList<Card> cardsToRemove, Row playerRow, Card card) {
+    private static void removeCardsInRow(Row playerRow, Card card) {
         GameMenuController.resetRow(playerRow);
         if (card.getAbility().equals("MoralBoost") || card.getAbility().equals("CommandersHorn")) {
             GameMenuController.resetRow(playerRow);
             for (Card rowCard : playerRow.getCards())
-                if (rowCard.getAbility().equals("MoralBoost") || card.getAbility().equals("CommandersHorn")) {
+                if (rowCard.getAbility().equals("MoralBoost") || rowCard.getAbility().equals("CommandersHorn")) {
                     GameMenuController.doAction(rowCard, new Object[]{playerRow, rowCard});
                 }
         }
@@ -71,8 +71,9 @@ public class Scorch extends Card implements Actionable {
                 ArrayList<Card> cardsToRemove = new ArrayList<>();
                 for (Card card : row.getCards()) {
                     if (!card.isHero() && card.getCurrentPower() == maxPowerInRow) {
-                        removeCardsInRow(cardsToRemove, row, card);
-                        GameMenuController.currentPlayer.getDiscardPile().add(card);
+                        removeCardsInRow(row, card);
+                        cardsToRemove.add(card);
+                        GameMenuController.opponentPlayer.getDiscardPile().add(card);
                     }
                 }
                 row.getCards().removeAll(cardsToRemove);
