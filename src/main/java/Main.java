@@ -14,6 +14,8 @@ public class Main {
         LoadController.loadAll();
         Player player1 = new Player(new User("amir","1","ahy","amir@gmail.com"));
         Player player2 = new Player(new User("ali","1","amb","ali@gmail.com"));
+        PreGameMenuController.currentPlayer = player1;
+        PreGameMenuController.opponentPlayer = player2;
         GameMenuController.currentGameTable = new GameTable(new Date(),player1,player2);
         GameMenuController.currentPlayer = player1;
         GameMenuController.opponentPlayer = player2;

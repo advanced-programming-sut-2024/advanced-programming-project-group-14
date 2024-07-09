@@ -63,6 +63,10 @@ public class GameMenuView extends MenuView {
     public GridPane playerCloseCombatSpecial;
     public GridPane playerRangedSpecial;
     public GridPane playerSiegeSpecial;
+
+    public ArrayList<GridPane> rows = new ArrayList<>();
+    public ArrayList<GridPane> specials = new ArrayList<>();
+
     public Label opponentName;
     public Label opponentCardCount;
     public Label opponentCrystal;
@@ -85,6 +89,9 @@ public class GameMenuView extends MenuView {
     @Override
     public void start(Stage stage) throws Exception {
         GameMenuView.stage = stage;
+        rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
+        specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
+
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/GameMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
@@ -98,8 +105,6 @@ public class GameMenuView extends MenuView {
 
     @FXML
     public void initialize() {
-        ArrayList<GridPane> rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
-        ArrayList<GridPane> specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
         ArrayList<GridPane> rowsWithSpecials = new ArrayList<>();
         rowsWithSpecials.addAll(rows);
         rowsWithSpecials.addAll(specials);
@@ -113,7 +118,7 @@ public class GameMenuView extends MenuView {
             if (clickedCard != null) {
                 GameMenuController.placeCard(clickedCard, "Weather", null);
                 clickedCard = null;
-                refreshRows(rows, specials);
+                refreshRows();
             }
 
         });
@@ -129,7 +134,7 @@ public class GameMenuView extends MenuView {
                         rowName = "Siege Unit";
                     GameMenuController.placeCard(clickedCard, rowName, null);
                     clickedCard = null;
-                    refreshRows(rows, specials);
+                    refreshRows();
                 }
             });
         }
@@ -138,12 +143,12 @@ public class GameMenuView extends MenuView {
         doVeto();
         updateDiscardPilesAndImages();
         updateTableLabels();
-        loadPlayerHand(rows, specials);
-        resizePanes(rows, specials);
+        loadPlayerHand();
+        resizePanes();
 
     }
 
-    private void resizePanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
+    private void resizePanes() {
         mainGridPane.setPadding(new Insets(cardWidth, cardWidth, cardWidth, cardWidth));
         opponentLeaderImage.setFitWidth(leaderImageWidth);
         opponentLeaderImage.setFitHeight(leaderImageHeight);
@@ -188,14 +193,14 @@ public class GameMenuView extends MenuView {
         opponentDeck.setFitHeight(cardHeight + 10);
     }
 
-    private void loadPlayerHand(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
+    private void loadPlayerHand() {
         playerHand.getChildren().clear();
         for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
             Card card = GameMenuController.currentPlayer.getHand().get(i);
             StackPane stackPane = getStackPaneOfCard(card);
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 clickedCard = card;
-                resetGridPanes(rows, specials);
+                resetGridPanes();
                 showAvailableRows(clickedCard);
             });
             playerHand.add(stackPane, i, 0);
@@ -204,7 +209,7 @@ public class GameMenuView extends MenuView {
         playerHand.setHgap(10);
     }
 
-    private void refreshRows(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
+    private void refreshRows() {
         for (GridPane gridPane : rows) {
             gridPane.getChildren().clear();
             gridPane.setAlignment(Pos.CENTER);
@@ -287,8 +292,8 @@ public class GameMenuView extends MenuView {
 
         updateDiscardPilesAndImages();
         updateTableLabels();
-        loadPlayerHand(rows, specials);
-        resetGridPanes(rows, specials);
+        loadPlayerHand();
+        resetGridPanes();
         updateSpell();
     }
 
@@ -345,7 +350,7 @@ public class GameMenuView extends MenuView {
 
     }
 
-    private void resetGridPanes(ArrayList<GridPane> rows, ArrayList<GridPane> specials) {
+    private void resetGridPanes() {
         playerHand.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         for (GridPane gridPane : rows) {
             gridPane.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
@@ -518,6 +523,7 @@ public class GameMenuView extends MenuView {
     }
 
     public void passTurn() {
-
+        GameMenuController.changeTurn();
+        refreshRows();
     }
 }
