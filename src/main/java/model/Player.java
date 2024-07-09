@@ -21,6 +21,7 @@ public class Player extends User {
     private HashMap<Integer, Integer> scoreOfRounds;
     private int numberOfVetoUse;
     private boolean isPassed;
+    private boolean usedCommanderAction;
 
     public Player(User user) {
         super(user.getUsername(), user.getPassword(), user.getNickname(), user.getEmail());
@@ -183,5 +184,13 @@ public class Player extends User {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean hasUsedCommanderAction() {
+        return usedCommanderAction;
+    }
+
+    public void setUsedCommanderAction(boolean usedCommanderAction) {
+        this.usedCommanderAction = usedCommanderAction;
     }
 }

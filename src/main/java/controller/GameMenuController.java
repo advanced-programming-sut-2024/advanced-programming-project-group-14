@@ -222,6 +222,10 @@ public class GameMenuController {
     }
 
     public static void playCommanderPower() {
+        if (currentPlayer.hasUsedCommanderAction())
+            return;
+
+        currentPlayer.setUsedCommanderAction(true);
         switch (currentPlayer.getCommander().getName()) {
             case "TheSiegemaster":
                 placeCardOfCommanderAction(Card.getCardByName("Impenetrablefog"));
