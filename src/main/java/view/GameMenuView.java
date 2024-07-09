@@ -299,6 +299,7 @@ public class GameMenuView extends MenuView {
         currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
             //ToDo
             // Commander action
+            GameMenuController.playCommanderPower();
         });
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
         currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));

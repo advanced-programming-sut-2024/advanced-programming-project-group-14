@@ -33,6 +33,7 @@ public class Card implements Serializable {
         this.description = description;
         this.moralBoostAction = false;
         this.commandersHornAction = false;
+        cards.add(this);
 
         if (factionName.equals("Neutral")) {
             for (Faction faction : Faction.getFactions())

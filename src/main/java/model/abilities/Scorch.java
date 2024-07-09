@@ -53,7 +53,6 @@ public class Scorch extends Card implements Actionable {
     @Override
     public void doAction(Object[] items) {
         Row row = (Row) items[0];
-        System.out.println(1);
         Scorch scorch = (Scorch) items[1];
         if (scorch.getName().equals("Scorch")) {
             int maxPowerInTable = 0;

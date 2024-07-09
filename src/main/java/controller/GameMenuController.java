@@ -5,7 +5,6 @@ import model.*;
 import model.abilities.*;
 import view.GameMenuView;
 
-import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -16,18 +15,27 @@ public class GameMenuController {
 
     public static void loadHand() {
         Random random = new Random();
-        for (int i = 0; i < 10; i++) {
-            int chosenCard = random.nextInt(0, currentPlayer.getDeck().size());
-            int chosenCard1 = random.nextInt(0, opponentPlayer.getDeck().size());
 
-            Card toAdd = currentPlayer.getDeck().get(chosenCard);
-            Card toAdd1 = opponentPlayer.getDeck().get(chosenCard1);
+        int capacityOfHand = 10;
 
-            currentPlayer.getDeck().remove(toAdd);
-            currentPlayer.getHand().add(toAdd);
+        if (currentPlayer.getCommander().getName().equals("DaisyoftheValley"))
+            capacityOfHand = 11;
 
-            opponentPlayer.getDeck().remove(toAdd1);
-            opponentPlayer.getHand().add(toAdd1);
+        loadHandOfEachPlayer(random, capacityOfHand, currentPlayer);
+        if (!opponentPlayer.getCommander().getName().equals("DaisyoftheValley"))
+            capacityOfHand = 10;
+
+        loadHandOfEachPlayer(random, capacityOfHand, opponentPlayer);
+
+
+    }
+
+    private static void loadHandOfEachPlayer(Random random, int capacityOfHand, Player opponentPlayer) {
+        for (int i = 0; i < capacityOfHand; i++) {
+            int chosenCard = random.nextInt(0, opponentPlayer.getDeck().size());
+            Card toAdd = opponentPlayer.getDeck().get(chosenCard);
+            opponentPlayer.getDeck().remove(toAdd);
+            opponentPlayer.getHand().add(toAdd);
         }
     }
 
@@ -162,6 +170,199 @@ public class GameMenuController {
         }
     }
 
+    public static void reviveCard(Card card) {
+        currentPlayer.getDiscardPile().remove(card);
+        String rowName = card.getType();
+        if (card.getType().contains("Agile")) rowName = "Close Combat Unit";
+        placeCard(card, rowName, null);
+    }
+
+    public static void endTurn() {
+        checkForRoundWinner();
+        clearTable();
+        currentPlayer.setPassed(false);
+        opponentPlayer.setPassed(false);
+        currentGameTable.increaseRoundNumber();
+
+    }
+
+    private static void checkForRoundWinner() {
+        int roundNumber = currentGameTable.getRoundNumber();
+        currentPlayer.setScoresOfRound(roundNumber, currentPlayer.calculateTotalScore());
+        opponentPlayer.setScoresOfRound(roundNumber, opponentPlayer.calculateTotalScore());
+        if (currentPlayer.getScoreOfRound(roundNumber) < opponentPlayer.getScoreOfRound(roundNumber))
+            currentPlayer.decreaseLife();
+        else
+            opponentPlayer.decreaseLife();
+
+        if (currentPlayer.getLives() == 0 || opponentPlayer.getLives() == 0)
+            endGame();
+    }
+
+    private static void clearTable() {
+        for (Row row : currentPlayer.getRows()) {
+            currentPlayer.getDiscardPile().addAll(row.getCards());
+            row.getCards().clear();
+            row.setSpecial(null);
+        }
+        for (Row row : opponentPlayer.getRows()) {
+            opponentPlayer.getDiscardPile().addAll(row.getCards());
+            row.getCards().clear();
+            row.setSpecial(null);
+        }
+        currentGameTable.setWeather(new ArrayList<>());
+    }
+
+    public static void endGame() {
+        currentPlayer.addGamePlayed(currentGameTable);
+        opponentPlayer.addGamePlayed(currentGameTable);
+        new GameMenuView().endGame();
+    }
+
+    public static void playCommanderPower() {
+        switch (currentPlayer.getCommander().getName()) {
+            case "TheSiegemaster":
+                placeCardOfCommanderAction(Card.getCardByName("Impenetrablefog"));
+                break;
+            case "TheSteel-Forged":
+                ((Weather) Card.getCardByName("ClearWeather")).doAction(new Object[]{null, Card.getCardByName("ClearWeather")});
+                changeTurn();
+                break;
+            case "KingofTemeria":
+                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{currentPlayer.getSiege()});
+                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{opponentPlayer.getSiege()});
+                changeTurn();
+                break;
+            case "LordCommanderoftheNorth":
+                ((Scorch) Card.getCardByName("Villentretenmerth")).doAction(new Object[]{currentPlayer.getSiege(), Card.getCardByName("Villentretenmerth")});
+                ((Scorch) Card.getCardByName("Villentretenmerth")).doAction(new Object[]{opponentPlayer.getSiege(), Card.getCardByName("Villentretenmerth")});
+                changeTurn();
+                break;
+            case "SonofMedell":
+                ((Scorch) Card.getCardByName("Villentretenmerth")).doAction(new Object[]{currentPlayer.getRangedCombat(), Card.getCardByName("Villentretenmerth")});
+                ((Scorch) Card.getCardByName("Villentretenmerth")).doAction(new Object[]{opponentPlayer.getRangedCombat(), Card.getCardByName("Villentretenmerth")});
+                changeTurn();
+                break;
+            case "TheWhiteFlame":
+                placeCardOfCommanderAction(Card.getCardByName("TorrentialRain"));
+                break;
+            case "HisImperialMajesty":
+                break;
+            case "EmperorofNilfgaard":
+                break;
+            case "TheRelentless":
+                break;
+            case "InvaderoftheNorth":
+                invaderoftheNorthAction();
+                changeTurn();
+                break;
+            case "BringerofDeath":
+                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{currentPlayer.getCloseCombat()});
+                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{opponentPlayer.getCloseCombat()});
+                changeTurn();
+                break;
+            case "KingofthewildHunt":
+                ((Medic) Card.getCardByName("MennoCoehoorn")).doAction(new Object[]{});
+                break;
+            case "DestroyerofWorlds":
+                break;
+            case "CommanderoftheRedRiders":
+                commanderoftheRedRidersAction();
+                changeTurn();
+                break;
+            case "TheTreacherous":
+                theTreacherousAction();
+                changeTurn();
+                break;
+            case "QueenofDolBlathanna":
+                queenofDolBlathanna();
+                changeTurn();
+                break;
+            case "TheBeautiful":
+                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{currentPlayer.getRangedCombat()});
+                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{opponentPlayer.getRangedCombat()});
+                changeTurn();
+                break;
+            case "DaisyoftheValley": //Done
+                break;
+            case "PurebloodElf":
+                placeCardOfCommanderAction(Card.getCardByName("BitingFrost"));
+                break;
+            case "HopeoftheAenSeidhe":
+                break;
+            case "CrachanCraite":
+                crachanCraiteAction();
+                changeTurn();
+                break;
+            case "KingBran":
+                break;
+
+        }
+
+    }
+
+    private static void queenofDolBlathanna() {
+        if (opponentPlayer.getCloseCombat().getTotalScore() > 10) {
+            int maxPower = 0;
+            for (Card card : opponentPlayer.getRangedCombat().getCards())
+                if (card.getCurrentPower() > maxPower && !card.isHero()) maxPower = card.getCurrentPower();
+            for (Card card : opponentPlayer.getRangedCombat().getCards()) {
+                if (card.getCurrentPower() == maxPower && !card.isHero()) {
+                    opponentPlayer.getRangedCombat().getCards().remove(card);
+                    break;
+                }
+            }
+        }
+    }
+
+    private static void invaderoftheNorthAction() {
+        Random random = new Random();
+        reviveCard(currentPlayer.getHand().get(random.nextInt(0, currentPlayer.getHand().size())));
+    }
+
+    private static void commanderoftheRedRidersAction() {
+        for (Card card : currentPlayer.getHand()) {
+            if (card.getType().equals("Weather")) {
+                placeCard(card, "Weather", null);
+                break;
+            }
+        }
+    }
+
+    private static void theTreacherousAction() {
+        for (Row row : currentPlayer.getRows()) {
+            for (Card card : row.getCards()) {
+                if (card.getAbility().equals("Spy"))
+                    card.setCurrentPower(card.getCurrentPower() * 2);
+            }
+        }
+        for (Row row : opponentPlayer.getRows()) {
+            for (Card card : row.getCards()) {
+                if (card.getAbility().equals("Spy"))
+                    card.setCurrentPower(card.getCurrentPower() * 2);
+            }
+        }
+    }
+
+    private static void crachanCraiteAction() {
+        for (Card card : currentPlayer.getDiscardPile())
+            currentPlayer.getDeck().add(card);
+        currentPlayer.getDiscardPile().clear();
+        for (Card card : opponentPlayer.getDiscardPile())
+            opponentPlayer.getDeck().add(card);
+        opponentPlayer.getDiscardPile().clear();
+
+    }
+
+    private static void placeCardOfCommanderAction(Card card1) {
+        for (Card card : currentPlayer.getHand()) {
+            if (card.getName().equals(card1.getName())) {
+                placeCard(card, "Weather", null);
+                break;
+            }
+        }
+    }
+
     public String showDeck() {
         return "";
     }
@@ -186,23 +387,8 @@ public class GameMenuController {
         return new Result(true, "");
     }
 
-    public void doAction(Card card) {
-
-    }
-
-    public static void reviveCard(Card card) {
-        currentPlayer.getDiscardPile().remove(card);
-        String rowName = card.getType();
-        if (card.getType().contains("Agile")) rowName = "Close Combat Unit";
-        placeCard(card, rowName, null);
-    }
-
     public Result showCommander() {
         return new Result(true, "");
-    }
-
-    public void playCommanderPower() {
-
     }
 
     public Result showPlayersInfo() {
@@ -233,50 +419,8 @@ public class GameMenuController {
 
     }
 
-    public static void endTurn() {
-        checkForRoundWinner();
-        clearTable();
-        currentPlayer.setPassed(false);
-        opponentPlayer.setPassed(false);
-        currentGameTable.increaseRoundNumber();
-
-    }
-
-    private static void checkForRoundWinner() {
-        int roundNumber = currentGameTable.getRoundNumber();
-        currentPlayer.setScoresOfRound(roundNumber, currentPlayer.calculateTotalScore());
-        opponentPlayer.setScoresOfRound(roundNumber, opponentPlayer.calculateTotalScore());
-        if (currentPlayer.getScoreOfRound(roundNumber) < opponentPlayer.getScoreOfRound(roundNumber))
-            currentPlayer.decreaseLife();
-        else
-            opponentPlayer.decreaseLife();
-
-        if (currentPlayer.getLives()==0 || opponentPlayer.getLives()==0)
-            endGame();
-    }
-
-    private static void clearTable() {
-        for (Row row : currentPlayer.getRows()) {
-            currentPlayer.getDiscardPile().addAll(row.getCards());
-            row.getCards().clear();
-            row.setSpecial(null);
-        }
-        for (Row row : opponentPlayer.getRows()) {
-            opponentPlayer.getDiscardPile().addAll(row.getCards());
-            row.getCards().clear();
-            row.setSpecial(null);
-        }
-        currentGameTable.setWeather(new ArrayList<>());
-    }
-
     public void discardSpells() {
 
-    }
-
-    public static void endGame() {
-        currentPlayer.addGamePlayed(currentGameTable);
-        opponentPlayer.addGamePlayed(currentGameTable);
-        new GameMenuView().endGame();
     }
 
     public int CalculatePlayersTotalScore() {
