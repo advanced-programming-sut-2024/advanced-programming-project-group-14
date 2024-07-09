@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class GameTable {
-
     private int roundNumber;
     private Date date;
     private Player player1;
@@ -16,6 +15,7 @@ public class GameTable {
         this.player1 = player1;
         this.player2 = player2;
         this.weather = new ArrayList<>();
+        this.roundNumber = 1;
     }
 
     public int getRoundNumber() {
@@ -46,8 +46,14 @@ public class GameTable {
         this.roundNumber++;
     }
 
-    public Player getWinner() {
-        if (player1.getTotalScoreOfRounds()> player2.getTotalScoreOfRounds())
+    public Player getGameWinner() {
+        if (player2.getLives()==0)
+            return player1;
+        return player2;
+    }
+
+    public Player getRoundWinner(int roundNumber) {
+        if (player1.getScoreOfRound(roundNumber) > player2.getScoreOfRound(roundNumber))
             return player1;
         return player2;
     }

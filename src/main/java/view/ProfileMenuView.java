@@ -130,16 +130,16 @@ public class ProfileMenuView extends MenuView {
             String roundScores = "";
             Player player1 = cellData.getValue().getPlayer1();
             Player player2 = cellData.getValue().getPlayer2();
-            roundScores += player1.getScoreOfRounds().get(1) + " | " + player2.getScoreOfRounds().get(1) + "\n";
-            roundScores += player1.getScoreOfRounds().get(2) + " | " + player2.getScoreOfRounds().get(2) + "\n";
-            roundScores += player1.getScoreOfRounds().get(3) + " | " + player2.getScoreOfRounds().get(3);
+            roundScores += player1.getScoreOfRound(1) + " | " + player2.getScoreOfRound(1) + "\n";
+            roundScores += player1.getScoreOfRound(2) + " | " + player2.getScoreOfRound(2) + "\n";
+            roundScores += player1.getScoreOfRound(3) + " | " + player2.getScoreOfRound(3);
             return new SimpleStringProperty(roundScores);
         });
         totalColumn.setCellValueFactory(cellData -> {
             String totalScores = cellData.getValue().getPlayer1().getTotalScoreOfRounds() + " | " + cellData.getValue().getPlayer2().getTotalScoreOfRounds();
             return new SimpleStringProperty(totalScores);
         });
-        winnerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getWinner().getUsername()));
+        winnerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGameWinner().getUsername()));
 
         //Set style for columns
         ArrayList<TableColumn> tableColumns = new ArrayList<>(Arrays.asList(opponentColumn,dateColumn,roundsColumn,totalColumn,winnerColumn));

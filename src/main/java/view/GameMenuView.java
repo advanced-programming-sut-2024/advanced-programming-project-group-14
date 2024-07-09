@@ -89,9 +89,6 @@ public class GameMenuView extends MenuView {
     @Override
     public void start(Stage stage) throws Exception {
         GameMenuView.stage = stage;
-        rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
-        specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
-
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/GameMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
@@ -105,47 +102,13 @@ public class GameMenuView extends MenuView {
 
     @FXML
     public void initialize() {
-        ArrayList<GridPane> rowsWithSpecials = new ArrayList<>();
-        rowsWithSpecials.addAll(rows);
-        rowsWithSpecials.addAll(specials);
-
-        for (GridPane gridPane : rows) {
-            gridPane.setAlignment(Pos.CENTER);
-            gridPane.setHgap(10);
-        }
-
-        spell.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            if (clickedCard != null) {
-                GameMenuController.placeCard(clickedCard, "Weather", null);
-                clickedCard = null;
-                refreshRows();
-            }
-
-        });
-        for (GridPane gridPane : rowsWithSpecials) {
-            gridPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                String rowName = null;
-                if (clickedCard != null) {
-                    if (gridPane.getId().contains("Close"))
-                        rowName = "Close Combat Unit";
-                    else if (gridPane.getId().contains("Ranged"))
-                        rowName = "Ranged Unit";
-                    else if (gridPane.getId().contains("Siege"))
-                        rowName = "Siege Unit";
-                    GameMenuController.placeCard(clickedCard, rowName, null);
-                    clickedCard = null;
-                    refreshRows();
-                }
-            });
-        }
+        rows = new ArrayList<>(Arrays.asList(playerRanged, playerSiege, playerCloseCombat, opponentSiege, opponentRanged, opponentCloseCombat));
+        specials = new ArrayList<>(Arrays.asList(playerRangedSpecial, playerSiegeSpecial, playerCloseCombatSpecial, opponentSiegeSpecial, opponentRangedSpecial, opponentCloseCombatSpecial));
 
         GameMenuController.loadHand();
         doVeto();
-        updateDiscardPilesAndImages();
-        updateTableLabels();
-        loadPlayerHand();
         resizePanes();
-
+        updateTable();
     }
 
     private void resizePanes() {
@@ -193,23 +156,38 @@ public class GameMenuView extends MenuView {
         opponentDeck.setFitHeight(cardHeight + 10);
     }
 
-    private void loadPlayerHand() {
-        playerHand.getChildren().clear();
-        for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
-            Card card = GameMenuController.currentPlayer.getHand().get(i);
-            StackPane stackPane = getStackPaneOfCard(card);
-            stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-                clickedCard = card;
-                resetGridPanes();
-                showAvailableRows(clickedCard);
-            });
-            playerHand.add(stackPane, i, 0);
-        }
-        playerHand.setAlignment(Pos.CENTER);
-        playerHand.setHgap(10);
+    private void updateTable(){
+        updateRows();
+        updateDiscardPilesAndImages();
+        updateTableLabels();
+        loadPlayerHand();
+        resetGridPanes();
+        updateSpell();
     }
 
-    private void refreshRows() {
+    private void updateRows() {
+        ArrayList<GridPane> rowsWithSpecials = new ArrayList<>();
+        rowsWithSpecials.addAll(rows);
+        rowsWithSpecials.addAll(specials);
+
+
+        for (GridPane gridPane : rowsWithSpecials) {
+            gridPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                String rowName = null;
+                if (clickedCard != null) {
+                    if (gridPane.getId().contains("Close"))
+                        rowName = "Close Combat Unit";
+                    else if (gridPane.getId().contains("Ranged"))
+                        rowName = "Ranged Unit";
+                    else if (gridPane.getId().contains("Siege"))
+                        rowName = "Siege Unit";
+                    GameMenuController.placeCard(clickedCard, rowName, null);
+                    clickedCard = null;
+                    updateTable();
+                }
+            });
+        }
+
         for (GridPane gridPane : rows) {
             gridPane.getChildren().clear();
             gridPane.setAlignment(Pos.CENTER);
@@ -290,11 +268,23 @@ public class GameMenuView extends MenuView {
         opponentSiegeSpecial.add(
                 getStackPaneOfCard(GameMenuController.opponentPlayer.getSiege().getSpecial()), 0, 0);
 
-        updateDiscardPilesAndImages();
-        updateTableLabels();
-        loadPlayerHand();
-        resetGridPanes();
-        updateSpell();
+
+    }
+
+    private void loadPlayerHand() {
+        playerHand.getChildren().clear();
+        for (int i = 0; i < GameMenuController.currentPlayer.getHand().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getHand().get(i);
+            StackPane stackPane = getStackPaneOfCard(card);
+            stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                clickedCard = card;
+                resetGridPanes();
+                showAvailableRows(clickedCard);
+            });
+            playerHand.add(stackPane, i, 0);
+        }
+        playerHand.setAlignment(Pos.CENTER);
+        playerHand.setHgap(10);
     }
 
     private void updateDiscardPilesAndImages() {
@@ -336,6 +326,15 @@ public class GameMenuView extends MenuView {
     }
 
     private void updateSpell() {
+        spell.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+            if (clickedCard != null) {
+                GameMenuController.placeCard(clickedCard, "Weather", null);
+                clickedCard = null;
+                updateTable();
+            }
+
+        });
+
         spell.getChildren().clear();
         spell.setStyle("-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;");
         for (int i = 0; i < GameMenuController.currentGameTable.getWeather().size(); i++) {
@@ -523,7 +522,22 @@ public class GameMenuView extends MenuView {
     }
 
     public void passTurn() {
+        if (GameMenuController.opponentPlayer.isPassed()){
+            GameMenuController.endTurn();
+            showSuccessfulMessage("Winner of this round: "+ GameMenuController.currentGameTable.getRoundWinner(
+                    GameMenuController.currentGameTable.getRoundNumber()-1).getUsername());
+            updateTable();
+            return;
+        }
+
+        GameMenuController.currentPlayer.setPassed(true);
         GameMenuController.changeTurn();
-        refreshRows();
+        updateTable();
     }
+
+    public void endGame() {
+        showSuccessfulMessage("Winner: "+ GameMenuController.currentGameTable.getGameWinner().getUsername());
+        goToMainMenu(stage);
+    }
+
 }

@@ -3,8 +3,10 @@ package controller;
 
 import model.*;
 import model.abilities.*;
+import view.GameMenuView;
 
 import java.sql.Array;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class GameMenuController {
@@ -33,7 +35,7 @@ public class GameMenuController {
         if (card.getAbility().equals("Decoy") && targetCard == null) return;
 
         if (rowName.equals("Weather")) {
-            Object[] objects = {null,card};
+            Object[] objects = {null, card};
             if (card.getAbility().equals("Scorch"))
                 ((Scorch) card).doAction(objects);
             else
@@ -57,9 +59,9 @@ public class GameMenuController {
         } else {
             if (rowName.equals("Close Combat Unit") && (card.getType().equals("Close Combat Unit") || (card.getType().equals("Special")) || card.getType().equals("Agile Unit")))
                 row.addToCards(card);
-            else if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || (card.getType().equals("Special"))  || card.getType().equals("Agile Unit")))
+            else if (rowName.equals("Ranged Unit") && (card.getType().equals("Ranged Unit") || (card.getType().equals("Special")) || card.getType().equals("Agile Unit")))
                 row.addToCards(card);
-            else if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit") || (card.getType().equals("Special")) )
+            else if (rowName.equals("Siege Unit") && card.getType().equals("Siege Unit") || (card.getType().equals("Special")))
                 row.addToCards(card);
             else return;
         }
@@ -120,6 +122,8 @@ public class GameMenuController {
     }
 
     public static void changeTurn() {
+        if (opponentPlayer.isPassed())
+            return;
         Player tempPlayer = currentPlayer;
         currentPlayer = opponentPlayer;
         opponentPlayer = tempPlayer;
@@ -228,21 +232,54 @@ public class GameMenuController {
 
     }
 
-    public void endTurn() {
+    public static void endTurn() {
+        checkForRoundWinner();
+        clearTable();
+        currentPlayer.setPassed(false);
+        opponentPlayer.setPassed(false);
+        currentGameTable.increaseRoundNumber();
 
     }
 
-    public void disCardSpells() {
+    private static void checkForRoundWinner() {
+        int roundNumber = currentGameTable.getRoundNumber();
+        currentPlayer.setScoresOfRound(roundNumber, currentPlayer.calculateTotalScore());
+        opponentPlayer.setScoresOfRound(roundNumber, opponentPlayer.calculateTotalScore());
+        if (currentPlayer.getScoreOfRound(roundNumber) < opponentPlayer.getScoreOfRound(roundNumber))
+            currentPlayer.decreaseLife();
+        else
+            opponentPlayer.decreaseLife();
+
+        if (currentPlayer.getLives()==0 || opponentPlayer.getLives()==0)
+            endGame();
+    }
+
+    private static void clearTable() {
+        for (Row row : currentPlayer.getRows()) {
+            currentPlayer.getDiscardPile().addAll(row.getCards());
+            row.getCards().clear();
+            row.setSpecial(null);
+        }
+        for (Row row : opponentPlayer.getRows()) {
+            opponentPlayer.getDiscardPile().addAll(row.getCards());
+            row.getCards().clear();
+            row.setSpecial(null);
+        }
+        currentGameTable.setWeather(new ArrayList<>());
+    }
+
+    public void discardSpells() {
 
     }
 
-    public void endGame() {
-
+    public static void endGame() {
+        currentPlayer.addGamePlayed(currentGameTable);
+        opponentPlayer.addGamePlayed(currentGameTable);
+        new GameMenuView().endGame();
     }
 
     public int CalculatePlayersTotalScore() {
         return 0;
     }
-
 
 }

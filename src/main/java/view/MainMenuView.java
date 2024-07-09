@@ -22,6 +22,7 @@ public class MainMenuView extends MenuView{
         stage.setTitle("Main Menu");
         stage.setHeight(600);
         stage.setWidth(800);
+        stage.centerOnScreen();
         stage.show();
     }
 

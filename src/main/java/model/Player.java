@@ -124,11 +124,12 @@ public class Player extends User {
     }
 
     public void decreaseLife() {
+        this.lives--;
 
     }
 
-    public HashMap<Integer, Integer> getScoreOfRounds() {
-        return scoreOfRounds;
+    public int getScoreOfRound(int roundNumber) {
+        return scoreOfRounds.get(roundNumber);
     }
 
     public int getTotalScoreOfRounds() {
