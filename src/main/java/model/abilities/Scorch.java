@@ -32,12 +32,21 @@ public class Scorch extends Card implements Actionable {
                 if (card.getCurrentPower() == maxPowerInTable && !card.isHero()) {
                     currentPlayer.getDiscardPile().add(card);
                     cardsToRemove.add(card);
-                    GameMenuController.resetRow(playerRow);
-                    for (Card rowCard : playerRow.getCards())
-                        GameMenuController.doAction(card, new Object[]{rowCard, playerRow});
+                    removeCardsInRow(cardsToRemove, playerRow, card);
                 }
             }
             playerRow.getCards().removeAll(cardsToRemove);
+        }
+    }
+
+    private static void removeCardsInRow(ArrayList<Card> cardsToRemove, Row playerRow, Card card) {
+        GameMenuController.resetRow(playerRow);
+        if (card.getAbility().equals("MoralBoost") || card.getAbility().equals("CommandersHorn")) {
+            GameMenuController.resetRow(playerRow);
+            for (Card rowCard : playerRow.getCards())
+                if (rowCard.getAbility().equals("MoralBoost") || card.getAbility().equals("CommandersHorn")) {
+                    GameMenuController.doAction(rowCard, new Object[]{playerRow, rowCard});
+                }
         }
     }
 
@@ -57,15 +66,13 @@ public class Scorch extends Card implements Actionable {
             if (totalPowerInRow > 10) {
                 int maxPowerInRow = 0;
                 for (Card card : row.getCards()) {
-                    if (card.getCurrentPower() > maxPowerInRow && !card.isHero()) maxPowerInRow = card.getCurrentPower();
+                    if (card.getCurrentPower() > maxPowerInRow && !card.isHero())
+                        maxPowerInRow = card.getCurrentPower();
                 }
                 ArrayList<Card> cardsToRemove = new ArrayList<>();
                 for (Card card : row.getCards()) {
                     if (!card.isHero() && card.getCurrentPower() == maxPowerInRow) {
-                        cardsToRemove.add(card);
-                        GameMenuController.resetRow(row);
-                        for (Card rowCard : row.getCards())
-                            GameMenuController.doAction(card, new Object[]{rowCard, row});
+                        removeCardsInRow(cardsToRemove, row, card);
                         GameMenuController.currentPlayer.getDiscardPile().add(card);
                     }
                 }

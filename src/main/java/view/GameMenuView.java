@@ -213,7 +213,8 @@ public class GameMenuView extends MenuView {
         for (int i = 0; i < GameMenuController.currentPlayer.getCloseCombat().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getCloseCombat().getCards().get(i);
             StackPane stackPane = getStackPaneOfCard(card);
-            ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            if (!card.getName().equals("Decoy"))
+                ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
                     GameMenuController.placeCard(clickedCard, "Close Combat Unit", card);
@@ -224,7 +225,8 @@ public class GameMenuView extends MenuView {
         for (int i = 0; i < GameMenuController.currentPlayer.getRangedCombat().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getRangedCombat().getCards().get(i);
             StackPane stackPane = getStackPaneOfCard(card);
-            ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            if (!card.getName().equals("Decoy"))
+                ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
                     GameMenuController.placeCard(clickedCard, "Ranged Unit", card);
@@ -235,7 +237,8 @@ public class GameMenuView extends MenuView {
         for (int i = 0; i < GameMenuController.currentPlayer.getSiege().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getSiege().getCards().get(i);
             StackPane stackPane = getStackPaneOfCard(card);
-            ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            if (!card.getName().equals("Decoy"))
+                ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             stackPane.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 if (clickedCard != null && clickedCard.getName().equals("Decoy"))
                     GameMenuController.placeCard(clickedCard, "Siege Unit", card);
@@ -245,19 +248,22 @@ public class GameMenuView extends MenuView {
         for (int i = 0; i < GameMenuController.opponentPlayer.getCloseCombat().getCards().size(); i++) {
             Card card = GameMenuController.opponentPlayer.getCloseCombat().getCards().get(i);
             StackPane stackPane = getStackPaneOfCard(card);
-            ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            if (!card.getName().equals("Decoy"))
+                ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             opponentCloseCombat.add(stackPane, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getRangedCombat().getCards().size(); i++) {
             Card card = GameMenuController.opponentPlayer.getRangedCombat().getCards().get(i);
             StackPane stackPane = getStackPaneOfCard(card);
-            ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            if (!card.getName().equals("Decoy"))
+                ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             opponentRanged.add(stackPane, i, 0);
         }
         for (int i = 0; i < GameMenuController.opponentPlayer.getSiege().getCards().size(); i++) {
             Card card = GameMenuController.opponentPlayer.getSiege().getCards().get(i);
             StackPane stackPane = getStackPaneOfCard(card);
-            ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
+            if (!card.getName().equals("Decoy"))
+                ((Label) stackPane.getChildren().get(1)).setText(String.valueOf(card.getCurrentPower()));
             opponentSiege.add(stackPane, i, 0);
         }
 

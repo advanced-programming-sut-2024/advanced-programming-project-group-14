@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -378,14 +378,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720453248424</updated>
     </task>
-    <task id="LOCAL-00041" summary="Medic debugged">
-      <created>1720455036442</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1720455036442</updated>
-    </task>
-    <option name="localTasksCounter" value="42" />
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,6 +411,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Register Menu completed" />
     <MESSAGE value="Dialogs completed" />
     <MESSAGE value="Main Menu completed" />
     <MESSAGE value="ShowUserInfo method completed" />
@@ -446,7 +440,6 @@
     <MESSAGE value="Card labels redesigned" />
     <MESSAGE value="Veto added" />
     <MESSAGE value="Update Leaders image" />
-    <MESSAGE value="Medic debugged" />
-    <option name="LAST_COMMIT_MESSAGE" value="Medic debugged" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Leaders image" />
   </component>
 </project>
