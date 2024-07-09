@@ -81,6 +81,8 @@ public class GameMenuView extends MenuView {
     public Label playerSiegeScore;
     public Label currentScore;
     public Label opponentScore;
+    public Label currentDeckSize;
+    public Label opponentDeckSize;
 
     public static void run() {
         launch();
@@ -323,6 +325,8 @@ public class GameMenuView extends MenuView {
         opponentCardCount.setText(String.valueOf(GameMenuController.opponentPlayer.getHand().size()));
         currentCrystal.setText(String.valueOf(GameMenuController.currentPlayer.getLives()));
         opponentCrystal.setText(String.valueOf(GameMenuController.opponentPlayer.getLives()));
+        currentDeckSize.setText(String.valueOf(GameMenuController.currentPlayer.getDeck().size()));
+        opponentDeckSize.setText(String.valueOf(GameMenuController.opponentPlayer.getDeck().size()));
     }
 
     private void updateSpell() {

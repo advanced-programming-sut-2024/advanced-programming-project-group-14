@@ -97,14 +97,20 @@
                 <HBox spacing="20">
                     <GridPane fx:id="opponentDiscardPile"
                               style="-fx-border-color: #a57a1c;"/>
-                    <ImageView fx:id="opponentDeck"
-                               style="-fx-border-color: #a57a1c;"/>
+                    <VBox alignment="CENTER" spacing="10">
+                        <ImageView fx:id="opponentDeck"
+                                   style="-fx-border-color: #a57a1c;"/>
+                        <Label fx:id="opponentDeckSize" text="0"/>
+                    </VBox>
                 </HBox>
                 <HBox spacing="20">
                     <GridPane fx:id="currentDiscardPile"
                               style="-fx-border-color: #a57a1c;"/>
-                    <ImageView fx:id="currentDeck"
-                               style="-fx-border-color: #a57a1c;"/>
+                    <VBox>
+                        <ImageView fx:id="currentDeck"
+                                   style="-fx-border-color: #a57a1c;"/>
+                        <Label fx:id="currentDeckSize" text="0"/>
+                    </VBox>
                 </HBox>
             </VBox>
         </HBox>
