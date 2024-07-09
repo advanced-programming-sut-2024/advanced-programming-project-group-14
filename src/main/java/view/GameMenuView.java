@@ -31,12 +31,12 @@ import java.util.Collection;
 
 public class GameMenuView extends MenuView {
     public static Stage stage;
-    public static double screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-    public static double screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+    public static double screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width * 0.9;
+    public static double screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height * 0.9;
     public static double cardWidth = 0.06 * screenWidth;
     public static double cardHeight = 0.1 * screenHeight;
-    private double leaderImageWidth = 0.1 * screenWidth;
-    private double leaderImageHeight = 0.2 * screenHeight;
+    private double leaderImageWidth = 0.09 * screenWidth;
+    private double leaderImageHeight = 0.18 * screenHeight;
     private double buttonWidth = 0.06 * screenWidth;
     public Card clickedCard;
 
@@ -90,8 +90,9 @@ public class GameMenuView extends MenuView {
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Game Menu");
-        stage.setMaximized(true);
-        stage.setResizable(false);
+        stage.setWidth(screenWidth);
+        stage.setHeight(screenHeight);
+        stage.centerOnScreen();
         stage.show();
     }
 
