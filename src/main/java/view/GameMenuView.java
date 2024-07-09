@@ -69,10 +69,10 @@ public class GameMenuView extends MenuView {
 
     public Label opponentName;
     public Label opponentCardCount;
-    public Label opponentCrystal;
+    public ImageView opponentCrystal;
     public Label currentName;
     public Label currentCardCount;
-    public Label currentCrystal;
+    public ImageView currentCrystal;
     public Label opponentSiegeScore;
     public Label opponentRangedScore;
     public Label opponentCloseCombatScore;
@@ -156,6 +156,11 @@ public class GameMenuView extends MenuView {
         currentDeck.setFitHeight(cardHeight + 10);
         opponentDeck.setFitWidth(cardWidth);
         opponentDeck.setFitHeight(cardHeight + 10);
+
+        currentCrystal.setFitWidth(cardWidth);
+        currentCrystal.setFitHeight(cardHeight*0.3);
+        opponentCrystal.setFitWidth(cardWidth);
+        opponentCrystal.setFitHeight(cardHeight*0.3);
     }
 
     private void updateTable(){
@@ -323,8 +328,8 @@ public class GameMenuView extends MenuView {
         opponentScore.setText(String.valueOf(GameMenuController.opponentPlayer.calculateTotalScore()));
         currentCardCount.setText(String.valueOf(GameMenuController.currentPlayer.getHand().size()));
         opponentCardCount.setText(String.valueOf(GameMenuController.opponentPlayer.getHand().size()));
-        currentCrystal.setText(String.valueOf(GameMenuController.currentPlayer.getLives()));
-        opponentCrystal.setText(String.valueOf(GameMenuController.opponentPlayer.getLives()));
+        currentCrystal.setImage(new Image(String.valueOf(getClass().getResource("/Images/Live"+ GameMenuController.currentPlayer.getLives()+".png"))));
+        opponentCrystal.setImage(new Image(String.valueOf(getClass().getResource("/Images/Live"+ GameMenuController.opponentPlayer.getLives()+".png"))));
         currentDeckSize.setText(String.valueOf(GameMenuController.currentPlayer.getDeck().size()));
         opponentDeckSize.setText(String.valueOf(GameMenuController.opponentPlayer.getDeck().size()));
     }

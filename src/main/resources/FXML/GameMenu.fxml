@@ -21,7 +21,7 @@
                 </HBox>
                 <HBox alignment="CENTER" spacing="20">
                     <Label fx:id="opponentCardCount" text="Cards: 10"/>
-                    <Label fx:id="opponentCrystal" text="Crystal: 2"/>
+                    <ImageView fx:id="opponentCrystal"/>
                 </HBox>
                 <GridPane fx:id="spell" minHeight="120" minWidth="200"
                           style="-fx-border-color: #a57a1c; -fx-border-width: 2px; -fx-background-color: #1c1c1c;"/>
@@ -31,7 +31,7 @@
                 </HBox>
                 <HBox alignment="CENTER" spacing="20">
                     <Label fx:id="currentCardCount" text="Cards: 10"/>
-                    <Label fx:id="currentCrystal" text="Crystal: 2"/>
+                    <ImageView fx:id="currentCrystal"/>
                 </HBox>
                 <ImageView fx:id="currentLeaderImage"/>
                 <Button fx:id="passButton" text="Pass" onAction="#passTurn"/>
