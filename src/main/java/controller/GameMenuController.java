@@ -96,7 +96,7 @@ public class GameMenuController {
                 case "Decoy":
                     ((Decoy) card).doAction(forAction);
                     break;
-                case "Mardroem":
+                case "Mardroeme":
                     ((Mardroeme) card).doAction(forAction);
                     break;
                 case "Medic":
@@ -222,9 +222,6 @@ public class GameMenuController {
     }
 
     public static void playCommanderPower() {
-        if (currentPlayer.hasUsedCommanderAction())
-            return;
-
         currentPlayer.setUsedCommanderAction(true);
         switch (currentPlayer.getCommander().getName()) {
             case "TheSiegemaster":

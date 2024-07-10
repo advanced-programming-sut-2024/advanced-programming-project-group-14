@@ -10,6 +10,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -158,12 +159,12 @@ public class GameMenuView extends MenuView {
         opponentDeck.setFitHeight(cardHeight + 10);
 
         currentCrystal.setFitWidth(cardWidth);
-        currentCrystal.setFitHeight(cardHeight*0.3);
+        currentCrystal.setFitHeight(cardHeight * 0.3);
         opponentCrystal.setFitWidth(cardWidth);
-        opponentCrystal.setFitHeight(cardHeight*0.3);
+        opponentCrystal.setFitHeight(cardHeight * 0.3);
     }
 
-    private void updateTable(){
+    private void updateTable() {
         updateRows();
         updateDiscardPilesAndImages();
         updateTableLabels();
@@ -297,17 +298,31 @@ public class GameMenuView extends MenuView {
     private void updateDiscardPilesAndImages() {
         currentDiscardPile.getChildren().clear();
         opponentDiscardPile.getChildren().clear();
-        if (GameMenuController.currentPlayer.getDiscardPile().size()!=0)
+        if (GameMenuController.currentPlayer.getDiscardPile().size() != 0)
             currentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.currentPlayer.getDiscardPile().get(0)));
-        if (GameMenuController.opponentPlayer.getDiscardPile().size()!=0)
+        if (GameMenuController.opponentPlayer.getDiscardPile().size() != 0)
             opponentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.opponentPlayer.getDiscardPile().get(0)));
 
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
+
         currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            GameMenuController.playCommanderPower();
+            if (GameMenuController.currentPlayer.hasUsedCommanderAction()) {
+                currentLeaderImage.setOpacity(0.3);
+                return;
+            }
+            System.out.println(GameMenuController.currentPlayer.getUsername());
+            //ButtonType buttonType = showConfirmMessage("You want to use commander action?");
+            //if (buttonType == ButtonType.OK) {
+                GameMenuController.playCommanderPower();
+            System.out.println(11111);
+
             updateTable();
+            currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED,event1 -> {});
+            //}
         });
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
+        if (GameMenuController.opponentPlayer.hasUsedCommanderAction())
+            opponentLeaderImage.setOpacity(0.3);
         currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentName.setText(GameMenuController.opponentPlayer.getUsername());
@@ -328,8 +343,8 @@ public class GameMenuView extends MenuView {
         opponentScore.setText(String.valueOf(GameMenuController.opponentPlayer.calculateTotalScore()));
         currentCardCount.setText(String.valueOf(GameMenuController.currentPlayer.getHand().size()));
         opponentCardCount.setText(String.valueOf(GameMenuController.opponentPlayer.getHand().size()));
-        currentCrystal.setImage(new Image(String.valueOf(getClass().getResource("/Images/Live"+ GameMenuController.currentPlayer.getLives()+".png"))));
-        opponentCrystal.setImage(new Image(String.valueOf(getClass().getResource("/Images/Live"+ GameMenuController.opponentPlayer.getLives()+".png"))));
+        currentCrystal.setImage(new Image(String.valueOf(getClass().getResource("/Images/Live" + GameMenuController.currentPlayer.getLives() + ".png"))));
+        opponentCrystal.setImage(new Image(String.valueOf(getClass().getResource("/Images/Live" + GameMenuController.opponentPlayer.getLives() + ".png"))));
         currentDeckSize.setText(String.valueOf(GameMenuController.currentPlayer.getDeck().size()));
         opponentDeckSize.setText(String.valueOf(GameMenuController.opponentPlayer.getDeck().size()));
     }
@@ -528,10 +543,10 @@ public class GameMenuView extends MenuView {
     }
 
     public void passTurn() {
-        if (GameMenuController.opponentPlayer.isPassed()){
+        if (GameMenuController.opponentPlayer.isPassed()) {
             GameMenuController.endTurn();
-            showSuccessfulMessage("Winner of this round: "+ GameMenuController.currentGameTable.getRoundWinner(
-                    GameMenuController.currentGameTable.getRoundNumber()-1).getUsername());
+            showSuccessfulMessage("Winner of this round: " + GameMenuController.currentGameTable.getRoundWinner(
+                    GameMenuController.currentGameTable.getRoundNumber() - 1).getUsername());
             updateTable();
             return;
         }
@@ -542,7 +557,7 @@ public class GameMenuView extends MenuView {
     }
 
     public void endGame() {
-        showSuccessfulMessage("Winner: "+ GameMenuController.currentGameTable.getGameWinner().getUsername());
+        showSuccessfulMessage("Winner: " + GameMenuController.currentGameTable.getGameWinner().getUsername());
         goToMainMenu(stage);
     }
 
