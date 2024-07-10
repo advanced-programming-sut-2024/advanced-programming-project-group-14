@@ -10,12 +10,14 @@ import java.util.Random;
 
 public class GameMenuController {
     public static GameTable currentGameTable;
+
     public static Player currentPlayer;
     public static Player opponentPlayer;
 
-    public static void loadHand() {
-        Random random = new Random();
+    static Random random = new Random();
 
+
+    public static void loadHand() {
         int capacityOfHand = 10;
 
         if (currentPlayer.getCommander().getName().equals("DaisyoftheValley"))
@@ -158,7 +160,6 @@ public class GameMenuController {
     }
 
     public static void vetoCard(Card card) {
-        Random random = new Random();
         Card cardToAdd = currentPlayer.getDeck().get(random.nextInt(0, currentPlayer.getDeck().size()));
         currentPlayer.getHand().add(cardToAdd);
         currentPlayer.getHand().remove(card);
@@ -325,7 +326,6 @@ public class GameMenuController {
     }
 
     private static void invaderoftheNorthAction() {
-        Random random = new Random();
         reviveCard(currentPlayer.getHand().get(random.nextInt(0, currentPlayer.getHand().size())));
     }
 
@@ -384,8 +384,10 @@ public class GameMenuController {
 
     public static void addSpyCardCheat() {
         for (Card card : Card.getCards()) {
-            if (card.getAbility().equals("Spy") && card.getFactionName().equals(currentPlayer.getFaction().getName()))
+            if (card.getAbility().equals("Spy") && card.getFactionName().equals(currentPlayer.getFaction().getName())) {
                 currentPlayer.getHand().add(card);
+                return;
+            }
         }
     }
 
@@ -398,16 +400,15 @@ public class GameMenuController {
 
     public static void addHeroCardCheat() {
         for (Card card : Card.getCards()) {
-            if (card.isHero() && card.getFactionName().equals(currentPlayer.getFaction().getName()))
+            if (card.isHero() && card.getFactionName().equals(currentPlayer.getFaction().getName())) {
                 currentPlayer.getHand().add(card);
+                return;
+            }
         }
     }
 
     public static void addClearWeatherCheat() {
-        for (Card card : Card.getCards()) {
-            if (card.isHero() && card.getFactionName().equals(currentPlayer.getFaction().getName()))
-                currentPlayer.getHand().add(card);
-        }
+        ((Weather) Card.getCardByName("ClearWeather")).doAction(new Object[]{null, Card.getCardByName("ClearWeather")});
     }
 
     public static void changeTurnCheat() {

@@ -6,21 +6,19 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Date;
 
 public class PreGameMenuController {
     public static Player currentPlayer;
     public static Player opponentPlayer;
 
-    public static Result selectFaction(Faction faction) {
+    public static void selectFaction(Faction faction) {
         currentPlayer.setCommander(null);
         currentPlayer.getHand().clear();
         currentPlayer.setFaction(faction);
-        return new Result(true, "Selected successfully");
     }
 
-    public static Result saveDeck(String flag, String input) {
+    public static void saveDeck(String flag, String input) {
         if (flag.equals("-f")) {
             String fileAddress = input;
             currentPlayer.saveDeckByFileAddress(fileAddress);
@@ -28,19 +26,17 @@ public class PreGameMenuController {
             String deckName = input;
             Path path = Paths.get("data/decks/" + deckName);
             if (deckName == null) {
-                return new Result(false, "invalid deck name");
+                return;
             }
             if (Files.exists(path)) {
-                return new Result(false, "deck name already exists");
+                return;
             }
             currentPlayer.saveDeckByDeckName(deckName);
         }
-        return new Result(true, "saved successfully");
     }
 
-    public static Result loadDeck(File file) {
+    public static void loadDeck(File file) {
         currentPlayer.loadDeckByFile(file);
-        return new Result(true, "loaded successfully");
     }
 
     public static void selectLeader(Commander commander) {
@@ -62,10 +58,9 @@ public class PreGameMenuController {
         return new Result(true, "added successfully");
     }
 
-    public static Result deleteFromDeck(Card card) {
+    public static void deleteFromDeck(Card card) {
         currentPlayer.getFaction().addCard(card);
         currentPlayer.deleteFromDeck(card);
-        return new Result(true, "deleted successfully");
     }
 
     public static Result changeTurn() {
@@ -91,7 +86,6 @@ public class PreGameMenuController {
         GameMenuController.opponentPlayer = opponentPlayer;
         return new Result(true, "Welcome to the game!");
     }
-
 
     public static Player getCurrentPlayer() {
         return currentPlayer;

@@ -56,7 +56,7 @@ public class ProfileMenuController {
     public static Result numberOfGameToShow(String number) {
         int numberToShow = 5;
         int numberOfGamePlayed = User.getLoggedInUser().getGamePlayed().size();
-        if (number.length() == 0) {
+        if (number.isEmpty()) {
             if (numberOfGamePlayed < 5)
                 numberToShow = numberOfGamePlayed;
         } else if (Integer.parseInt(number) < 1)
