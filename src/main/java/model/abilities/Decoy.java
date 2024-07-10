@@ -19,6 +19,7 @@ public class Decoy extends Card implements Actionable {
         row.deleteFromCards(card);
         if (card.getAbility().equals("MoralBoost") || card.getAbility().equals("CommandersHorn")) {
             GameMenuController.resetRow(row);
+            if (row.getSpecial().getAbility().equals("CommandersHorn")) GameMenuController.doAction(Card.getCardByName("CommandersHorn"), new Object[]{row});
             for (Card rowCard : row.getCards())
                 if (rowCard.getAbility().equals("MoralBoost") || card.getAbility().equals("CommandersHorn")) {
                     GameMenuController.doAction(rowCard, new Object[]{row, rowCard});

@@ -205,11 +205,13 @@ public class GameMenuController {
         for (Row row : currentPlayer.getRows()) {
             currentPlayer.getDiscardPile().addAll(row.getCards());
             row.getCards().clear();
+            row.setWeatherAction(false);
             row.setSpecial(null);
         }
         for (Row row : opponentPlayer.getRows()) {
             opponentPlayer.getDiscardPile().addAll(row.getCards());
             row.getCards().clear();
+            row.setWeatherAction(false);
             row.setSpecial(null);
         }
         currentGameTable.setWeather(new ArrayList<>());
