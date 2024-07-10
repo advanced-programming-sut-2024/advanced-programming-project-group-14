@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,13 +26,10 @@
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="complete-pregame-menu" />
   </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/detached2" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="detached" />
+        <entry key="$PROJECT_DIR$" value="detached3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,13 +66,6 @@
       </method>
     </configuration>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -96,10 +87,6 @@
       <workItem from="1719580604325" duration="17249000" />
       <workItem from="1719644171364" duration="3981000" />
       <workItem from="1719668195405" duration="8084000" />
-      <workItem from="1720333262935" duration="2235000" />
-      <workItem from="1720341391752" duration="1128000" />
-      <workItem from="1720414758042" duration="3458000" />
-      <workItem from="1720526276602" duration="10613000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -304,130 +291,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <task id="LOCAL-00030" summary="LoadAll called">
-      <created>1720177236561</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1720177236561</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Commanders array list initialized corrected">
-      <created>1720184153583</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1720184153583</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Photos name update completed">
-      <created>1720187861875</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1720187861875</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Add action of weather and complete placeCard method">
-      <option name="closed" value="true" />
-      <created>1720273389258</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1720273389258</updated>
-    </task>
-    <task id="LOCAL-00034" summary="PlayerHand refresh">
-      <created>1720282766463</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1720282766463</updated>
-    </task>
-    <task id="LOCAL-00035" summary="null -&gt; Weather in placeCard method">
-      <option name="closed" value="true" />
-      <created>1720346792958</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1720346792958</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Padding set">
-      <created>1720364383577</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1720364383577</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Spell reset corrected">
-      <created>1720365224841</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1720365224841</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Card labels redesigned">
-      <created>1720387372194</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1720387372194</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Veto added">
-      <created>1720416845330</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1720416845330</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Update Leaders image">
-      <created>1720453248424</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1720453248424</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Array lists rows and specials changed to public and passTurn completed">
-      <created>1720509556133</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1720509556133</updated>
-    </task>
-    <task id="LOCAL-00042" summary="End turn and end game completed">
-      <created>1720514644756</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1720514644756</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Add commanders actions">
-      <option name="closed" value="true" />
-      <created>1720542486209</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1720542486209</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Add cards.add(this) in constructor of card">
-      <option name="closed" value="true" />
-      <created>1720543462901</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1720543462901</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Commander action field added">
-      <created>1720561131747</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1720561131747</updated>
-    </task>
-    <task id="LOCAL-00046" summary="Deck size label added">
-      <created>1720561392189</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1720561392189</updated>
-    </task>
-    <option name="localTasksCounter" value="47" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,7 +302,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/complete-pregame-menu" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -460,6 +336,23 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Random button and Stay Login added" />
+    <MESSAGE value="PreGame fxml added" />
+    <MESSAGE value="Directions of methods fixed" />
+    <MESSAGE value="Wrong merge fixed" />
+    <MESSAGE value="Dahanemon service shod valy ok kardim" />
+    <MESSAGE value="MenuView added" />
+    <MESSAGE value="changeMenu and login mthod addded" />
+    <MESSAGE value="misc.xml updated" />
+    <MESSAGE value="Unversioned Files" />
+    <MESSAGE value="MenuView completed" />
+    <MESSAGE value="Register Menu completed" />
+    <MESSAGE value="Dialogs completed" />
+    <MESSAGE value="Main Menu completed" />
+    <MESSAGE value="ShowUserInfo method completed" />
+    <MESSAGE value="Show game history compeleted" />
+    <MESSAGE value="Set style for show game history" />
+    <MESSAGE value="back button added to profile menu" />
     <MESSAGE value="Show question after register" />
     <MESSAGE value="Check new password fixed" />
     <MESSAGE value="Start of PreGame Menu" />
@@ -468,36 +361,14 @@
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Update some photo name in image folder" />
-    <MESSAGE value="Deleted image folder because I can't do anything" />
-    <MESSAGE value="Add placeCard and vetoCard methods to GameMenuController" />
-    <MESSAGE value="Complete placeCard and methods in GameMenuController" />
-    <MESSAGE value="LoadAll called" />
-    <MESSAGE value="Commanders array list initialized corrected" />
-    <MESSAGE value="Photos name update completed" />
-    <MESSAGE value="Add action of weather and complete placeCard method" />
-    <MESSAGE value="PlayerHand refresh" />
-    <MESSAGE value="null -&gt; Weather in placeCard method" />
-    <MESSAGE value="Padding set" />
-    <MESSAGE value="Spell reset corrected" />
-    <MESSAGE value="Card labels redesigned" />
-    <MESSAGE value="Veto added" />
-    <MESSAGE value="Update Leaders image" />
-    <MESSAGE value="Array lists rows and specials changed to public and passTurn completed" />
-    <MESSAGE value="End turn and end game completed" />
-    <MESSAGE value="Add commanders actions" />
-    <MESSAGE value="Add cards.add(this) in constructor of card" />
-    <MESSAGE value="Commander action field added" />
-    <MESSAGE value="Deck size label added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deck size label added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update some photo name in image folder" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.util.ConcurrentModificationException" package="java.util" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$controller_in_graft.ic" NAME="controller in graft Coverage Results" MODIFIED="1720589071098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$LoginMenuControllerTest.ic" NAME="LoginMenuControllerTest Coverage Results" MODIFIED="1720589046802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

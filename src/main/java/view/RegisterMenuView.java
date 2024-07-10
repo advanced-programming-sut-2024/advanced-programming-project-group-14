@@ -37,6 +37,7 @@ public class RegisterMenuView extends MenuView {
 
     @Override
     public void start(Stage stage) throws Exception {
+        Question.loadQuestions();
         RegisterMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/RegisterMenu.fxml"));
         Scene scene = new Scene(root);
@@ -76,7 +77,6 @@ public class RegisterMenuView extends MenuView {
     }
 
     private void showQuestionDialog(){
-        Question.loadQuestions();
         Dialog<Pair<String, String>> dialog = new Dialog<>();
         dialog.setTitle("Questions");
         dialog.setHeaderText("Please choose a question and answer it:");
