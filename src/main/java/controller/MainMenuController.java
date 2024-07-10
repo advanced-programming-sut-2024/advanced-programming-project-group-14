@@ -4,11 +4,16 @@ package controller;
 import model.Player;
 import model.Result;
 import model.User;
+import model.UsersManager;
 
 public class MainMenuController {
-
+    private static UsersManager usersManager;
+    public MainMenuController(UsersManager usersManager) {
+        MainMenuController.usersManager = usersManager;
+    }
     public static void logout() {
-        // ToDo clean stay login file
+        User.setLoggedInUser(null);
+        usersManager.saveStayLoggedInUser(null);
     }
 
     public static Result createGame(String opponentName) {

@@ -20,8 +20,12 @@ import javafx.stage.Stage;
 import model.Card;
 import model.Player;
 import model.Row;
+import model.ScreenRecorder;
 import model.abilities.Spy;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -31,7 +35,7 @@ public class GameMenuView extends MenuView {
     public int cardWidth = 70;
     public int cardHeight = 120;
     public Card clickedCard;
-
+    private ScreenRecorder screenRecorder;
     public ImageView opponentLeaderImage;
     public ImageView currentLeaderImage;
     public GridPane spell;
@@ -74,11 +78,34 @@ public class GameMenuView extends MenuView {
         stage.setMaximized(true);
         stage.setResizable(false);
         stage.show();
+        try {
+            String videoName = "videos/" + GameMenuController.currentPlayer.getUsername() + "_vs_" + GameMenuController.opponentPlayer.getUsername() + "_on_" + GameMenuController.currentGameTable.getDate() + ".mp4";
+            screenRecorder = new ScreenRecorder(videoName, 1920, 1080);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        screenRecorder.startRecording(scene);
+
+        //TODO add stop recording on finished game
+        if (GameMenuController.currentGameTable.getWinner() != null) {
+            screenRecorder.stopRecording();
+        }
+        //stage.setOnCloseRequest(e -> {
+        //    screenRecorder.stopRecording();
+        //});
     }
 
 
     @FXML
     public void initialize() {
+        Path directory = Path.of("videos");
+        if (!Files.exists(directory)) {
+            try {
+                Files.createDirectory(directory);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
         spell.getChildren().add(new ImageView(new Image(String.valueOf(getClass().getResource("/Images/spell.jpg")))));

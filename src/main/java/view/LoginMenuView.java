@@ -21,6 +21,10 @@ import model.User;
 //import javax.mail.*;
 //import javax.mail.internet.InternetAddress;
 //import javax.mail.internet.MimeMessage;
+import javax.mail.*;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
@@ -209,7 +213,7 @@ public class LoginMenuView extends MenuView {
         });
     }
 
-    /* public void login() {
+    public void login() {
         Result result = LoginMenuController.login(loginUsernameField.getText(), loginPasswordTextField.getText(), stayLoginCheckBox.isSelected());
         if (!result.isSuccessful())
             showError(result.getMessage());
@@ -278,6 +282,11 @@ public class LoginMenuView extends MenuView {
     }
 
     public void sendEmailInBackground(String email, String subject, String content) {
+        Alert waitingAlert = new Alert(Alert.AlertType.INFORMATION);
+        waitingAlert.setTitle("Please Wait");
+        waitingAlert.setHeaderText(null);
+        waitingAlert.setContentText("Please wait while the verification code is being sent for 2FA...");
+        waitingAlert.show();
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
@@ -325,5 +334,5 @@ public class LoginMenuView extends MenuView {
         sendEmailInBackground(email, subject, content);
     }
 
-     */
+
 }

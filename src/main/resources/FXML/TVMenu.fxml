@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane fx:id="root" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.TVMenuView">
+    <left>
+        <VBox>
+            <Label text="Your Game Videos:" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 20px;" />
+            <ListView fx:id="videoListView" prefWidth="300.0" />
+        </VBox>
+    </left>
+    <center>
+        <StackPane>
+            <MediaView fx:id="mediaView" />
+            <Label fx:id="loadingLabel" text="" style="-fx-font-size: 20px; -fx-text-fill: white;" />
+        </StackPane>
+    </center>
+</BorderPane>

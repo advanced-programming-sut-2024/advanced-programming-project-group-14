@@ -52,6 +52,10 @@ public class User {
     public static ArrayList<User> getAllUsers() {
         return allUsers;
     }
+    public static void resetUsers() {
+        allUsers.clear();
+        loggedInUser = null;
+    }
 
     public String getUsername() {
         return username;
@@ -144,6 +148,9 @@ public class User {
 
     public ArrayList<GameTable> getGamePlayed() {
         return gamePlayed;
+    }
+    public void setGamePlayed(ArrayList<GameTable> gamePlayed){
+        this.gamePlayed = gamePlayed;
     }
 
     public void addGamePlayed(GameTable gameTable) {

@@ -13,7 +13,7 @@ public class GameMenuController {
     public static Player currentPlayer;
     public static Player opponentPlayer;
 
-    public void vetoCard(Card card) {
+    public static void vetoCard(Card card) {
         Random random = new Random();
         Card cardToAdd = currentPlayer.getDeck().get(random.nextInt(0, currentPlayer.getDeck().size()));
         currentPlayer.getHand().add(cardToAdd);
