@@ -98,7 +98,7 @@ public class LoadController {
 
     private static void loadMardroemeCards() {
         for (int i = 0; i < 3; i++)
-            new Mardroeme("Mardoeme", 0, 3, "Mardroeme", "Special", "Skellige", false, "This Spell card has Mardoeme Ability and can be placed in the commmander's Horn spot . it effects the row that it was placed in");
+            new Mardroeme("Mardroeme", 0, 3, "Mardroeme", "Special", "Skellige", false, "This Spell card has Mardoeme Ability and can be placed in the commmander's Horn spot . it effects the row that it was placed in");
         new Mardroeme("Ermion", 8, 1, "Mardroeme", "Ranged Unit", "Skellige", true, "");
     }
 

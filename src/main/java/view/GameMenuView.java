@@ -568,6 +568,7 @@ public class GameMenuView extends MenuView {
         dialogStage.setTitle("Faction Cards");
 
         GridPane gridPane = new GridPane();
+        int cardCountInRow = 10;
         for (int i = 0; i < GameMenuController.currentPlayer.getFaction().getCards().size(); i++) {
             Card card = GameMenuController.currentPlayer.getFaction().getCards().get(i);
             ImageView imageView = new ImageView(new Image(String.valueOf(GameMenuView.class.getResource("/Images/" + card.getName() + ".jpg"))));
@@ -577,15 +578,16 @@ public class GameMenuView extends MenuView {
                 GameMenuController.currentPlayer.addToHand(card);
                 dialogStage.close();
             });
-            gridPane.add(imageView, i, 0);
+            int columnIndex = i % cardCountInRow;
+            gridPane.add(imageView, columnIndex, i/cardCountInRow);
         }
         gridPane.setHgap(10);
         gridPane.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(gridPane);
         dialogStage.setScene(scene);
-        dialogStage.setWidth(600);
-        dialogStage.setHeight(400);
+        dialogStage.setWidth(1000);
+        dialogStage.setHeight(800);
         dialogStage.showAndWait();
     }
 
