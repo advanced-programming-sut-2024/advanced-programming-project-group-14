@@ -128,7 +128,8 @@ public class GameMenuController {
             if (card.getAbility().equals("CommandersHorn")) ((CommandersHorn) card).doAction(new Object[]{row});
             if (card.getAbility().equals("MoralBoost")) ((MoralBoost) card).doAction(new Object[]{row, card});
         }
-        if (row.getSpecial() != null && row.getSpecial().getAbility().equals("CommandersHorn")) ((CommandersHorn) row.getSpecial()).doAction(new Object[]{row});
+        if (row.getSpecial() != null && row.getSpecial().getAbility().equals("CommandersHorn"))
+            ((CommandersHorn) row.getSpecial()).doAction(new Object[]{row});
     }
 
     public static void changeTurn() {
@@ -371,68 +372,46 @@ public class GameMenuController {
         }
     }
 
-    public String showDeck() {
-        return "";
+
+    public static void increaseHitPointCheat() {
+        if (currentPlayer.getLives() == 1)
+            currentPlayer.setLives(currentPlayer.getLives() + 1);
     }
 
-    public Result showInHand(int cardNumber) {
-        return new Result(true, "");
+    public static void addChosenCardCheat() {
+        GameMenuView.showFactionCard();
     }
 
-    public Result getNumOfRemainingCards() {
-        return new Result(true, "");
+    public static void addSpyCardCheat() {
+        for (Card card : Card.getCards()) {
+            if (card.getAbility().equals("Spy") && card.getFactionName().equals(currentPlayer.getFaction().getName()))
+                currentPlayer.getHand().add(card);
+        }
     }
 
-    public Result showDiscardPile() {
-        return new Result(true, "");
+    public static void addMoralBoostCardCheat() {
+        for (Card card : Card.getCards()) {
+            if (card.getAbility().equals("MoralBoost") && card.getFactionName().equals(currentPlayer.getFaction().getName()))
+                currentPlayer.getHand().add(card);
+        }
     }
 
-    public Result showCardsInRow(int rowNumber) {
-        return new Result(true, "");
+    public static void addHeroCardCheat() {
+        for (Card card : Card.getCards()) {
+            if (card.isHero() && card.getFactionName().equals(currentPlayer.getFaction().getName()))
+                currentPlayer.getHand().add(card);
+        }
     }
 
-    public Result showSpellInPlay() {
-        return new Result(true, "");
+    public static void addClearWeatherCheat() {
+        for (Card card : Card.getCards()) {
+            if (card.isHero() && card.getFactionName().equals(currentPlayer.getFaction().getName()))
+                currentPlayer.getHand().add(card);
+        }
     }
 
-    public Result showCommander() {
-        return new Result(true, "");
-    }
-
-    public Result showPlayersInfo() {
-        return new Result(true, "");
-    }
-
-    public Result showPlayersLives() {
-        return new Result(true, "");
-    }
-
-    public Result showNumberOfCardsInHand() {
-        return new Result(true, "");
-    }
-
-    public Result showTurnInfo() {
-        return new Result(true, "");
-    }
-
-    public Result showTotalScore() {
-        return new Result(true, "");
-    }
-
-    public Result showTotalScoreOfRow(int rowNumber) {
-        return new Result(true, "");
-    }
-
-    public void passRound() {
-
-    }
-
-    public void discardSpells() {
-
-    }
-
-    public int CalculatePlayersTotalScore() {
-        return 0;
+    public static void changeTurnCheat() {
+        changeTurn();
     }
 
 }

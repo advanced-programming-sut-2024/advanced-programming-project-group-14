@@ -68,6 +68,10 @@ public class Player extends User {
         return lives;
     }
 
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
+
     public Commander getCommander() {
         return commander;
     }
