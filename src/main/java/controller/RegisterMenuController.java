@@ -4,10 +4,7 @@ import model.Question;
 import model.Result;
 import model.User;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class RegisterMenuController {
@@ -83,12 +80,8 @@ public class RegisterMenuController {
         return password.toString();
     }
 
-    public static String showQuestion() {
-        return User.getLoggedInUser().getQuestion().getQuestionText();
-    }
-
     public static void pickQuestion(int number, String answer) {
-        Question question = new Question(Question.getQuestionByNumber(number), answer);
+        Question question = new Question(Objects.requireNonNull(Question.getQuestionByNumber(number)), answer);
         User.getLoggedInUser().setQuestion(question);
     }
 }

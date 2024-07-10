@@ -614,5 +614,4 @@ public class GameMenuView extends MenuView {
         showSuccessfulMessage("Winner: " + GameMenuController.currentGameTable.getGameWinner().getUsername());
         goToMainMenu(stage);
     }
-
 }

@@ -29,7 +29,7 @@ public class LoadController {
 
         loadNoActionSkelligeCards();
         loadNoActionScoiataellCards();
-        loadNoActionNorthenCards();
+        loadNoActionNorthernCards();
         loadNoActionNilfgaardianCards();
         loadNoActionMonstersCards();
     }
@@ -98,7 +98,7 @@ public class LoadController {
 
     private static void loadMardroemeCards() {
         for (int i = 0; i < 3; i++)
-            new Mardroeme("Mardroeme", 0, 3, "Mardroeme", "Special", "Skellige", true, "This Spell card has Mardoeme Ability and can be placed in the commmander's Horn spot . it effects the row that it was placed in");
+            new Mardroeme("Mardoeme", 0, 3, "Mardroeme", "Special", "Skellige", false, "This Spell card has Mardoeme Ability and can be placed in the commmander's Horn spot . it effects the row that it was placed in");
         new Mardroeme("Ermion", 8, 1, "Mardroeme", "Ranged Unit", "Skellige", true, "");
     }
 
@@ -188,7 +188,7 @@ public class LoadController {
     }
 
     private static void loadTransformersCards() {
-        new Transformers("Kambi", 0, 1, "Transformers", "Close Combat Unit", "Skellige", true, "Turns into a card with a power of 11 after one round");
+        new Transformers("Kambi", 0, 1, "Transformers", "Close Combat Unit", "Skellige", false, "Turns into a card with a power of 11 after one round");
         new Transformers("Cow", 0, 1, "Transformers", "Ranged Unit", "Neutral", false, "Turns into a card with a power of 8 after one round");
     }
 
@@ -240,7 +240,7 @@ public class LoadController {
         new Card("Vreemde", 2, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
     }
 
-    private static void loadNoActionNorthenCards() {
+    private static void loadNoActionNorthernCards() {
         for (int i = 0; i < 2; i++) {
             new Card("Ballista", 6, 2, "", "Siege Unit", "Northern", false, "");
             new Card("RedanianFootSoldier", 1, 2, "", "Close Combat Unit", "Northern", false, "");
