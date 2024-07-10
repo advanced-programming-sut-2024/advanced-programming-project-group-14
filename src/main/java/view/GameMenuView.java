@@ -22,6 +22,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.Card;
+import model.Faction;
 import model.Player;
 import model.Row;
 import model.abilities.Spy;
@@ -42,6 +43,7 @@ public class GameMenuView extends MenuView {
     private double buttonWidth = 0.06 * screenWidth;
     public Card clickedCard;
 
+    @FXML
     public GridPane mainGridPane;
     public ImageView opponentLeaderImage;
     public ImageView currentLeaderImage;
@@ -101,7 +103,6 @@ public class GameMenuView extends MenuView {
         stage.setWidth(screenWidth);
         stage.setHeight(screenHeight);
         stage.centerOnScreen();
-        setKeyEvents();
         stage.show();
     }
 
@@ -114,14 +115,35 @@ public class GameMenuView extends MenuView {
         doVeto();
         resizePanes();
         updateTable();
+        setKeyEvents();
     }
 
     private void setKeyEvents() {
-        stage.getScene().addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+        stage.addEventHandler(KeyEvent.KEY_PRESSED,event -> {
             switch (event.getCode()) {
-                //ToDo
-                // set events
+                case L:
+                    GameMenuController.increaseHitPointCheat();
+                    break;
+                case C:
+                    GameMenuController.addChosenCardCheat();
+                    break;
+                case S:
+                    GameMenuController.addSpyCardCheat();
+                    break;
+                case M:
+                    GameMenuController.addMoralBoostCardCheat();
+                    break;
+                case H:
+                    GameMenuController.addHeroCardCheat();
+                    break;
+                case W:
+                    GameMenuController.addClearWeatherCheat();
+                    break;
+                case T:
+                    GameMenuController.changeTurnCheat();
+                    break;
             }
+            updateTable();
         });
     }
 
@@ -286,7 +308,6 @@ public class GameMenuView extends MenuView {
                 getStackPaneOfCard(GameMenuController.opponentPlayer.getRangedCombat().getSpecial()), 0, 0);
         opponentSiegeSpecial.add(
                 getStackPaneOfCard(GameMenuController.opponentPlayer.getSiege().getSpecial()), 0, 0);
-
 
     }
 
@@ -510,7 +531,7 @@ public class GameMenuView extends MenuView {
     }
 
     public static void showDiscardPile() {
-        if (GameMenuController.currentPlayer.getDiscardPile().size() == 0){
+        if (GameMenuController.currentPlayer.getDiscardPile().size() == 0) {
             GameMenuController.changeTurn();
             return;
         }
@@ -528,6 +549,32 @@ public class GameMenuView extends MenuView {
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 GameMenuController.reviveCard(card);
+                dialogStage.close();
+            });
+            gridPane.add(imageView, i, 0);
+        }
+        gridPane.setHgap(10);
+        gridPane.setAlignment(Pos.CENTER);
+
+        Scene scene = new Scene(gridPane);
+        dialogStage.setScene(scene);
+        dialogStage.setWidth(600);
+        dialogStage.setHeight(400);
+        dialogStage.showAndWait();
+    }
+
+    public static void showFactionCard() {
+        Stage dialogStage = new Stage();
+        dialogStage.setTitle("Faction Cards");
+
+        GridPane gridPane = new GridPane();
+        for (int i = 0; i < GameMenuController.currentPlayer.getFaction().getCards().size(); i++) {
+            Card card = GameMenuController.currentPlayer.getFaction().getCards().get(i);
+            ImageView imageView = new ImageView(new Image(String.valueOf(GameMenuView.class.getResource("/Images/" + card.getName() + ".jpg"))));
+            imageView.setFitWidth(cardWidth);
+            imageView.setFitHeight(cardHeight);
+            imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+                GameMenuController.currentPlayer.addToHand(card);
                 dialogStage.close();
             });
             gridPane.add(imageView, i, 0);
