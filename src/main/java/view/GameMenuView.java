@@ -15,6 +15,7 @@ import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -100,6 +101,7 @@ public class GameMenuView extends MenuView {
         stage.setWidth(screenWidth);
         stage.setHeight(screenHeight);
         stage.centerOnScreen();
+        setKeyEvents();
         stage.show();
     }
 
@@ -112,6 +114,15 @@ public class GameMenuView extends MenuView {
         doVeto();
         resizePanes();
         updateTable();
+    }
+
+    private void setKeyEvents() {
+        stage.getScene().addEventHandler(KeyEvent.KEY_PRESSED, event -> {
+            switch (event.getCode()) {
+                //ToDo
+                // set events
+            }
+        });
     }
 
     private void resizePanes() {
@@ -304,22 +315,15 @@ public class GameMenuView extends MenuView {
             opponentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.opponentPlayer.getDiscardPile().get(0)));
 
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
-
+        if (GameMenuController.currentPlayer.hasUsedCommanderAction())
+            currentLeaderImage.setOpacity(0.3);
         currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
-            if (GameMenuController.currentPlayer.hasUsedCommanderAction()) {
-                currentLeaderImage.setOpacity(0.3);
+            if (GameMenuController.currentPlayer.hasUsedCommanderAction())
                 return;
-            }
-            System.out.println(GameMenuController.currentPlayer.getUsername());
-            //ButtonType buttonType = showConfirmMessage("You want to use commander action?");
-            //if (buttonType == ButtonType.OK) {
-                GameMenuController.playCommanderPower();
-            System.out.println(11111);
-
+            GameMenuController.playCommanderPower();
             updateTable();
-            currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED,event1 -> {});
-            //}
         });
+
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
         if (GameMenuController.opponentPlayer.hasUsedCommanderAction())
             opponentLeaderImage.setOpacity(0.3);
@@ -506,8 +510,11 @@ public class GameMenuView extends MenuView {
     }
 
     public static void showDiscardPile() {
-        if (GameMenuController.currentPlayer.getDiscardPile().size() == 0)
+        if (GameMenuController.currentPlayer.getDiscardPile().size() == 0){
+            GameMenuController.changeTurn();
             return;
+        }
+
 
         Stage dialogStage = new Stage();
         dialogStage.setTitle("DiscardPile");

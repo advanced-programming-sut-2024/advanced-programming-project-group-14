@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Mardroeme.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Mardroeme.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/Mardoeme.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Mardroeme.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -300,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1720597979890</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Debugging">
+      <created>1720610726742</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1720610726742</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

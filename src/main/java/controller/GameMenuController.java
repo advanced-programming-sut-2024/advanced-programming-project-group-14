@@ -83,7 +83,6 @@ public class GameMenuController {
         Object[] forAction = {row, card, targetCard};
 
         doAction(card, forAction);
-
         changeTurn();
     }
 
@@ -166,7 +165,6 @@ public class GameMenuController {
 
     public static void resetRow(Row row) {
         for (Card card : row.getCards()) {
-            System.out.println(1);
             card.setMoralBoostAction(false);
             card.setCommandersHornAction(false);
         }
