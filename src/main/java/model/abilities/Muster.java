@@ -5,6 +5,7 @@ import model.Actionable;
 import model.Card;
 import model.Row;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,8 +18,8 @@ public class Muster extends Card implements Actionable {
     }
 
     public static boolean isTeammate(String str1, String str2) {
-        Set<String> wordsSet = new HashSet<>(Arrays.asList(str1.split(" ")));
-        for (String word : str2.split(" ")) {
+        Set<String> wordsSet = new HashSet<>(Arrays.asList(str1.split("-")));
+        for (String word : str2.split("-")) {
             if (wordsSet.contains(word)) {
                 return true;
             }
@@ -30,17 +31,24 @@ public class Muster extends Card implements Actionable {
     public void doAction(Object[] items) {
         Row row = (Row) items[0];
         Muster muster = (Muster) items[1];
+
+        ArrayList<Card> cardsToRemove = new ArrayList<>();
+
         for (Card card : GameMenuController.currentPlayer.getHand()) {
             if (isTeammate(muster.getName(), card.getName())){
-                GameMenuController.currentPlayer.getHand().remove(card);
+                cardsToRemove.add(card);
                 row.addToCards(card);
             }
         }
+        GameMenuController.currentPlayer.getHand().removeAll(cardsToRemove);
+
+        cardsToRemove = new ArrayList<>();
         for (Card card : GameMenuController.currentPlayer.getDeck()) {
             if (isTeammate(muster.getName(), card.getName())){
-                GameMenuController.currentPlayer.getDeck().remove(card);
+                cardsToRemove.add(card);
                 row.addToCards(card);
             }
         }
+        GameMenuController.currentPlayer.getDeck().removeAll(cardsToRemove);
     }
 }

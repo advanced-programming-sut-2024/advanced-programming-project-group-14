@@ -4,67 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Update some photo name in image folder">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_cow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Cow.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_dandelion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Dandelion.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_gaunter_odimm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/GaunterODimm.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_gaunter_odimm_darkness.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/GaunterODImmDarkness.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_mysterious_elf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MysteriousElf.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_olgierd.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/OlgierdVonEverc.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_villen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Villentretenmerth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_yennefer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/YenneferofVengerberg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_barclay.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BarclayEls.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_ciaran.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Ciaranaep.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dennis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DennisCranmer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_archer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaArcher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaScout.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DwarvenSkirmisher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_eithne.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Eithne.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ElvenSkirmisher.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_filavandrel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Filavandrel.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HavekarHealer.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HavekarSmuggler.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_ida.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/IdaEmeanaep.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_iorveth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Iorveth.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MahakamanDefender.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_riordain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Riordain.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_saskia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Seasenthessis.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_schirru.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Schirru.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_toruviel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Toruviel.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_brigade.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeVeteran.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_brigade_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeRecruit.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_yaevinn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Yaevinn.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_decoy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Decoy.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_horn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Commandershorn.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_scorch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Scorch.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_clear.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClearWeather.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_fog.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Impenetrablefog.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_frost.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BitingFrost.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_rain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TorrentialRain.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_storm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SkelligeStorm.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_kayran.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_chort.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_ciri.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_emiel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_geralt.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_triss.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_vesemir.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_zoltan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_black_archer_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_infantry_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_infantry_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dwarf_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dwarf_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_elf_skirmisher_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_elf_skirmisher_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_nurse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_nurse_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_support_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_support_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_isengrim.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_milva.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_vrihedd_brigade_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_hemdall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_heymaey.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Images/spell.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/GameTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Row.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Decoy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Medic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/TightBond.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Transformers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,10 +72,13 @@
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="complete-pregame-menu" />
   </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="origin/detached2" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="complete-pregame-menu" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -100,19 +94,29 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.main.executor": "Run",
-    "git-widget-placeholder": "main",
-    "node.js.selected.package.tslint": "(autodetect)"
-  }
-}]]></component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -353,13 +357,43 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="LoadAll called">
+      <created>1720177236561</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1720177236561</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Commanders array list initialized corrected">
+      <created>1720184153583</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1720184153583</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Photos name update completed">
+      <created>1720187861875</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1720187861875</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="RECENT_FILTERS">
       <map>
         <entry key="Branch">
@@ -375,31 +409,8 @@
         </entry>
       </map>
     </option>
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/complete-pregame-menu" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Random button and Stay Login added" />
-    <MESSAGE value="PreGame fxml added" />
     <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
@@ -423,6 +434,12 @@
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Update some photo name in image folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update some photo name in image folder" />
+    <MESSAGE value="Deleted image folder because I can't do anything" />
+    <MESSAGE value="Add placeCard and vetoCard methods to GameMenuController" />
+    <MESSAGE value="Complete placeCard and methods in GameMenuController" />
+    <MESSAGE value="LoadAll called" />
+    <MESSAGE value="Commanders array list initialized corrected" />
+    <MESSAGE value="Photos name update completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Photos name update completed" />
   </component>
 </project>

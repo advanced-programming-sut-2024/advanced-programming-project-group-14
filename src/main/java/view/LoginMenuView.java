@@ -218,7 +218,8 @@ public class LoginMenuView extends MenuView {
         if (!result.isSuccessful())
             showError(result.getMessage());
         else {
-            yourMethod();
+            goToMainMenu(stage);
+            //yourMethod();
         }
     }
 
@@ -248,7 +249,7 @@ public class LoginMenuView extends MenuView {
         goToRegisterMenu(stage);
     }
 
-    private void sendEmail(String to, String subject, String text) {
+    /*private void sendEmail(String to, String subject, String text) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");

@@ -1,15 +1,8 @@
 package controller;
 
-import model.Question;
 import model.Result;
 import model.User;
 import model.UsersManager;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-import java.util.regex.Pattern;
 
 public class LoginMenuController {
     private static UsersManager usersManager;

@@ -29,7 +29,7 @@ public class LoadController {
 
         loadNoActionSkelligeCards();
         loadNoActionScoiataellCards();
-        loadNoActionNorthenCards();
+        loadNoActionNorthernCards();
         loadNoActionNilfgaardianCards();
         loadNoActionMonstersCards();
     }
@@ -98,7 +98,7 @@ public class LoadController {
 
     private static void loadMardroemeCards() {
         for (int i = 0; i < 3; i++)
-            new Mardroeme("Mardoeme", 0, 3, "Mardroeme", "Special", "Skellige", true, "This Spell card has Mardoeme Ability and can be placed in the commmander's Horn spot . it effects the row that it was placed in");
+            new Mardroeme("Mardroeme", 0, 3, "Mardroeme", "Special", "Skellige", false, "This Spell card has Mardoeme Ability and can be placed in the commmander's Horn spot . it effects the row that it was placed in");
         new Mardroeme("Ermion", 8, 1, "Mardroeme", "Ranged Unit", "Skellige", true, "");
     }
 
@@ -130,7 +130,7 @@ public class LoadController {
             new Muster("ElvenSkirmisher", 2, 3, "Muster", "Ranged Unit", "Scoiatael", false, "");
             new Muster("DwarvenSkirmisher", 3, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
             new Muster("HavekarSmuggler", 5, 3, "Muster", "Close Combat Unit", "Scoiatael", false, "");
-            new Muster("GaunterODImmDarkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
+            new Muster("Gaunter-ODImmDarkness", 4, 3, "Muster", "Ranged Unit", "Neutral", false, "");
             new Muster("Arachas", 4, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Ghoul", 1, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
             new Muster("Nekker", 2, 3, "Muster", "Close Combat Unit", "Monsters", false, "");
@@ -144,8 +144,8 @@ public class LoadController {
         new Muster("Vampire-Ekimmara", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
         new Muster("Vampire-Fleder", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
         new Muster("Vampire-Garkain", 4, 1, "Muster", "Close Combat Unit", "Monsters", false, "");
-////////        new Muster("ArachasBehemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
-        new Muster("GaunterODimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
+        new Muster("ArachasBehemoth", 6, 1, "Muster", "Siege Unit", "Monsters", false, "");
+        new Muster("Gaunter-ODimm", 2, 1, "Muster", "Siege Unit", "Neutral", false, "");
     }
 
     private static void loadScorchCards() {
@@ -188,7 +188,7 @@ public class LoadController {
     }
 
     private static void loadTransformersCards() {
-        new Transformers("Kambi", 0, 1, "Transformers", "Close Combat Unit", "Skellige", true, "Turns into a card with a power of 11 after one round");
+        new Transformers("Kambi", 0, 1, "Transformers", "Close Combat Unit", "Skellige", false, "Turns into a card with a power of 11 after one round");
         new Transformers("Cow", 0, 1, "Transformers", "Ranged Unit", "Neutral", false, "Turns into a card with a power of 8 after one round");
     }
 
@@ -207,12 +207,12 @@ public class LoadController {
         new Card("PlagueMaiden", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Werewolf", 5, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Botchling", 4, 1, "", "Close Combat Unit", "Monsters", false, "");
-        new Card("CelaenoHarpy", 2, 1, "", "Agile", "Monsters", false, "");
+        new Card("CelaenoHarpy", 2, 1, "", "Agile Unit", "Monsters", false, "");
         new Card("Cockatrice", 2, 1, "", "Ranged Unit", "Monsters", false, "");
         new Card("Endrega", 2, 1, "", "Ranged Unit", "Monsters", false, "");
         new Card("Foglet", 2, 1, "", "Close Combat Unit", "Monsters", false, "");
         new Card("Gargoyle", 2, 1, "", "Ranged Unit", "Monsters", false, "");
-        new Card("Harpy", 2, 1, "", "Agile", "Monsters", false, "");
+        new Card("Harpy", 2, 1, "", "Agile Unit", "Monsters", false, "");
         new Card("Wyvern", 2, 1, "", "Ranged Unit", "Monsters", false, "");
     }
 
@@ -240,7 +240,7 @@ public class LoadController {
         new Card("Vreemde", 2, 1, "", "Close Combat Unit", "Nilfgaard", false, "");
     }
 
-    private static void loadNoActionNorthenCards() {
+    private static void loadNoActionNorthernCards() {
         for (int i = 0; i < 2; i++) {
             new Card("Ballista", 6, 2, "", "Siege Unit", "Northern", false, "");
             new Card("RedanianFootSoldier", 1, 2, "", "Close Combat Unit", "Northern", false, "");
