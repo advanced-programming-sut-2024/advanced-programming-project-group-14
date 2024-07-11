@@ -179,6 +179,31 @@ public class GameMenuController {
         placeCard(card, rowName, null);
     }
 
+    public static void reviveOpponentRandomCard() {
+        Card card = opponentPlayer.getDiscardPile().get(0);
+        while (card == null || card.getType().equals("Special") || card.getType().equals("Weather")) {
+            int randomNumber = random.nextInt(0, opponentPlayer.getDiscardPile().size());
+            card = opponentPlayer.getDiscardPile().get(randomNumber);
+        }
+
+        opponentPlayer.getDiscardPile().remove(card);
+        String rowName = card.getType();
+        Row row = null;
+        switch (rowName){
+            case "Close Combat Unit":
+            case "Agile Unit":
+                row = opponentPlayer.getCloseCombat();
+                break;
+            case "Ranged Unit":
+                row = opponentPlayer.getRangedCombat();
+                break;
+            case "Siege Unit":
+                row = opponentPlayer.getSiege();
+                break;
+        }
+        row.addToCards(card);
+    }
+
     public static void endTurn() {
         checkForRoundWinner();
         clearTable();
@@ -225,7 +250,7 @@ public class GameMenuController {
 
     public static void playCommanderPower() {
         currentPlayer.setUsedCommanderAction(true);
-        System.out.println(currentPlayer.getUsername()+" controller");
+        System.out.println(currentPlayer.getUsername() + " controller");
         switch (currentPlayer.getCommander().getName()) {
             case "TheSiegemaster":
                 placeCardOfCommanderAction(Card.getCardByName("Impenetrablefog"));
