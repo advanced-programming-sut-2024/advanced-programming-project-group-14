@@ -225,6 +225,7 @@ public class GameMenuController {
 
     public static void playCommanderPower() {
         currentPlayer.setUsedCommanderAction(true);
+        System.out.println(currentPlayer.getUsername()+" controller");
         switch (currentPlayer.getCommander().getName()) {
             case "TheSiegemaster":
                 placeCardOfCommanderAction(Card.getCardByName("Impenetrablefog"));
@@ -366,7 +367,6 @@ public class GameMenuController {
             }
         }
     }
-
 
     public static void increaseHitPointCheat() {
         if (currentPlayer.getLives() == 1)

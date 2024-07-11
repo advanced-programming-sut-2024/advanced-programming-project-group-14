@@ -48,7 +48,7 @@ public class Scorch extends Card implements Actionable {
                     GameMenuController.doAction(rowCard, new Object[]{playerRow, rowCard});
                 }
         }
-        if (playerRow.getSpecial().getAbility().equals("CommandersHorn")) GameMenuController.doAction(Card.getCardByName("CommandersHorn"), new Object[]{playerRow});
+        if (playerRow.getSpecial() != null && playerRow.getSpecial().getAbility().equals("CommandersHorn")) GameMenuController.doAction(Card.getCardByName("CommandersHorn"), new Object[]{playerRow});
     }
 
     @Override

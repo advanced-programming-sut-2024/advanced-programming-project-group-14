@@ -3,6 +3,7 @@ package view;
 import controller.GameMenuController;
 import controller.PreGameMenuController;
 import javafx.event.ActionEvent;
+import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
@@ -336,9 +337,10 @@ public class GameMenuView extends MenuView {
             opponentDiscardPile.getChildren().add(getStackPaneOfCard(GameMenuController.opponentPlayer.getDiscardPile().get(0)));
 
         currentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.currentPlayer.getCommander().getName() + ".jpg"))));
-        if (GameMenuController.currentPlayer.hasUsedCommanderAction())
-            currentLeaderImage.setOpacity(0.3);
-        currentLeaderImage.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
+        currentLeaderImage.setOpacity(GameMenuController.currentPlayer.hasUsedCommanderAction() ? 0.3 : 1);
+
+        currentLeaderImage.setOnMouseClicked(null);
+        currentLeaderImage.setOnMouseClicked(event -> {
             if (GameMenuController.currentPlayer.hasUsedCommanderAction())
                 return;
             GameMenuController.playCommanderPower();
@@ -346,8 +348,8 @@ public class GameMenuView extends MenuView {
         });
 
         opponentLeaderImage.setImage(new Image(String.valueOf(getClass().getResource("/Images/" + GameMenuController.opponentPlayer.getCommander().getName() + ".jpg"))));
-        if (GameMenuController.opponentPlayer.hasUsedCommanderAction())
-            opponentLeaderImage.setOpacity(0.3);
+        opponentLeaderImage.setOpacity(GameMenuController.opponentPlayer.hasUsedCommanderAction() ? 0.3 : 1);
+
         currentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentDeck.setImage(new Image(String.valueOf(getClass().getResource("/Images/deck.jpg"))));
         opponentName.setText(GameMenuController.opponentPlayer.getUsername());
