@@ -7,6 +7,9 @@
     <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/abilities/Scorch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/abilities/Scorch.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +108,7 @@
       <workItem from="1720414758042" duration="3458000" />
       <workItem from="1720526276602" duration="10613000" />
       <workItem from="1720618876281" duration="1085000" />
-      <workItem from="1720694513917" duration="8137000" />
+      <workItem from="1720694513917" duration="4496000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -448,14 +451,7 @@
       <option name="project" value="LOCAL" />
       <updated>1720623564516</updated>
     </task>
-    <task id="LOCAL-00049" summary="Leader multiple action fixed">
-      <created>1720699379696</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1720699379696</updated>
-    </task>
-    <option name="localTasksCounter" value="50" />
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,6 +484,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Show faction completed" />
     <MESSAGE value="PreGame menu completed" />
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
@@ -514,8 +511,7 @@
     <MESSAGE value="Deck size label added" />
     <MESSAGE value="Debug scorch and decoy action and resetTable method" />
     <MESSAGE value="Show faction card resized" />
-    <MESSAGE value="Leader multiple action fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Leader multiple action fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show faction card resized" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

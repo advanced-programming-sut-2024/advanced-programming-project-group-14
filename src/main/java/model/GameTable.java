@@ -2,9 +2,11 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 
 public class GameTable {
     private int roundNumber;
+    private HashMap<Integer, Player> roundWinner;
     private Date date;
     private Player player1;
     private Player player2;
@@ -16,6 +18,7 @@ public class GameTable {
         this.player2 = player2;
         this.weather = new ArrayList<>();
         this.roundNumber = 1;
+        this.roundWinner = new HashMap<>();
     }
 
     public int getRoundNumber() {
@@ -38,6 +41,10 @@ public class GameTable {
         return weather;
     }
 
+    public void setWeather(ArrayList<Card> arrayList) {
+        this.weather = arrayList;
+    }
+
     public void addToWeather(Card weather) {
         this.weather.add(weather);
     }
@@ -47,18 +54,17 @@ public class GameTable {
     }
 
     public Player getGameWinner() {
-        if (player2.getLives()==0)
+        if (player2.getLives() == 0)
             return player1;
         return player2;
     }
 
     public Player getRoundWinner(int roundNumber) {
-        if (player1.getScoreOfRound(roundNumber) > player2.getScoreOfRound(roundNumber))
-            return player1;
-        return player2;
+        return roundWinner.get(roundNumber);
     }
 
-    public void setWeather(ArrayList<Card> arrayList) {
-        this.weather = arrayList;
+    public void setRoundWinner(int roundNumber, Player winner, Player loser) {
+        roundWinner.put(roundNumber, winner);
+        loser.decreaseLife();
     }
 }

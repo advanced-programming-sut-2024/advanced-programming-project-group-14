@@ -217,10 +217,30 @@ public class GameMenuController {
         int roundNumber = currentGameTable.getRoundNumber();
         currentPlayer.setScoresOfRound(roundNumber, currentPlayer.calculateTotalScore());
         opponentPlayer.setScoresOfRound(roundNumber, opponentPlayer.calculateTotalScore());
-        if (currentPlayer.getScoreOfRound(roundNumber) < opponentPlayer.getScoreOfRound(roundNumber))
-            currentPlayer.decreaseLife();
+        Player winner;
+        if (currentPlayer.getScoreOfRound(roundNumber) == opponentPlayer.getScoreOfRound(roundNumber)) {
+            if (currentPlayer.getFaction().getName().equals("Nilfgaard") && !opponentPlayer.getFaction().getName().equals("Nilfgaard"))
+                winner = currentPlayer;
+            else if (opponentPlayer.getFaction().getName().equals("Nilfgaard") && !currentPlayer.getFaction().getName().equals("Nilfgaard"))
+                winner = opponentPlayer;
+            else {
+                winner = opponentPlayer;
+            }
+        } else if (currentPlayer.getScoreOfRound(roundNumber) < opponentPlayer.getScoreOfRound(roundNumber))
+            winner = opponentPlayer;
         else
-            opponentPlayer.decreaseLife();
+            winner = currentPlayer;
+
+        if (winner == currentPlayer) {
+            if (currentPlayer.getFaction().getName().equals("Northern"))
+                currentPlayer.getHand().add(currentPlayer.getFaction().getCards().get(random.nextInt(0, currentPlayer.getFaction().getCards().size())));
+            currentGameTable.setRoundWinner(roundNumber, winner, opponentPlayer);
+        } else {
+            if (opponentPlayer.getFaction().getName().equals("Northern"))
+                opponentPlayer.getHand().add(opponentPlayer.getFaction().getCards().get(random.nextInt(0, opponentPlayer.getFaction().getCards().size())));
+            currentGameTable.setRoundWinner(roundNumber, winner, currentPlayer);
+        }
+
 
         if (currentPlayer.getLives() == 0 || opponentPlayer.getLives() == 0)
             endGame();
@@ -232,6 +252,11 @@ public class GameMenuController {
             row.getCards().clear();
             row.setWeatherAction(false);
             row.setSpecial(null);
+        }
+        if (currentPlayer.getFaction().getName().equals("Monsters")) {
+            int toStayRow = random.nextInt(0, currentPlayer.getDiscardPile().size());
+            reviveCard(currentPlayer.getDiscardPile().get(toStayRow));
+            changeTurn();
         }
         for (Row row : opponentPlayer.getRows()) {
             opponentPlayer.getDiscardPile().addAll(row.getCards());
@@ -261,7 +286,6 @@ public class GameMenuController {
                 break;
             case "KingofTemeria":
                 ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{currentPlayer.getSiege()});
-                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{opponentPlayer.getSiege()});
                 changeTurn();
                 break;
             case "LordCommanderoftheNorth":
@@ -289,7 +313,6 @@ public class GameMenuController {
                 break;
             case "BringerofDeath":
                 ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{currentPlayer.getCloseCombat()});
-                ((CommandersHorn) Card.getCardByName("CommandersHorn")).doAction(new Object[]{opponentPlayer.getCloseCombat()});
                 changeTurn();
                 break;
             case "KingofthewildHunt":
@@ -327,9 +350,7 @@ public class GameMenuController {
                 break;
             case "KingBran":
                 break;
-
         }
-
     }
 
     private static void queenofDolBlathanna() {
@@ -347,7 +368,7 @@ public class GameMenuController {
     }
 
     private static void invaderoftheNorthAction() {
-        reviveCard(currentPlayer.getHand().get(random.nextInt(0, currentPlayer.getHand().size())));
+        reviveCard(currentPlayer.getDiscardPile().get(random.nextInt(0, currentPlayer.getDiscardPile().size())));
     }
 
     private static void commanderoftheRedRidersAction() {
