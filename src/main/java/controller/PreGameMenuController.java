@@ -48,7 +48,7 @@ public class PreGameMenuController {
             return new Result(false, "invalid card name");
         }
         if (card.getType().equals("Special") || card.getType().equals("Weather")) {
-            if (getCurrentPlayerHandSize()-getCurrentPlayerNumberOfSoldiers() >= 10) {
+            if (getCurrentPlayerHandSize() - getCurrentPlayerNumberOfSoldiers() >= 10) {
                 return new Result(false, "you can't have more than 10 special cards in your deck");
             }
         }
@@ -67,7 +67,7 @@ public class PreGameMenuController {
         if (currentPlayer.getDeck().size() < 22)
             return new Result(false, "Deck is not full");
         if (currentPlayer.getCommander() == null)
-            return new Result(false,"Choose a leader please");
+            return new Result(false, "Choose a leader please");
         if (currentPlayer.getDeck().size() >= 22 && opponentPlayer.getDeck().size() >= 22)
             return new Result(false, "Your opponent has passed it's turn, please start the game");
         Player temp = currentPlayer;
@@ -82,8 +82,15 @@ public class PreGameMenuController {
         }
 
         GameMenuController.currentGameTable = new GameTable(Date.from(new Date().toInstant()), currentPlayer, opponentPlayer);
-        GameMenuController.currentPlayer = currentPlayer;
-        GameMenuController.opponentPlayer = opponentPlayer;
+
+        if (currentPlayer.getFaction().getName().equals("Scoiatael") && !opponentPlayer.getFaction().getName().equals("Scoiatael")) {
+            GameMenuController.currentPlayer = currentPlayer;
+            GameMenuController.opponentPlayer = opponentPlayer;
+        }
+        else {
+            GameMenuController.currentPlayer = opponentPlayer;
+            GameMenuController.opponentPlayer = currentPlayer;
+        }
         return new Result(true, "Welcome to the game!");
     }
 
@@ -106,7 +113,7 @@ public class PreGameMenuController {
     public static int getCurrentPlayerNumberOfSoldiers() {
         int number = 0;
         for (Card card : currentPlayer.getDeck()) {
-            if (card.getType() != "Special" && card.getType()!= "Weather")
+            if (card.getType() != "Special" && card.getType() != "Weather")
                 number++;
         }
         return number;

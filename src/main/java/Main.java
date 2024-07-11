@@ -19,18 +19,18 @@ public class Main {
         GameMenuController.currentGameTable = new GameTable(new Date(),player1,player2);
         GameMenuController.currentPlayer = player1;
         GameMenuController.opponentPlayer = player2;
-        Faction faction1 = new Faction(Faction.getFactionByName("Skellige"));
+        Faction faction1 = new Faction(Faction.getFactionByName("Northern"));
         Faction faction2 = new Faction(Faction.getFactionByName("Skellige"));
         player1.setFaction(faction1);
         player2.setFaction(faction2);
-        player1.setCommander(faction1.getCommanderByName("CrachanCraite"));
+        player1.setCommander(faction1.getCommanderByName("KingofTemeria"));
         player2.setCommander(faction2.getCommanderByName("CrachanCraite"));
         player1.setDeck(new ArrayList<>(faction1.getCards()));
         player2.setDeck(new ArrayList<>(faction2.getCards()));
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        GameMenuView.run();
+        PreGameMenuView.run();
     }
 
     private static void saveUsers(UsersManager usersManager) {
