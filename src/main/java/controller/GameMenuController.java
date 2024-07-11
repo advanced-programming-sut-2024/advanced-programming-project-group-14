@@ -211,6 +211,19 @@ public class GameMenuController {
         opponentPlayer.setPassed(false);
         currentGameTable.increaseRoundNumber();
 
+        for (int i = 0; i < 2; i++) {
+            if (currentPlayer.getFaction().getName().equals("Skellige")) {
+                int toStay = random.nextInt(0, currentPlayer.getDiscardPile().size());
+                reviveCard(currentPlayer.getDiscardPile().get(toStay));
+                changeTurn();
+            }
+
+            if (opponentPlayer.getFaction().getName().equals("Skellige")) {
+                reviveOpponentRandomCard();
+                changeTurn();
+            }
+        }
+
     }
 
     private static void checkForRoundWinner() {
@@ -254,8 +267,8 @@ public class GameMenuController {
             row.setSpecial(null);
         }
         if (currentPlayer.getFaction().getName().equals("Monsters")) {
-            int toStayRow = random.nextInt(0, currentPlayer.getDiscardPile().size());
-            reviveCard(currentPlayer.getDiscardPile().get(toStayRow));
+            int toStay = random.nextInt(0, currentPlayer.getDiscardPile().size());
+            reviveCard(currentPlayer.getDiscardPile().get(toStay));
             changeTurn();
         }
         for (Row row : opponentPlayer.getRows()) {
@@ -264,6 +277,12 @@ public class GameMenuController {
             row.setWeatherAction(false);
             row.setSpecial(null);
         }
+        if (opponentPlayer.getFaction().getName().equals("Monsters")) {
+            reviveOpponentRandomCard();
+            changeTurn();
+        }
+
+
         currentGameTable.setWeather(new ArrayList<>());
     }
 
