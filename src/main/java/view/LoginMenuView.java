@@ -354,5 +354,5 @@ public class LoginMenuView extends MenuView {
         sendEmailInBackground(email, subject, content);
     }
 
-
+*/
 }

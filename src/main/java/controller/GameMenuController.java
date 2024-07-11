@@ -180,6 +180,8 @@ public class GameMenuController {
     }
 
     public static void reviveOpponentRandomCard() {
+        if (opponentPlayer.getDiscardPile().size()==0)
+            return;
         Card card = opponentPlayer.getDiscardPile().get(0);
         while (card == null || card.getType().equals("Special") || card.getType().equals("Weather")) {
             int randomNumber = random.nextInt(0, opponentPlayer.getDiscardPile().size());
@@ -269,6 +271,8 @@ public class GameMenuController {
             row.setSpecial(null);
         }
         if (currentPlayer.getFaction().getName().equals("Monsters")) {
+            if (currentPlayer.getDiscardPile().size()==0)
+                return;
             int toStay = random.nextInt(0, currentPlayer.getDiscardPile().size());
             reviveCard(currentPlayer.getDiscardPile().get(toStay));
             changeTurn();
@@ -289,14 +293,20 @@ public class GameMenuController {
     }
 
     public static void endGame() {
-        currentPlayer.addGamePlayed(currentGameTable);
-        opponentPlayer.addGamePlayed(currentGameTable);
+        if (currentPlayer.getLives()==0){
+            User.getUserByUsername(opponentPlayer.getUsername()).increaseNumOfWin();
+            User.getUserByUsername(currentPlayer.getUsername()).increaseNumOfLose();
+        }else{
+            User.getUserByUsername(currentPlayer.getUsername()).increaseNumOfWin();
+            User.getUserByUsername(opponentPlayer.getUsername()).increaseNumOfLose();
+        }
+        User.getUserByUsername(currentPlayer.getUsername()).addGamePlayed(currentGameTable);
+        User.getUserByUsername(opponentPlayer.getUsername()).addGamePlayed(currentGameTable);
         new GameMenuView().endGame();
     }
 
     public static void playCommanderPower() {
         currentPlayer.setUsedCommanderAction(true);
-        System.out.println(currentPlayer.getUsername() + " controller");
         switch (currentPlayer.getCommander().getName()) {
             case "TheSiegemaster":
                 placeCardOfCommanderAction(Card.getCardByName("Impenetrablefog"));

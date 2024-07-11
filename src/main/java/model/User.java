@@ -149,12 +149,15 @@ public class User {
     public ArrayList<GameTable> getGamePlayed() {
         return gamePlayed;
     }
+
     public void setGamePlayed(ArrayList<GameTable> gamePlayed){
         this.gamePlayed = gamePlayed;
     }
 
     public void addGamePlayed(GameTable gameTable) {
+        System.out.println("P"+gamePlayed.size());
         this.gamePlayed.add(gameTable);
+        System.out.println(gamePlayed.size());
     }
 
     public ArrayList<Card> getDeck() {

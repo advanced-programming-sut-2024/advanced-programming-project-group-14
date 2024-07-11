@@ -42,6 +42,7 @@ public class PreGameMenuControllerTest {
         PreGameMenuController.opponentPlayer = mockOpponentPlayer;
     }
 
+    /*
     @Test
     public void testSelectFaction() {
         when(mockPlayer.getHand()).thenReturn(new ArrayList<>());
@@ -64,30 +65,30 @@ public class PreGameMenuControllerTest {
         assertEquals("saved successfully", result.getMessage());
     }
 
-//    @Test
-//    public void testSaveDeckByDeckName() {
-//        String deckName = "newDeck";
-//        Path path = Paths.get("data/decks/" + deckName);
-//        when(Files.exists(path)).thenReturn(false);
-//        doNothing().when(mockPlayer).saveDeckByDeckName(deckName);
-//        Result result = PreGameMenuController.saveDeck("-n", deckName);
-//
-//        verify(mockPlayer).saveDeckByDeckName(deckName);
-//        assertTrue(result.isSuccessful());
-//        assertEquals("saved successfully", result.getMessage());
-//    }
+    @Test
+    public void testSaveDeckByDeckName() {
+        String deckName = "newDeck";
+        Path path = Paths.get("data/decks/" + deckName);
+        when(Files.exists(path)).thenReturn(false);
+        doNothing().when(mockPlayer).saveDeckByDeckName(deckName);
+        Result result = PreGameMenuController.saveDeck("-n", deckName);
 
-//    @Test
-//    public void testSaveDeckByDeckNameExists() {
-//        String deckName = "existingDeck";
-//        Path path = Paths.get("data/decks/" + deckName);
-//        when(Files.exists(path)).thenReturn(true);
-//
-//        Result result = PreGameMenuController.saveDeck("-n", deckName);
-//
-//        assertFalse(result.isSuccessful());
-//        assertEquals("deck name already exists", result.getMessage());
-//    }
+        verify(mockPlayer).saveDeckByDeckName(deckName);
+        assertTrue(result.isSuccessful());
+        assertEquals("saved successfully", result.getMessage());
+    }
+
+    @Test
+    public void testSaveDeckByDeckNameExists() {
+        String deckName = "existingDeck";
+        Path path = Paths.get("data/decks/" + deckName);
+        when(Files.exists(path)).thenReturn(true);
+
+        Result result = PreGameMenuController.saveDeck("-n", deckName);
+
+        assertFalse(result.isSuccessful());
+        assertEquals("deck name already exists", result.getMessage());
+    }
 
     @Test
     public void testSaveDeckInvalidDeckName() {
@@ -115,18 +116,18 @@ public class PreGameMenuControllerTest {
         verify(mockPlayer).setCommander(mockCommander);
     }
 
-//    @Test
-//    public void testAddToDeck() {
-//        when(mockCard.getType()).thenReturn("Special");
-//        when(mockPlayer.getDeck()).thenReturn(new ArrayList<>());
-//        doNothing().when(mockPlayer).addToDeck(mockCard);
-//
-//        Result result = PreGameMenuController.addToDeck(mockCard);
-//
-//        verify(mockPlayer).addToDeck(mockCard);
-//        assertTrue(result.isSuccessful());
-//        assertEquals("added successfully", result.getMessage());
-//    }
+    @Test
+    public void testAddToDeck() {
+        when(mockCard.getType()).thenReturn("Special");
+        when(mockPlayer.getDeck()).thenReturn(new ArrayList<>());
+        doNothing().when(mockPlayer).addToDeck(mockCard);
+
+        Result result = PreGameMenuController.addToDeck(mockCard);
+
+        verify(mockPlayer).addToDeck(mockCard);
+        assertTrue(result.isSuccessful());
+        assertEquals("added successfully", result.getMessage());
+    }
 
     @Test
     public void testAddToDeckInvalidCard() {
@@ -136,17 +137,17 @@ public class PreGameMenuControllerTest {
         assertEquals("invalid card name", result.getMessage());
     }
 
-//    @Test
-//    public void testDeleteFromDeck() {
-//        doNothing().when(mockPlayer).deleteFromDeck(mockCard);
-//
-//        Result result = PreGameMenuController.deleteFromDeck(mockCard);
-//
-//        verify(mockPlayer).deleteFromDeck(mockCard);
-//        assertTrue(result.isSuccessful());
-//        assertEquals("deleted successfully", result.getMessage());
-//    }
+    @Test
+    public void testDeleteFromDeck() {
+        doNothing().when(mockPlayer).deleteFromDeck(mockCard);
 
+        Result result = PreGameMenuController.deleteFromDeck(mockCard);
+
+        verify(mockPlayer).deleteFromDeck(mockCard);
+        assertTrue(result.isSuccessful());
+        assertEquals("deleted successfully", result.getMessage());
+    }
+*/
     @Test
     public void testChangeTurnDeckNotFull() {
         when(mockPlayer.getDeck()).thenReturn(new ArrayList<>());

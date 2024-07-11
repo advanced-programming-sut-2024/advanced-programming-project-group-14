@@ -8,6 +8,10 @@ public class Question {
     private String answer;
     private static ArrayList<Question> questions = new ArrayList<>();
 
+    static {
+        loadQuestions();
+    }
+
     public Question(int number, String question) {
         this.number = number;
         this.questionText = question;

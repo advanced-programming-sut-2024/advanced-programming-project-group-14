@@ -134,13 +134,15 @@ public class Player extends User {
     }
 
     public int getScoreOfRound(int roundNumber) {
-        return scoreOfRounds.get(roundNumber);
+        if (scoreOfRounds.containsKey(roundNumber))
+            return scoreOfRounds.get(roundNumber);
+        return 0;
     }
 
     public int getTotalScoreOfRounds() {
         int total = 0;
         for (int i = 1; i < 4; i++) {
-            total += scoreOfRounds.get(i);
+            total += getScoreOfRound(i);
         }
         return total;
     }

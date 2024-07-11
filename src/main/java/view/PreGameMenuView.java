@@ -50,7 +50,6 @@ public class PreGameMenuView extends MenuView{
         stage.setScene(scene);
         stage.setTitle("PreGame Menu");
         stage.setMaximized(true);
-        stage.setResizable(false);
         stage.show();
     }
 
@@ -137,6 +136,7 @@ public class PreGameMenuView extends MenuView{
 
         ArrayList<Card> cards = PreGameMenuController.getCurrentPlayer().getFaction().getCards();
         for (int i = 0; i < cards.size(); i++) {
+            System.out.println(cards.get(i).getName());
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);

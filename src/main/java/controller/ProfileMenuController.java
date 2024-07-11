@@ -58,7 +58,7 @@ public class ProfileMenuController {
         int numberOfGamePlayed = User.getLoggedInUser().getGamePlayed().size();
         if (number.isEmpty()) {
             if (numberOfGamePlayed < 5)
-                numberToShow = numberOfGamePlayed;
+                return new Result(true, String.valueOf(numberOfGamePlayed));
         } else if (Integer.parseInt(number) < 1)
             return new Result(false, "The number should be greater than 0");
 

@@ -4,58 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Deleted Images added">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Ciri.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Monsters.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Nilfgaard.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Northern.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Scoiatael.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/Skellige.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/deck.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stayLoggedInUser.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/ProfileMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/GameMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/monsters_kayran.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_chort.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_ciri.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_emiel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_geralt.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_triss.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_vesemir.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/neutral_zoltan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/nilfgaard_black_archer_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_infantry_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dol_infantry_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dwarf_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_dwarf_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_elf_skirmisher_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_elf_skirmisher_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_nurse.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_nurse_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_support_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_havekar_support_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_isengrim.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_mahakam_4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_milva.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/scoiatael_vrihedd_brigade_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_hemdall.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_heymaey.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/skellige_shield_maiden_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Images/spell.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/GameTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Row.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Decoy.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Medic.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/TightBond.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/abilities/Transformers.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/LoginMenuView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/PreGameMenuControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/PreGameMenuControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/RegisterMenuControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/RegisterMenuControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CSS/gwent-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSS/gwent-theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/RegisterMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/RegisterMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/MainMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/MainMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Question.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Question.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,13 +57,10 @@
   <component name="Git.Merge.Settings">
     <option name="BRANCH" value="complete-pregame-menu" />
   </component>
-  <component name="Git.Rebase.Settings">
-    <option name="NEW_BASE" value="origin/detached2" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="70b31a514a111e20a7edb4ec7f9b8cd361c8d7dc" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -94,28 +76,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -357,28 +322,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <task id="LOCAL-00030" summary="LoadAll called">
-      <created>1720177236561</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1720177236561</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Commanders array list initialized corrected">
-      <created>1720184153583</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1720184153583</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Photos name update completed">
-      <created>1720187861875</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1720187861875</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +333,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/complete-pregame-menu" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -411,6 +367,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="PreGame fxml added" />
     <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
@@ -434,12 +391,15 @@
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Update some photo name in image folder" />
-    <MESSAGE value="Deleted image folder because I can't do anything" />
-    <MESSAGE value="Add placeCard and vetoCard methods to GameMenuController" />
-    <MESSAGE value="Complete placeCard and methods in GameMenuController" />
-    <MESSAGE value="LoadAll called" />
-    <MESSAGE value="Commanders array list initialized corrected" />
-    <MESSAGE value="Photos name update completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Photos name update completed" />
+    <MESSAGE value="Deleted Images added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted Images added" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$controller_in_graft.ic" NAME="controller in graft Coverage Results" MODIFIED="1720589071098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$LoginMenuControllerTest.ic" NAME="LoginMenuControllerTest Coverage Results" MODIFIED="1720589046802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

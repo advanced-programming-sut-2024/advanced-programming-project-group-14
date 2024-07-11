@@ -39,7 +39,6 @@ public class RegisterMenuView extends MenuView {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Question.loadQuestions();
         RegisterMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/RegisterMenu.fxml"));
         Scene scene = new Scene(root);

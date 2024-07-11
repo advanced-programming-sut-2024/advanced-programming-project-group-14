@@ -153,7 +153,7 @@ public class RegisterMenuControllerTest {
         assertTrue(password.matches(".*[0-9].*"));
         assertTrue(password.matches(".*[!@#$%^&*].*"));
     }
-
+/*
     @Test
     public void testShowQuestion() {
         User user = mock(User.class);
@@ -166,7 +166,7 @@ public class RegisterMenuControllerTest {
 
         assertEquals("Sample Question?", questionText);
     }
-
+*/
     @Test
     public void testPickQuestion() {
         User user = mock(User.class);

@@ -9,11 +9,13 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
-
     static {
         LoadController.loadAll();
-        Player player1 = new Player(new User("amir","1","ahy","amir@gmail.com"));
-        Player player2 = new Player(new User("ali","1","amb","ali@gmail.com"));
+        User user1 = new User("amir","1","ahy","amir@gmail.com");
+        User user2 = new User("ali","1","amb","ali@gmail.com");
+        User.setLoggedInUser(user1);
+        Player player1 = new Player(user1);
+        Player player2 = new Player(user2);
         GameMenuController.currentGameTable = new GameTable(new Date(),player1,player2);
         GameMenuController.currentPlayer = player1;
         GameMenuController.opponentPlayer = player2;
