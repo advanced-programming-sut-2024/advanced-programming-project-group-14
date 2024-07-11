@@ -211,14 +211,16 @@ public class GameMenuController {
         opponentPlayer.setPassed(false);
         currentGameTable.increaseRoundNumber();
 
+        if (currentGameTable.getRoundNumber()!=3)
+            return;
         for (int i = 0; i < 2; i++) {
-            if (currentPlayer.getFaction().getName().equals("Skellige")) {
+            if (currentPlayer.getDiscardPile().size() > 0 && currentPlayer.getFaction().getName().equals("Skellige")) {
                 int toStay = random.nextInt(0, currentPlayer.getDiscardPile().size());
                 reviveCard(currentPlayer.getDiscardPile().get(toStay));
                 changeTurn();
             }
 
-            if (opponentPlayer.getFaction().getName().equals("Skellige")) {
+            if (opponentPlayer.getDiscardPile().size()>0 && opponentPlayer.getFaction().getName().equals("Skellige")) {
                 reviveOpponentRandomCard();
                 changeTurn();
             }
