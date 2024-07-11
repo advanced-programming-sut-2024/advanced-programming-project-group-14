@@ -20,7 +20,7 @@ public class MainMenuControllerTest {
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
-        User.resetUsers(); // فرض بر این است که متدی برای ریست کردن کاربران وجود دارد.
+        User.resetUsers();
         new MainMenuController(mockUsersManager);
     }
 

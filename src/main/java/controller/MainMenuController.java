@@ -7,7 +7,7 @@ import model.User;
 import model.UsersManager;
 
 public class MainMenuController {
-    private static UsersManager usersManager;
+    private static UsersManager usersManager = new UsersManager();
     public MainMenuController(UsersManager usersManager) {
         MainMenuController.usersManager = usersManager;
     }

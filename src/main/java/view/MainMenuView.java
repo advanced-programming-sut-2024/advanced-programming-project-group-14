@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextInputDialog;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.Result;
 
@@ -24,6 +26,15 @@ public class MainMenuView extends MenuView{
         stage.setWidth(800);
         stage.centerOnScreen();
         stage.show();
+        try {
+            String musicFile = getClass().getResource("/Media/profile.mp3").toExternalForm();
+            Media sound = new Media(musicFile);
+            player = new MediaPlayer(sound);
+            player.setCycleCount(MediaPlayer.INDEFINITE);
+            player.play();
+        } catch (Exception e) {
+            System.err.println("Error loading or playing the media file: " + e.getMessage());
+        }
     }
 
     public void logout() {

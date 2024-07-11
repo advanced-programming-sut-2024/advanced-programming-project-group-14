@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -54,6 +56,15 @@ public class ProfileMenuView extends MenuView {
         stage.setHeight(600);
         stage.setWidth(800);
         stage.show();
+        try {
+            String musicFile = getClass().getResource("/Media/profile.mp3").toExternalForm();
+            Media sound = new Media(musicFile);
+            player = new MediaPlayer(sound);
+            player.setCycleCount(MediaPlayer.INDEFINITE);
+            player.play();
+        } catch (Exception e) {
+            System.err.println("Error loading or playing the media file: " + e.getMessage());
+        }
     }
 
 

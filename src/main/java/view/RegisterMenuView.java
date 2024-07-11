@@ -11,6 +11,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import model.Question;
@@ -46,6 +48,15 @@ public class RegisterMenuView extends MenuView {
         stage.setTitle("Register Menu");
         stage.setHeight(600);
         stage.setWidth(800);
+        try {
+            String musicFile = getClass().getResource("/Media/register.mp3").toExternalForm();
+            Media sound = new Media(musicFile);
+            player = new MediaPlayer(sound);
+            player.setCycleCount(MediaPlayer.INDEFINITE);
+            player.play();
+        } catch (Exception e) {
+            System.err.println("Error loading or playing the media file: " + e.getMessage());
+        }
         stage.show();
     }
 

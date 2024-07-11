@@ -12,6 +12,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import model.Question;
@@ -62,13 +66,27 @@ public class LoginMenuView extends MenuView {
     public void start(Stage stage) throws Exception {
         LoginMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/LoginMenu.fxml"));
-        Scene scene = new Scene(root);
+        StackPane stackPane = new StackPane();
+        String videoPath = getClass().getResource("/Media/GwentGame.mp4").toExternalForm();
+        Media media = new Media(videoPath);
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        //mediaPlayer.setAutoPlay(true);
+        MediaView mediaView = new MediaView(mediaPlayer);
+        mediaView.setPreserveRatio(false);
+        stackPane.getChildren().addAll(mediaView, root);
+        Scene scene = new Scene(stackPane);
+        mediaView.fitWidthProperty().bind(scene.widthProperty());
+        mediaView.fitHeightProperty().bind(scene.heightProperty());
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Login Menu");
         stage.setHeight(600);
         stage.setWidth(800);
         stage.show();
+
+        mediaPlayer.play();
+        player = mediaPlayer;
     }
 
     @FXML
@@ -238,6 +256,7 @@ public class LoginMenuView extends MenuView {
             String enteredCode = codeField.getText();
             if (enteredCode.equals(generatedCode)) {
                 showSuccessfulMessage("Email verified successfully.");
+                player.stop();
                 goToMainMenu(stage);
             } else {
                 showError("Invalid verification code.");
