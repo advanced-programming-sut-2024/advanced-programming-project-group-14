@@ -68,4 +68,7 @@ public class MainMenuView extends MenuView {
         // Show dialog and get the result
         return dialog.showAndWait().orElse(null);
     }
+    public void openScoreBoard() {
+        goToScoreBoardMenu(stage);
+    }
 }

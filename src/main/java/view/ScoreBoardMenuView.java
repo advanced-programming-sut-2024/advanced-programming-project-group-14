@@ -37,7 +37,7 @@ public class ScoreBoardMenuView extends MenuView {
 
     @Override
     public void start(Stage stage) throws Exception {
-        RegisterMenuView.stage = stage;
+        ScoreBoardMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/ScoreBoardMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
@@ -67,11 +67,17 @@ public class ScoreBoardMenuView extends MenuView {
     private void loadScoreBoard() {
         scoreList.clear();
         scoreList.addAll(User.getAllUsers());
-        scoreList.sort((o1, o2) -> o2.getNumOfWin() - o1.getNumOfWin());
+        if (User.getAllUsers().size() > 1) {
+            scoreList.sort((o1, o2) -> o2.getNumOfWin() - o1.getNumOfWin());
+        }
     }
 
     @FXML
     private void handleRefresh() {
         loadScoreBoard();
+    }
+    @FXML
+    private void handleBack() {
+        goToMainMenu(stage);
     }
 }

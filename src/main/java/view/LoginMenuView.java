@@ -21,6 +21,7 @@ import javafx.util.Pair;
 import model.Question;
 import model.Result;
 import model.User;
+import model.UsersManager;
 
 //import javax.mail.*;
 //import javax.mail.internet.InternetAddress;
@@ -84,8 +85,15 @@ public class LoginMenuView extends MenuView {
         stage.setWidth(800);
         stage.show();
 
-        mediaPlayer.play();
-        player = mediaPlayer;
+        UsersManager usersManager = new UsersManager();
+        usersManager.loadStayLoggedInUser();
+        if (User.getLoggedInUser() != null) {
+            goToMainMenu(stage);
+        }
+        else {
+            mediaPlayer.play();
+            player = mediaPlayer;
+        }
     }
 
     @FXML
