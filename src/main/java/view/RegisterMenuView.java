@@ -1,5 +1,6 @@
 package view;
 
+import client.Client;
 import controller.RegisterMenuController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -133,20 +134,25 @@ public class RegisterMenuView extends MenuView {
 
         dialog.showAndWait().ifPresent(result -> {
             Question question = Question.getQuestionByText(result.getKey());
-            RegisterMenuController.pickQuestion(question.getNumber(),result.getValue());
+            Client.pickQuestion(question.getNumber(),result.getValue());
         });
     }
 
     public void register() {
-        Result result = RegisterMenuController.register(nameField.getText(),passwordTextField.getText(),CPasswordTextField.getText(),nicknameField.getText(),emailField.getText());
+        Result result = Client.register(
+                nameField.getText(),
+                passwordTextField.getText(),
+                CPasswordTextField.getText(),
+                nicknameField.getText(),
+                emailField.getText()
+        );
         if (!result.isSuccessful())
             showError(result.getMessage());
-        else{
+        else {
             showQuestionDialog();
             showSuccessfulMessage(result.getMessage());
             goToMainMenu(stage);
         }
-
     }
 
     public void randomPassword() {
