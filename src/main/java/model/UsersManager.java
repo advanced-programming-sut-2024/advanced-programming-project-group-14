@@ -36,6 +36,7 @@ public class UsersManager {
             throw new RuntimeException(e);
         }
     }
+
     public void saveStayLoggedInUser(User user) {
         try {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(USER_JSON));
@@ -46,11 +47,14 @@ public class UsersManager {
             System.err.println("Error saving stay logged in user: " + e.getMessage());
         }
     }
+
     public void loadStayLoggedInUser() {
         try {
             ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(USER_JSON));
             User user = (User) objectInputStream.readObject();
-            User.getAllUsers().add(user);
+            if (user != null) {
+                User.getAllUsers().add(user);
+            }
             User.setLoggedInUser(user);
             objectInputStream.close();
         } catch (IOException e) {

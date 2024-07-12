@@ -54,6 +54,14 @@ public class MenuView extends Application {
             e.printStackTrace();
         }
     }
+    public void goToScoreBoardMenu(Stage stage){
+        ScoreBoardMenuView scoreBoardMenuView = new ScoreBoardMenuView();
+        try {
+            scoreBoardMenuView.start(stage);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
     public void goToPreGameMenu(Stage stage){
         PreGameMenuView preGameMenuView = new PreGameMenuView();
