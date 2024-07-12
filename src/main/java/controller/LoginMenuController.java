@@ -5,7 +5,7 @@ import model.User;
 import model.UsersManager;
 
 public class LoginMenuController {
-    private static UsersManager usersManager;
+    private static UsersManager usersManager= new UsersManager();
 
     public LoginMenuController(UsersManager usersManager) {
         LoginMenuController.usersManager = usersManager;

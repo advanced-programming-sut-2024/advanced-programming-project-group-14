@@ -71,7 +71,6 @@ public class LoginMenuView extends MenuView {
         Media media = new Media(videoPath);
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        //mediaPlayer.setAutoPlay(true);
         MediaView mediaView = new MediaView(mediaPlayer);
         mediaView.setPreserveRatio(false);
         stackPane.getChildren().addAll(mediaView, root);

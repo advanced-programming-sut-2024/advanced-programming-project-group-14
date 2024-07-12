@@ -64,10 +64,8 @@ public class PreGameMenuController {
     }
 
     public static Result changeTurn() {
-        if (currentPlayer.getDeck().size() < 22)
-            return new Result(false, "Deck is not full");
-        if (currentPlayer.getCommander() == null)
-            return new Result(false, "Choose a leader please");
+        if (currentPlayer.getDeck().size() < 22) return new Result(false, "Deck is not full");
+        if (currentPlayer.getCommander() == null) return new Result(false, "Choose a leader please");
         if (currentPlayer.getDeck().size() >= 22 && opponentPlayer.getDeck().size() >= 22)
             return new Result(false, "Your opponent has passed it's turn, please start the game");
         Player temp = currentPlayer;
@@ -80,14 +78,14 @@ public class PreGameMenuController {
         if (currentPlayer.getDeck().size() < 22 || opponentPlayer.getDeck().size() < 22) {
             return new Result(false, "One of decks is not full");
         }
+        if (currentPlayer.getCommander() == null) return new Result(false, "Choose a leader please");
 
         GameMenuController.currentGameTable = new GameTable(Date.from(new Date().toInstant()), currentPlayer, opponentPlayer);
 
         if (currentPlayer.getFaction().getName().equals("Scoiatael") && !opponentPlayer.getFaction().getName().equals("Scoiatael")) {
             GameMenuController.currentPlayer = currentPlayer;
             GameMenuController.opponentPlayer = opponentPlayer;
-        }
-        else {
+        } else {
             GameMenuController.currentPlayer = opponentPlayer;
             GameMenuController.opponentPlayer = currentPlayer;
         }
@@ -99,22 +97,19 @@ public class PreGameMenuController {
     }
 
     public static String getCurrentPlayerFactionName() {
-        if (currentPlayer.getFaction() == null)
-            return "";
+        if (currentPlayer.getFaction() == null) return "";
         return currentPlayer.getFaction().getName();
     }
 
     public static int getCurrentPlayerHandSize() {
-        if (currentPlayer.getDeck() == null)
-            return 0;
+        if (currentPlayer.getDeck() == null) return 0;
         return currentPlayer.getDeck().size();
     }
 
     public static int getCurrentPlayerNumberOfSoldiers() {
         int number = 0;
         for (Card card : currentPlayer.getDeck()) {
-            if (card.getType() != "Special" && card.getType() != "Weather")
-                number++;
+            if (card.getType() != "Special" && card.getType() != "Weather") number++;
         }
         return number;
     }
@@ -122,8 +117,7 @@ public class PreGameMenuController {
     public static int getCurrentPlayerNumberOfHeroes() {
         int number = 0;
         for (Card card : currentPlayer.getDeck()) {
-            if (card.isHero())
-                number++;
+            if (card.isHero()) number++;
         }
         return number;
     }

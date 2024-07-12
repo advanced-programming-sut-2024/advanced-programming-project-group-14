@@ -153,20 +153,7 @@ public class RegisterMenuControllerTest {
         assertTrue(password.matches(".*[0-9].*"));
         assertTrue(password.matches(".*[!@#$%^&*].*"));
     }
-/*
-    @Test
-    public void testShowQuestion() {
-        User user = mock(User.class);
-        Question question = mock(Question.class);
-        when(question.getQuestionText()).thenReturn("Sample Question?");
-        when(user.getQuestion()).thenReturn(question);
-        User.setLoggedInUser(user);
 
-        String questionText = RegisterMenuController.showQuestion();
-
-        assertEquals("Sample Question?", questionText);
-    }
-*/
     @Test
     public void testPickQuestion() {
         User user = mock(User.class);
