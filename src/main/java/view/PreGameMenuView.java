@@ -71,6 +71,7 @@ public class PreGameMenuView extends MenuView{
         File file = fileChooser.showOpenDialog(new Stage());
         if (file != null) {
             PreGameMenuController.loadDeck(file);
+            updateLabels();
             System.out.println("Deck loaded from: " + file.getAbsolutePath());
         }
     }
