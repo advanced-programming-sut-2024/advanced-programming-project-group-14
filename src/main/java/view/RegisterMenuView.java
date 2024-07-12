@@ -1,6 +1,7 @@
 package view;
 
 import client.Client;
+import com.google.gson.JsonObject;
 import controller.RegisterMenuController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -134,18 +135,26 @@ public class RegisterMenuView extends MenuView {
 
         dialog.showAndWait().ifPresent(result -> {
             Question question = Question.getQuestionByText(result.getKey());
-            Client.pickQuestion(question.getNumber(),result.getValue());
+
+            JsonObject jsonRequest = new JsonObject();
+            jsonRequest.addProperty("action", "pickQuestion");
+            jsonRequest.addProperty("number", question.getNumber());
+            jsonRequest.addProperty("answer", result.getValue());
+
+            Client.getResponse(jsonRequest);
         });
     }
 
     public void register() {
-        Result result = Client.register(
-                nameField.getText(),
-                passwordTextField.getText(),
-                CPasswordTextField.getText(),
-                nicknameField.getText(),
-                emailField.getText()
-        );
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "register");
+        jsonRequest.addProperty("username", nameField.getText());
+        jsonRequest.addProperty("password", passwordTextField.getText());
+        jsonRequest.addProperty("confirmPassword", CPasswordTextField.getText());
+        jsonRequest.addProperty("nickname", nicknameField.getText());
+        jsonRequest.addProperty("email", emailField.getText());
+        Result result = Client.getResponse(jsonRequest);
+
         if (!result.isSuccessful())
             showError(result.getMessage());
         else {

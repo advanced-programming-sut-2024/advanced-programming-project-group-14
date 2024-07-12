@@ -48,6 +48,12 @@ public class Server {
 
                         RegisterMenuController.pickQuestion(number, answer);
                     }
+                    else if (action.equals("login")) {
+                        int number = jsonRequest.get("number").getAsInt();
+                        String answer = jsonRequest.get("answer").getAsString();
+
+                        RegisterMenuController.pickQuestion(number, answer);
+                    }
 
                     out.println(gson.toJson(result));
 
