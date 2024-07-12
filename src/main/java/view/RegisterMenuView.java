@@ -141,7 +141,7 @@ public class RegisterMenuView extends MenuView {
             jsonRequest.addProperty("number", question.getNumber());
             jsonRequest.addProperty("answer", result.getValue());
 
-            Client.getResponse(jsonRequest);
+            Client.getResult(jsonRequest);
         });
     }
 
@@ -153,7 +153,7 @@ public class RegisterMenuView extends MenuView {
         jsonRequest.addProperty("confirmPassword", CPasswordTextField.getText());
         jsonRequest.addProperty("nickname", nicknameField.getText());
         jsonRequest.addProperty("email", emailField.getText());
-        Result result = Client.getResponse(jsonRequest);
+        Result result = Client.getResult(jsonRequest);
 
         if (!result.isSuccessful())
             showError(result.getMessage());

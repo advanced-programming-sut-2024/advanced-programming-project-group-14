@@ -4,6 +4,7 @@ package client;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import model.Result;
+import model.User;
 
 import java.io.*;
 import java.net.Socket;
@@ -14,7 +15,7 @@ public class Client {
     private static final int SERVER_PORT = 12345;
     private static Gson gson = new Gson();
 
-    public static Result getResponse(JsonObject jsonRequest) {
+    public static Result getResult(JsonObject jsonRequest) {
         try (Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT)) {
             PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));

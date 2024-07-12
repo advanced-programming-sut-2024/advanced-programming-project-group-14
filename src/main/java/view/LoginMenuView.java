@@ -1,5 +1,7 @@
 package view;
 
+import client.Client;
+import com.google.gson.JsonObject;
 import controller.LoginMenuController;
 import controller.RegisterMenuController;
 import javafx.concurrent.Task;
@@ -126,8 +128,12 @@ public class LoginMenuView extends MenuView {
         }
     }
 
-    private void showQuestionDialog() {
-        User user = User.getUserByUsername(loginUsernameField.getText());
+  /*  private void showQuestionDialog() {
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "getUser");
+        jsonRequest.addProperty("username", loginUsernameField.getText());
+
+        User user = Client.getUser(jsonRequest);
         if (user == null) {
             showError("Enter a correct Username");
             return;
@@ -173,14 +179,20 @@ public class LoginMenuView extends MenuView {
         });
 
         dialog.showAndWait().ifPresent(result -> {
-            Result checkResult = LoginMenuController.checkAnswer(user, result);
+            JsonObject jsonRequest1 = new JsonObject();
+            jsonRequest1.addProperty("action", "checkAnswer");
+            jsonRequest1.addProperty("username", loginUsernameField.getText());
+            jsonRequest1.addProperty("answer", result);
+
+            Result checkResult = Client.getResult(jsonRequest1);
+
             if (!checkResult.isSuccessful())
                 showError(checkResult.getMessage());
             else
                 showNewPasswordDialog(user);
         });
     }
-
+*/
     private void showNewPasswordDialog(User user) {
         Dialog<String> dialog = new Dialog<>();
         dialog.setTitle("New Password");
@@ -239,7 +251,13 @@ public class LoginMenuView extends MenuView {
     }
 
     public void login() {
-        Result result = LoginMenuController.login(loginUsernameField.getText(), loginPasswordTextField.getText(), stayLoginCheckBox.isSelected());
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "login");
+        jsonRequest.addProperty("username", loginUsernameField.getText());
+        jsonRequest.addProperty("password", loginPasswordField.getText());
+        jsonRequest.addProperty("stayLoggedIn", stayLoginCheckBox.getText());
+        Result result = Client.getResult(jsonRequest);
+
         if (!result.isSuccessful())
             showError(result.getMessage());
         else {
@@ -248,7 +266,7 @@ public class LoginMenuView extends MenuView {
     }
 
     public void forgetPassword() {
-        showQuestionDialog();
+        //showQuestionDialog();
     }
 
     public void verifyCode() {
@@ -353,11 +371,15 @@ public class LoginMenuView extends MenuView {
 
     public void verification() {
         generatedCode = generateVerificationCode();
-        String email = User.getUserByUsername(loginUsernameField.getText()).getEmail();
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "getEmail");
+        jsonRequest.addProperty("username", loginUsernameField.getText());
+
+        Result email = Client.getResult(jsonRequest);
         String subject = "Gwent Game";
         String content = "Your verification code is: " + generatedCode;
 
-        sendEmailInBackground(email, subject, content);
+        sendEmailInBackground(email.getMessage(), subject, content);
     }
 
 }

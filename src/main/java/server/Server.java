@@ -3,6 +3,7 @@ package server;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import controller.LoginMenuController;
 import controller.RegisterMenuController;
 import model.Question;
 import model.Result;
@@ -31,31 +32,46 @@ public class Server {
                     String action = jsonRequest.get("action").getAsString();
 
 
-
                     Result result = null;
-                    if (action.equals("register")) {
-                        String username = jsonRequest.get("username").getAsString();
-                        String password = jsonRequest.get("password").getAsString();
-                        String confirmPassword = jsonRequest.get("confirmPassword").getAsString();
-                        String nickname = jsonRequest.get("nickname").getAsString();
-                        String email = jsonRequest.get("email").getAsString();
-                        result = RegisterMenuController.register(username, password, confirmPassword, nickname, email);
+                    switch (action) {
+                        case "register" -> {
+                            String username = jsonRequest.get("username").getAsString();
+                            String password = jsonRequest.get("password").getAsString();
+                            String confirmPassword = jsonRequest.get("confirmPassword").getAsString();
+                            String nickname = jsonRequest.get("nickname").getAsString();
+                            String email = jsonRequest.get("email").getAsString();
+                            result = RegisterMenuController.register(username, password, confirmPassword, nickname, email);
+                            out.println(gson.toJson(result));
+                        }
+                        case "pickQuestion" -> {
+                            int number = jsonRequest.get("number").getAsInt();
+                            String answer = jsonRequest.get("answer").getAsString();
 
+                            RegisterMenuController.pickQuestion(number, answer);
+                            out.println(gson.toJson(result));
+                        }
+                        case "login" -> {
+                            String username = jsonRequest.get("username").getAsString();
+                            String password = jsonRequest.get("password").getAsString();
+                            boolean stayLoggedIn = jsonRequest.get("stayLoggedIn").getAsBoolean();
+
+                            result = LoginMenuController.login(username, password, stayLoggedIn);
+                            out.println(gson.toJson(result));
+                        }
+                        case "checkAnswer" -> {
+                            String username = jsonRequest.get("username").getAsString();
+                            String answer = jsonRequest.get("answer").getAsString();
+
+                            result = LoginMenuController.checkAnswer(User.getUserByUsername(username), answer);
+                            out.println(gson.toJson(result));
+                        }
+                        case "getEmail" -> {
+                            String username = jsonRequest.get("username").getAsString();
+
+                            result = new Result(true, User.getUserByUsername(username).getEmail());
+                            out.println(gson.toJson(result));
+                        }
                     }
-                    else if (action.equals("pickQuestion")) {
-                        int number = jsonRequest.get("number").getAsInt();
-                        String answer = jsonRequest.get("answer").getAsString();
-
-                        RegisterMenuController.pickQuestion(number, answer);
-                    }
-                    else if (action.equals("login")) {
-                        int number = jsonRequest.get("number").getAsInt();
-                        String answer = jsonRequest.get("answer").getAsString();
-
-                        RegisterMenuController.pickQuestion(number, answer);
-                    }
-
-                    out.println(gson.toJson(result));
 
                 } catch (IOException e) {
                     e.printStackTrace();

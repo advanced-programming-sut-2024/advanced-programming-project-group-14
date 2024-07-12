@@ -31,5 +31,6 @@
     </TableView>
     <HBox spacing="10" style="-fx-padding: 10px; -fx-alignment: CENTER;">
         <Button text="Refresh" onAction="#handleRefresh" style="-fx-padding: 10px;"/>
+        <Button text="Back" onAction="#handleBack" style="-fx-padding: 10px;"/>
     </HBox>
 </VBox>
