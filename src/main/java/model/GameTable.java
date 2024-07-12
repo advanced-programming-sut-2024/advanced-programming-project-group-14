@@ -41,10 +41,6 @@ public class GameTable {
         return weather;
     }
 
-    public void setWeather(ArrayList<Card> arrayList) {
-        this.weather = arrayList;
-    }
-
     public void addToWeather(Card weather) {
         this.weather.add(weather);
     }

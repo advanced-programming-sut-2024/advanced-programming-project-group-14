@@ -236,8 +236,7 @@ public class LoginMenuView extends MenuView {
         if (!result.isSuccessful())
             showError(result.getMessage());
         else {
-            goToMainMenu(stage);
-            //yourMethod();
+            verification();
         }
     }
 
@@ -268,7 +267,7 @@ public class LoginMenuView extends MenuView {
         goToRegisterMenu(stage);
     }
 
-    /*private void sendEmail(String to, String subject, String text) {
+    private void sendEmail(String to, String subject, String text) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -345,7 +344,7 @@ public class LoginMenuView extends MenuView {
         thread.start();
     }
 
-    public void yourMethod() {
+    public void verification() {
         generatedCode = generateVerificationCode();
         String email = User.getUserByUsername(loginUsernameField.getText()).getEmail();
         String subject = "Gwent Game";
@@ -354,5 +353,4 @@ public class LoginMenuView extends MenuView {
         sendEmailInBackground(email, subject, content);
     }
 
-*/
 }
