@@ -11,7 +11,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import model.Result;
 
-public class MainMenuView extends MenuView{
+public class MainMenuView extends MenuView {
     public static Stage stage;
 
     @Override
@@ -26,6 +26,9 @@ public class MainMenuView extends MenuView{
         stage.setWidth(800);
         stage.centerOnScreen();
         stage.show();
+        if (player != null) {
+            player.stop();
+        }
         try {
             String musicFile = getClass().getResource("/Media/profile.mp3").toExternalForm();
             Media sound = new Media(musicFile);
@@ -46,7 +49,7 @@ public class MainMenuView extends MenuView{
         Result result = MainMenuController.createGame(getOpponentName());
         if (!result.isSuccessful())
             showError(result.getMessage());
-        else{
+        else {
             goToPreGameMenu(stage);
         }
 
