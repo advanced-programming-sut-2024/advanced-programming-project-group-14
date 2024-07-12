@@ -2,8 +2,7 @@ package model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 
 public class UsersManager {
@@ -17,7 +16,9 @@ public class UsersManager {
 
     public void saveUsers(ArrayList<User> users) {
         try {
-            objectMapper.writeValue(new File(USERS_JSON), users);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(USERS_JSON));
+            objectOutputStream.writeObject(users);
+            objectOutputStream.close();
             System.out.println("Users and decks saved to " + USERS_JSON);
         } catch (IOException e) {
             System.err.println("Error saving users and decks: " + e.getMessage());
@@ -26,24 +27,36 @@ public class UsersManager {
 
     public void loadUsers() {
         try {
-            User.getAllUsers().addAll(objectMapper.readValue(new File(USERS_JSON), objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, User.class)));
+            ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(USERS_JSON));
+            User.getAllUsers().addAll((ArrayList<User>) objectInputStream.readObject());
+            objectInputStream.close();
         } catch (IOException e) {
             System.err.println("Error loading users and decks: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
     public void saveStayLoggedInUser(User user) {
         try {
-            objectMapper.writeValue(new File(USER_JSON), user);
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(USER_JSON));
+            objectOutputStream.writeObject(user);
+            objectOutputStream.close();
             System.out.println("Stay logged in user saved to " + USER_JSON);
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error saving stay logged in user: " + e.getMessage());
         }
     }
     public void loadStayLoggedInUser() {
         try {
-            User.setLoggedInUser(objectMapper.readValue(new File(USER_JSON), User.class));
+            ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(USER_JSON));
+            User user = (User) objectInputStream.readObject();
+            User.getAllUsers().add(user);
+            User.setLoggedInUser(user);
+            objectInputStream.close();
         } catch (IOException e) {
             System.err.println("Error loading stay logged in user: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }

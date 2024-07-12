@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
-//    static {
+    //    static {
 //        LoadController.loadAll();
 //        User user1 = new User("amir","1","ahy","amir@gmail.com");
 //        User user2 = new User("ali","1","amb","ali@gmail.com");
@@ -30,7 +30,10 @@ public class Main {
 //    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        UsersManager usersManager = new UsersManager();
+        usersManager.loadUsers();
         LoginMenuView.run();
+        saveUsers(usersManager);
     }
 
     private static void saveUsers(UsersManager usersManager) {
