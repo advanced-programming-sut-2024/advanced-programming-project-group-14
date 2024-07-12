@@ -12,13 +12,21 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import model.Question;
 import model.Result;
 import model.User;
 
+//import javax.mail.*;
+//import javax.mail.internet.InternetAddress;
+//import javax.mail.internet.MimeMessage;
 import javax.mail.*;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.io.IOException;
@@ -58,13 +66,27 @@ public class LoginMenuView extends MenuView {
     public void start(Stage stage) throws Exception {
         LoginMenuView.stage = stage;
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/LoginMenu.fxml"));
-        Scene scene = new Scene(root);
+        StackPane stackPane = new StackPane();
+        String videoPath = getClass().getResource("/Media/GwentGame.mp4").toExternalForm();
+        Media media = new Media(videoPath);
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        //mediaPlayer.setAutoPlay(true);
+        MediaView mediaView = new MediaView(mediaPlayer);
+        mediaView.setPreserveRatio(false);
+        stackPane.getChildren().addAll(mediaView, root);
+        Scene scene = new Scene(stackPane);
+        mediaView.fitWidthProperty().bind(scene.widthProperty());
+        mediaView.fitHeightProperty().bind(scene.heightProperty());
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
         stage.setScene(scene);
         stage.setTitle("Login Menu");
         stage.setHeight(600);
         stage.setWidth(800);
         stage.show();
+
+        mediaPlayer.play();
+        player = mediaPlayer;
     }
 
     @FXML
@@ -214,7 +236,8 @@ public class LoginMenuView extends MenuView {
         if (!result.isSuccessful())
             showError(result.getMessage());
         else {
-            yourMethod();
+            goToMainMenu(stage);
+            //yourMethod();
         }
     }
 
@@ -233,6 +256,7 @@ public class LoginMenuView extends MenuView {
             String enteredCode = codeField.getText();
             if (enteredCode.equals(generatedCode)) {
                 showSuccessfulMessage("Email verified successfully.");
+                player.stop();
                 goToMainMenu(stage);
             } else {
                 showError("Invalid verification code.");
@@ -244,7 +268,7 @@ public class LoginMenuView extends MenuView {
         goToRegisterMenu(stage);
     }
 
-    private void sendEmail(String to, String subject, String text) {
+    /*private void sendEmail(String to, String subject, String text) {
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -278,6 +302,11 @@ public class LoginMenuView extends MenuView {
     }
 
     public void sendEmailInBackground(String email, String subject, String content) {
+        Alert waitingAlert = new Alert(Alert.AlertType.INFORMATION);
+        waitingAlert.setTitle("Please Wait");
+        waitingAlert.setHeaderText(null);
+        waitingAlert.setContentText("Please wait while the verification code is being sent for 2FA...");
+        waitingAlert.show();
         Task<Void> task = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
@@ -324,4 +353,6 @@ public class LoginMenuView extends MenuView {
 
         sendEmailInBackground(email, subject, content);
     }
+
+*/
 }

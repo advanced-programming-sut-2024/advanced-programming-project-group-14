@@ -3,12 +3,17 @@ package view;
 import javafx.application.Application;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Optional;
 
 public class MenuView extends Application {
+    public MediaView mediaView;
+
+    public static MediaPlayer player;
     @Override
     public void start(Stage primaryStage) throws Exception {
 

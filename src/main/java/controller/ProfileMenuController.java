@@ -56,16 +56,19 @@ public class ProfileMenuController {
     public static Result numberOfGameToShow(String number) {
         int numberToShow = 5;
         int numberOfGamePlayed = User.getLoggedInUser().getGamePlayed().size();
-        if (number.length() == 0) {
+        if (number.isEmpty()) {
             if (numberOfGamePlayed < 5)
-                numberToShow = numberOfGamePlayed;
+                return new Result(true, String.valueOf(numberOfGamePlayed));
         } else if (Integer.parseInt(number) < 1)
             return new Result(false, "The number should be greater than 0");
 
-        else if (numberOfGamePlayed == 0)
+        if (numberOfGamePlayed == 0)
             return new Result(false, "You haven't played any games yet!");
         else if (numberOfGamePlayed < Integer.parseInt(number))
             numberToShow = numberOfGamePlayed;
+        else
+            numberToShow = Integer.parseInt(number);
+
 
         return new Result(true, String.valueOf(numberToShow));
     }

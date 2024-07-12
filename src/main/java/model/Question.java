@@ -8,6 +8,10 @@ public class Question {
     private String answer;
     private static ArrayList<Question> questions = new ArrayList<>();
 
+    static {
+        loadQuestions();
+    }
+
     public Question(int number, String question) {
         this.number = number;
         this.questionText = question;
@@ -62,4 +66,12 @@ public class Question {
         }
         return null;
     }
+
+    public static void loadQuestions(){
+        new Question(1,"When is your birthday?");
+        new Question(2,"What was your first school name?");
+        new Question(3,"What is your father name?");
+        new Question(4,"What city you were born in?");
+    }
+
 }

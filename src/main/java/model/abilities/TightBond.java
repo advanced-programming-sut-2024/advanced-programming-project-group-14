@@ -15,6 +15,7 @@ public class TightBond extends Card implements Actionable {
     public void doAction(Object[] items) {
         Row row =(Row) items[0];
         TightBond tightBond = (TightBond) items[1];
+        int primitivePower = tightBond.getPower();
         int numOfSameCard = 0;
         for (Card card : row.getCards()) {
             if (card.getName().equals(tightBond.getName()))
@@ -22,7 +23,7 @@ public class TightBond extends Card implements Actionable {
         }
         for (Card card : row.getCards()) {
             if (card.getName().equals(tightBond.getName()))
-                card.setPower(card.getPower() * numOfSameCard);
+                card.setPower(primitivePower * numOfSameCard);
         }
     }
 }

@@ -21,6 +21,7 @@ public class Player extends User {
     private HashMap<Integer, Integer> scoreOfRounds;
     private int numberOfVetoUse;
     private boolean isPassed;
+    private boolean usedCommanderAction;
 
     public Player(User user) {
         super(user.getUsername(), user.getPassword(), user.getNickname(), user.getEmail());
@@ -65,6 +66,10 @@ public class Player extends User {
 
     public int getLives() {
         return lives;
+    }
+
+    public void setLives(int lives) {
+        this.lives = lives;
     }
 
     public Commander getCommander() {
@@ -116,21 +121,28 @@ public class Player extends User {
     }
 
     public int calculateTotalScore() {
-        return 0;
+        int totalScore = 0;
+        for (Row row: rows) {
+            totalScore += row.getTotalScore();
+        }
+        return totalScore;
     }
 
     public void decreaseLife() {
+        this.lives--;
 
     }
 
-    public HashMap<Integer, Integer> getScoreOfRounds() {
-        return scoreOfRounds;
+    public int getScoreOfRound(int roundNumber) {
+        if (scoreOfRounds.containsKey(roundNumber))
+            return scoreOfRounds.get(roundNumber);
+        return 0;
     }
 
     public int getTotalScoreOfRounds() {
         int total = 0;
         for (int i = 1; i < 4; i++) {
-            total += scoreOfRounds.get(i);
+            total += getScoreOfRound(i);
         }
         return total;
     }
@@ -178,5 +190,13 @@ public class Player extends User {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean hasUsedCommanderAction() {
+        return usedCommanderAction;
+    }
+
+    public void setUsedCommanderAction(boolean usedCommanderAction) {
+        this.usedCommanderAction = usedCommanderAction;
     }
 }

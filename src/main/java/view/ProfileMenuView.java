@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -76,24 +78,32 @@ public class ProfileMenuView extends MenuView {
 
         TextField nameField = new TextField();
         Button nameButton = new Button("Change username");
-        nameButton.setOnAction(event -> {handleMessage(ProfileMenuController.changeUsername(nameField.getText()));});
+        nameButton.setOnAction(event -> {
+            handleMessage(ProfileMenuController.changeUsername(nameField.getText()));
+        });
 
         TextField nickNameField = new TextField();
         Button nickNameButton = new Button("Change nickname");
-        nickNameButton.setOnAction(event -> {handleMessage(ProfileMenuController.changeNickname(nickNameField.getText()));});
+        nickNameButton.setOnAction(event -> {
+            handleMessage(ProfileMenuController.changeNickname(nickNameField.getText()));
+        });
 
         TextField emailField = new TextField();
         Button emailButton = new Button("Change email");
-        emailButton.setOnAction(event -> {handleMessage(ProfileMenuController.changeEmail(emailField.getText()));});
+        emailButton.setOnAction(event -> {
+            handleMessage(ProfileMenuController.changeEmail(emailField.getText()));
+        });
 
         Label oldPasswordLabel = new Label("old password:");
         TextField oldPasswordField = new TextField();
         TextField passwordField = new TextField();
         Button passwordButton = new Button("Change password");
-        passwordButton.setOnAction(event -> {handleMessage(ProfileMenuController.changePassword(passwordField.getText(),oldPasswordField.getText()));});
+        passwordButton.setOnAction(event -> {
+            handleMessage(ProfileMenuController.changePassword(passwordField.getText(), oldPasswordField.getText()));
+        });
 
-        ArrayList<Button> buttons = new ArrayList<Button>(Arrays.asList(nameButton,nickNameButton,emailButton,passwordButton));
-        ArrayList<TextField> fields = new ArrayList<TextField>(Arrays.asList(nameField,nickNameField,emailField,passwordField,oldPasswordField));
+        ArrayList<Button> buttons = new ArrayList<Button>(Arrays.asList(nameButton, nickNameButton, emailButton, passwordButton));
+        ArrayList<TextField> fields = new ArrayList<TextField>(Arrays.asList(nameField, nickNameField, emailField, passwordField, oldPasswordField));
 
         for (int i = 0; i < buttons.size(); i++) {
             buttons.get(i).setPrefWidth(180);
@@ -101,8 +111,8 @@ public class ProfileMenuView extends MenuView {
             infoGrid.add(fields.get(i), 1, labels.length + i);
             infoGrid.add(buttons.get(i), 2, labels.length + i);
         }
-        infoGrid.add(oldPasswordLabel,0,labels.length+buttons.size());
-        infoGrid.add(oldPasswordField,1,labels.length+buttons.size());
+        infoGrid.add(oldPasswordLabel, 0, labels.length + buttons.size());
+        infoGrid.add(oldPasswordField, 1, labels.length + buttons.size());
 
     }
 
@@ -130,20 +140,20 @@ public class ProfileMenuView extends MenuView {
             String roundScores = "";
             Player player1 = cellData.getValue().getPlayer1();
             Player player2 = cellData.getValue().getPlayer2();
-            roundScores += player1.getScoreOfRounds().get(1) + " | " + player2.getScoreOfRounds().get(1) + "\n";
-            roundScores += player1.getScoreOfRounds().get(2) + " | " + player2.getScoreOfRounds().get(2) + "\n";
-            roundScores += player1.getScoreOfRounds().get(3) + " | " + player2.getScoreOfRounds().get(3);
+            roundScores += player1.getScoreOfRound(1) + " | " + player2.getScoreOfRound(1) + "\n";
+            roundScores += player1.getScoreOfRound(2) + " | " + player2.getScoreOfRound(2) + "\n";
+            roundScores += player1.getScoreOfRound(3) + " | " + player2.getScoreOfRound(3);
             return new SimpleStringProperty(roundScores);
         });
         totalColumn.setCellValueFactory(cellData -> {
             String totalScores = cellData.getValue().getPlayer1().getTotalScoreOfRounds() + " | " + cellData.getValue().getPlayer2().getTotalScoreOfRounds();
             return new SimpleStringProperty(totalScores);
         });
-        winnerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getWinner().getUsername()));
+        winnerColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getGameWinner().getUsername()));
 
         //Set style for columns
-        ArrayList<TableColumn> tableColumns = new ArrayList<>(Arrays.asList(opponentColumn,dateColumn,roundsColumn,totalColumn,winnerColumn));
-        for (TableColumn tableColumn: tableColumns) {
+        ArrayList<TableColumn> tableColumns = new ArrayList<>(Arrays.asList(opponentColumn, dateColumn, roundsColumn, totalColumn, winnerColumn));
+        for (TableColumn tableColumn : tableColumns) {
             setCustomCellFactory(tableColumn);
         }
         // Convert ArrayList to ObservableList
@@ -179,10 +189,9 @@ public class ProfileMenuView extends MenuView {
         });
     }
 
-    public void handleMessage(Result result){
-        if (!result.isSuccessful())
-            showError(result.getMessage());
-        else{
+    public void handleMessage(Result result) {
+        if (!result.isSuccessful()) showError(result.getMessage());
+        else {
             showSuccessfulMessage(result.getMessage());
             handleUserInfoButtonClick();
         }

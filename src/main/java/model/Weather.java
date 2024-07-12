@@ -11,40 +11,41 @@ public class Weather extends Card implements Actionable {
 
     @Override
     public void doAction(Object[] items) {
-        Weather weather = (Weather) items[0];
+        Weather weather = (Weather) items[1];
 
         Player player1 = GameMenuController.currentPlayer;
         Player player2 = GameMenuController.opponentPlayer;
 
         switch (weather.getName()) {
             case "BitingFrost":
-                changePowerToOne(player1.getCloseCombat(), player2.getCloseCombat());
+                activeWeather(player1.getCloseCombat(), player2.getCloseCombat());
                 break;
             case "Impenetrablefog":
-                changePowerToOne(player1.getRangedCombat(), player2.getRangedCombat());
+                activeWeather(player1.getRangedCombat(), player2.getRangedCombat());
                 break;
             case "TorrentialRain":
-                changePowerToOne(player1.getSiege(), player2.getSiege());
+                activeWeather(player1.getSiege(), player2.getSiege());
                 break;
             case "SkelligeStorm":
-                changePowerToOne(player1.getRangedCombat(), player2.getRangedCombat());
-                changePowerToOne(player1.getSiege(), player2.getSiege());
+                activeWeather(player1.getRangedCombat(), player2.getRangedCombat());
+                activeWeather(player1.getSiege(), player2.getSiege());
                 break;
             case "ClearWeather":
-                GameMenuController.currentGameTable.setWeather(null);
+                deActiveWeather(player1.getCloseCombat(), player2.getCloseCombat());
+                deActiveWeather(player1.getRangedCombat(), player2.getRangedCombat());
+                deActiveWeather(player1.getSiege(), player2.getSiege());
+                GameMenuController.currentGameTable.getWeather().clear();
                 break;
 
         }
     }
 
-    private static void changePowerToOne(Row player1, Row player2) {
-        for (Card card : player1.getCards()) {
-            if (!card.isHero())
-                card.setPower(1);
-        }
-        for (Card card : player2.getCards()) {
-            if (!card.isHero())
-                card.setPower(1);
-        }
+    private static void activeWeather(Row player1Row, Row player2Row) {
+        player1Row.setWeatherAction(true);
+        player2Row.setWeatherAction(true);
+    }
+    private static void deActiveWeather(Row player1Row, Row player2Row) {
+        player1Row.setWeatherAction(false);
+        player2Row.setWeatherAction(false);
     }
 }

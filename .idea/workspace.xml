@@ -4,9 +4,67 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Complete placeCard and methods in GameMenuController">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Update some photo name in image folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/GameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/LoadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/GameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_cow.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Cow.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_dandelion.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Dandelion.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_gaunter_odimm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/GaunterODimm.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_gaunter_odimm_darkness.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/GaunterODImmDarkness.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_mysterious_elf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MysteriousElf.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_olgierd.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/OlgierdVonEverc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_villen.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Villentretenmerth.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/neutral_yennefer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/YenneferofVengerberg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_barclay.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BarclayEls.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_ciaran.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Ciaranaep.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dennis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DennisCranmer.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_archer.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaArcher.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DolBlathannaScout.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dol_infantry_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/DwarvenSkirmisher.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_dwarf_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_eithne.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Eithne.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ElvenSkirmisher.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_elf_skirmisher_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_filavandrel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Filavandrel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HavekarHealer.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_nurse_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/HavekarSmuggler.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_havekar_support_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_ida.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/IdaEmeanaep.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_iorveth.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Iorveth.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/MahakamanDefender.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_mahakam_4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_riordain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Riordain.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_saskia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Seasenthessis.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_schirru.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Schirru.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_toruviel.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Toruviel.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_brigade.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeVeteran.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_brigade_1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_vrihedd_cadet.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/VriheddBrigadeRecruit.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/scoiatael_yaevinn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Yaevinn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_decoy.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Decoy.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_horn.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Commandershorn.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/special_scorch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Scorch.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_clear.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/ClearWeather.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_fog.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/Impenetrablefog.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_frost.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/BitingFrost.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_rain.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/TorrentialRain.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Images/weather_storm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Images/SkelligeStorm.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/GameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/GameMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +85,6 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="complete-pregame-menu" />
-        <entry key="$PROJECT_DIR$" value="d2b80a498dd8b0ad5db3b1411499ef14f151e7a5" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,9 +100,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -57,32 +111,8 @@
     "Application.main.executor": "Run",
     "git-widget-placeholder": "main",
     "node.js.selected.package.tslint": "(autodetect)"
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;4cb9a534&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/javaPrograms/Graphics&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/javaPrograms/Graphics",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -97,13 +127,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -126,9 +149,6 @@
       <workItem from="1719580604325" duration="17249000" />
       <workItem from="1719644171364" duration="3981000" />
       <workItem from="1719668195405" duration="8084000" />
-      <workItem from="1720199383866" duration="4616000" />
-      <workItem from="1720205522147" duration="1583000" />
-      <workItem from="1720249188865" duration="387000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -333,31 +353,7 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <task id="LOCAL-00030" summary="Deleted image folder because I can't do anything">
-      <option name="closed" value="true" />
-      <created>1720190064192</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1720190064192</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Add placeCard and vetoCard methods to GameMenuController">
-      <option name="closed" value="true" />
-      <created>1720194152022</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1720194152022</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Complete placeCard and methods in GameMenuController">
-      <option name="closed" value="true" />
-      <created>1720207770372</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1720207770372</updated>
-    </task>
-    <option name="localTasksCounter" value="33" />
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,6 +398,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Random button and Stay Login added" />
+    <MESSAGE value="PreGame fxml added" />
+    <MESSAGE value="Directions of methods fixed" />
     <MESSAGE value="Wrong merge fixed" />
     <MESSAGE value="Dahanemon service shod valy ok kardim" />
     <MESSAGE value="MenuView added" />
@@ -424,9 +423,6 @@
     <MESSAGE value="Labels added" />
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Update some photo name in image folder" />
-    <MESSAGE value="Deleted image folder because I can't do anything" />
-    <MESSAGE value="Add placeCard and vetoCard methods to GameMenuController" />
-    <MESSAGE value="Complete placeCard and methods in GameMenuController" />
-    <option name="LAST_COMMIT_MESSAGE" value="Complete placeCard and methods in GameMenuController" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update some photo name in image folder" />
   </component>
 </project>
