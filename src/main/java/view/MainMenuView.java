@@ -95,4 +95,11 @@ public class MainMenuView extends MenuView {
     public void openScoreBoard() {
         goToScoreBoardMenu(stage);
     }
+
+    public void openChat(ActionEvent actionEvent) {
+        Client client = new Client();
+        ChatView chatView = new ChatView(client);
+        client.setChatWindow(chatView);
+        client.listenForMessages();
+    }
 }

@@ -30,10 +30,6 @@ public class Main {
 //        player2.setDeck(new ArrayList<>(faction2.getCards()));
 //    }
     public static void main(String[] args) {
-        Client client = new Client();
-        ChatView chatView = new ChatView(client);
-        client.setChatWindow(chatView);
-        client.listenForMessages();
-        //LoginMenuView.run();
+        LoginMenuView.run();
     }
 }

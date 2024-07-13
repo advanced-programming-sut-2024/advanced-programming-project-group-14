@@ -14,6 +14,7 @@
         <Button text="Profile" fx:id="profileButton" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
         <Button text="Start Game" fx:id="startGameButton" onAction="#startGame" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
         <Button text="Score Board" fx:id="scoreBoardButton" onAction="#openScoreBoard" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
+        <Button text="Score Board" fx:id="chat" onAction="#openChat" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
         <Button text="Logout" fx:id="logoutButton" onAction="#logout" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-pref-width: 200px; -fx-pref-height: 40px; -fx-border-radius: 5px;" />
     </VBox>
 </GridPane>

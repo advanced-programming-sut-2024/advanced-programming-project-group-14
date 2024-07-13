@@ -79,6 +79,10 @@ public class Client {
         }
     }
 
+    public static String getFactionName(JsonObject jsonRequest) {
+        return "";
+    }
+
     public void setChatWindow(ChatView chatView) {
         this.chatView = chatView;
     }
