@@ -2,7 +2,10 @@ package server;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import controller.*;
+import controller.LoginMenuController;
+import controller.MainMenuController;
+import controller.PreGameMenuController;
+import controller.RegisterMenuController;
 import model.*;
 
 import java.io.BufferedReader;
@@ -17,17 +20,47 @@ public class Server {
     private static final int PORT = 12345;
     private static Gson gson = new Gson();
     private static boolean startedGame = false;
+    private static List<ClientHandler> clients = Collections.synchronizedList(new ArrayList<>());
 
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("Server started on port " + PORT);
             GameDatabase.initializeDatabase();
             while (true) {
-                try (Socket clientSocket = serverSocket.accept()) {
-                    BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                    PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+                Socket clientSocket = serverSocket.accept();
+                ClientHandler clientHandler = new ClientHandler(clientSocket);
+                clients.add(clientHandler);
+                new Thread(clientHandler).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-                    String request = in.readLine();
+    public static void broadcastMessage(JsonObject message) {
+        synchronized (clients) {
+            for (ClientHandler client : clients) {
+                client.sendMessage(message);
+            }
+        }
+    }
+
+    private static class ClientHandler implements Runnable {
+        private Socket socket;
+        private BufferedReader in;
+        private PrintWriter out;
+
+        public ClientHandler(Socket socket) throws IOException {
+            this.socket = socket;
+            this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            this.out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
+        }
+
+        @Override
+        public void run() {
+            try {
+                String request;
+                while ((request = in.readLine()) != null) {
                     JsonObject jsonRequest = gson.fromJson(request, JsonObject.class);
                     String action = jsonRequest.get("action").getAsString();
                     String clientId = jsonRequest.get("clientId").getAsString();  // Retrieve the client ID
@@ -86,7 +119,6 @@ public class Server {
                             out.println(gson.toJson(thisPlayer.getFaction().getName()));
                         }
                         case "selectFaction" -> {
-                            LoadController.loadAll();
                             String factionName = jsonRequest.get("factionName").getAsString();
                             Faction faction = Faction.getFactionByName(factionName);
                             PreGameMenuController.selectFaction(thisPlayer, faction);
@@ -118,7 +150,7 @@ public class Server {
                         case "addToDeck" -> {
                             String cardName = jsonRequest.get("cardName").getAsString();
                             Card card = thisPlayer.getFaction().getCardByName(cardName);
-                            result = PreGameMenuController.addToDeck(thisPlayer,card);
+                            result = PreGameMenuController.addToDeck(thisPlayer, card);
                             out.println(gson.toJson(result));
                         }
                         case "getDeck" -> {
@@ -128,23 +160,31 @@ public class Server {
                         case "deleteFromDeck" -> {
                             String cardName = jsonRequest.get("cardName").getAsString();
                             Card card = thisPlayer.getFaction().getCardByName(cardName);
-                            PreGameMenuController.deleteFromDeck(thisPlayer,card);
-                            out.println(gson.toJson(new Result(true,"")));
+                            PreGameMenuController.deleteFromDeck(thisPlayer, card);
+                            out.println(gson.toJson(new Result(true, "")));
                         }
-                        case "getPlayer" -> {
-                            out.println(gson.toJson(thisPlayer));
+                        case "sendMessage" -> {
+                            String message = jsonRequest.get("message").getAsString();
+                            String timestamp = jsonRequest.get("timestamp").getAsString();
+                            JsonObject jsonMessage = new JsonObject();
+                            jsonMessage.addProperty("type", "message");
+                            jsonMessage.addProperty("clientId", clientId);
+                            jsonMessage.addProperty("message", message);
+                            jsonMessage.addProperty("timestamp", timestamp);
+                            Server.broadcastMessage(jsonMessage);
                         }
-
                     }
-
-
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    socket.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                clients.remove(this);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-    }
 
 }

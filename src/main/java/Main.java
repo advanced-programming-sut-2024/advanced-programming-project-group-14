@@ -1,3 +1,4 @@
+import client.Client;
 import controller.GameMenuController;
 import controller.LoadController;
 import controller.PreGameMenuController;
@@ -29,6 +30,10 @@ public class Main {
 //        player2.setDeck(new ArrayList<>(faction2.getCards()));
 //    }
     public static void main(String[] args) {
-        LoginMenuView.run();
+        Client client = new Client();
+        ChatView chatView = new ChatView(client);
+        client.setChatWindow(chatView);
+        client.listenForMessages();
+        //LoginMenuView.run();
     }
 }
