@@ -3,6 +3,10 @@ package controller;
 import model.Result;
 import model.User;
 import model.UsersManager;
+import server.GameDatabase;
+
+import java.sql.SQLException;
+import java.util.Date;
 
 public class LoginMenuController {
     private static UsersManager usersManager= new UsersManager();
@@ -12,18 +16,23 @@ public class LoginMenuController {
     }
 
     public static Result login(String username, String password, boolean stayLoggedIn) {
-        if (User.getUserByUsername(username) == null)
-            return new Result(false, "Username not found!");
+        try {
+            if (GameDatabase.getUserByUsername(username) == null)
+                return new Result(false, "Username not found!");
 
-        if (!User.getUserByUsername(username).getPassword().equals(password))
-            return new Result(false, "Password incorrect!");
+            if (!GameDatabase.getUserByUsername(username).getPassword().equals(password))
+                return new Result(false, "Password incorrect!");
 
-        if (stayLoggedIn) {
-            usersManager.saveStayLoggedInUser(User.getUserByUsername(username));
+            if (stayLoggedIn) {
+                usersManager.saveStayLoggedInUser(GameDatabase.getUserByUsername(username));
+                return new Result(true, "Login successful");
+            }
+            User.setLoggedInUser(GameDatabase.getUserByUsername(username));
             return new Result(true, "Login successful");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return new Result(false, "Could not connect to the server.");
         }
-        User.setLoggedInUser(User.getUserByUsername(username));
-        return new Result(true, "Login successful");
     }
 
     public static void changePassword(User user, String password) {
