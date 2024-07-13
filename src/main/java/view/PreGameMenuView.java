@@ -1,5 +1,7 @@
 package view;
 
+import client.Client;
+import com.google.gson.JsonObject;
 import controller.LoadController;
 import controller.PreGameMenuController;
 import javafx.event.ActionEvent;
@@ -79,19 +81,22 @@ public class PreGameMenuView extends MenuView{
     public void showFaction() {
         infoGrid.getChildren().clear();
 
-        ArrayList<Faction> factions = Faction.getFactions();
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "getFactions");
+        ArrayList<Faction> factions = Client.getFactionArrayList(jsonRequest);
+        jsonRequest.remove("action");
         for (int i = 0; i < factions.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String name = getNameFromUrl(imageView.getImage().getUrl());
-                Faction faction = new Faction(Faction.getFactionByName(name));
-                ButtonType buttonType = showConfirmMessage("You want to change faction to "+ faction.getName() + "?");
+                ButtonType buttonType = showConfirmMessage("You want to change faction to "+ name + "?");
                 if (buttonType == ButtonType.OK){
-                    PreGameMenuController.currentPlayer.setDeck(new ArrayList<>());
-                    PreGameMenuController.selectFaction(faction);
-                    showSuccessfulMessage(faction.getName() + " chose as your faction");
+                    jsonRequest.addProperty("action","selectFaction");
+                    jsonRequest.addProperty("factionName",name);
+                    Client.getResult(jsonRequest);
+                    showSuccessfulMessage(name + " chose as your faction");
                     infoGrid.getChildren().clear();
                     updateLabels();
                 }
@@ -103,23 +108,23 @@ public class PreGameMenuView extends MenuView{
 
     public void showLeaders() {
         infoGrid.getChildren().clear();
-        if (PreGameMenuController.getCurrentPlayer().getFaction() == null){
-            showError("Choose a faction first!");
-            return;
-        }
 
-        ArrayList<Commander> leaders = PreGameMenuController.getCurrentPlayer().getFaction().getCommanders();
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "getCommanders");
+        ArrayList<Commander> leaders = Client.getCommanderArrayList(jsonRequest);
+        jsonRequest.remove("action");
         for (int i = 0; i < leaders.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String name = getNameFromUrl(imageView.getImage().getUrl());
-                Commander commander = PreGameMenuController.getCurrentPlayer().getFaction().getCommanderByName(name);
-                ButtonType buttonType = showConfirmMessage("You want to choose "+ commander.getName() + " as leader?");
+                ButtonType buttonType = showConfirmMessage("You want to choose "+ name + " as leader?");
                 if (buttonType == ButtonType.OK){
-                    PreGameMenuController.selectLeader(commander);
-                    showSuccessfulMessage(commander.getName() + " chose as your leader");
+                    jsonRequest.addProperty("action","selectLeader");
+                    jsonRequest.addProperty("leaderName",name);
+                    Client.getResult(jsonRequest);
+                    showSuccessfulMessage(name + " chose as your leader");
                     infoGrid.getChildren().clear();
                 }
             });

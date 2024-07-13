@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Base of client and server classes updated">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Testing phase 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/PreGameMenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegisterMenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stayLoggedInUser.json" beforeDir="false" afterPath="$PROJECT_DIR$/stayLoggedInUser.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FXML/ScoreBoardMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/ScoreBoardMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/RegisterMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/RegisterMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ScoreBoardMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ScoreBoardMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/PreGameMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/controller/PreGameMenuControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/controller/PreGameMenuControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,36 +48,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2
-}</component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.RegisterMenuView.executor": "Run",
-    "Application.Server.executor": "Run",
-    "Application.main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/javaPrograms/P3Q2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -371,21 +341,6 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/complete-pregame-menu" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -403,6 +358,21 @@
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/complete-pregame-menu" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -435,5 +405,13 @@
     <MESSAGE value="Client and server classes added" />
     <MESSAGE value="Base of client and server classes updated" />
     <option name="LAST_COMMIT_MESSAGE" value="Base of client and server classes updated" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$controller_in_graft.ic" NAME="controller in graft Coverage Results" MODIFIED="1720589071098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$LoginMenuControllerTest.ic" NAME="LoginMenuControllerTest Coverage Results" MODIFIED="1720589046802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
   </component>
 </project>

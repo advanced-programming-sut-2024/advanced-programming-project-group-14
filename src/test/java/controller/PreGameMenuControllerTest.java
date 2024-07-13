@@ -45,7 +45,7 @@ public class PreGameMenuControllerTest {
 
     @Test
     void testSelectFaction() {
-        PreGameMenuController.selectFaction(mockFaction);
+        PreGameMenuController.selectFaction(mockPlayer,mockFaction);
         verify(mockPlayer).setFaction(mockFaction);
     }
 

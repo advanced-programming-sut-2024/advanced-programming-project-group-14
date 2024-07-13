@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class User implements Serializable {
 
@@ -21,7 +22,7 @@ public class User implements Serializable {
     private int numOfLose;
     private ArrayList<GameTable> gamePlayed;
     private ArrayList<Card> deck;
-    private static User loggedInUser;
+    private static HashMap<String,User> loggedInUsers = new HashMap<>();
 
     public User(String username, String password, String nickname, String email) {
         this.username = username;
@@ -42,20 +43,21 @@ public class User implements Serializable {
             allUsers.add(user);
     }
 
-    public static User getLoggedInUser() {
-        return loggedInUser;
-    }
-
-    public static void setLoggedInUser(User loggedInUser) {
-        User.loggedInUser = loggedInUser;
+    public static void addLoggedInUser(String clientId, User loggedInUser) {
+        User.loggedInUsers.put(clientId,loggedInUser);
     }
 
     public static ArrayList<User> getAllUsers() {
         return allUsers;
     }
+
     public static void resetUsers() {
         allUsers.clear();
-        loggedInUser = null;
+        loggedInUsers = new HashMap<>();
+    }
+
+    public static User getUserByClientId(String clientId) {
+        return loggedInUsers.get(clientId);
     }
 
     public String getUsername() {

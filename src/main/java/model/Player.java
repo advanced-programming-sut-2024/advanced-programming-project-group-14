@@ -23,6 +23,8 @@ public class Player extends User {
     private boolean isPassed;
     private boolean usedCommanderAction;
 
+    private static ArrayList<Player> players = new ArrayList<>();
+
     public Player(User user) {
         super(user.getUsername(), user.getPassword(), user.getNickname(), user.getEmail());
         this.lives = 2;
@@ -34,6 +36,15 @@ public class Player extends User {
         this.siege = new Row("Siege Unit");
         this.rows = new ArrayList<>(Arrays.asList(closeCombat,rangedCombat,siege));
 
+        players.add(this);
+    }
+
+    public static Player getPlayerByName(String username) {
+        for (Player player: players) {
+            if (player.getUsername().equals(username))
+                return player;
+        }
+        return null;
     }
 
     public Row getCloseCombat() {

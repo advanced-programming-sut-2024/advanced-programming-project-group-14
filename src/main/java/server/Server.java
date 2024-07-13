@@ -3,14 +3,14 @@ package server;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import controller.LoginMenuController;
+import controller.PreGameMenuController;
 import controller.RegisterMenuController;
-import model.Question;
-import model.Result;
-import model.User;
+import model.*;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Server {
@@ -30,6 +30,8 @@ public class Server {
                     JsonObject jsonRequest = gson.fromJson(request, JsonObject.class);
                     String action = jsonRequest.get("action").getAsString();
                     String clientId = jsonRequest.get("clientId").getAsString();  // Retrieve the client ID
+                    User thisUser = User.getUserByClientId(clientId);
+                    Player thisPlayer = Player.getPlayerByName(thisUser.getUsername());
 
 
                     Result result = null;
@@ -70,6 +72,26 @@ public class Server {
 
                             result = new Result(true, User.getUserByUsername(username).getEmail());
                             out.println(gson.toJson(result));
+                        }
+                        case "getFactions" -> {
+                            ArrayList<Faction> arrayList = Faction.getFactions();
+                            out.println(gson.toJson(arrayList));
+                        }
+                        case "selectFaction" -> {
+                            String factionName = jsonRequest.get("factionName").getAsString();
+                            Faction faction = Faction.getFactionByName(factionName);
+                            PreGameMenuController.selectFaction(thisPlayer,faction);
+                            out.println(gson.toJson(new Result(true,"")));
+                        }
+                        case "getCommanders" -> {
+                            ArrayList<Commander> arrayList = thisPlayer.getFaction().getCommanders();
+                            out.println(gson.toJson(arrayList));
+                        }
+                        case "selectLeader" -> {
+                            String leaderName = jsonRequest.get("leaderName").getAsString();
+                            Commander commander = thisPlayer.getFaction().getCommanderByName(leaderName);
+                            PreGameMenuController.selectLeader(thisPlayer,commander);
+                            out.println(gson.toJson(new Result(true,"")));
                         }
                     }
 

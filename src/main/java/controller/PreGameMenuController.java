@@ -6,16 +6,18 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class PreGameMenuController {
     public static Player currentPlayer;
     public static Player opponentPlayer;
 
-    public static void selectFaction(Faction faction) {
-        currentPlayer.setCommander(null);
-        currentPlayer.getHand().clear();
-        currentPlayer.setFaction(faction);
+    public static void selectFaction(Player player, Faction faction) {
+        player.setDeck(new ArrayList<>());
+        player.setCommander(null);
+        player.getHand().clear();
+        player.setFaction(faction);
     }
 
     public static void saveDeck(String flag, String input) {
@@ -39,8 +41,8 @@ public class PreGameMenuController {
         currentPlayer.loadDeckByFile(file);
     }
 
-    public static void selectLeader(Commander commander) {
-        currentPlayer.setCommander(commander);
+    public static void selectLeader(Player player,Commander commander) {
+        player.setCommander(commander);
     }
 
     public static Result addToDeck(Card card) {
