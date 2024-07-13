@@ -1,12 +1,9 @@
-// src/server/Server.java
 package server;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import controller.RegisterMenuController;
-import model.Question;
 import model.Result;
-import model.User;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -29,8 +26,10 @@ public class Server {
                     String request = in.readLine();
                     JsonObject jsonRequest = gson.fromJson(request, JsonObject.class);
                     String action = jsonRequest.get("action").getAsString();
+                    String clientId = jsonRequest.get("clientId").getAsString();  // Retrieve the client ID
 
-
+                    System.out.println("Received request from client: " + clientId);
+                    System.out.println("Request: " + request);
 
                     Result result = null;
                     if (action.equals("register")) {
@@ -40,22 +39,22 @@ public class Server {
                         String nickname = jsonRequest.get("nickname").getAsString();
                         String email = jsonRequest.get("email").getAsString();
                         result = RegisterMenuController.register(username, password, confirmPassword, nickname, email);
+                    } else if (action.equals("pickQuestion")) {
+                        int number = jsonRequest.get("number").getAsInt();
+                        String answer = jsonRequest.get("answer").getAsString();
 
-                    }
-                    else if (action.equals("pickQuestion")) {
+                        RegisterMenuController.pickQuestion(number, answer);
+                    } else if (action.equals("login")) {
                         int number = jsonRequest.get("number").getAsInt();
                         String answer = jsonRequest.get("answer").getAsString();
 
                         RegisterMenuController.pickQuestion(number, answer);
                     }
-                    else if (action.equals("login")) {
-                        int number = jsonRequest.get("number").getAsInt();
-                        String answer = jsonRequest.get("answer").getAsString();
 
-                        RegisterMenuController.pickQuestion(number, answer);
-                    }
+                    String jsonResponse = gson.toJson(result);
+                    System.out.println("Response to client " + clientId + ": " + jsonResponse);
 
-                    out.println(gson.toJson(result));
+                    out.println(jsonResponse);
 
                 } catch (IOException e) {
                     e.printStackTrace();
