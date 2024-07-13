@@ -93,6 +93,23 @@ public class Server {
                             PreGameMenuController.selectLeader(thisPlayer,commander);
                             out.println(gson.toJson(new Result(true,"")));
                         }
+                        case "addToDeck" -> {
+                            String cardName = jsonRequest.get("cardName").getAsString();
+                            Card card = thisPlayer.getFaction().getCardByName(cardName);
+                            result = PreGameMenuController.addToDeck(thisPlayer,card);
+                            out.println(gson.toJson(result));
+                        }
+                        case "getDeck" -> {
+                            ArrayList<Card> arrayList = thisPlayer.getDeck();
+                            out.println(gson.toJson(arrayList));
+                        }
+                        case "deleteFromDeck" -> {
+                            String cardName = jsonRequest.get("cardName").getAsString();
+                            Card card = thisPlayer.getFaction().getCardByName(cardName);
+                            PreGameMenuController.deleteFromDeck(thisPlayer,card);
+                            out.println(gson.toJson(new Result(true,"")));
+                        }
+
                     }
 
                 } catch (IOException e) {

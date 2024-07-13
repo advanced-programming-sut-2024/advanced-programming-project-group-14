@@ -3,10 +3,7 @@ package client;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import model.Commander;
-import model.Faction;
-import model.Result;
-import model.User;
+import model.*;
 
 import java.io.*;
 import java.net.Socket;
@@ -35,7 +32,7 @@ public class Client {
         }
     }
 
-    public static ArrayList<Faction> getFactionArrayList(JsonObject jsonRequest) {
+    public static <T> ArrayList<T> getArrayList(JsonObject jsonRequest) {
         jsonRequest.addProperty("clientId", CLIENT_ID);  // Add client ID to the request
         try (Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT)) {
             PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
@@ -51,7 +48,7 @@ public class Client {
         }
     }
 
-    public static ArrayList<Commander> getCommanderArrayList(JsonObject jsonRequest) {
+    public static Player getPlayer(JsonObject jsonRequest) {
         jsonRequest.addProperty("clientId", CLIENT_ID);  // Add client ID to the request
         try (Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT)) {
             PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
@@ -60,10 +57,10 @@ public class Client {
             out.println(gson.toJson(jsonRequest));
 
             String response = in.readLine();
-            return gson.fromJson(response, ArrayList.class);
+            return gson.fromJson(response, Player.class);
         } catch (IOException e) {
             e.printStackTrace();
-            return new ArrayList<>();
+            return null;
         }
     }
 }

@@ -45,24 +45,25 @@ public class PreGameMenuController {
         player.setCommander(commander);
     }
 
-    public static Result addToDeck(Card card) {
+    public static Result addToDeck(Player player,Card card) {
         if (card == null) {
             return new Result(false, "invalid card name");
         }
         if (card.getType().equals("Special") || card.getType().equals("Weather")) {
+            //change methods below to thisPlayer
             if (getCurrentPlayerHandSize() - getCurrentPlayerNumberOfSoldiers() >= 10) {
                 return new Result(false, "you can't have more than 10 special cards in your deck");
             }
         }
 
-        currentPlayer.getFaction().removeCard(card);
-        currentPlayer.addToDeck(card);
+        player.getFaction().removeCard(card);
+        player.addToDeck(card);
         return new Result(true, "added successfully");
     }
 
-    public static void deleteFromDeck(Card card) {
-        currentPlayer.getFaction().addCard(card);
-        currentPlayer.deleteFromDeck(card);
+    public static void deleteFromDeck(Player player,Card card) {
+        player.getFaction().addCard(card);
+        player.deleteFromDeck(card);
     }
 
     public static Result changeTurn() {
