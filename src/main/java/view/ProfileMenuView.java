@@ -1,3 +1,4 @@
+/*
 package view;
 
 import controller.ProfileMenuController;
@@ -201,3 +202,4 @@ public class ProfileMenuView extends MenuView {
         goToMainMenu(stage);
     }
 }
+*/

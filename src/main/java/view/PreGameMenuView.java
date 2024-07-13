@@ -44,6 +44,7 @@ public class PreGameMenuView extends MenuView{
 
     @Override
     public void start(Stage stage) throws Exception {
+        MainMenuView.checkInGame.stop();
         PreGameMenuView.stage = stage;
         LoadController.loadAll();
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/PreGameMenu.fxml"));

@@ -46,14 +46,14 @@ public class MenuView extends Application {
         }
     }
 
-    public void goToProfileMenu(Stage stage){
+    /*public void goToProfileMenu(Stage stage){
         ProfileMenuView profileMenuView = new ProfileMenuView();
         try {
             profileMenuView.start(stage);
         }catch (Exception e){
             e.printStackTrace();
         }
-    }
+    }*/
     public void goToScoreBoardMenu(Stage stage){
         ScoreBoardMenuView scoreBoardMenuView = new ScoreBoardMenuView();
         try {

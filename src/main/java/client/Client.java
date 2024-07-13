@@ -12,11 +12,12 @@ import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Client {
     private static final String SERVER_ADDRESS = "localhost";
     private static final int SERVER_PORT = 12345;
-    private static final String CLIENT_ID = "Client1";  // Unique identifier for this client
+    private static final String CLIENT_ID = "Client" + new Random().nextInt(0, 10000);  // Unique identifier for this client
     private static Gson gson = new Gson();
 
     public static Result getResult(JsonObject jsonRequest) {

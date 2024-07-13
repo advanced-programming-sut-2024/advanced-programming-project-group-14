@@ -1,6 +1,11 @@
 package view;
 
+import client.Client;
+import com.google.gson.JsonObject;
 import controller.MainMenuController;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.animation.Transition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,10 +14,12 @@ import javafx.scene.control.TextInputDialog;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.Result;
 
 public class MainMenuView extends MenuView {
     public static Stage stage;
+    public static Timeline checkInGame;
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -38,26 +45,43 @@ public class MainMenuView extends MenuView {
         } catch (Exception e) {
             System.err.println("Error loading or playing the media file: " + e.getMessage());
         }
+
+        checkInGame = new Timeline(new KeyFrame(Duration.seconds(1), actionEvent -> {
+                    JsonObject jsonRequest = new JsonObject();
+                    jsonRequest.addProperty("action", "checkInGame");
+                    Result result = Client.getResult(jsonRequest);
+                    if (result.isSuccessful())
+                        goToPreGameMenu(stage);
+        }));
+        checkInGame.setCycleCount(-1);
+        checkInGame.play();
+
     }
 
     public void logout() {
-        MainMenuController.logout();
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "logout");
+        Client.getResult(jsonRequest);
+
         goToLoginMenu(stage);
     }
 
     public void startGame() {
-        Result result = MainMenuController.createGame(getOpponentName());
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "startGame");
+        jsonRequest.addProperty("opponentUsername", getOpponentName());
+        Result result = Client.getResult(jsonRequest);
+
         if (!result.isSuccessful())
             showError(result.getMessage());
         else {
             goToPreGameMenu(stage);
         }
-
     }
 
-    public void openProfileMenu() {
+    /*public void openProfileMenu() {
         goToProfileMenu(stage);
-    }
+    }*/
 
     private String getOpponentName() {
         TextInputDialog dialog = new TextInputDialog();

@@ -11,7 +11,7 @@ public class RegisterMenuController {
 
     static Random random = new Random();
 
-    public static Result register(String username, String password, String passwordConfirm, String nickname, String email) {
+    public static Result register(String username, String password, String passwordConfirm, String nickname, String email, String clientId) {
         if (User.getUserByUsername(username) != null)
             return new Result(false, "Username is already taken! Do you want to use this username" + username + "-" + random.nextInt(100));
 
@@ -26,7 +26,7 @@ public class RegisterMenuController {
             return checkPassword;
 
         User user = new User(username, password, nickname, email);
-        User.setLoggedInUser(user);
+        User.addLoggedInUser(clientId, user);
         return new Result(true, "Register successful");
     }
 
@@ -80,9 +80,9 @@ public class RegisterMenuController {
         return password.toString();
     }
 
-    public static void pickQuestion(int number, String answer) {
+    public static void pickQuestion(int number, String answer, String clientId) {
         Question question = new Question(Objects.requireNonNull(Question.getQuestionByNumber(number)), answer);
-        User.getLoggedInUser().setQuestion(question);
+        User.getUserByClientId(clientId).setQuestion(question);
     }
 }
 

@@ -29,21 +29,6 @@ public class Main {
 //        player2.setDeck(new ArrayList<>(faction2.getCards()));
 //    }
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        UsersManager usersManager = new UsersManager();
-        usersManager.loadUsers();
         LoginMenuView.run();
-        saveUsers(usersManager);
-    }
-
-    private static void saveUsers(UsersManager usersManager) {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            usersManager.saveUsers(User.getAllUsers());
-        }));
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

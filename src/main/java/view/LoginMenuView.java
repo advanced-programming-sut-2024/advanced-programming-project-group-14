@@ -12,42 +12,35 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
-import javafx.util.Pair;
-import model.Question;
 import model.Result;
 import model.User;
-import model.UsersManager;
 
-//import javax.mail.*;
-//import javax.mail.internet.InternetAddress;
-//import javax.mail.internet.MimeMessage;
 import javax.mail.*;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.io.IOException;
 import java.security.SecureRandom;
-import java.util.ArrayList;
 import java.util.Optional;
 import java.util.Properties;
 
 
 public class LoginMenuView extends MenuView {
-    public static Stage stage;
     private static final String USERNAME = "gwentgame14@gmail.com";
     private static final String PASSWORD = "perognblyuxxvicq";
-    private String generatedCode;
-
+    public static Stage stage;
     @FXML
     public TextField loginUsernameField;
     public CheckBox stayLoginCheckBox;
+    public TextField registerPasswordTextField;
+    public Button registerToggleButton;
+    public TextField registerCPasswordTextField;
+    public Button registerToggleCButton;
+    private String generatedCode;
     @FXML
     private PasswordField loginPasswordField;
     @FXML
@@ -55,11 +48,7 @@ public class LoginMenuView extends MenuView {
     @FXML
     private Button loginToggleButton;
     private PasswordField registerPasswordField;
-    public TextField registerPasswordTextField;
-    public Button registerToggleButton;
     private PasswordField registerCPasswordField;
-    public TextField registerCPasswordTextField;
-    public Button registerToggleCButton;
 
     public static void run() {
         launch();
@@ -87,15 +76,9 @@ public class LoginMenuView extends MenuView {
         stage.setWidth(800);
         stage.show();
 
-        UsersManager usersManager = new UsersManager();
-        usersManager.loadStayLoggedInUser();
-        if (User.getLoggedInUser() != null) {
-            goToMainMenu(stage);
-        }
-        else {
-            mediaPlayer.play();
-            player = mediaPlayer;
-        }
+
+        mediaPlayer.play();
+        player = mediaPlayer;
     }
 
     @FXML
@@ -128,71 +111,71 @@ public class LoginMenuView extends MenuView {
         }
     }
 
-  /*  private void showQuestionDialog() {
-        JsonObject jsonRequest = new JsonObject();
-        jsonRequest.addProperty("action", "getUser");
-        jsonRequest.addProperty("username", loginUsernameField.getText());
+    /*  private void showQuestionDialog() {
+          JsonObject jsonRequest = new JsonObject();
+          jsonRequest.addProperty("action", "getUser");
+          jsonRequest.addProperty("username", loginUsernameField.getText());
 
-        User user = Client.getUser(jsonRequest);
-        if (user == null) {
-            showError("Enter a correct Username");
-            return;
-        }
+          User user = Client.getUser(jsonRequest);
+          if (user == null) {
+              showError("Enter a correct Username");
+              return;
+          }
 
-        Dialog<String> dialog = new Dialog<>();
-        dialog.setTitle("Questions");
-        dialog.setHeaderText("Please َAnswer the question:");
+          Dialog<String> dialog = new Dialog<>();
+          dialog.setTitle("Questions");
+          dialog.setHeaderText("Please َAnswer the question:");
 
-        ButtonType OkType = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
-        dialog.getDialogPane().getButtonTypes().addAll(OkType, ButtonType.CANCEL);
+          ButtonType OkType = new ButtonType("Ok", ButtonBar.ButtonData.OK_DONE);
+          dialog.getDialogPane().getButtonTypes().addAll(OkType, ButtonType.CANCEL);
 
-        GridPane grid = new GridPane();
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(20, 150, 10, 10));
+          GridPane grid = new GridPane();
+          grid.setHgap(10);
+          grid.setVgap(10);
+          grid.setPadding(new Insets(20, 150, 10, 10));
 
-        Label questionLabel = new Label("Question:");
-        Label questionTextLabel = new Label(user.getQuestion().getQuestionText());
-
-
-        Label answerLabel = new Label("Answer:");
-        TextField answerField = new TextField();
-
-        grid.add(questionLabel, 0, 0);
-        grid.add(questionTextLabel, 1, 0);
-        grid.add(answerLabel, 0, 1);
-        grid.add(answerField, 1, 1);
-
-        dialog.getDialogPane().setContent(grid);
-        dialog.getDialogPane().getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
-        dialog.getDialogPane().getStyleClass().add("dialog-pane");
-        dialog.getDialogPane().getContent().getStyleClass().add("dialog-content");
-        dialog.getDialogPane().lookup(".header-panel").getStyleClass().add("dialog-header");
-        dialog.setTitle("dialog-title");
+          Label questionLabel = new Label("Question:");
+          Label questionTextLabel = new Label(user.getQuestion().getQuestionText());
 
 
-        dialog.setResultConverter(dialogButton -> {
-            if (dialogButton == OkType) {
-                return answerField.getText();
-            }
-            return null;
-        });
+          Label answerLabel = new Label("Answer:");
+          TextField answerField = new TextField();
 
-        dialog.showAndWait().ifPresent(result -> {
-            JsonObject jsonRequest1 = new JsonObject();
-            jsonRequest1.addProperty("action", "checkAnswer");
-            jsonRequest1.addProperty("username", loginUsernameField.getText());
-            jsonRequest1.addProperty("answer", result);
+          grid.add(questionLabel, 0, 0);
+          grid.add(questionTextLabel, 1, 0);
+          grid.add(answerLabel, 0, 1);
+          grid.add(answerField, 1, 1);
 
-            Result checkResult = Client.getResult(jsonRequest1);
+          dialog.getDialogPane().setContent(grid);
+          dialog.getDialogPane().getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
+          dialog.getDialogPane().getStyleClass().add("dialog-pane");
+          dialog.getDialogPane().getContent().getStyleClass().add("dialog-content");
+          dialog.getDialogPane().lookup(".header-panel").getStyleClass().add("dialog-header");
+          dialog.setTitle("dialog-title");
 
-            if (!checkResult.isSuccessful())
-                showError(checkResult.getMessage());
-            else
-                showNewPasswordDialog(user);
-        });
-    }
-*/
+
+          dialog.setResultConverter(dialogButton -> {
+              if (dialogButton == OkType) {
+                  return answerField.getText();
+              }
+              return null;
+          });
+
+          dialog.showAndWait().ifPresent(result -> {
+              JsonObject jsonRequest1 = new JsonObject();
+              jsonRequest1.addProperty("action", "checkAnswer");
+              jsonRequest1.addProperty("username", loginUsernameField.getText());
+              jsonRequest1.addProperty("answer", result);
+
+              Result checkResult = Client.getResult(jsonRequest1);
+
+              if (!checkResult.isSuccessful())
+                  showError(checkResult.getMessage());
+              else
+                  showNewPasswordDialog(user);
+          });
+      }
+  */
     private void showNewPasswordDialog(User user) {
         Dialog<String> dialog = new Dialog<>();
         dialog.setTitle("New Password");

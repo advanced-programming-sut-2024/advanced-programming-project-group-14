@@ -23,6 +23,8 @@ public class User implements Serializable {
     private ArrayList<GameTable> gamePlayed;
     private ArrayList<Card> deck;
     private static HashMap<String,User> loggedInUsers = new HashMap<>();
+    private static HashMap<User,User> currentMatches = new HashMap<>();
+
 
     public User(String username, String password, String nickname, String email) {
         this.username = username;
@@ -54,6 +56,14 @@ public class User implements Serializable {
     public static void resetUsers() {
         allUsers.clear();
         loggedInUsers = new HashMap<>();
+    }
+
+    public static HashMap<User, User> getCurrentMatches() {
+        return currentMatches;
+    }
+
+    public static void addCurrentMatches(User user1, User user2) {
+        User.currentMatches.put(user1, user2);
     }
 
     public static User getUserByClientId(String clientId) {

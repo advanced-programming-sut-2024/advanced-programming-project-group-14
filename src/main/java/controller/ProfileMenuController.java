@@ -1,3 +1,4 @@
+/*
 package controller;
 
 import model.Result;
@@ -7,13 +8,13 @@ import java.util.regex.Pattern;
 
 public class ProfileMenuController {
 
-    public static Result changeUsername(String username) {
+    public static Result changeUsername(String username, String clientId) {
         if (User.getUserByUsername(username) != null)
             return new Result(false, "Username is already taken!");
         if (!Pattern.matches("[a-zA-Z0-9\\-]+", username))
             return new Result(false, "Username is invalid!");
 
-        User.getLoggedInUser().setUsername(username);
+        User.getUserByClientId(clientId).setUsername(username);
         return new Result(true, "Username changed successfully");
     }
 
@@ -73,3 +74,4 @@ public class ProfileMenuController {
         return new Result(true, String.valueOf(numberToShow));
     }
 }
+*/
