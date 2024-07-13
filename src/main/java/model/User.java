@@ -13,7 +13,6 @@ public class User implements Serializable {
     private String nickname;
     private String email;
     private Question question;
-    private int maxScore;
     private int rank;
     private int numOfGamePlayed;
     private int numOfDraw;
@@ -99,14 +98,28 @@ public class User implements Serializable {
     }
 
     public int getMaxScore() {
+        int maxScore = 0;
+        for (GameTable gameTable: gamePlayed) {
+            Player player1 = gameTable.getPlayer1();
+            Player player2 = gameTable.getPlayer2();
+            int score = 0;
+            if (player1.getUsername().equals(this.getUsername()))
+                score = player1.getTotalScoreOfRounds();
+            else
+                score = player2.getTotalScoreOfRounds();
+
+            if (score> maxScore)
+                maxScore = score;
+        }
         return maxScore;
     }
 
-    public void setMaxScore(int maxScore) {
-        this.maxScore = maxScore;
-    }
-
     public int getRank() {
+        int rank = 1;
+        for (User user: allUsers) {
+            if (user.getMaxScore() > this.getMaxScore())
+                rank++;
+        }
         return rank;
     }
 

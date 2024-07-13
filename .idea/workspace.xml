@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="Add ability of rest factions">
+    <list default="true" id="5103f76b-d419-467f-9144-6ab0e7e84c50" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/GameTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/GameTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/LoginMenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/MainMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FXML/ScoreBoardMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/FXML/ScoreBoardMenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/LoginMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/PreGameMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/ProfileMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/Commander.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/model/Commander.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MainMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/PreGameMenuView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ProfileMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/MenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/MenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/ScoreBoardMenuView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/view/ScoreBoardMenuView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/users.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="complete-pregame-menu" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,22 +53,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
   <component name="ProjectId" id="2i8xRwLl6eJQhmBQrRZfP4ddePo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.main.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
-  }
-}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Amir Yeganeh\Desktop\Amir\Java\advanced-programming-project-group-14\src\main" />
@@ -71,13 +66,20 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main" type="Application" factoryName="Application">
+    <configuration name="main" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="graft" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -100,6 +102,7 @@
       <workItem from="1719580604325" duration="17249000" />
       <workItem from="1719644171364" duration="3981000" />
       <workItem from="1719668195405" duration="8084000" />
+      <workItem from="1720801882966" duration="9851000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml updated">
       <created>1718898421248</created>
@@ -304,28 +307,52 @@
       <option name="project" value="LOCAL" />
       <updated>1719916218146</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Testing phase 2">
+      <option name="closed" value="true" />
+      <created>1720780499405</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1720780499405</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Server started">
+      <option name="closed" value="true" />
+      <created>1720801434563</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1720801434563</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Client and server classes added">
+      <option name="closed" value="true" />
+      <created>1720801692623</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1720801692623</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Base of client and server classes updated">
+      <option name="closed" value="true" />
+      <created>1720804172464</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1720804172464</updated>
+    </task>
+    <task id="LOCAL-00034" summary="PreGame network started">
+      <created>1720854312517</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1720854312517</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/complete-pregame-menu" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -347,13 +374,23 @@
         </entry>
       </map>
     </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/complete-pregame-menu" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="PreGame fxml added" />
-    <MESSAGE value="Directions of methods fixed" />
-    <MESSAGE value="Wrong merge fixed" />
-    <MESSAGE value="Dahanemon service shod valy ok kardim" />
-    <MESSAGE value="MenuView added" />
     <MESSAGE value="changeMenu and login mthod addded" />
     <MESSAGE value="misc.xml updated" />
     <MESSAGE value="Unversioned Files" />
@@ -374,6 +411,19 @@
     <MESSAGE value="Fix the bugs after merge" />
     <MESSAGE value="Update some photo name in image folder" />
     <MESSAGE value="Add ability of rest factions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add ability of rest factions" />
+    <MESSAGE value="Testing phase 2" />
+    <MESSAGE value="Server started" />
+    <MESSAGE value="Client and server classes added" />
+    <MESSAGE value="Base of client and server classes updated" />
+    <MESSAGE value="PreGame network started" />
+    <option name="LAST_COMMIT_MESSAGE" value="PreGame network started" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$controller_in_graft.ic" NAME="controller in graft Coverage Results" MODIFIED="1720589071098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/advanced_programming_project_group_14$LoginMenuControllerTest.ic" NAME="LoginMenuControllerTest Coverage Results" MODIFIED="1720589046802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>controller.*</FILTER>
+    </SUITE>
   </component>
 </project>
