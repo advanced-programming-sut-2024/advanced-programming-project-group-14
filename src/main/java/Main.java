@@ -32,7 +32,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         UsersManager usersManager = new UsersManager();
         usersManager.loadUsers();
-        GameMenuView.run();
+        LoginMenuView.run();
         saveUsers(usersManager);
     }
 
