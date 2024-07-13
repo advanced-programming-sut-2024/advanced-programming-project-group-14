@@ -20,7 +20,7 @@ public class Server {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("Server started on port " + PORT);
-
+            GameDatabase.initializeDatabase();
             while (true) {
                 try (Socket clientSocket = serverSocket.accept()) {
                     BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
