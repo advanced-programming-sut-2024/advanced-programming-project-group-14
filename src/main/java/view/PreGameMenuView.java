@@ -2,6 +2,7 @@ package view;
 
 import client.Client;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import controller.LoadController;
 import controller.PreGameMenuController;
 import javafx.event.ActionEvent;
@@ -21,6 +22,7 @@ import model.*;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class PreGameMenuView extends MenuView{
@@ -44,6 +46,7 @@ public class PreGameMenuView extends MenuView{
         MainMenuView.checkInGame.stop();
         PreGameMenuView.stage = stage;
         LoadController.loadAll();
+        System.out.println("sads");
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/PreGameMenu.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/CSS/gwent-theme.css").toExternalForm());
@@ -80,9 +83,7 @@ public class PreGameMenuView extends MenuView{
         infoGrid.getChildren().clear();
 
         JsonObject jsonRequest = new JsonObject();
-        jsonRequest.addProperty("action", "getFactions");
-        ArrayList<Faction> factions = Client.getArrayList(jsonRequest);
-        jsonRequest.remove("action");
+        ArrayList<Faction> factions = Faction.getFactions();
         for (int i = 0; i < factions.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
@@ -108,8 +109,9 @@ public class PreGameMenuView extends MenuView{
         infoGrid.getChildren().clear();
 
         JsonObject jsonRequest = new JsonObject();
-        jsonRequest.addProperty("action", "getCommanders");
-        ArrayList<Commander> leaders = Client.getArrayList(jsonRequest);
+        jsonRequest.addProperty("action", "getFactionName");
+        Faction faction = Faction.getFactionByName(Client.getFactionName(jsonRequest));
+        ArrayList<Commander> leaders = faction.getCommanders();
         jsonRequest.remove("action");
         for (int i = 0; i < leaders.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getName() + ".jpg"))));
@@ -135,8 +137,9 @@ public class PreGameMenuView extends MenuView{
         infoGrid.getChildren().clear();
 
         JsonObject jsonRequest = new JsonObject();
-        jsonRequest.addProperty("action", "getFactionCards");
-        ArrayList<Card> cards = Client.getArrayList(jsonRequest);
+        jsonRequest.addProperty("action", "getFactionName");
+        Faction faction = Faction.getFactionByName(Client.getFactionName(jsonRequest));
+        ArrayList<Card> cards = faction.getCards();
         jsonRequest.remove("action");
         for (int i = 0; i < cards.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getName() + ".jpg"))));
@@ -164,8 +167,9 @@ public class PreGameMenuView extends MenuView{
         infoGrid.getChildren().clear();
 
         JsonObject jsonRequest = new JsonObject();
-        jsonRequest.addProperty("action", "getDeck");
-        ArrayList<Card> deck = Client.getArrayList(jsonRequest);
+        jsonRequest.addProperty("action", "getPlayer");
+        Player player = Client.getPlayer(jsonRequest);
+        ArrayList<Card> deck = player.getDeck();
         jsonRequest.remove("action");
         for (int i = 0; i < deck.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + deck.get(i).getName() + ".jpg"))));

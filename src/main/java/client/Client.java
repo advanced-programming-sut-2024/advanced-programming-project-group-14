@@ -3,12 +3,15 @@ package client;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 import model.*;
+import org.bytedeco.opencv.presets.opencv_core;
 
 import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Client {
@@ -33,7 +36,7 @@ public class Client {
         }
     }
 
-    public static <T> ArrayList<T> getArrayList(JsonObject jsonRequest) {
+    public static <T> List<T> getArrayList(JsonObject jsonRequest, TypeToken<List<T>> typeToken) {
         jsonRequest.addProperty("clientId", CLIENT_ID);  // Add client ID to the request
         try (Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT)) {
             PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
@@ -42,7 +45,7 @@ public class Client {
             out.println(gson.toJson(jsonRequest));
 
             String response = in.readLine();
-            return gson.fromJson(response, ArrayList.class);
+            return gson.fromJson(response, typeToken.getType());
         } catch (IOException e) {
             e.printStackTrace();
             return new ArrayList<>();
@@ -59,6 +62,22 @@ public class Client {
 
             String response = in.readLine();
             return gson.fromJson(response, Player.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String getFactionName(JsonObject jsonRequest) {
+        jsonRequest.addProperty("clientId", CLIENT_ID);  // Add client ID to the request
+        try (Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT)) {
+            PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
+            out.println(gson.toJson(jsonRequest));
+
+            String response = in.readLine();
+            return gson.fromJson(response, String.class);
         } catch (IOException e) {
             e.printStackTrace();
             return null;

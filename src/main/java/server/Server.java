@@ -2,10 +2,7 @@ package server;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import controller.LoginMenuController;
-import controller.MainMenuController;
-import controller.PreGameMenuController;
-import controller.RegisterMenuController;
+import controller.*;
 import model.*;
 
 import java.io.BufferedReader;
@@ -81,11 +78,15 @@ public class Server {
                             result = new Result(true, User.getUserByUsername(username).getEmail());
                             out.println(gson.toJson(result));
                         }
-                        case "getFactions" -> {
-                            ArrayList<Faction> arrayList = Faction.getFactions();
-                            out.println(gson.toJson(arrayList));
+                        case "loadAll" -> {
+                            LoadController.loadAll();
+                            out.println(gson.toJson(new Result(true,"")));
+                        }
+                        case "getFactionName" -> {
+                            out.println(gson.toJson(thisPlayer.getFaction().getName()));
                         }
                         case "selectFaction" -> {
+                            LoadController.loadAll();
                             String factionName = jsonRequest.get("factionName").getAsString();
                             Faction faction = Faction.getFactionByName(factionName);
                             PreGameMenuController.selectFaction(thisPlayer, faction);
@@ -129,6 +130,9 @@ public class Server {
                             Card card = thisPlayer.getFaction().getCardByName(cardName);
                             PreGameMenuController.deleteFromDeck(thisPlayer,card);
                             out.println(gson.toJson(new Result(true,"")));
+                        }
+                        case "getPlayer" -> {
+                            out.println(gson.toJson(thisPlayer));
                         }
 
                     }
