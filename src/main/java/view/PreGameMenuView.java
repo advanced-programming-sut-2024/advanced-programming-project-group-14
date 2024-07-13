@@ -16,10 +16,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import model.Card;
-import model.Commander;
-import model.Faction;
-import model.Result;
+import model.*;
 
 
 import java.io.File;
@@ -84,7 +81,7 @@ public class PreGameMenuView extends MenuView{
 
         JsonObject jsonRequest = new JsonObject();
         jsonRequest.addProperty("action", "getFactions");
-        ArrayList<Faction> factions = Client.getFactionArrayList(jsonRequest);
+        ArrayList<Faction> factions = Client.getArrayList(jsonRequest);
         jsonRequest.remove("action");
         for (int i = 0; i < factions.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + factions.get(i).getName() + ".jpg"))));
@@ -112,7 +109,7 @@ public class PreGameMenuView extends MenuView{
 
         JsonObject jsonRequest = new JsonObject();
         jsonRequest.addProperty("action", "getCommanders");
-        ArrayList<Commander> leaders = Client.getCommanderArrayList(jsonRequest);
+        ArrayList<Commander> leaders = Client.getArrayList(jsonRequest);
         jsonRequest.remove("action");
         for (int i = 0; i < leaders.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + leaders.get(i).getName() + ".jpg"))));
@@ -136,22 +133,20 @@ public class PreGameMenuView extends MenuView{
 
     public void showCards() {
         infoGrid.getChildren().clear();
-        if (PreGameMenuController.getCurrentPlayer().getFaction() == null){
-            showError("Choose a faction first!");
-            return;
-        }
 
-        ArrayList<Card> cards = PreGameMenuController.getCurrentPlayer().getFaction().getCards();
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "getFactionCards");
+        ArrayList<Card> cards = Client.getArrayList(jsonRequest);
+        jsonRequest.remove("action");
         for (int i = 0; i < cards.size(); i++) {
-            System.out.println(cards.get(i).getName());
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + cards.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String name = getNameFromUrl(imageView.getImage().getUrl());
-                Card card = PreGameMenuController.getCurrentPlayer().getFaction().getCardByName(name);
-                Result result = PreGameMenuController.addToDeck(card);
-                Object[] objects = {card,2,"salam"};
+                jsonRequest.addProperty("action","addToDeck");
+                jsonRequest.addProperty("cardName",name);
+                Result result = Client.getResult(jsonRequest);
                 if (!result.isSuccessful()) {
                     showError(result.getMessage());
                     return;
@@ -167,20 +162,20 @@ public class PreGameMenuView extends MenuView{
 
     public void showDeck() {
         infoGrid.getChildren().clear();
-        if (PreGameMenuController.getCurrentPlayer().getDeck().size() == 0){
-            showError("Deck is empty");
-            return;
-        }
 
-        ArrayList<Card> deck = PreGameMenuController.getCurrentPlayer().getDeck();
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "getDeck");
+        ArrayList<Card> deck = Client.getArrayList(jsonRequest);
+        jsonRequest.remove("action");
         for (int i = 0; i < deck.size(); i++) {
             ImageView imageView = new ImageView(new Image(String.valueOf(getClass().getResource("/Images/" + deck.get(i).getName() + ".jpg"))));
             imageView.setFitWidth(cardWidth);
             imageView.setFitHeight(cardHeight);
             imageView.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> {
                 String name = getNameFromUrl(imageView.getImage().getUrl());
-                Card card = PreGameMenuController.currentPlayer.getCardInDeck(name);
-                PreGameMenuController.deleteFromDeck(card);
+                jsonRequest.addProperty("action","deleteFromDeck");
+                jsonRequest.addProperty("cardName",name);
+                Client.getResult(jsonRequest);
                 infoGrid.getChildren().remove(imageView);
                 updateLabels();
                 showDeck();
@@ -193,6 +188,9 @@ public class PreGameMenuView extends MenuView{
     public void showCurrentUserInfo() {
         infoGrid.getChildren().clear();
 
+        JsonObject jsonRequest = new JsonObject();
+        jsonRequest.addProperty("action", "getCurrentPlayer");
+        Player currentPlayer = Client.getPlayer(jsonRequest);
         String[] labels = {"Player Name", "Faction Name", "Cards in Hand", "Number of Soldiers", "Special Cards", "Hero Cards", "Total Power"};
         String name = PreGameMenuController.getCurrentPlayer().getUsername();
         String factionName = PreGameMenuController.getCurrentPlayerFactionName();

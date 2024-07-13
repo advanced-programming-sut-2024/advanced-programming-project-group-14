@@ -24,7 +24,7 @@ public class Server {
     public static void main(String[] args) {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("Server started on port " + PORT);
-
+            GameDatabase.initializeDatabase();
             while (true) {
                 try (Socket clientSocket = serverSocket.accept()) {
                     BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
@@ -114,6 +114,23 @@ public class Server {
                             result = MainMenuController.checkIsInGame(thisUser);
                             out.println(gson.toJson(result));
                         }
+                        case "addToDeck" -> {
+                            String cardName = jsonRequest.get("cardName").getAsString();
+                            Card card = thisPlayer.getFaction().getCardByName(cardName);
+                            result = PreGameMenuController.addToDeck(thisPlayer,card);
+                            out.println(gson.toJson(result));
+                        }
+                        case "getDeck" -> {
+                            ArrayList<Card> arrayList = thisPlayer.getDeck();
+                            out.println(gson.toJson(arrayList));
+                        }
+                        case "deleteFromDeck" -> {
+                            String cardName = jsonRequest.get("cardName").getAsString();
+                            Card card = thisPlayer.getFaction().getCardByName(cardName);
+                            PreGameMenuController.deleteFromDeck(thisPlayer,card);
+                            out.println(gson.toJson(new Result(true,"")));
+                        }
+
                     }
 
 
